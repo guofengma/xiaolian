@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='yes' name='mobile-web-app-capable'>
+<meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
+<meta content='webkit' name='renderer'>
+<meta content='app-id=1050565468' name='apple-itunes-app'>
+<title>
+wallet
+</title>
+<link href='images/icon_android.png' rel='icon' sizes='192x192'>
+<link href='images/icon_retina.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='images/icon_retina3x.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='images/icon_ipad.png' rel='apple-touch-icon' sizes='152x152'>
+<link href='images/splashes/retina.png' media='(device-width: 320px) and (device-height: 568px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone4_portrait_retina.png' media='(device-width: 320px) and (device-height: 480px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6_portrait_retina.png' media='(device-width: 375px) and (device-height: 667px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/iphone6plus_portrait_retina.png' media='(device-width: 414px) and (device-height: 736px)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_portrait_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:portrait)' rel='apple-touch-startup-image'>
+<link href='images/splashes/ipad_landscape_retina.png' media='(device-width: 768px) and (device-height: 1024px) and (orientation:landscape)' rel='apple-touch-startup-image'>
+<style>
+  html, body {
+    color: #333333;
+    font-family: -apple-system, "SF UI Text", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Zen Hei", sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    overflow: hidden;
+    height: 100%; }
+  
+  body {
+    background: #efefef;
+    color: #333333; }
+    body.mobile {
+      background-color: white; }
+  
+  #download, .modal.fade, #header {
+    display: none; }
+  
+  #notification {
+    position: fixed;
+    top: -70px;
+    left: 0; }
+  
+  .notice {
+    padding: 10px;
+    font-size: 14px; }
+    .notice p {
+      margin-bottom: 10px; }
+  
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(51, 54, 58, 0.6) transparent;
+    border-radius: 100%;
+    transform-origin: 50% 50% 0px;
+    -webkit-animation: mb-spin 0.8s infinite linear;
+    animation: mb-spin 0.8s infinite linear;
+    display: inline-block; }
+  
+  @-webkit-keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  @keyframes mb-spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+  
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg); } }
+  
+  .actions {
+    visibility: hidden; }
+  
+  #safemode, #logo, #install, .cover, #device {
+    display: none; }
+  
+  #fontawesome {
+    position: absolute;
+    top: -65535px;
+    left: -65535px; }
+    #fontawesome .aw {
+      position: absolute;
+      width: auto;
+      white-space: nowrap; }
+    #fontawesome .ah {
+      position: absolute;
+      height: auto;
+      word-break: break-word;
+      word-wrap: break-word; }
+      #fontawesome .ah p {
+        margin-bottom: 5px;
+        white-space: pre-wrap; }
+        #fontawesome .ah p:last-child {
+          margin-bottom: 0px; }
+  
+  #loading {
+    width: 86px;
+    height: 86px;
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -43px;
+    text-align: center;
+    font-size: 12px; }
+    #loading .logo, #loading .indicator {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 86px;
+      height: 86px;
+      overflow: hidden;
+      background: url("images/logo-lg.svg");
+      background-size: 86px 86px; }
+    #loading .logo {
+      opacity: 0.3; }
+    #loading .indicator {
+      opacity: 1;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      height: 0%; }
+    #loading span {
+      position: absolute;
+      width: 300px;
+      left: 50%;
+      top: 110px;
+      margin-left: -150px;
+      font-size: 14px;
+      line-height: 28px;
+      color: #f77d77; }
+</style>
+
+<style>
+  #splash {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f0f0f2; }
+    #splash img {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    #splash img.landscape {
+      display: none; }
+    #splash .spinner {
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      margin-left: -15px; }
+  
+  @media all and (orientation: landscape) {
+    #splash img {
+      position: absolute;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+      -webkit-transform-origin: bottom left; }
+  
+    #splash .spinner {
+      position: absolute;
+      top: 50%;
+      margin-top: -16px; } }
+</style>
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="3fsZ1qqlWp7nhrz+ooLSSiwkCIKfzfnyscDBFdfM9u8xKWl/uCOgoiRQBg+P7Qe8/+Gan/YtSrdHK+b7nkTnWg==" />
+</head>
+<body>
+<div id='fontawesome'>
+<i class='fa fa-user'></i>
+<div class='aw'></div>
+<div class='ah'></div>
+</div>
+<div id='loading'>
+<div class='logo'></div>
+<div class='indicator'></div>
+<span>
+正在读取 wallet...
+</span>
+</div>
+<div data-user='null' id='workspace'>
+<div id='install'>
+<div class='app-inner'>
+<img class='app-icon' src='images/icon_android.png'>
+<h1 class='app-name'>
+wallet
+</h1>
+<div class='app-update-time'>
+<span>
+最后更新
+:
+</span>
+<abbr class='timeago' title='2017-04-12T02:15:56Z'></abbr>
+</div>
+<a class='install-btn' href='/app/6m7CND4FUarE0Xja0CjN8o7zzVwPDnL?inapp=1'>
+直接查看
+</a>
+<a class='install install-btn'>
+安装
+</a>
+<a class='download' href='https://itunes.apple.com/cn/app/mockingbot/id1050565468?ls=1&amp;mt=8' id='ios-download'>
+下载墨刀客户端获得最佳展示体验
+</a>
+</div>
+</div>
+<div class='cover wechat'>
+<div class='tip-wrapper'>
+<p class='tip'>
+在浏览器中打开
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+</div>
+<div class='cover ipad'>
+<div class='tip-wrapper'>
+<p class='tip'>
+请点击
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+然后选择&quot;添加到主屏幕&quot;.
+</p>
+<img class='arrow' src='images/short-arrow.png'>
+</div>
+</div>
+<div class='cover iphone'>
+<div class='tip-wrapper iphone'>
+<p class='tip'>
+请点击
+<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA1BAMAAADfUYSoAAAAFVBMVEUAAAAGfv8Eff8Xh/8Ae/cAgfcDev8kxpS2AAAABnRSTlMAgGPrExbGXyRsAAAAYUlEQVQ4y+3MsQ2AMBADQMMEofk6VSZgEyZ4Cu8/Ai+QXgpOmTJuYp2cR+aAZGMRM7rOKENzmss1/i/aDaJ5P6thO0s/C0OLJ3PV1/YTfZhtuvFLlOxjk7/LphmWTTPJ0B64+0mEocrEDQAAAABJRU5ErkJggg==' width='19'>
+,
+然后选择&quot;添加到主屏幕&quot;.
+</p>
+<img class='arrow' src='images/down-arrow.png'>
+</div>
+</div>
+<div class='cover building'>
+<div class='tip-wrapper'>
+<p class='tip'>
+正在生成 APK 文件
+</p>
+<div class='spinner'></div>
+</div>
+</div>
+</div>
+<div class='safe-mask' id='safemode'>
+<div class='indicator restore'>
+<div class='spinner'></div>
+<div class='text'>
+此操作可能需要几分钟，请您耐心等待...
+<span class='progress'>0%</span>
+</div>
+</div>
+<div class='indicator success'>
+<span class='icon'>
+<i class='fa fa-smile-o'></i>
+</span>
+<div class='text'>
+数据恢复成功，请刷新此页面。<a onclick="window.location.reload()"> 立刻刷新</a>
+</div>
+</div>
+</div>
+<div class='modal fade modal-small' id='safe-modal'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-body'>
+<img alt='' src='data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMTY4IDAgNjQgNjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwLjMgKDMzODM5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9ImljX2Vycm9yX291dGxpbmUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2OC4wMDAwMDAsIDAuMDAwMDAwKSI+CiAgICAgICAgPGcgaWQ9Ikljb24tMjRweCI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJTaGFwZSIgcG9pbnRzPSIwIDAgNjQgMCA2NCA2NCAwIDY0Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0yOS4zMzMzMzMzLDQwIEwzNC42NjY2NjY3LDQwIEwzNC42NjY2NjY3LDQ1LjMzMzMzMzMgTDI5LjMzMzMzMzMsNDUuMzMzMzMzMyBMMjkuMzMzMzMzMyw0MCBaIE0yOS4zMzMzMzMzLDE4LjY2NjY2NjcgTDM0LjY2NjY2NjcsMTguNjY2NjY2NyBMMzQuNjY2NjY2NywzNC42NjY2NjY3IEwyOS4zMzMzMzMzLDM0LjY2NjY2NjcgTDI5LjMzMzMzMzMsMTguNjY2NjY2NyBaIE0zMS45NzMzMzMzLDUuMzMzMzMzMzMgQzE3LjI1MzMzMzMsNS4zMzMzMzMzMyA1LjMzMzMzMzMzLDE3LjI4IDUuMzMzMzMzMzMsMzIgQzUuMzMzMzMzMzMsNDYuNzIgMTcuMjUzMzMzMyw1OC42NjY2NjY3IDMxLjk3MzMzMzMsNTguNjY2NjY2NyBDNDYuNzIsNTguNjY2NjY2NyA1OC42NjY2NjY3LDQ2LjcyIDU4LjY2NjY2NjcsMzIgQzU4LjY2NjY2NjcsMTcuMjggNDYuNzIsNS4zMzMzMzMzMyAzMS45NzMzMzMzLDUuMzMzMzMzMzMgTDMxLjk3MzMzMzMsNS4zMzMzMzMzMyBaIE0zMiw1My4zMzMzMzMzIEMyMC4yMTMzMzMzLDUzLjMzMzMzMzMgMTAuNjY2NjY2Nyw0My43ODY2NjY3IDEwLjY2NjY2NjcsMzIgQzEwLjY2NjY2NjcsMjAuMjEzMzMzMyAyMC4yMTMzMzMzLDEwLjY2NjY2NjcgMzIsMTAuNjY2NjY2NyBDNDMuNzg2NjY2NywxMC42NjY2NjY3IDUzLjMzMzMzMzMsMjAuMjEzMzMzMyA1My4zMzMzMzMzLDMyIEM1My4zMzMzMzMzLDQzLjc4NjY2NjcgNDMuNzg2NjY2Nyw1My4zMzMzMzMzIDMyLDUzLjMzMzMzMzMgTDMyLDUzLjMzMzMzMzMgWiIgaWQ9IlNoYXBlIiBmaWxsPSIjRjc1QjUwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4='>
+<h5>非常抱歉！</h5>
+<p id='alert-msg'></p>
+<button class='btn btn-primary' onclick='window.location.reload()'>立即刷新</button>
+</div>
+</div>
+</div>
+</div>
+
+<div id='modals'>
+<div class='modal fade' id='warning-modal'></div>
+<div class='modal fade' id='sharing-modal'></div>
+<div class='modal fade' id='renew_modal'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<a class='close' data-dismiss='modal' href='#'>×</a>
+<h4>帐户已过期</h4>
+</div>
+<div class='modal-body'>
+<p class='limit collaboration'>
+这是一个协作项目，您需要联系项目所有人续费才能继续编辑，如果您拥有此项目，您也可以移除所有协作者后继续编辑
+</p>
+<p class='limit exporting comments'>
+这是一个收费功能，您需要先续费才能继续使用此功能，如您不是项目或团队所有人，请联系项目或团队所有人续费。
+</p>
+<p class='limit exceed_quota'>
+您的项目已超出免费版图片存储限制（100M），您需要升级到付费方案方可继续使用。
+</p>
+</div>
+<div class='modal-footer'>
+<a class='btn btn-primary' href='/account'>
+立即续费
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='chrome-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-label='Close' class='close' data-dismiss='modal' type='button'>
+<span aria-hidden='true'>
+&times
+</span>
+</button>
+<h4 class='modal-title'>
+<i class='fa fa-warning'></i>
+警告
+</h4>
+</div>
+<div class='modal-body'>
+<p>
+我们发现您正在使用Chrome浏览器，要显示小于12像素的文字，您需要先修改Chrome 的默认最小字体大小设置，
+</p>
+<p>
+<a href='https://modao.cc/posts/63' target='blank'>
+设置方法请参看这篇文章。
+</a>
+</p>
+</div>
+<div class='modal-footer'>
+<button class='btn btn-default' data-dismiss='modal' type='button'>
+知道了！
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class='modal fade' id='cheating-warning'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-body'>
+<p>
+<b>任何要求微信转账，汇款，购买授权码的行为都是诈骗行为</b>。
+</p>
+<p>
+墨刀官方唯一购买渠道： <a href="https://modao.cc">modao.cc</a>，其它都是诈骗，损失墨刀概不负责。
+</p>
+<p class='tips'>
+付费用户可去除此提示。
+</p>
+</div>
+<div class='modal-footer'>
+<a aria-hidden='true' data-dismiss='modal' href='#'>
+知道了，我不会转账
+</a>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+  (function() {
+    var splash;
+  
+    window.MBLocale = 'zh-CN';
+  
+    window.I18N = {
+      "new_app": "创建应用",
+      "preview_demo": "预览模板",
+      "create": "创建",
+      "setting": "设置",
+      "update": "更新",
+      "are_you_sure": "您确定要执行此操作吗？",
+      "screen_remove_confirmation": "有\u003cb\u003e {children} 个子页面\u003c/b\u003e，此页面及其所有子页面都将被删除, 您确定吗？",
+      "cant_remove_screen": "您的应用需要至少一个页面。",
+      "last_updated": "最后更新",
+      "support": "技术支持",
+      "carrier": "中国移动",
+      "remove_parent_only": "不，只删除父页面",
+      "remove_all": "是的，删除父页面及所有子页面",
+      "w": {
+        "label": "文字",
+        "text_view": "多行文字",
+        "pg": "手势",
+        "lr": "链接区域",
+        "icon_button": "图标",
+        "image_view": "图片",
+        "button": "按钮",
+        "webpage": "网页",
+        "mtooltip": "聊天气泡",
+        "rounded_rect": "矩形",
+        "circle_rect": "圆形",
+        "hr": "直线",
+        "ve": "竖线",
+        "triangleb": "三角形1",
+        "triangletl": "三角形2",
+        "navigation_bar": "标题栏",
+        "search_bar": "搜索栏",
+        "tab_bar": "底栏",
+        "tab_item": "标签",
+        "rectangle": "列表项",
+        "switch": "开关",
+        "map_view": "地图",
+        "keyboard": "键盘",
+        "sticky": "批注",
+        "status_bar": "状态栏",
+        "panel": "母版实例",
+        "group": "群组",
+        "text_view_placeholder": "如果你无法简洁的表达你的想法，那只说明你还不够了解它。\n  -- 阿尔伯特·爱因斯坦",
+        "navbar_title": "标题",
+        "search": "搜索",
+        "mcheckbox2": "复选框",
+        "mradiobutton": "单选框",
+        "mtext_input": "单行输入",
+        "mtextarea": "多行输入",
+        "mselect": "下拉框",
+        "mfile_input": "文件选择"
+      },
+      "drag_to_link_screen": "拖动圆圈到右侧目标页面创建交互",
+      "password": "密码",
+      "screen": "页面",
+      "home": "主页",
+      "pay_with_alipay": "translation missing: zh-CN.pay_with_alipay",
+      "share": "分享",
+      "rotate": "旋转",
+      "back": "返回",
+      "return": "换行",
+      "login_from_desktop": "要创建新应用，请使用桌面浏览器登录墨刀。",
+      "install": "安装",
+      "tap": "请点击",
+      "public": "公开",
+      "private": "加密",
+      "add_to_home_screen": "然后选择\"添加到主屏幕\".",
+      "open_in_broswer": "translation missing: zh-CN.open_in_broswer",
+      "dup_app_confirmation": "确定要复制此项目吗？",
+      "data_lost_warning": "您还有数据没有保存，确定要退出吗？",
+      "inspector": {
+        "width": "宽",
+        "height": "高",
+        "font_size": "字体大小",
+        "line_height": "行高",
+        "bs": "边框宽度",
+        "ls": "边框样式",
+        "radius": "圆角半径",
+        "p": "等比例缩放图片",
+        "is": "图标大小",
+        "search": "搜索图标，比如: 设置",
+        "drop_image": "拖动图片到这里或者",
+        "click_to_upload": "点击选择图片上传",
+        "asset_search": "搜索图片",
+        "circularize": "圆形",
+        "squareize": "正方形",
+        "ro": "旋转角度",
+        "input_type": "键盘样式",
+        "z": "图层",
+        "o": "不透明度",
+        "ds": "阴影宽度",
+        "sc": "阴影颜色",
+        "ts": "阴影长度",
+        "tsc": "阴影颜色",
+        "bg": "背景色",
+        "tc": "前景色",
+        "bc": "边框颜色",
+        "f": "字体",
+        "padding": "边距",
+        "checked": "是否勾选",
+        "numeric": "数字键盘",
+        "fixed": "运行时固定位置，不随页面上下滑动",
+        "fixed_widget": "固定位置",
+        "not_fixed": "不固定",
+        "fixed_auto": "自动检测固定方向",
+        "fixed_top": "相对顶部固定",
+        "fixed_bottom": "相对底部固定",
+        "visible": "当前状态可见(快捷键：v)",
+        "placement": "箭头方向",
+        "offset": "箭头偏移",
+        "arrow_size": "箭头大小",
+        "blur": "模糊",
+        "grayscale": "灰度",
+        "sepia": "加温",
+        "brightness": "亮度",
+        "contrast": "对比度",
+        "hue_rotate": "色相",
+        "invert": "反色",
+        "saturate": "饱和度",
+        "reset": "重置"
+      },
+      "drag_to_create_screen": "拖动图片文件(可多张)到此处直接创建新页面",
+      "regenerate": "重新生成",
+      "got_it": "知道了！",
+      "network_error": "网络连接超时，无法保存您的操作，请检查您的网络并重新保存，取决于您的网络状况，如您上传的图片文件较大，可能需要多尝试几次。",
+      "unsupported": "不支持此文件类型",
+      "link_back": "返回上一页",
+      "drag_to_start": "拖动组件或图片文件到这里",
+      "home_screen": "主屏幕",
+      "signup_required": "您需要注册后才可使用此功能。",
+      "credential_required": "此应用受密码保护，请输入你的密码凭证：",
+      "state": "状态",
+      "new": "新建",
+      "widgets": "组件(1)",
+      "new_combo": "新组合",
+      "invalid_credential": "无效的密码，请刷新后重试。",
+      "app_device": "设备类型",
+      "app_type": "项目类型",
+      "icon": "图标",
+      "splash": "启动界面",
+      "size": "尺寸",
+      "icon_and_splash": "图标和启动图",
+      "tr": {
+        "none": "默认",
+        "slideleft": "右移入",
+        "slideright": "左移入",
+        "slidebottom": "下移入",
+        "slidetop": "上移入",
+        "leftmenu": "左菜单",
+        "rightmenu": "右菜单",
+        "leftdrawer": "左抽屉",
+        "rightdrawer": "右抽屉",
+        "slideleft2": "左弹入",
+        "slideright2": "右弹入",
+        "topin": "上弹入",
+        "popin": "下弹入",
+        "leftout": "左弹出",
+        "rightout": "右弹出",
+        "topout": "上弹出",
+        "popout": "下弹出"
+      },
+      "target": "目标页",
+      "png_only": "图标/启动屏幕只支持PNG文件",
+      "all_apps": "我的当前应用",
+      "inbox": "移入当前应用",
+      "sharing": "分享",
+      "owner_only": "只有所有者或管理员可以邀请新成员",
+      "sharing_url": "分享链接",
+      "toolbox": {
+        "ruler": "尺寸(R)",
+        "text": "文字(T)",
+        "palette": "外观(O)",
+        "icons": "图标(I)",
+        "uploader": "图片上传(U)",
+        "states": "选择一个状态创建母版链接"
+      },
+      "last_saved": "最后保存",
+      "archive": "移入归档应用",
+      "download": "下载",
+      "archived": "我的归档应用",
+      "del_app_confirmation": "您确定要删除此应用吗？",
+      "wait_for_saving": "此页面尚未保存，请您稍后再试。",
+      "fix_data": "我们检测到您上次退出时有未保存的修改，您希望现在保存吗？",
+      "upload_image": "上传图片",
+      "site_title": "墨刀",
+      "send_front": "置顶",
+      "send_back": "置底",
+      "forward": "向上",
+      "backward": "向下",
+      "wechat": "微信",
+      "choose_screen": "选择要跳转的页面",
+      "hdistribute": "水平等间距",
+      "vdistribute": "垂直等间距",
+      "hright": "右对齐",
+      "make_a_copy": "创建副本",
+      "more_options": "更多选项",
+      "unsaved": "未保存",
+      "all_saved": "全部操作已保存",
+      "timer": "定时器",
+      "no_timer": "未设置",
+      "cant_delete_template": "无法删除此母版，请先删除此母版的所有实例。",
+      "archive_confirmation": "您确定要归档此应用吗？",
+      "unarchive_confirmation": "您确定要取消归档此应用吗？",
+      "dc_confirm": "此页面有多个子页面，确定要复制所有子页面吗？",
+      "delete": "删除",
+      "expand_screen": "扩展屏幕高度",
+      "shrink_screen": "缩减屏幕高度",
+      "watch_tutorial": "观看教学视频",
+      "edit": "编辑",
+      "builtin_theme": "内置主题",
+      "custom_theme": "自定义主题",
+      "screen_bgcolor": "设置背景色",
+      "screen_bgimage": "设置背景图片",
+      "pg_tooltip": "全局手势",
+      "lr_tooltip": "可按住 Ctrl/Cmd 拖动鼠标快速创建链接区域",
+      "icon_tooltip": "图标",
+      "sticky_tooltip": "批注组件可显示在页面任意位置",
+      "menu_offset": "菜单偏移%",
+      "edit_demo": "编辑演示应用",
+      "create_new": "创建新应用",
+      "blank_app": "空白应用",
+      "template_app": "模板应用",
+      "basic": "基本",
+      "shapes": "形状",
+      "bars": "工具栏",
+      "others": "其它",
+      "webpage": "网页",
+      "drag_to_resize": "拖动调节页面高度",
+      "https_only": "双击编辑URL，处于安全考虑，外部网页组件仅支持https协议网站。",
+      "template_search": "搜索母版",
+      "no_archived_app": "小墨提示：还没有已归档的APP哦",
+      "archive_app": "你可以电脑访问墨刀归档APP",
+      "no_app": "你还没有创建应用",
+      "visit_via_computer": "你可以电脑访问墨刀",
+      "view_demo": "查看官方演示项目",
+      "sharing_password": "访问密码（可为空）",
+      "edit_screens": "编辑应用",
+      "state_link_tutorial": "观看母版链接教学视频",
+      "highlight_clickable": "点击空白区域时高亮可点击区域",
+      "type2search": "点此搜索",
+      "all_assets": "全部图片",
+      "current_assets": "当前项目",
+      "text_color": "文本颜色",
+      "search_doc": "搜索文档",
+      "combo_search": "搜索组合",
+      "all_combos": "所有组合",
+      "my_combos": "我的组合",
+      "builtin": "内置",
+      "width": "宽度",
+      "height": "高度",
+      "sticky": "批注",
+      "new_template": "新母版",
+      "auto_scale": "自动缩放",
+      "auto_scale_tip": "自动缩放以适配不同设备, 比如，勾选此选项后，为iPhone 5设计的组合在iPhone 6上将会放大1.17倍，在iPhone 6 plus上会放大1.29倍。",
+      "drag_widgets_2create": "拖动组件到这里创建组合",
+      "upgrade_prompt": "新版本已修复下载功能，请使用浏览器访问modao.cc下载。",
+      "embed": "嵌入",
+      "submit_app_proposal": "需要更多模板应用？\u003ca href=\"#page/forum/feature_request\" data-toggle=\"modal\"\u003e点这里告诉我们\u003c/a\u003e",
+      "shell_type": "边框类型",
+      "device_shell": "真实设备边框",
+      "default_shell": "默认黑边框",
+      "none_shell": "无边框",
+      "upload_own": "上传自定义图片",
+      "upload_icon": "上传新图标",
+      "upload_splash": "上传新启动图",
+      "app_name": "名称",
+      "free_trial": "14天免费试用，查看价格",
+      "restricted": "白名单",
+      "public_intro": "在个人主页显示此项目。",
+      "private_intro": "所有知道 URL 和密码的人都可查看。",
+      "restricted_intro": "只有我指定的人有权查看。 ",
+      "expired": "已过期",
+      "manage_collaborators": "管理团队成员",
+      "roles": {
+        "admin": "管理员",
+        "admin_desc": "所有权限",
+        "editor": "协作者",
+        "editor_desc": "修改,复制",
+        "viewer": "审阅者",
+        "viewer_desc": "查看,评论",
+        "owner": "所有者"
+      },
+      "invite": "邀请",
+      "pending": "等待",
+      "others_apps": "的应用",
+      "remove_me": "退出",
+      "invalid_post": "请输入内容或选择一个应用",
+      "cant_invite_self": "您已经在此项目中.",
+      "left": "左",
+      "right": "右",
+      "top": "上",
+      "down": "下",
+      "dip_help": "如何设置应用分辨率？",
+      "dblclick_to_edit": "双击编辑母版",
+      "name_copy": "副本",
+      "load_project": "正在读取项目数据，请稍候...",
+      "connect_to_push_server": "正在连接同步服务器，请稍候...",
+      "reconnect_push_server": "您已断开与服务器的连接, 正在重新连接，请稍候...",
+      "invalid_email": "无效的Email",
+      "cant_invite_yourself": "不能邀请自己",
+      "already_invited": "已经邀请过了",
+      "exceed_collaborator_limit": "您已超出当前计划所支持的协作者数目，需要升级帐户。",
+      "in_progress": "此操作可能需要几分钟，请您耐心等待...",
+      "screen_list": "页面列表",
+      "text_mode": "文本选择模式",
+      "link_mode": "链接模式",
+      "order_period": "付款时长",
+      "current_plan": "当前方案",
+      "next_billing_on": "当前方案到期",
+      "balance_left": "translation missing: zh-CN.balance_left",
+      "enterprise": "企业版",
+      "actually_pay": "translation missing: zh-CN.actually_pay",
+      "monthly": "月付",
+      "yearly": "年付",
+      "pro": "增强版",
+      "free": "免费版",
+      "standard": "标准版",
+      "startup": "创业版",
+      "invalid_comment": "评论内容不能为空",
+      "electron_download_alert": "点击没有反应？请先从浏览器进行下载，我们已知悉并正在解决此问题。",
+      "no_permission": "对不起，您没有权限编辑此母版，请双击实例进行编辑。",
+      "widget_list": "组件列表",
+      "team_name": "团队名称",
+      "edit_team": "编辑团队",
+      "team_icon": "团队图标",
+      "team_color": "团队颜色",
+      "icon_and_color": "图标和颜色",
+      "team": "团队",
+      "role": "角色",
+      "projects_count": "项目",
+      "screens_count": "页面",
+      "members_count": "团队成员",
+      "choose_team": "选择团队",
+      "no_joined_team": "您没有加入任何团队",
+      "my_assets": "我的图片",
+      "import_app": "导入个人应用",
+      "choose_app": "选择一个应用",
+      "dup_and_import": "复制此应用并导入副本",
+      "no_privilege": "对不起，您没有足够的权限执行此操作。",
+      "delete_projects_first": "删除团队前需要先删除所有项目。",
+      "refresh_token_confirmation": "此操作将会重新生成分享URL，使用旧URL将无法再访问此应用，确认要重新生成吗？",
+      "main_state": "默认状态",
+      "ani_name": "动效",
+      "ani_delay": "延迟",
+      "ani_duration": "动效时长",
+      "ani_count": "重复次数",
+      "animate": "动起来",
+      "none": "无",
+      "default": "默认",
+      "infinite": "无限循环",
+      "ani": {
+        "attention_seekers": "引起注意",
+        "bouncing_entrances": "弹入",
+        "flippers": "翻转",
+        "rotating_entrances": "旋转",
+        "sliding_entrances": "滑入",
+        "zoom_entrances": "缩放",
+        "specials": "其它",
+        "bounce": "弹跳",
+        "fadeIn": "渐现",
+        "flash": "闪烁",
+        "pulse": "跳动",
+        "rubberBand": "橡皮筋",
+        "shake": "抖动",
+        "swing": "摆动",
+        "tada": "哒啷",
+        "wobble": "摇晃",
+        "jello": "扭曲抖动",
+        "bounceIn": "弹入",
+        "bounceInDown": "上弹入",
+        "bounceInLeft": "左弹入",
+        "bounceInRight": "右弹入",
+        "bounceInUp": "下弹入",
+        "flipInX": "水平翻转",
+        "flipInY": "垂直翻转",
+        "spinning": "旋转（顺时针）",
+        "spinning-reverse": "旋转（逆时针）",
+        "rotateIn": "旋入",
+        "rotateInDownLeft": "左下旋转",
+        "rotateInDownRight": "右下旋转",
+        "rotateInUpLeft": "左下旋转",
+        "rotateInUpRight": "右上旋转",
+        "slideInDown": "上滑入",
+        "slideInLeft": "左滑入",
+        "slideInRight": "右滑入",
+        "slideInUp": "下滑入",
+        "zoomIn": "逐渐放大",
+        "zoomInDown": "从下放大",
+        "zoomInLeft": "从左放大",
+        "zoomInRight": "从右放大",
+        "zoomInUp": "从上放大",
+        "rollIn": "滚入",
+        "lightSpeedIn": "闪入"
+      },
+      "storage": "图片存储",
+      "whats_this": "这是什么？",
+      "exceed_screen_limit": "这个项目的组件及状态数量已超过 5 万，为了保证项目的打开速度，以及良好的编辑和运行时体验，您暂时不能再在此项目中添加新的页面及状态，我们建议您创建一个新的项目来完成这部分工作。",
+      "new_state": "新状态",
+      "tutorial": "教程",
+      "reset_target_screen": "重置目标页为初始状态",
+      "android.customize": "自定义安卓设备",
+      "unsaved_changes": "您的项目还有改动尚未保存，为保证导出内容无误，请先确保所有改动都已保存再重新导出。",
+      "transfer_screen": "转移此页面及子页面到其它项目",
+      "transfer": "转移",
+      "minputs": "输入组件",
+      "move": "移动",
+      "global_state": "全局状态",
+      "global_state_link_error": "全局状态不允许创建状态链接",
+      "input_types": {
+        "text": "文字",
+        "number": "数字",
+        "search": "搜索",
+        "password": "密码",
+        "date": "日期",
+        "time": "时间",
+        "datetime": "日期时间"
+      },
+      "move_tips": "创建一个副本，并移动副本到选定团队。",
+      "g": {
+        "tap": "单击",
+        "left": "左滑",
+        "right": "右滑",
+        "up": "上滑",
+        "down": "下滑",
+        "hold": "长按",
+        "dtap": "双击",
+        "shake": "摇一摇",
+        "timer": "定时器",
+        "vscroll": "垂直滚动"
+      },
+      "choose_move_dst": "选择移动位置",
+      "assets_manager": "上传/管理图片(A)",
+      "tags": "标签",
+      "tags_placeholder": "选择一个图片添加标签",
+      "name": "名称",
+      "choose_tag": "添加标签",
+      "create_tag": "创建新标签",
+      "insert_to_current": "插入图片到当前页面",
+      "create_new_screen": "使用此图片创建一个新页面",
+      "my_apps": "我的应用",
+      "team_apps": "我的团队",
+      "remove_clip": "移除图片裁切",
+      "update_colorset": "更新主题",
+      "colorset_tips": "提示：Shift-NUM套用主题，点选添加/更新主题",
+      "new_colorset": "添加主题",
+      "replace_image": "替换图片",
+      "cancel": "取消",
+      "duplicate_all": "是，连同子页面一起复制",
+      "duplicate_parent_only": "不，只复制父页面",
+      "coupon": "折扣码",
+      "new_flow": "新工作流",
+      "flow": "工作流",
+      "untitled_flow": "未命名工作流 - 双击进行编辑",
+      "ipa_building_starts": "已开始为您生成 iOS 应用程序，就绪后会发送邮件到您的邮箱，请注意查收。",
+      "ipa_device.not_configured": "您目前无可安装设备，请先联系团队管理员添加您的设备",
+      "no_ios_certificate": "没有可使用的苹果开发者证书，请联系墨刀客服添加证书。",
+      "go_to_account_settings": "前往帐户设置",
+      "ios_offline": "iOS IPA(离线)",
+      "import": "导入",
+      "import_template": "导入其它项目母版",
+      "choose_template_to_import": "选择要导入的母版",
+      "full_view": "全局工作流",
+      "edit_workflows": "编辑工作流",
+      "view_app": "直接查看",
+      "view_workflows": "查看工作流",
+      "expand_all": "展开所有父页",
+      "fold_all": "translation missing: zh-CN.fold_all",
+      "apply_coupon": "应用折扣",
+      "notifications": {
+        "all": "通知",
+        "view_all": "查看全部",
+        "load_more": "加载更多",
+        "request_permission": "若您要在这台电脑上使用墨刀，我们强烈建议您开启桌面通知功能。",
+        "enable_notification": "开启通知功能",
+        "ask_later": "下次再开启",
+        "never_ask_again": "不再询问",
+        "mark_all_as_read": "全部标记为已读",
+        "empty": "目前还没有通知"
+      },
+      "loading": "正在读取",
+      "untitled_editable": "未命名 - 双击进行编辑",
+      "got_message": "收到一条通知",
+      "buy": "购买",
+      "no_post": "还没有帖子，快来创建新帖吧",
+      "click2create": "点击创建",
+      "login_to_vote": "请登录后点赞",
+      "preview": {
+        "comment": {
+          "switch": "评论模式",
+          "tip": "双击预览区域添加新评论",
+          "tip_signin": "登录以添加新评论",
+          "tip_not_collaborator": "当前登录帐号不在协作名单中，请联系项目所有者获取权限，参与讨论",
+          "panel": " 条评论",
+          "thread_create": "评论",
+          "thread_delete_confirm": "永久删除本组评论？",
+          "thread_none": "无评论",
+          "thread_none_tip": "点击底部按钮或双击预览区添加新评论",
+          "thread_none_tip_signin": "使用下方按钮登录以添加新评论",
+          "comment_placeholder": "使用 Shift + Enter 换行",
+          "comment_create": "回复",
+          "comment_create_initial": "创建",
+          "comment_create_initial_title": "创建评论",
+          "comment_delete_confirm": "永久删除本条回复？",
+          "modify_edit": "编辑",
+          "modify_delete": "删除",
+          "reply": " 条回复",
+          "reply_none": "无回复",
+          "reply_none_tip": "请在下方添加评论内容以创建评论",
+          "reply_new": " 未读",
+          "reply_new_thread": "新",
+          "divider_new": "新回复",
+          "show_all_0": "展开",
+          "show_all_1": " 条回复",
+          "tag_edited": "修改",
+          "unfold": "展开"
+        },
+        "screen": {
+          "panel": "页面",
+          "total_page": "页面总数"
+        }
+      },
+      "web_signin": "登录",
+      "switch_to_free": "您的帐户过期后将会自动降级为免费方案，无需手动切换。",
+      "other_settings": "其它设置",
+      "new_post": "新帖子",
+      "choose_category": "选择分类",
+      "project": "项目",
+      "acl_moved_to_sharing": "应用访问权限设置已移至分享面板。",
+      "who_can_access": "谁可以访问此项目",
+      "unknown_error": "服务器发生未知错误，我们已经知晓此问题，并正在紧急修复中，为避免数据丢失，请您刷新此页面再进行后续操作。",
+      "new_version_detected": "检测到您已打开此页面\u003cspan\u003e超过10小时\u003c/span\u003e，目前墨刀长时间运行可能会产生一些无法预知的小问题，为了您的正常使用，请先刷新此页面，我们正在解决此问题，给您带来不便我们深感抱歉。",
+      "no_team": "您还没有团队",
+      "no_team_app": "此团队还没有任何应用",
+      "create_app_tips": "你可以在这里快速创建应用原型，或者通过模板创建。",
+      "create_team_tips": "点击这里创建一个团队",
+      "new_team": "创建团队",
+      "client_download": "macOS和Windows版客户端下载",
+      "tutorial_video": "墨刀教程和视频",
+      "created_time": "最早创建在前",
+      "updated_time": "最后修改在前",
+      "forum": "讨论区",
+      "all_teams": "所有团队",
+      "created_teams": "我创建的团队",
+      "joined_teams": "我加入的团队",
+      "team_intro": "点击了解团队功能",
+      "liked": "被赞",
+      "karma": "Karma",
+      "edit_profile": "编辑个人资料",
+      "public_projects": "公开作品",
+      "my_posts": "我的发表",
+      "his_posts": "Ta的发表",
+      "my_comments": "我的评论",
+      "his_comments": "Ta的评论",
+      "sharing_app": "分享原型",
+      "embed_app": "嵌入代码",
+      "permission": "权限",
+      "access_permission": "访问权限",
+      "preview_settings": "播放选项",
+      "embed_tips": "通过复制下面的代码将原型插入到网站或博客中。",
+      "view_in_browser": "跳过安装提示界面，直接在微信/浏览器内运行应用。",
+      "functional_widgets": "功能",
+      "locale_text": "EN",
+      "trial_expired": "试用过期",
+      "upgrade": "升级",
+      "renew": "续费",
+      "active": "有效",
+      "guide": "新手教程",
+      "feature_update": "功能更新",
+      "my_account": "我的帐户",
+      "signout": "登出",
+      "trial": "试用中",
+      "project_duplicated": "副本正在创建中，请稍候...",
+      "project_duplicating": "复制中, 请稍候...",
+      "project_duplicate_failed": "项目复制失败, 请重试",
+      "save": "保存",
+      "save_tip": "保存 (ctrl+S)",
+      "undo": "撤销",
+      "undo_tip": "撤销 (ctrl+Z)",
+      "redo": "重做",
+      "redo_tip": "重做 (ctrl+Y)",
+      "cut": "剪切",
+      "cut_tip": "剪切 (ctrl+X)",
+      "copy": "复制",
+      "copy_tip": "复制 (ctrl+C)",
+      "paste": "粘贴",
+      "paste_tip": "粘贴 (ctrl+V)",
+      "paste_directly": "到原位置",
+      "paste_to_point": "到当前位置",
+      "link_line": "链接",
+      "grid": "格线",
+      "ruler": "量尺",
+      "lock": "锁定",
+      "export": "导出",
+      "layout": "排列",
+      "align": "对齐",
+      "hleft": "左对齐",
+      "hleft_tip": "左对齐 (ctrl+alt+L)",
+      "hcenter": "水平居中",
+      "hcenter_tip": "水平居中 (ctrl+alt+C)",
+      "hright_tip": "右对齐 (ctrl+alt+R)",
+      "vtop": "顶对齐",
+      "vtop_tip": "顶对齐 (ctrl+alt+T)",
+      "vcenter": "垂直居中",
+      "vcenter_tip": "垂直居中 (ctrl+alt+V)",
+      "vbottom": "底对齐",
+      "vbottom_tip": "底对齐 (ctrl+alt+B)",
+      "distribute": "分布",
+      "hdistribute_tip": "水平等间距 (ctrl+shift+H)",
+      "vdistribute_tip": "垂直等间距 (ctrl+shift+U)",
+      "group": "组合",
+      "group_tip": "组合 (ctrl+G)",
+      "ungroup": "打散",
+      "ungroup_tip": "打散 (ctrl+U)",
+      "zoomin": "放大",
+      "zoomout": "缩小",
+      "launch": "运行",
+      "new_screen": "新页面",
+      "add_to": "添加至",
+      "templates": "母版",
+      "combos": "组合",
+      "custom_combo": "自定义组合",
+      "templates_2": "母版 (2)",
+      "combos_3": "组合 (3)",
+      "lock_widget": "锁定组件",
+      "unlock": "解锁",
+      "widgets_here": "此处的组件",
+      "error_project": "当前项目因为数据异常无法打开, 请点击确认将其删除",
+      "recover": "恢复",
+      "no_deleted_screens": "回收站里空空如也",
+      "transh_can": "回收站",
+      "screen_transh_can": "页面回收站",
+      "project_transh_can": "项目回收站",
+      "electron_upgrading_title": "请下载最新版客户端",
+      "electron_upgrading_msg": "此功能需要最新版客户端方可使用，\u003ca href='/downloads#sec-desktop' target='_blank'\u003e点击此处下载最新版客户端\u003c/a\u003e",
+      "icons": {
+        "all": "全部",
+        "web_app": "Web App.",
+        "medical": "医疗",
+        "text_editor": "文字编辑",
+        "spinner": "旋转",
+        "file_type": "文件类型",
+        "directional": "方向",
+        "video_player": "播放器",
+        "form_control": "表单",
+        "transportation": "交通",
+        "chart": "图表",
+        "brand": "Logo",
+        "hand": "手势",
+        "payment": "支付",
+        "currency": "货币",
+        "accessibility": "无障碍",
+        "gender": "性別",
+        "action": "动作",
+        "alert": "告警",
+        "communication": "沟通",
+        "content": "编辑",
+        "device": "设备",
+        "editor": "文字编辑",
+        "file": "文件",
+        "handware": "硬件",
+        "image": "影像",
+        "maps": "地图",
+        "navi": "导览",
+        "notif": "通知",
+        "places": "地点",
+        "social": "社交",
+        "toggle": "切换"
+      },
+      "account": {
+        "pay_success": "支付成功",
+        "reload_after_countdown": "\u003cspan style=\"color: #F55D54\"\u003e\u003c/span\u003e 秒后自动跳转",
+        "switch_plan": "切换方案",
+        "renew": "续费",
+        "pay_with_paypal": "使用Paypal支付",
+        "pay_with_alipay": "使用支付宝支付",
+        "pay_with_wechat": "使用微信支付",
+        "scan_with_wechat": "使用微信扫一扫付款",
+        "provided_by_pingxx": "本支付服务由 Ping++ 提供",
+        "reload": "立即刷新",
+        "balance_left": "剩余时长抵现",
+        "actually_pay": "实际应付",
+        "save_17": "节省17%",
+        "new_plan": "新方案",
+        "new_billing_date": "新续费日",
+        "payment_methods": "支付方式",
+        "wechat_pay": "微信支付",
+        "confirm_pay": "确认支付",
+        "pay": "支付",
+        "discount": "当前折扣"
+      }
+    };
+  
+    splash = document.getElementById('splashimg');
+  
+    if (splash && window.innerWidth > window.innerHeight) {
+      splash.style.width = window.innerHeight + 'px';
+      splash.style.height = window.innerWidth + 'px';
+      splash.style.top = (0 - window.innerWidth) + 'px';
+    }
+  
+  }).call(this);
+</script>
+<link rel="stylesheet" media="screen" href="webpack/font-icons-c1a0e86aabf1428282cea40ec2561242.css" />
+<link href='css/roboto.css' media='screen' rel='stylesheet'>
+<link href='css/mb-font.css' media='screen' rel='stylesheet'>
+
+<link rel="stylesheet" media="screen" href="assets/sharing-585b80895ca65baf7eb19e131043bb9d.css" />
+<link rel="stylesheet" media="screen" href="webpack/preview-30aed20c447f7a2493ab2ff06516fb0c.css" />
+<script>
+  document.getElementsByClassName("indicator")[0].style.height = '30%';
+  var MBServer = "modao.cc";
+</script>
+<script>
+   var webpackManifest = {"0":"0-cddab462d90f59b918ab.js","1":"1-1a522d61e6041c03a53e.js","2":"2-4264cb6528f27eae95f9.js","3":"3-3877a3be63a122e1bc28.js","4":"4-0b165d7be9fb40f60f6a.js","5":"5-70855aed1b67af8458ae.js","6":"6-349945635020ff394a3b.js","7":"7-8965a575f6a7efe5e7f1.js","8":"8-b276b1eec9c102f27b10.js","9":"9-68a883e78a4c541594ed.js","10":"10-6af7a85f9996cbe552ac.js"}
+</script>
+<script src="webpack/manifest-2be2dafa0f25567b2060.js"></script>
+<script src="webpack/vendor-cddab462d90f59b918ab.js"></script>
+<script src="assets/sharing-9f8df0b95fef6c31ec89b46d608ad986.js"></script>
+<script src="webpack/preview-4264cb6528f27eae95f9.js"></script>
+<script>
+  (function() {
+    MB.play = function() {
+      return MB.load('6m7CND4FUarE0Xja0CjN8o7zzVwPDnL', false, '');
+    };
+  
+    $(function() {
+      if (!window.navigator.standalone && !false && MB.isMobile() && !MB.isLocal()) {
+        MB.initWechat(null);
+        return MB.initInstall();
+      } else if (MB.isPhantom()) {
+        return $("body").addClass('phantom');
+      } else {
+        return MB.play();
+      }
+    });
+  
+  }).call(this);
+</script>
+
+</body>
+</html>
+<script>window.MBData=
+{"templates":[{"owner_id":365396,"owner_plan":"startup","owner_name":"郑宏","owner_email":"zhenghong596@126.com","owner_avatar":"/uploads2/avatars/36/365396/forum_0.jpeg","limitation":5,"screens_count":4,"cid":"t5D9444D4CD1489475343235","team_cid":null,"name":"轮播图副本","updated_at":"2017-03-14T08:38:16Z","created_at":"2017-03-14T07:09:09Z","access":"public","access_token":"NdMh1S4egYzyRvW3hKKu3AVo958YSrS","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":375,"height":150,"device":"iphone","model":null,"scale":100,"archived":false,"template":true,"timestamp":"1489480696","combo":false,"behavior":"break_away","master":false,"builtin":false,"auto_scale":true,"parent_cid":null,"host_cid":"p22180832311489040042326","clones":0,"shell_type":"device","password":null,"wechat":false,"highlight":true,"expired":false,"validated":false,"duplicating":false,"slack_web_hook_url":null},{"owner_id":365396,"owner_plan":"startup","owner_name":"郑宏","owner_email":"zhenghong596@126.com","owner_avatar":"/uploads2/avatars/36/365396/forum_0.jpeg","limitation":5,"screens_count":4,"cid":"t5D9444D4CD1489475343235","team_cid":null,"name":"轮播图副本","updated_at":"2017-03-14T08:38:16Z","created_at":"2017-03-14T07:09:09Z","access":"public","access_token":"NdMh1S4egYzyRvW3hKKu3AVo958YSrS","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":375,"height":150,"device":"iphone","model":null,"scale":100,"archived":false,"template":true,"timestamp":"1489480696","combo":false,"behavior":"break_away","master":false,"builtin":false,"auto_scale":true,"parent_cid":null,"host_cid":"p22180832311489040042326","clones":0,"shell_type":"device","password":null,"wechat":false,"highlight":true,"expired":false,"validated":false,"duplicating":false,"slack_web_hook_url":null},{"owner_id":365396,"owner_plan":"startup","owner_name":"郑宏","owner_email":"zhenghong596@126.com","owner_avatar":"/uploads2/avatars/36/365396/forum_0.jpeg","limitation":5,"screens_count":4,"cid":"t2802AB301F1491376181424","team_cid":null,"name":"轮播图副本","updated_at":"2017-04-05T07:09:58Z","created_at":"2017-04-05T07:09:58Z","access":"public","access_token":"RwW2P1DdhrSqDyplCFrOM6HJwAtGcyU","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":375,"height":150,"device":"iphone","model":null,"scale":100,"archived":false,"template":true,"timestamp":"1491376198","combo":false,"behavior":"break_away","master":false,"builtin":false,"auto_scale":true,"parent_cid":null,"host_cid":"p22180832311489040042326","clones":0,"shell_type":"device","password":null,"wechat":false,"highlight":true,"expired":false,"validated":false,"duplicating":false,"slack_web_hook_url":null}],"project":{"owner_id":365396,"owner_plan":"startup","owner_name":"郑宏","owner_email":"zhenghong596@126.com","owner_avatar":"/uploads2/avatars/36/365396/forum_0.jpeg","limitation":5,"screens_count":12,"cid":"p22180832311489040042326","team_cid":null,"name":"wallet","updated_at":"2017-04-12T02:15:56Z","created_at":"2017-03-09T06:14:21Z","access":"private","access_token":"6m7CND4FUarE0Xja0CjN8o7zzVwPDnL","version":"v2","icon":"/images/icon_retina.png","splash":null,"width":375,"height":667,"device":"iphone","model":"iphone_6","scale":75,"archived":false,"template":false,"timestamp":"1491963356","combo":false,"behavior":"inherit","master":false,"builtin":false,"auto_scale":false,"parent_cid":null,"host_cid":null,"clones":0,"shell_type":"device","password":"","wechat":false,"highlight":true,"expired":false,"validated":false,"duplicating":false,"slack_web_hook_url":null},"screens":[{"cid":"s17DC89DF601489386047594","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"加载页","orientation":"portrait","position":1,"width":375,"height":667,"hh":61,"fh":null,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sB52BF9C8A11489457330109","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"首页","orientation":"portrait","position":2,"width":375,"height":667,"hh":null,"fh":0,"bgcolor":"#F0F0F2","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s02B4E314C31489474388260","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"明细","orientation":"portrait","position":7,"width":375,"height":747,"hh":null,"fh":0,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s8ED9A0D6281489567117219","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"交易","orientation":"portrait","position":5,"width":375,"height":667,"hh":null,"fh":null,"bgcolor":"#ffffff","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s0F4ECDC58E1489570656144","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"扫码","orientation":"portrait","position":3,"width":375,"height":667,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sDF36EECC471489630562879","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"相册","orientation":"portrait","position":4,"width":375,"height":667,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s5DB85A9CFA1489634209170","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"结果","orientation":"portrait","position":6,"width":375,"height":667,"hh":null,"fh":null,"bgcolor":"#F0F0F2","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s3C648C3E1C1491376224810","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"区块明细","orientation":"portrait","position":8,"width":375,"height":667,"hh":null,"fh":0,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s46C5D5E31B1491377612057","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"区块详细","orientation":"portrait","position":9,"width":375,"height":747,"hh":null,"fh":-1,"bgcolor":"#F0F0F2","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s43EF0792DC1491379854318","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"交易明细","orientation":"portrait","position":10,"width":375,"height":667,"hh":null,"fh":0,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s14E3B63B551491379880624","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":false,"name":"交易详细","orientation":"portrait","position":11,"width":375,"height":667,"hh":null,"fh":-1,"bgcolor":"#F0F0F2","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sF300F5BF751491383412411","project_cid":"p22180832311489040042326","parent_cid":null,"expanded":true,"name":"节点信息","orientation":"portrait","position":12,"width":375,"height":667,"hh":null,"fh":0,"bgcolor":"#F0F0F2","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sA4C625DED51489475343238","project_cid":"t5D9444D4CD1489475343235","parent_cid":null,"expanded":false,"name":"页面 1","orientation":"portrait","position":0,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sA9D00E84571489475343240","project_cid":"t5D9444D4CD1489475343235","parent_cid":null,"expanded":false,"name":"页面 4","orientation":"portrait","position":3,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s6CA29C58291489475343241","project_cid":"t5D9444D4CD1489475343235","parent_cid":null,"expanded":false,"name":"页面 3","orientation":"portrait","position":2,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s9CB6CF3BEC1489475343242","project_cid":"t5D9444D4CD1489475343235","parent_cid":null,"expanded":false,"name":"页面 2","orientation":"portrait","position":1,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s91EBF149DC1491376181426","project_cid":"t2802AB301F1491376181424","parent_cid":null,"expanded":false,"name":"页面 1","orientation":"portrait","position":0,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":"","deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s0FFFC347191491376181427","project_cid":"t2802AB301F1491376181424","parent_cid":null,"expanded":false,"name":"页面 4","orientation":"portrait","position":3,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"sA797329A581491376181428","project_cid":"t2802AB301F1491376181424","parent_cid":null,"expanded":false,"name":"页面 3","orientation":"portrait","position":2,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null},{"cid":"s93016F11E51491376181429","project_cid":"t2802AB301F1491376181424","parent_cid":null,"expanded":false,"name":"页面 2","orientation":"portrait","position":1,"width":375,"height":150,"hh":null,"fh":null,"bgcolor":"transparent","bgimage":null,"deleter_name":null,"deleted_at":null,"artboard_id":null,"artboard_asset_id":null}],"widgets":[{"cid":"wB6A283A9171489456209810","screen_cid":"s17DC89DF601489386047594","timestamp":34412987,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":374.666666666667,"height":666.666666666667,"gid":"l16C726A4BF1489457346052","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w73CB0EE0881489457439802","screen_cid":"s17DC89DF601489386047594","timestamp":34413043,"v":true,"name":"sticky","left":405.333333333333,"top":329.333333333333,"width":197.333333333333,"height":130.666666666667,"gid":null,"locked":false,"text":"<p><span style=\"background-color: transparent;\">护照封面</span></p><p><span style=\"background-color: transparent;\">色调 黑、红</span></p><p><span style=\"background-color: transparent;\">商务、科技</span></p><p>局部动态、写实</p><div><br></div><p></p>","fs":14,"ha":"left","lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":50,"slt":20,"padding":8},{"cid":"w7AB7F277CF1489457330111","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413038,"v":true,"name":"status_bar","left":null,"top":0.0,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"w17408837901489459395529","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413174,"v":true,"name":"rounded_rect","left":0.0,"top":20.0,"width":374.666666666667,"height":150.0,"gid":null,"locked":false,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":2,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":true,"fixed_type":2,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE47C808AEF1489459533968","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413185,"v":true,"name":"sticky","left":406.666666666667,"top":49.3333333333333,"width":201.333333333333,"height":80.6666666666667,"gid":null,"locked":false,"text":"<p><span style=\"background-color: transparent;\">总资产展示</span></p><p></p>","fs":14,"ha":null,"lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":50,"slt":20,"padding":8},{"cid":"wD4971057FC1489460608736","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413259,"v":true,"name":"label","left":140.0,"top":68.0,"width":162.666666666667,"height":62.0,"gid":null,"locked":false,"text":"<p>600,000 BAE</p>","fs":20,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":29,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":true,"fixed_type":2,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w249EEC2AC61489460823967","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413271,"v":true,"name":"rounded_rect","left":0.0,"top":216.0,"width":374.666666666667,"height":150.666666666667,"gid":"lDA7D5BAA9E1489650499922","locked":false,"text":"","fs":14,"br":16,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w26DCC32D2B1489463188317","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413355,"v":true,"name":"sticky","left":406.666666666667,"top":209.333333333333,"width":201.333333333333,"height":90.6666666666667,"gid":null,"locked":false,"text":"<p>二维码  合约HASH</p><div>用户 账户HASH</div><p></p>","fs":14,"ha":"left","lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":53,"slt":20,"padding":8},{"cid":"w2FF4946D2D1489473243398","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413842,"v":true,"name":"rounded_rect","left":0.0,"top":410.0,"width":374.666666666667,"height":150.666666666667,"gid":null,"locked":false,"text":"","fs":14,"br":16,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2A44CD4BCC1489473243410","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413850,"v":true,"name":"text_view","left":139.0,"top":460.0,"width":210.0,"height":80.0,"gid":null,"locked":false,"text":"<p><span style=\"background-color: transparent; font-size: 11.3px;\">Ta/xf6rCn2fRg7654FlxGmlyj</span><br></p><p>15/300,000 BAE</p><p><br></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"top","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"w10BF34AEB21489543817580","screen_cid":"sB52BF9C8A11489457330109","timestamp":34415207,"v":true,"name":"button","left":100.0,"top":594.0,"width":180.0,"height":51.0,"gid":"l834C2725B71489644403544","locked":false,"text":"扫一扫","fs":18,"br":20,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":30,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":1,"icon":"qrcode","is":0,"fixed":true,"fixed_type":2,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE5961666011489462140441","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413339,"v":true,"name":"rounded_rect","left":20.0,"top":242.0,"width":60.0,"height":60.0,"gid":null,"locked":false,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wEB03FF8BB41489544708900","screen_cid":"sB52BF9C8A11489457330109","timestamp":34415278,"v":true,"name":"image_view","left":20.0,"top":241.0,"width":60.0,"height":60.0,"gid":"lDA7D5BAA9E1489650499922","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w720953DC1D1489544724964","screen_cid":"sB52BF9C8A11489457330109","timestamp":34415282,"v":true,"name":"image_view","left":20.0,"top":435.0,"width":60.0,"height":60.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wBB6CC979A21489635414627","screen_cid":"sB52BF9C8A11489457330109","timestamp":34416275,"v":true,"name":"image_view","left":20.0,"top":40.0,"width":65.0,"height":65.0,"gid":"lC1C7D329881489648745448","locked":false,"bs":0,"br":30,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":2,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w1760BBBD671489649508131","screen_cid":"sB52BF9C8A11489457330109","timestamp":34417657,"v":true,"name":"text_view","left":138.0,"top":265.0,"width":209.333333333333,"height":80.0,"gid":"lDA7D5BAA9E1489650499922","locked":false,"text":"<p><span style=\"background-color: transparent; font-size: 11.3px;\">Sa/xf8rCn2fRg7654sdfjhjh</span><br></p><p>1500/30,000 BAE</p><p><br></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"top","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wCCF36648401491375950568","screen_cid":"sB52BF9C8A11489457330109","timestamp":34417966,"v":true,"name":"button","left":314.0,"top":110.0,"width":45.0,"height":45.0,"gid":"l1F37EF3A371491376292499","locked":false,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":1,"icon":"connectdevelop","is":25,"fixed":true,"fixed_type":2,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC4A7EEB5871489473243419","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413858,"v":true,"name":"label","left":27.0,"top":374.0,"width":37.0,"height":30.0,"gid":null,"locked":false,"text":"<p>授权</p>","fs":18,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":26,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0CB799900E1489472370289","screen_cid":"sB52BF9C8A11489457330109","timestamp":34413615,"v":true,"name":"label","left":27.0,"top":178.0,"width":37.0,"height":30.0,"gid":null,"locked":false,"text":"积分","fs":18,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":26,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wFC028AD8ED1489474388263","screen_cid":"s02B4E314C31489474388260","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"wA628E915211489476887763","screen_cid":"s02B4E314C31489474388260","timestamp":34414481,"v":true,"name":"label","left":99.666666666667,"top":186.0,"width":253.0,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/03/14       5,000 BAE       消费</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6B197262CB1489478741676","screen_cid":"s02B4E314C31489474388260","timestamp":34414599,"v":true,"name":"rectangle","left":0.0,"top":169.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":2,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD44BF3486B1489479761117","screen_cid":"s02B4E314C31489474388260","timestamp":34415043,"v":true,"name":"rectangle","left":0.0,"top":239.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":5,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6D92C04AD41489479761127","screen_cid":"s02B4E314C31489474388260","timestamp":34415051,"v":true,"name":"label","left":100.0,"top":256.0,"width":253.0,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/03/13       3,600 BAE       折扣</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wFA13885F181489479773216","screen_cid":"s02B4E314C31489474388260","timestamp":34415069,"v":true,"name":"rectangle","left":0.0,"top":309.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":5,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC391C017381489479773229","screen_cid":"s02B4E314C31489474388260","timestamp":34415077,"v":true,"name":"label","left":96.0,"top":326.0,"width":257.333333333333,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/03/08       1,800 BAE       转出</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w01C58CF3091489480169310","screen_cid":"s02B4E314C31489474388260","timestamp":34415152,"v":true,"name":"sticky","left":406.666666666667,"top":249.333333333333,"width":200.0,"height":60.6666666666667,"gid":null,"locked":false,"text":"<p>手势 右滑 右滑出</p>","fs":14,"ha":null,"lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":50,"slt":20,"padding":8},{"cid":"w32F626EAEF1489480379085","screen_cid":"s02B4E314C31489474388260","timestamp":34415159,"v":true,"name":"sticky","left":406.666666666667,"top":379.333333333333,"width":200.0,"height":60.6666666666667,"gid":null,"locked":false,"text":"<p>图标  商户LOGO</p><p>时间  积分、来源</p>","fs":14,"ha":null,"lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":50,"slt":20,"padding":8},{"cid":"w0C7B6390D51489644152526","screen_cid":"s02B4E314C31489474388260","timestamp":34417294,"v":true,"name":"rectangle","left":0.0,"top":379.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0796151BD11489644152539","screen_cid":"s02B4E314C31489474388260","timestamp":34417302,"v":true,"name":"label","left":99.666666666667,"top":396.0,"width":253.0,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/03/02       7,400 BAE       消费</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9DD6B6CF441489644152544","screen_cid":"s02B4E314C31489474388260","timestamp":34417306,"v":true,"name":"rectangle","left":0.0,"top":447.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB5610B0FF41489644152552","screen_cid":"s02B4E314C31489474388260","timestamp":34417314,"v":true,"name":"label","left":100.0,"top":466.0,"width":253.0,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/02/14       8,500 BAE       转出</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w712D2AA1861489644152569","screen_cid":"s02B4E314C31489474388260","timestamp":34417330,"v":true,"name":"rectangle","left":0.0,"top":517.666666666667,"width":374.666666666667,"height":70.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w030594432A1489644152577","screen_cid":"s02B4E314C31489474388260","timestamp":34417338,"v":true,"name":"label","left":100.0,"top":536.0,"width":253.0,"height":45.3333333333333,"gid":"l6C85D8FA5C1489651601732","locked":false,"text":"<p>2017/02/10       3,100 BAE       转入</p>","fs":16,"br":0,"bs":0,"ha":"right","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD5D2E534F31489651172315","screen_cid":"s02B4E314C31489474388260","timestamp":34417890,"v":true,"name":"image_view","left":20.0,"top":530.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w920F75B3431489651384543","screen_cid":"s02B4E314C31489474388260","timestamp":34417896,"v":true,"name":"image_view","left":20.0,"top":180.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w7896E00A4D1489651407535","screen_cid":"s02B4E314C31489474388260","timestamp":34417903,"v":true,"name":"image_view","left":20.0,"top":250.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w5E178039F71489651428365","screen_cid":"s02B4E314C31489474388260","timestamp":34417913,"v":true,"name":"image_view","left":20.0,"top":318.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w537F24A47B1489651482281","screen_cid":"s02B4E314C31489474388260","timestamp":34417931,"v":true,"name":"image_view","left":20.0,"top":388.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wC15669C56A1489651496845","screen_cid":"s02B4E314C31489474388260","timestamp":34417938,"v":true,"name":"image_view","left":20.0,"top":460.0,"width":50.0,"height":50.0,"gid":"l6C85D8FA5C1489651601732","locked":false,"bs":0,"br":25,"image":null,"z":6,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wFF1ABCA7811489475343250","screen_cid":"sA4C625DED51489475343238","timestamp":5351063,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w2C69E9EE171489475343255","screen_cid":"sA4C625DED51489475343238","timestamp":5351098,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w34EA8CD3131489475343258","screen_cid":"sA4C625DED51489475343238","timestamp":5351099,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB2C9961A3A1489475343261","screen_cid":"sA4C625DED51489475343238","timestamp":5351101,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC49247315C1489475343264","screen_cid":"sA4C625DED51489475343238","timestamp":5351102,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w66452709F41489475343267","screen_cid":"sA4C625DED51489475343238","timestamp":5351343,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lB38B33A3361489475343244","locked":false,"icon":"left"},{"cid":"wE278ED49471489475343271","screen_cid":"sA9D00E84571489475343240","timestamp":5351104,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wEFD0E2FBC61489475343274","screen_cid":"sA9D00E84571489475343240","timestamp":5351105,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9D7CC4A7791489475343278","screen_cid":"sA9D00E84571489475343240","timestamp":5351106,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w91B1E9C6011489475343281","screen_cid":"sA9D00E84571489475343240","timestamp":5351108,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9D1ABE34A21489475343285","screen_cid":"sA9D00E84571489475343240","timestamp":5351109,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w03051048501489475343289","screen_cid":"sA9D00E84571489475343240","timestamp":5351364,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lE8DC3ACCCA1489475343245","locked":false,"icon":"left"},{"cid":"w9C396B34531489475343293","screen_cid":"s6CA29C58291489475343241","timestamp":5351111,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w68C2A236121489475343296","screen_cid":"s6CA29C58291489475343241","timestamp":5351113,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC7AD9657E41489475343299","screen_cid":"s6CA29C58291489475343241","timestamp":5351114,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA4970636871489475343302","screen_cid":"s6CA29C58291489475343241","timestamp":5351115,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w396FF048451489475343305","screen_cid":"s6CA29C58291489475343241","timestamp":5351117,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w722C47CF681489475343308","screen_cid":"s6CA29C58291489475343241","timestamp":5351363,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lDDA54CCE3B1489475343246","locked":false,"icon":"left"},{"cid":"w3684527C5B1489475343312","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351118,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wF7B04ED72D1489475343314","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351120,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w92C7A58A6B1489475343317","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351122,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"dark","bg":"","bc":"","tc":"#444444","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB51C7A3DFF1489475343325","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351124,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1B02BB19A91489475343330","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351126,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE67D3A0A181489475343336","screen_cid":"s9CB6CF3BEC1489475343242","timestamp":5351344,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"l27575E8C691489475343248","locked":false,"icon":"left"},{"cid":"w113139BD671489567117222","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415430,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"dark","bg":"#555","tc":"#fff","bc":"#444","o":100,"z":3},{"cid":"w2D45C3E47C1489567961198","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415491,"v":true,"name":"hr","left":40.0,"top":291.666666666667,"width":300.0,"height":10.0,"gid":null,"locked":false,"z":5,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE5AA115E5A1489567976361","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415496,"v":true,"name":"hr","left":40.0,"top":361.666666666666,"width":300.0,"height":10.0,"gid":null,"locked":false,"z":5,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9F6F3F8DFC1489568068004","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415508,"v":true,"name":"label","left":60.0,"top":240.333333333333,"width":33.0,"height":45.0,"gid":null,"locked":false,"text":"<p>积分</p>","fs":16,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w582BE9749F1489568089017","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415514,"v":true,"name":"label","left":60.0,"top":311.0,"width":33.0,"height":45.0,"gid":null,"locked":false,"text":"<p>密码</p>","fs":16,"br":0,"bs":0,"ha":"center","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1A9D1A96081489569279855","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415556,"v":true,"name":"button","left":41.3333333333333,"top":538.666666666667,"width":298.666666666667,"height":50.0,"gid":"l9DF58D5FC51489634358738","locked":false,"text":"支付","fs":16,"br":25,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w659DB186951489570235494","screen_cid":"s8ED9A0D6281489567117219","timestamp":34415623,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"支付","fs":18,"z":5,"th":"dark","td":"normal","bo":0,"i":0,"bg":"#555","tc":"#fff","bc":"#444","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"wC11ABACA021489572965215","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416012,"v":true,"name":"mtext_input","left":148.0,"top":242.333333333333,"width":190.0,"height":40.0,"gid":"lD568D400011489637117155","locked":false,"text":"","fs":16,"br":0,"bs":0,"ha":"left","z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","td":"normal","bo":0,"i":0,"ls":0,"fixed":false,"fixed_type":1,"input_type":"tel"},{"cid":"w2FC86EEF151489573236308","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416045,"v":true,"name":"mtext_input","left":148.0,"top":312.333333333333,"width":190.0,"height":40.0,"gid":"l55E3EEBCD81489637811425","locked":false,"text":"","fs":16,"br":0,"bs":0,"ha":"left","z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","td":"normal","bo":0,"i":0,"ls":0,"fixed":false,"fixed_type":1,"input_type":"tel"},{"cid":"w734020AAA01489633222327","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416140,"v":true,"name":"tab_item","left":0.0,"top":19.6666666666667,"width":80.0,"height":45.0,"gid":"l505C2DA2311489633247076","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":5,"th":"light","bg":"","tc":"#fff","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4AE9B55C051489633612928","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416153,"v":true,"name":"image_view","left":40.0,"top":100.333333333333,"width":80.0,"height":80.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w1A586176691489635271099","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416260,"v":true,"name":"hr","left":40.0,"top":222.333333333333,"width":300.0,"height":10.0,"gid":null,"locked":false,"z":5,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w884E65BA601489636503429","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416782,"v":true,"name":"mtext_input","left":148.0,"top":140.333333333333,"width":190.0,"height":40.0,"gid":null,"locked":false,"text":"Yhjb83dHkDI0ndMhsfuiy","fs":16,"br":0,"bs":0,"ha":"left","z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","td":"normal","bo":0,"i":0,"ls":0,"fixed":false,"fixed_type":1,"input_type":"tel"},{"cid":"w8DD9D6C47A1489636522265","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416790,"v":true,"name":"sticky","left":405.333333333333,"top":105.333333333333,"width":200.0,"height":94.6666666666667,"gid":null,"locked":false,"text":"<p>默认扫码转账</p><div>或输入对方地址HASH</div><p></p>","fs":14,"ha":null,"lh":20,"bo":0,"i":0,"td":"normal","bg":"","tc":"","th":"","slw":50,"slt":20,"padding":8},{"cid":"w777C388BD41489642453049","screen_cid":"s8ED9A0D6281489567117219","timestamp":34416845,"v":true,"name":"label","left":60.0,"top":394.666666666667,"width":278.0,"height":44.0,"gid":null,"locked":false,"text":"交易实时,免手续费","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w384FF826701489570656148","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34415657,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"dark","bg":"#555","tc":"#fff","bc":"#444","o":100,"z":3},{"cid":"wA2EF55A62A1489646515008","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34417479,"v":true,"name":"image_view","left":0.0,"top":64.0,"width":375.0,"height":6.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w329B1110EE1489646525655","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34417483,"v":true,"name":"image_view","left":0.0,"top":64.0,"width":374.666666666667,"height":509.333333333333,"gid":"l0730CB2EA71489648535372","locked":false,"bs":0,"br":0,"image":"/uploads2/images/815/8152393/raw_1489646525.png","z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w403B8F3C9A1489646602602","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34417495,"v":true,"name":"image_view","left":0.0,"top":573.333333333333,"width":190.0,"height":93.3333333333333,"gid":"l0E0E3364E01489646782846","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":3,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wD58B63E3671489646698267","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34417511,"v":true,"name":"image_view","left":190.0,"top":573.333333333333,"width":184.666666666667,"height":93.3333333333333,"gid":"l531B0871731489646737913","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":3,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w2CBC0C41491489648137301","screen_cid":"s0F4ECDC58E1489570656144","timestamp":34417575,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"二维码","fs":18,"z":5,"th":"dark","td":"normal","bo":0,"i":0,"bg":"#555","tc":"#fff","bc":"#444","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w3F3A7E31D61489630562883","screen_cid":"sDF36EECC471489630562879","timestamp":34415657,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"dark","bg":"#555","tc":"#fff","bc":"#444","o":100,"z":3},{"cid":"w7E9D7D29891489647044160","screen_cid":"sDF36EECC471489630562879","timestamp":34417523,"v":true,"name":"image_view","left":0.0,"top":64.0,"width":374.666666666667,"height":553.333333333333,"gid":"l22504A4C971489648519868","locked":false,"bs":0,"br":0,"image":"/uploads2/images/815/8152925/raw_1489647044.png","z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w594FAB911D1489648060193","screen_cid":"sDF36EECC471489630562879","timestamp":34417564,"v":true,"name":"image_view","left":0.0,"top":573.333333333333,"width":190.0,"height":93.3333333333333,"gid":"l6EB3538DC51489648060189","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":3,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w91169558A01489648060197","screen_cid":"sDF36EECC471489630562879","timestamp":34417568,"v":true,"name":"image_view","left":190.0,"top":573.333333333333,"width":184.666666666667,"height":93.3333333333333,"gid":"l865DE459C31489648321904","locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":3,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wE87C510B701489648236704","screen_cid":"sDF36EECC471489630562879","timestamp":34417592,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"相册","fs":18,"z":5,"th":"dark","td":"normal","bo":0,"i":0,"bg":"#555","tc":"#fff","bc":"#444","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"wE37782B8C41489634209174","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34415430,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"dark","bg":"#555","tc":"#fff","bc":"#444","o":100,"z":3},{"cid":"w3B812FB33F1489634209190","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34415556,"v":true,"name":"button","left":38.3333333333333,"top":307.666666666667,"width":298.666666666667,"height":50.0,"gid":"lDC8346419E1489635853640","locked":false,"text":"完成","fs":16,"br":25,"bs":1,"ha":"center","va":"middle","z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"icon":"","is":14,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wBBE9BF83BD1489634209192","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34415623,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"结果","fs":18,"z":5,"th":"dark","td":"normal","bo":0,"i":0,"bg":"#555","tc":"#fff","bc":"#444","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w52156EA6E71489635667719","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34416305,"v":true,"name":"rounded_rect","left":0.0,"top":64.0,"width":374.666666666667,"height":210.0,"gid":null,"locked":false,"text":"","fs":14,"br":0,"bs":1,"ha":"center","va":"middle","z":5,"lh":20,"th":"","td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w63AD4E4B251489635736237","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34416317,"v":true,"name":"image_view","left":147.666666666667,"top":90.0,"width":80.0,"height":80.0,"gid":null,"locked":false,"bs":0,"br":100,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w740E402B531489635780421","screen_cid":"s5DB85A9CFA1489634209170","timestamp":34416326,"v":true,"name":"text_view","left":87.6666666666667,"top":199.666666666667,"width":200.0,"height":51.0,"gid":null,"locked":false,"text":"<p>支付成功</p><p>BAE 1,800</p>","fs":16,"br":0,"bs":0,"ha":"center","va":"top","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wE722B9B1121491376181433","screen_cid":"s91EBF149DC1491376181426","timestamp":5351063,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w308DC0EB781491376181437","screen_cid":"s91EBF149DC1491376181426","timestamp":5351098,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w7641D973441491376181441","screen_cid":"s91EBF149DC1491376181426","timestamp":5351099,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w587A86593C1491376181445","screen_cid":"s91EBF149DC1491376181426","timestamp":5351101,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wAF3103EF101491376181448","screen_cid":"s91EBF149DC1491376181426","timestamp":5351102,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wCA39A8BC301491376181451","screen_cid":"s91EBF149DC1491376181426","timestamp":5351343,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"l7A4C07E0821491376181430","locked":false,"icon":"left"},{"cid":"wD7EC8207C11491376181453","screen_cid":"s0FFFC347191491376181427","timestamp":5351104,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w4FDFD22A2F1491376181456","screen_cid":"s0FFFC347191491376181427","timestamp":5351105,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w25663B4DC21491376181458","screen_cid":"s0FFFC347191491376181427","timestamp":5351106,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w65F571F0D01491376181460","screen_cid":"s0FFFC347191491376181427","timestamp":5351108,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wEC5409572A1491376181463","screen_cid":"s0FFFC347191491376181427","timestamp":5351109,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0F5E384A5B1491376181465","screen_cid":"s0FFFC347191491376181427","timestamp":5351364,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lC50F21E6AD1491376181431","locked":false,"icon":"left"},{"cid":"wD4C9A6E8021491376181468","screen_cid":"sA797329A581491376181428","timestamp":5351111,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"wF3B22782661491376181471","screen_cid":"sA797329A581491376181428","timestamp":5351113,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1B17D669AB1491376181474","screen_cid":"sA797329A581491376181428","timestamp":5351114,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w70A8DE023E1491376181476","screen_cid":"sA797329A581491376181428","timestamp":5351115,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w339412158B1491376181478","screen_cid":"sA797329A581491376181428","timestamp":5351117,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3A9206D2961491376181480","screen_cid":"sA797329A581491376181428","timestamp":5351363,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lE144E6EFDE1491376181431","locked":false,"icon":"left"},{"cid":"wE7DAAEB79E1491376181482","screen_cid":"s93016F11E51491376181429","timestamp":5351118,"v":true,"name":"image_view","left":0.0,"top":0.0,"width":375.0,"height":150.0,"gid":null,"locked":false,"bs":0,"br":0,"image":null,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"p":true,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null,"filter":""},{"cid":"w503E5C1DB31491376181488","screen_cid":"s93016F11E51491376181429","timestamp":5351120,"v":true,"name":"icon_button","left":141.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wAE7853E9B81491376181491","screen_cid":"s93016F11E51491376181429","timestamp":5351122,"v":true,"name":"icon_button","left":157.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle","br":0,"bs":0,"z":5,"th":"dark","bg":"","bc":"","tc":"#444444","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5A269677231491376181493","screen_cid":"s93016F11E51491376181429","timestamp":5351124,"v":true,"name":"icon_button","left":173.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w97772BFB031491376181495","screen_cid":"s93016F11E51491376181429","timestamp":5351126,"v":true,"name":"icon_button","left":189.0,"top":100.0,"width":45.0,"height":45.0,"gid":null,"locked":false,"is":10,"icon":"circle-o","br":0,"bs":0,"z":5,"th":"","bg":"","bc":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"ls":0,"fixed":true,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5E7B2AC6241491376181497","screen_cid":"s93016F11E51491376181429","timestamp":5351344,"v":true,"name":"pg","left":489.0,"top":90.0,"width":52.0,"height":52.0,"gid":"lF54BABDAFF1491376181432","locked":false,"icon":"left"},{"cid":"w63316BF6081491376224814","screen_cid":"s3C648C3E1C1491376224810","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"wF6D10997C81491376327887","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418274,"v":true,"name":"tab_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"z":4,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w1C6FD23EFC1491376333858","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418277,"v":true,"name":"tab_item","left":0.0,"top":623.0,"width":80.0,"height":45.0,"gid":null,"locked":false,"text":"","is":24,"icon":"unlink","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4B6067CC2F1491376337201","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418281,"v":true,"name":"tab_item","left":295.0,"top":623.0,"width":80.0,"height":45.0,"gid":"l153B5755F71491383450426","locked":false,"text":"","is":24,"icon":"sitemap","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC053F116171491376340391","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418288,"v":true,"name":"tab_item","left":148.0,"top":623.0,"width":80.0,"height":45.0,"gid":"l5AD05176DF1491380335646","locked":false,"text":"","is":24,"icon":"line-chart","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w42ACE5658A1491376371675","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418294,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"区块","fs":18,"z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w753F4C450F1491376709274","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418308,"v":true,"name":"rectangle","left":0.0,"top":124.0,"width":375.0,"height":66.0,"gid":"lC492374DED1491377941692","locked":false,"z":5,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w518AEA6B4E1491376758379","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418319,"v":true,"name":"label","left":16.0,"top":75.0,"width":102.0,"height":45.0,"gid":null,"locked":false,"text":"<p>Height 50</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4D5EA027CD1491376834057","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418325,"v":true,"name":"label","left":16.0,"top":135.0,"width":54.0,"height":45.0,"gid":"lC492374DED1491377941692","locked":false,"text":"<p> 50</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w911AD994161491376908375","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418333,"v":true,"name":"label","left":60.0,"top":135.0,"width":289.0,"height":45.0,"gid":"lC492374DED1491377941692","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w8F6A2447511491377065270","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418346,"v":true,"name":"tab_item","left":0.0,"top":20.0,"width":80.0,"height":45.0,"gid":"l085399ACBF1491377191131","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":6,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB6FF3865E21491377110427","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418352,"v":true,"name":"rectangle","left":0.0,"top":190.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-563A5DA87CF122D0A441B","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w6E4F5E5B6A1491377110432","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418356,"v":true,"name":"label","left":16.0,"top":201.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-563A5DA87CF122D0A441B","locked":false,"text":"<p> 49</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wBC8419BEA91491377110434","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418360,"v":true,"name":"label","left":60.0,"top":201.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-563A5DA87CF122D0A441B","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9411D5CC981491377118487","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418370,"v":true,"name":"rectangle","left":0.0,"top":256.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-BB1154C7A3AB99874EEB6","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA4223F3BA01491377118492","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418374,"v":true,"name":"label","left":16.0,"top":267.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-BB1154C7A3AB99874EEB6","locked":false,"text":"<p> 48</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wAEC8BC1AB61491377118496","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418378,"v":true,"name":"label","left":60.0,"top":267.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-BB1154C7A3AB99874EEB6","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9BD3C43E8C1491378893455","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418549,"v":true,"name":"rectangle","left":0.0,"top":322.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-FDE014EA1D9F78DAF954B","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w36B65F1F8C1491378893460","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418553,"v":true,"name":"label","left":16.0,"top":333.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-FDE014EA1D9F78DAF954B","locked":false,"text":"<p> 47</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w20E28C0CF11491378893463","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418557,"v":true,"name":"label","left":60.0,"top":333.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-FDE014EA1D9F78DAF954B","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wEE37F87C581491378898379","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418564,"v":true,"name":"rectangle","left":0.0,"top":388.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-9A61D9EC557036537F02C","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w621D6DC1621491378898386","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418568,"v":true,"name":"label","left":16.0,"top":399.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-9A61D9EC557036537F02C","locked":false,"text":"<p> 46</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w30B550636F1491378898390","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418572,"v":true,"name":"label","left":60.0,"top":399.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-9A61D9EC557036537F02C","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w57CD7349031491378903094","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418576,"v":true,"name":"rectangle","left":0.0,"top":454.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-F82C25AF9B6F84C1ECB07","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w766FD9B7541491378903099","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418580,"v":true,"name":"label","left":16.0,"top":465.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-F82C25AF9B6F84C1ECB07","locked":false,"text":"<p> 45</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC89423A0F71491378903102","screen_cid":"s3C648C3E1C1491376224810","timestamp":34418584,"v":true,"name":"label","left":60.0,"top":465.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-F82C25AF9B6F84C1ECB07","locked":false,"text":"<p> hash sdflshfshshflkshfskhdldjiuiuiuiuiu</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w86447B852C1491377612061","screen_cid":"s46C5D5E31B1491377612057","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"w7B726D602A1491377612073","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418294,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"","fs":18,"z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w26EB334C251491377612079","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418319,"v":true,"name":"label","left":148.0,"top":75.0,"width":102.0,"height":45.0,"gid":null,"locked":false,"text":"<p>Block  50</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2E0206E8101491377612087","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418346,"v":true,"name":"tab_item","left":0.0,"top":20.0,"width":80.0,"height":45.0,"gid":"l869EE2BDCA1491377907976","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":6,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w81EA1336A21491377746942","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418463,"v":true,"name":"hr","left":40.0,"top":124.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB50","locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w084995760B1491377814138","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418471,"v":true,"name":"text_view","left":40.0,"top":149.0,"width":300.0,"height":106.0,"gid":"g02B0614320C7105BAFB50","locked":false,"text":"<p><b>Date</b>：2017-03-28 02：34：59</p><p><b>Nanos</b>：408015216</p><p><b>Transaction result</b>：OK</p><p><br></p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":6,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wB87B2FF3B31491378192590","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418507,"v":true,"name":"hr","left":40.0,"top":250.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB5-4D15A15A97DA9C0389F88","locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0D87AB695C1491378192594","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418511,"v":true,"name":"text_view","left":40.0,"top":275.0,"width":300.0,"height":78.0,"gid":"g02B0614320C7105BAFB5-4D15A15A97DA9C0389F88","locked":false,"text":"<p><b>State hash</b>：sdskdfhskjdhdfjshdfksjkfh</p><p><b>Pre hash</b>：sdskdfhskjdhdfjshdfksjkfh</p><p><br></p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":6,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"w33372E62E01491378392144","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418523,"v":true,"name":"hr","left":40.0,"top":342.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB5-D5490B1CC87090F2A3902","locked":false,"z":1,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w593A0E18341491378392149","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418527,"v":true,"name":"text_view","left":40.0,"top":367.0,"width":300.0,"height":403.0,"gid":"g02B0614320C7105BAFB5-D5490B1CC87090F2A3902","locked":false,"text":"<p><b>Total number of tx：1</b></p><p><b>Tx#1</b></p><p><b>UUID</b>：738478-rhtjrh-fgjkfj</p><p><b>Payload</b>：sdfjksfjksdjflsjdfjsleruwi989nknerk748384278hwejhrjwehrjhwjhwjherjwhjehwjrwhjhrwjherjwhhwjeh</p><p><b>Cert</b>：kcvnklnlsofwoi98hsjfwib2ijsfiwhfiwhhfiwhhwfuwhfiwhefiuhiwhefuwhfhf</p><p><b>Signature</b>：</p><p>sdfjsl989snfksndfklnskf0s8989nserjsdfskjdfsjfjksjdkfjskdfjksjdfksjk</p><p><br></p><p><br></p><p><br></p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":1,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wF136DEC7431491379560103","screen_cid":"s46C5D5E31B1491377612057","timestamp":34418654,"v":true,"name":"hr","left":40.0,"top":710.0,"width":300.0,"height":11.0,"gid":null,"locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD14C6364E91491379854324","screen_cid":"s43EF0792DC1491379854318","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"wDB9F1431251491379854328","screen_cid":"s43EF0792DC1491379854318","timestamp":34418274,"v":true,"name":"tab_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"z":4,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w61D6D98EE81491379854331","screen_cid":"s43EF0792DC1491379854318","timestamp":34418277,"v":true,"name":"tab_item","left":0.0,"top":623.0,"width":80.0,"height":45.0,"gid":"lC450210F0B1491380630225","locked":false,"text":"","is":24,"icon":"unlink","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wC8FD9D580C1491379854334","screen_cid":"s43EF0792DC1491379854318","timestamp":34418281,"v":true,"name":"tab_item","left":295.0,"top":623.0,"width":80.0,"height":45.0,"gid":"l15A31D3C591491383466371","locked":false,"text":"","is":24,"icon":"sitemap","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9E9A792B551491379854336","screen_cid":"s43EF0792DC1491379854318","timestamp":34418288,"v":true,"name":"tab_item","left":148.0,"top":623.0,"width":80.0,"height":45.0,"gid":null,"locked":false,"text":"","is":24,"icon":"line-chart","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0097BB9E5C1491379854338","screen_cid":"s43EF0792DC1491379854318","timestamp":34418294,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"交易","fs":18,"z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w60B3D2E40D1491379854343","screen_cid":"s43EF0792DC1491379854318","timestamp":34418319,"v":true,"name":"label","left":16.0,"top":75.0,"width":48.0,"height":45.0,"gid":null,"locked":false,"text":"<p>Tx List</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9611FA49E41491379854351","screen_cid":"s43EF0792DC1491379854318","timestamp":34418346,"v":true,"name":"tab_item","left":0.0,"top":20.0,"width":80.0,"height":45.0,"gid":"l870010BAD41491379854321","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":6,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w0D339186AC1491379854353","screen_cid":"s43EF0792DC1491379854318","timestamp":34418352,"v":true,"name":"rectangle","left":0.0,"top":124.0,"width":375.0,"height":66.0,"gid":"lAD5C0391C51491380379594","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wAFB54252BB1491379854355","screen_cid":"s43EF0792DC1491379854318","timestamp":34418356,"v":true,"name":"label","left":16.0,"top":135.0,"width":54.0,"height":45.0,"gid":"lAD5C0391C51491380379594","locked":false,"text":"<p> 48</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w295558092F1491379854357","screen_cid":"s43EF0792DC1491379854318","timestamp":34418360,"v":true,"name":"label","left":60.0,"top":135.0,"width":289.0,"height":45.0,"gid":"lAD5C0391C51491380379594","locked":false,"text":"UUID sfd88-sdhfjshdfj-sdhfjshdjf<p></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wDEFFA063761491379854360","screen_cid":"s43EF0792DC1491379854318","timestamp":34418370,"v":true,"name":"rectangle","left":0.0,"top":190.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-9A900C1E492F7405CC776","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w15723877AB1491379854363","screen_cid":"s43EF0792DC1491379854318","timestamp":34418374,"v":true,"name":"label","left":16.0,"top":201.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-9A900C1E492F7405CC776","locked":false,"text":"<p> 30</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w82E09BB29B1491379854365","screen_cid":"s43EF0792DC1491379854318","timestamp":34418378,"v":true,"name":"label","left":60.0,"top":201.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-9A900C1E492F7405CC776","locked":false,"text":"UUID sfd88-sdhfjshdfj-sdhfjshdjf<p></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wEE5E4900361491380287987","screen_cid":"s43EF0792DC1491379854318","timestamp":34418856,"v":true,"name":"rectangle","left":0.0,"top":256.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-A45602BB05863C401FF36","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w3006E783F91491380287993","screen_cid":"s43EF0792DC1491379854318","timestamp":34418860,"v":true,"name":"label","left":16.0,"top":267.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-A45602BB05863C401FF36","locked":false,"text":"<p> 23</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w32160426001491380287996","screen_cid":"s43EF0792DC1491379854318","timestamp":34418864,"v":true,"name":"label","left":60.0,"top":267.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-A45602BB05863C401FF36","locked":false,"text":"UUID sfd88-sdhfjshdfj-sdhfjshdjf<p></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w40FE1E3B8D1491380295215","screen_cid":"s43EF0792DC1491379854318","timestamp":34418868,"v":true,"name":"rectangle","left":0.0,"top":322.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-B554D743855ACBBE869B2","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wFD945FFAB51491380295220","screen_cid":"s43EF0792DC1491379854318","timestamp":34418872,"v":true,"name":"label","left":16.0,"top":333.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-B554D743855ACBBE869B2","locked":false,"text":"<p> 20</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w565C6413651491380295223","screen_cid":"s43EF0792DC1491379854318","timestamp":34418876,"v":true,"name":"label","left":60.0,"top":333.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-B554D743855ACBBE869B2","locked":false,"text":"UUID sfd88-sdhfjshdfj-sdhfjshdjf<p></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD24361E9F31491380300345","screen_cid":"s43EF0792DC1491379854318","timestamp":34418886,"v":true,"name":"rectangle","left":0.0,"top":388.0,"width":375.0,"height":66.0,"gid":"g96AC96FC6B1919BBC804-55AD44F7479EC9D3DF1F5","locked":false,"z":6,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w9BEC8CC3891491380300351","screen_cid":"s43EF0792DC1491379854318","timestamp":34418890,"v":true,"name":"label","left":16.0,"top":399.0,"width":54.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-55AD44F7479EC9D3DF1F5","locked":false,"text":"<p> 12</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE7206ED25C1491380300355","screen_cid":"s43EF0792DC1491379854318","timestamp":34418894,"v":true,"name":"label","left":60.0,"top":399.0,"width":289.0,"height":45.0,"gid":"g96AC96FC6B1919BBC804-55AD44F7479EC9D3DF1F5","locked":false,"text":"UUID sfd88-sdhfjshdfj-sdhfjshdjf<p></p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w129CB3702C1491379880628","screen_cid":"s14E3B63B551491379880624","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"wFD735510DB1491379880631","screen_cid":"s14E3B63B551491379880624","timestamp":34418294,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"","fs":18,"z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w1AAF607A771491379880634","screen_cid":"s14E3B63B551491379880624","timestamp":34418319,"v":true,"name":"label","left":134.0,"top":75.0,"width":114.0,"height":45.0,"gid":null,"locked":false,"text":"<p>Transaction info</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":5,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w94783CFC851491379880636","screen_cid":"s14E3B63B551491379880624","timestamp":34418346,"v":true,"name":"tab_item","left":0.0,"top":20.0,"width":80.0,"height":45.0,"gid":"l626169043D1491380600220","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":6,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w873690C51B1491379880638","screen_cid":"s14E3B63B551491379880624","timestamp":34418463,"v":true,"name":"hr","left":40.0,"top":124.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB5-1E423FF175D0A77C7CD47","locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wD1BD6614991491379880641","screen_cid":"s14E3B63B551491379880624","timestamp":34418471,"v":true,"name":"text_view","left":40.0,"top":149.0,"width":300.0,"height":173.0,"gid":"g02B0614320C7105BAFB5-1E423FF175D0A77C7CD47","locked":false,"text":"<p><b>Type</b>：合约</p><p><b>Date：</b>2017-03-28 02：34：59</p><p><b>UUID</b>：738478-rhtjrh-fgjkfj</p><p><b>Payload</b>：sdfjksfjksdjflsjdfjsleruwi989nknerk748384278hwejhrjwehrjhwjhwjherjwhjehwjrwhjhrwjherjwhhwjeh</p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":6,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"w140C2CCFD21491379880648","screen_cid":"s14E3B63B551491379880624","timestamp":34418523,"v":true,"name":"hr","left":40.0,"top":340.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB5-0A97740402EC9773DF649","locked":false,"z":1,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w4E37DBF8E71491379880650","screen_cid":"s14E3B63B551491379880624","timestamp":34418527,"v":true,"name":"text_view","left":40.0,"top":365.0,"width":300.0,"height":225.0,"gid":"g02B0614320C7105BAFB5-0A97740402EC9773DF649","locked":false,"text":"<p><b>Cert</b>：sdfhshfshdfjks78s7f7s8shfjshkjfdhsjkhfsjhhsjdfhsjhjhjdfh</p><p><b>Signature</b>：</p><p>sdfjsl989snfksndfklnskf0s8989nserjsdfskjdfsjfjksjdkfjskdfjksjdfksjk</p><p><br></p><p><br></p><p><br></p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":1,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null},{"cid":"wFE79940D431491379880653","screen_cid":"s14E3B63B551491379880624","timestamp":34418654,"v":true,"name":"hr","left":40.0,"top":529.0,"width":300.0,"height":11.0,"gid":null,"locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w92BA5D8B271491383412421","screen_cid":"sF300F5BF751491383412411","timestamp":34414161,"v":true,"name":"status_bar","left":null,"top":null,"width":375.0,"height":20.0,"gid":null,"locked":false,"text":"中国移动","th":"light","bg":"","tc":"","bc":"","o":100,"z":3},{"cid":"w3E20AA62651491383412427","screen_cid":"sF300F5BF751491383412411","timestamp":34418274,"v":true,"name":"tab_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"z":4,"th":"","bg":"","bc":"","o":100,"ds":0,"sc":"#aaaaaa","ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2ED76D50791491383412431","screen_cid":"sF300F5BF751491383412411","timestamp":34418277,"v":true,"name":"tab_item","left":0.0,"top":623.0,"width":80.0,"height":45.0,"gid":"l8C4241EE3C1491383412418","locked":false,"text":"","is":24,"icon":"unlink","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w5378E438491491383412434","screen_cid":"sF300F5BF751491383412411","timestamp":34418281,"v":true,"name":"tab_item","left":295.0,"top":623.0,"width":80.0,"height":45.0,"gid":null,"locked":false,"text":"","is":24,"icon":"sitemap","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wE17FB14DE11491383412436","screen_cid":"sF300F5BF751491383412411","timestamp":34418288,"v":true,"name":"tab_item","left":148.0,"top":623.0,"width":80.0,"height":45.0,"gid":"l5D127CE3471491383509425","locked":false,"text":"","is":24,"icon":"line-chart","fs":12,"z":5,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wB8F7D233DC1491383412441","screen_cid":"sF300F5BF751491383412411","timestamp":34418294,"v":true,"name":"navigation_bar","left":null,"top":null,"width":374.666666666667,"height":45.0,"gid":null,"locked":false,"text":"节点","fs":18,"z":5,"th":"","td":"normal","bo":0,"i":0,"bg":"","tc":"","bc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa"},{"cid":"w5EE2535F5B1491383412450","screen_cid":"sF300F5BF751491383412411","timestamp":34418346,"v":true,"name":"tab_item","left":0.0,"top":20.0,"width":80.0,"height":45.0,"gid":"l9F868949DB1491383412414","locked":false,"text":"","is":24,"icon":"chevron-left","fs":12,"z":6,"th":"","bg":"","tc":"","o":100,"ds":0,"sc":"#aaaaaa","fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA94B7F10DE1491790894897","screen_cid":"sF300F5BF751491383412411","timestamp":34418905,"v":true,"name":"label","left":134.0,"top":75.0,"width":65.0,"height":45.0,"gid":null,"locked":false,"text":"<p>Peer info</p>","fs":16,"br":0,"bs":0,"ha":"left","va":"middle","z":6,"th":"","lh":23,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"w2F2FC8C79A1491790894903","screen_cid":"sF300F5BF751491383412411","timestamp":34418909,"v":true,"name":"hr","left":40.0,"top":124.0,"width":300.0,"height":11.0,"gid":"g02B0614320C7105BAFB5-F0C5CC00F26ED6A5CA37E","locked":false,"z":6,"th":"","bc":"","ls":0,"ro":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0"},{"cid":"wA06C9260551491790894907","screen_cid":"sF300F5BF751491383412411","timestamp":34418913,"v":true,"name":"text_view","left":40.0,"top":149.0,"width":300.0,"height":369.0,"gid":"g02B0614320C7105BAFB5-F0C5CC00F26ED6A5CA37E","locked":false,"text":"<p><b>VP0</b>：bdpcjkxtduVKPSm/ClSv3GurVJjz6UVMKJ67LjOyN7A=</p><p><b>VP1</b>：</p><p>hIAaUerbJ14LQEp4gEOniAe4oxOEwOOzK2iljXu9WBE</p><p><b>VP2</b>：iXg0dt5Aiorqpw3QvlfFa003HzcKgYupXuBNMI56gLI=</p><p><b>VP3</b>：iXg0dt5Aiorqpw3QvlfFa003HzcKgYupXuBNMI56gLI=</p><p><br></p><p><br></p><p><br></p>","fs":15,"br":0,"bs":0,"ha":"left","va":"top","z":6,"th":"","lh":22,"td":"normal","bo":0,"i":0,"bg":"","bc":"","tc":"","o":100,"ts":0,"tsc":"#aaaaaa","ds":0,"sc":"#aaaaaa","ro":0,"padding":0,"ls":0,"fixed":false,"fixed_type":1,"ani_name":"none","ani_delay":"0","ani_count":"1","ani_duration":"0","clip":null}],"links":[{"cid":"l16C726A4BF1489457346052","screen_cid":"s17DC89DF601489386047594","target_cid":"sB52BF9C8A11489457330109","transition":"slideleft","gesture":"left","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l834C2725B71489644403544","screen_cid":"sB52BF9C8A11489457330109","target_cid":"s0F4ECDC58E1489570656144","transition":"slidebottom","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lC1C7D329881489648745448","screen_cid":"sB52BF9C8A11489457330109","target_cid":"s17DC89DF601489386047594","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lDA7D5BAA9E1489650499922","screen_cid":"sB52BF9C8A11489457330109","target_cid":"s02B4E314C31489474388260","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l1F37EF3A371491376292499","screen_cid":"sB52BF9C8A11489457330109","target_cid":"s3C648C3E1C1491376224810","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l6C85D8FA5C1489651601732","screen_cid":"s02B4E314C31489474388260","target_cid":"sB52BF9C8A11489457330109","transition":"slideright","gesture":"right","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lB38B33A3361489475343244","screen_cid":"sA4C625DED51489475343238","target_cid":"s9CB6CF3BEC1489475343242","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lE8DC3ACCCA1489475343245","screen_cid":"sA9D00E84571489475343240","target_cid":"sA4C625DED51489475343238","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lDDA54CCE3B1489475343246","screen_cid":"s6CA29C58291489475343241","target_cid":"sA9D00E84571489475343240","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l27575E8C691489475343248","screen_cid":"s9CB6CF3BEC1489475343242","target_cid":"s6CA29C58291489475343241","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l505C2DA2311489633247076","screen_cid":"s8ED9A0D6281489567117219","target_cid":"s0F4ECDC58E1489570656144","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l9DF58D5FC51489634358738","screen_cid":"s8ED9A0D6281489567117219","target_cid":"s5DB85A9CFA1489634209170","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l531B0871731489646737913","screen_cid":"s0F4ECDC58E1489570656144","target_cid":"sDF36EECC471489630562879","transition":"slidetop","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l0E0E3364E01489646782846","screen_cid":"s0F4ECDC58E1489570656144","target_cid":"sB52BF9C8A11489457330109","transition":"slidetop","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l0730CB2EA71489648535372","screen_cid":"s0F4ECDC58E1489570656144","target_cid":"s8ED9A0D6281489567117219","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l6EB3538DC51489648060189","screen_cid":"sDF36EECC471489630562879","target_cid":"sB52BF9C8A11489457330109","transition":"slidetop","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l865DE459C31489648321904","screen_cid":"sDF36EECC471489630562879","target_cid":"s0F4ECDC58E1489570656144","transition":"slidebottom","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l22504A4C971489648519868","screen_cid":"sDF36EECC471489630562879","target_cid":"s8ED9A0D6281489567117219","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lDC8346419E1489635853640","screen_cid":"s5DB85A9CFA1489634209170","target_cid":"sB52BF9C8A11489457330109","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l7A4C07E0821491376181430","screen_cid":"s91EBF149DC1491376181426","target_cid":"s93016F11E51491376181429","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lC50F21E6AD1491376181431","screen_cid":"s0FFFC347191491376181427","target_cid":"s91EBF149DC1491376181426","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lE144E6EFDE1491376181431","screen_cid":"sA797329A581491376181428","target_cid":"s0FFFC347191491376181427","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lF54BABDAFF1491376181432","screen_cid":"s93016F11E51491376181429","target_cid":"sA797329A581491376181428","transition":"slideleft","gesture":"left","timer":2.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l085399ACBF1491377191131","screen_cid":"s3C648C3E1C1491376224810","target_cid":"sB52BF9C8A11489457330109","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lC492374DED1491377941692","screen_cid":"s3C648C3E1C1491376224810","target_cid":"s46C5D5E31B1491377612057","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l5AD05176DF1491380335646","screen_cid":"s3C648C3E1C1491376224810","target_cid":"s43EF0792DC1491379854318","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l153B5755F71491383450426","screen_cid":"s3C648C3E1C1491376224810","target_cid":"sF300F5BF751491383412411","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l869EE2BDCA1491377907976","screen_cid":"s46C5D5E31B1491377612057","target_cid":"s3C648C3E1C1491376224810","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l870010BAD41491379854321","screen_cid":"s43EF0792DC1491379854318","target_cid":"sB52BF9C8A11489457330109","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lAD5C0391C51491380379594","screen_cid":"s43EF0792DC1491379854318","target_cid":"s14E3B63B551491379880624","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"lC450210F0B1491380630225","screen_cid":"s43EF0792DC1491379854318","target_cid":"s3C648C3E1C1491376224810","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l15A31D3C591491383466371","screen_cid":"s43EF0792DC1491379854318","target_cid":"sF300F5BF751491383412411","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l626169043D1491380600220","screen_cid":"s14E3B63B551491379880624","target_cid":"s43EF0792DC1491379854318","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l9F868949DB1491383412414","screen_cid":"sF300F5BF751491383412411","target_cid":"sB52BF9C8A11489457330109","transition":"slideright","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l8C4241EE3C1491383412418","screen_cid":"sF300F5BF751491383412411","target_cid":"s3C648C3E1C1491376224810","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"},{"cid":"l5D127CE3471491383509425","screen_cid":"sF300F5BF751491383412411","target_cid":"s43EF0792DC1491379854318","transition":"slideleft","gesture":"tap","timer":0.0,"menu_offset":75,"reset":true,"ani_duration":"0.2s","ani_delay":"","state_cid":null,"widget_cids":"","targetstate_cid":null,"sourcestate_cid":"default"}],"panels":[{"cid":"pE690EE5BFC1489475343340","screen_cid":"s02B4E314C31489474388260","template_cid":"t5D9444D4CD1489475343235","main_state_cid":null,"top":20,"left":0,"width":375,"height":150,"gid":null,"behavior":"break_away","z":5,"timestamp":34414369,"v":true,"locked":false,"fixed":true,"fixed_type":2}],"screen_aligns":[{"cid":"sB52BF9C8A11489457330109","h":"","v":""}],"screenstates":[],"widgetstates":[],"panelstates":[],"devices":{"android":{"google_nexus":{"width":360,"height":640,"name":"Google Pixel"},"samsung":{"width":360,"height":640,"name":"Samsung"},"Xiaomi":{"width":360,"height":640,"name":"XiaoMi"},"Huawei":{"width":360,"height":640,"name":"Huawei"},"Meizu":{"width":360,"height":600,"name":"Meizu","hide":true},"google_nexus_4":{"width":384,"height":640,"name":"Google Nexus 4","hide":true},"customize":{"width":360,"height":640,"name":"Customize"}},"iphone":{"iphone_4":{"width":320,"height":480,"scale":100,"icon_size":"120x120","name":"iPhone 4","hide":true},"iphone_5":{"width":320,"height":568,"scale":100,"icon_size":"120x120","name":"iPhone 5"},"iphone_6":{"width":375,"height":667,"scale":100,"icon_size":"180x180","name":"iPhone 6/7"},"iphone_6_plus":{"width":414,"height":736,"scale":100,"icon_size":"180x180","name":"iPhone 6/7 Plus"},"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"},"ipad_pro":{"width":1024,"height":1366,"scale":75,"icon_size":"152x152","name":"iPad Pro"}},"ipad":{"ipad_3_4":{"width":768,"height":1024,"scale":75,"icon_size":"152x152","name":"iPad"},"ipad_pro":{"width":1024,"height":1366,"scale":75,"icon_size":"152x152","name":"iPad Pro"}},"web":{"desktop":{"width":1440,"height":1024,"name":"Webpage"}},"default":{"iphone":"iphone_5","ipad":"ipad_3_4","android":"google_nexus"}},"collaborators":[],"threads":[],"comments":[],"teams":[]}</script>
