@@ -64,6 +64,12 @@ Page({
         }
       }
     }) 
+    setTimeout(function(){
+      that.setData({
+        hiddenLoading:true
+      })
+    },8000);
+    
 
   },
   // 事件处理
