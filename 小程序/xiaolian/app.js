@@ -22,7 +22,7 @@ App({
                     }  
                 });  
                 var d=that.globalData;//这里存储了appid、secret、token串    
-                var l='https://api.weixin.qq.com/sns/jscode2session?appid='+d.appid+'&secret='+d.secret+'&js_code='+res.code+'&grant_type=authorization_code';    
+                var l ='http://192.168.50.157:8888/wx/getopenid?code='+res.code;    
                 wx.request({    
                     url: l,    
                     data: {},    

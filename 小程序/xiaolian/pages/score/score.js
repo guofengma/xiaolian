@@ -121,30 +121,14 @@ Page({
         }
         console.log(event.detail.formId);
         console.log("---------------------------");
-        var promise = new Promise(function(resolve, reject){
-          wx.request({
-            url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential', //仅为示例，并非真实的接口地址
-            data: {
-              appid: 'wx6fabc07e4965d33e' ,
-              secret: '9356f5ed37a87e5cd930f134e86adf74'
-            },
-            header: {
-                'content-type': 'application/json'
-            },
-            success: function(response) {
-              resolve(response);
-            }
-          })
-        });
 
-        promise.then(function(response){
           wx.request({
-            url: 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token='+response.data.access_token, 
+            url: 'http://192.168.50.157:8888/wx/send', 
             data: {
-              "touser": wx.getStorageSync('user').openid,  
-              "template_id": "y6FU6brbCL-oo7yfJCi55Cxb5LIWV-LhLZ_66feKrJ8", 
+              "openid": wx.getStorageSync('user').openid,  
+              "templateid": "y6FU6brbCL-oo7yfJCi55Cxb5LIWV-LhLZ_66feKrJ8", 
               "page": "pages/index/index",          
-              "form_id": event.detail.formId,         
+              "formid": event.detail.formId,         
               "data": {
                   "keyword1": {
                       "value": score + " S", 
@@ -165,22 +149,17 @@ Page({
                },
                "emphasis_keyword": "keyword1.DATA"
             },
-            method: 'POST',
+            method: 'GET',
             header: {
-                'content-type': 'application/json'
+              'content-type': 'application/x-www-form-urlencoded'
             },
             success: function(res) {
               console.log(res.data)
-              wx.navigateTo({
-                url: '../pay/pay'
-              })
+              // wx.navigateTo({
+              //   url: '../pay/pay'
+              // })
             }
           })
-        })
-        
-        // wx.navigateTo({
-        //   url: '../pay/pay'
-        // })
 
       }
     })    
