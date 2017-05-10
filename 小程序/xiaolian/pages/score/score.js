@@ -171,9 +171,9 @@ Page({
             },
             success: function(res) {
               console.log(res.data)
-              // wx.navigateTo({
-              //   url: '../pay/pay'
-              // })
+              wx.navigateTo({
+                url: '../pay/pay'
+              })
             }
           })
         })
