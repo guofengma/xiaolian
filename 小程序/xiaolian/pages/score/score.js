@@ -123,7 +123,7 @@ Page({
         console.log("---------------------------");
 
           wx.request({
-            url: 'http://192.168.50.157:8888/wx/send', 
+            url: 'https://lite.lianlianchains.com/wx/send', 
             data: {
               "openid": wx.getStorageSync('user').openid,  
               "templateid": "y6FU6brbCL-oo7yfJCi55Cxb5LIWV-LhLZ_66feKrJ8", 

@@ -22,7 +22,7 @@ App({
                     }  
                 });  
                 var d=that.globalData;//这里存储了appid、secret、token串    
-                var l ='http://192.168.50.157:8888/wx/getopenid?code='+res.code;    
+                var l ='https://lite.lianlianchains.com/wx/getopenid?code='+res.code;    
                 wx.request({    
                     url: l,    
                     data: {},    

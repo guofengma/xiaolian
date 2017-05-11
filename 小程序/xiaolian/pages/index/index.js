@@ -33,19 +33,13 @@ Page({
       url: '../logs/logs'
     })
   },
+  //跳转区块列表页
   bindBlockTap: function () {
-    // var that = this;
-    // if (wx.getStorageSync('mobile') == '') {
-    //   that.setData({
-    //     'bindflag': true
-    //   })
-
-    //   return;
-    // }
     wx.navigateTo({
       url: '../peer/peer'
     })
   },
+  //跳转用户注册页
   bindBindTap: function () {
     var that = this;
     that.setData({
@@ -55,20 +49,25 @@ Page({
       url: '../bind/bind'
     });
   },
+  //点击扫码触发的函数
   bindScanTap: function () {
-    var that = this
+    var that = this;
+    var onoff = true;
     if (wx.getStorageSync('mobile') == '') {
-
-      that.setData({
-        'bindflag': true
-      })
-      setTimeout(function () {
+      if (onoff == true){
+        onoff = false;
         that.setData({
-          'bindflag': false
+          'bindflag': true
         })
+        setTimeout(function () {
+          that.setData({
+            'bindflag': false
+          })
+          onoff = true;
+        }, 6000)
+        return
       }
-        , 3000)
-      return
+     
     }
     if (wx.getStorageSync('mobile') !== '') {
       wx.scanCode({
@@ -87,6 +86,7 @@ Page({
   //二维码图片预览 => jzf
   bindPreviewTap: function () {
     var that = this;
+    var onoff = true;
     console.log(111);
     console.log(that.data.QRCodeSrc);
     if (wx.getStorageSync('mobile') !== '') {
@@ -96,16 +96,20 @@ Page({
           that.data.integralQRCode
         ] // 需要预览的图片http链接列表
       })
-    } else {
-      that.setData({
-        bindflag: true
-      })
-      setTimeout(function () {
+    } else if (wx.getStorageSync('mobile') == '' && onoff){
+      if(onoff == true){
+        onoff = false;
         that.setData({
-          'bindflag': false
+          bindflag: true
         })
+        setTimeout(function () {
+          that.setData({
+            'bindflag': false
+          })
+          onoff = true;
+        },6000)
       }
-        , 3000)
+      
     }
 
   },
@@ -114,14 +118,14 @@ Page({
     if(onoff){
       onoff = false;
       wx.showToast({
-        title: '该业务暂未开通,敬请期待！',
+        title: '暂未开通',
         icon: 'success',
         duration: 10000
       })
       setTimeout(function(){
         wx.hideToast();
         onoff = true;
-      },2000)
+      },3000)
     }
   },
   onCommenTap: function () {
