@@ -4,8 +4,8 @@ var app = getApp()
 Page({
   data: {
     hiddenLoading: true,
-    integralQRCode: "../image/qr.404.png",
-    patentQRCode: "../image/qr.404.png",
+    integralQRCode: "../../image/qr.404.png",
+    patentQRCode: "../../image/qr.404.png",
     bindflag: false,
     userInfo: {},
     balance: 0,
@@ -19,10 +19,10 @@ Page({
     return {
       title: '小链Lite',
       path: '/pages/index/index',
-      success: function(res) {
+      success: function (res) {
         // 分享成功
       },
-      fail: function(res) {
+      fail: function (res) {
         // 分享失败
       }
     }
@@ -54,7 +54,7 @@ Page({
     var that = this;
     var onoff = true;
     if (wx.getStorageSync('mobile') == '') {
-      if (onoff == true){
+      if (onoff == true) {
         onoff = false;
         that.setData({
           'bindflag': true
@@ -67,7 +67,7 @@ Page({
         }, 6000)
         return
       }
-     
+
     }
     if (wx.getStorageSync('mobile') !== '') {
       wx.scanCode({
@@ -87,8 +87,6 @@ Page({
   bindPreviewTap: function () {
     var that = this;
     var onoff = true;
-    console.log(111);
-    console.log(that.data.QRCodeSrc);
     if (wx.getStorageSync('mobile') !== '') {
       wx.previewImage({
         current: that.data.integralQRCode, // 当前图片的http链接
@@ -96,8 +94,8 @@ Page({
           that.data.integralQRCode
         ] // 需要预览的图片http链接列表
       })
-    } else if (wx.getStorageSync('mobile') == '' && onoff){
-      if(onoff == true){
+    } else if (wx.getStorageSync('mobile') == '' && onoff) {
+      if (onoff == true) {
         onoff = false;
         that.setData({
           bindflag: true
@@ -107,30 +105,22 @@ Page({
             'bindflag': false
           })
           onoff = true;
-        },6000)
+        }, 6000)
       }
-      
+
     }
 
   },
   bindPatentTap: function () {
-    var onoff = true;
-    if(onoff){
-      onoff = false;
-      wx.showToast({
-        title: '暂未开通',
-        icon: 'success',
-        duration: 10000
-      })
-      setTimeout(function(){
-        wx.hideToast();
-        onoff = true;
-      },3000)
-    }
+    wx.showToast({
+      title: '暂未开通',
+      icon: 'success',
+      image: '../../image/toast.png',
+      duration: 2000
+    })
   },
   onCommenTap: function () {
     var that = this
-    console.log(111);
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
       //更新数据
@@ -144,9 +134,7 @@ Page({
     // wx.setStorageSync('mobile', '18611426275');
     //获取数字资产 积分
     var mobile = wx.getStorageSync('mobile');
-    console.log(mobile);
     if (mobile != '') {
-
       //获取资产余额
       wx.request({
         url: 'https://lite.lianlianchains.com/chaincode/query/',
@@ -162,7 +150,6 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         success: function (res) {
-          console.log(666);
           wx.stopPullDownRefresh();
           that.setData({
             hiddenLoading: true,
@@ -170,8 +157,6 @@ Page({
             scoreB: res.data.message / 2,
             balance: res.data.message / 2
           })
-          
-
         }
       })
     }
@@ -183,19 +168,21 @@ Page({
         patentQRCode: "https://lite.lianlianchains.com/qrcode/?mobile=" + mobile + "&chaincodeID=1685b5e77273e3db96a6ebba1e0117d39ac0f1388f448e7691680927548d134b&width=102&height=102"
       })
     }
-    if(mobile == ''){
+    //关闭下拉刷新
+    if (mobile == '') {
       setTimeout(function () {
-       wx.stopPullDownRefresh();
+        wx.stopPullDownRefresh();
       }, 3000)
     }
   },
+  //下拉刷新函数
   onPullDownRefresh: function () {
     var that = this;
     that.onCommenTap();
   },
   onLoad: function () {
     var that = this;
-      that.onCommenTap();
+    that.onCommenTap();
 
   }
 
