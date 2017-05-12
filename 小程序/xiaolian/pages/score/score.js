@@ -126,7 +126,7 @@ Page({
             "data": {
               "keyword1": {
                 "value": score + " S",
-                "color": "black"
+                "color": "#000000"
               },
               "keyword2": {
                 "value": utils.formatTime(new Date()),

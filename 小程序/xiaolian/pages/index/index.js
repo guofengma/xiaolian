@@ -6,7 +6,6 @@ Page({
     hiddenLoading: true,
     integralQRCode: "../../image/qr.404.png",
     patentQRCode: "../../image/qr.404.png",
-    bindflag: false,
     userInfo: {},
     balance: 0,
     score: 0,
@@ -41,10 +40,6 @@ Page({
   },
   //跳转用户注册页
   bindBindTap: function () {
-    var that = this;
-    that.setData({
-      'bindflag': false
-    });
     wx.navigateTo({
       url: '../bind/bind'
     });
@@ -52,22 +47,10 @@ Page({
   //点击扫码触发的函数
   bindScanTap: function () {
     var that = this;
-    var onoff = true;
     if (wx.getStorageSync('mobile') == '') {
-      if (onoff == true) {
-        onoff = false;
-        that.setData({
-          'bindflag': true
-        })
-        setTimeout(function () {
-          that.setData({
-            'bindflag': false
-          })
-          onoff = true;
-        }, 6000)
-        return
-      }
-
+      wx.navigateTo({
+        url: '../bind/bind'
+      });
     }
     if (wx.getStorageSync('mobile') !== '') {
       wx.scanCode({
@@ -94,20 +77,10 @@ Page({
           that.data.integralQRCode
         ] // 需要预览的图片http链接列表
       })
-    } else if (wx.getStorageSync('mobile') == '' && onoff) {
-      if (onoff == true) {
-        onoff = false;
-        that.setData({
-          bindflag: true
-        })
-        setTimeout(function () {
-          that.setData({
-            'bindflag': false
-          })
-          onoff = true;
-        }, 6000)
-      }
-
+    } else if (wx.getStorageSync('mobile') == '') {
+      wx.navigateTo({
+        url: '../bind/bind'
+      });
     }
 
   },
@@ -125,8 +98,7 @@ Page({
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
-        userInfo: userInfo,
-        bindflag: false
+        userInfo: userInfo
       })
     })
 
