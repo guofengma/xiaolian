@@ -161,7 +161,7 @@ public class HttpAPIService {
      * @return
      * @throws Exception
      */
-    public HttpResult doPostWx(String url, Map<String, Object> map, Map<String, Object> header) throws Exception {
+    public HttpResult doPostJson(String url, Map<String, Object> map, Map<String, Object> header) throws Exception {
         // 声明httpPost请求
         HttpPost httpPost = new HttpPost(url);
         // 加入配置信息

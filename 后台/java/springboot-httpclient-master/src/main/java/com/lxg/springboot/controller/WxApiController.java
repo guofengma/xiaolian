@@ -26,8 +26,8 @@ public class WxApiController {
     public String getopenid(String code) throws Exception {
 
     	 String url = "https://api.weixin.qq.com/sns/jscode2session?"
-    	 		+ "appid=wx6fabc07e4965d33e&"
-    	 		+ "secret=9356f5ed37a87e5cd930f134e86adf74&"
+    	 		+ "appid=wx164f65f14e110d38&"
+    	 		+ "secret=756f007821137b2fc8c6c932d58f1b1c&"
     	 		+ "js_code="+code+"&"
     	 		+ "grant_type=authorization_code";
 
@@ -43,8 +43,8 @@ public class WxApiController {
 
     	 // 获取token
    	 	 String urltoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&"
-   	 	 		+ "appid=wx6fabc07e4965d33e&"
-   	 	 		+ "secret=9356f5ed37a87e5cd930f134e86adf74";
+   	 	 		+ "appid=wx164f65f14e110d38&"
+   	 	 		+ "secret=756f007821137b2fc8c6c932d58f1b1c";
 
 
    	 	 Token token = JSON.parseObject(httpAPIService.doGet(urltoken), Token.class);
@@ -67,7 +67,7 @@ public class WxApiController {
          // 请求头
          HashMap<String, Object> header = new HashMap<String, Object>();
          
-         HttpResult res = httpAPIService.doPostWx(url, maptemp, header);
+         HttpResult res = httpAPIService.doPostJson(url, maptemp, header);
          
          return res;
     	
