@@ -15,10 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 public class QrcodeController {
 
     @RequestMapping("qrcode")
-    public void qrcode(String mobile, String chaincodeID, HttpServletResponse response, Integer width, Integer height) throws Exception {
+    public void qrcode(String data, HttpServletResponse response, Integer width, Integer height) throws Exception {
 
-    	String mes = mobile + "|" + chaincodeID;
-	    MatrixToImageWriter.createRqCode(mes, width, height, response.getOutputStream());
+	    MatrixToImageWriter.createRqCode(data, width, height, response.getOutputStream());
     	
     }
     
