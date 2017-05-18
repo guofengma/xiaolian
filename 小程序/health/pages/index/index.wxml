@@ -1,10 +1,55 @@
 <!--index.wxml-->
+<import src="../../template/swiper/swiper.wxml" />
+<import src="../../template/docItem/docItem.wxml" />
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  <!--轮播图-->
+  <template is="swiper" data="{{...swiperData}}"></template>
+
+  <!--顶部菜单-->
+  <view class="nav">
+    <view class="item" bindtap="aaa">
+      <image width="40" src="../../image/bing.png"></image>
+      <view class="classname">
+        <text>男性不育</text>
+      </view>
+    </view>
+    <view class="item" bindtap="aaa">
+      <image width="40" src="../../image/bing.png"></image>
+      <view class="classname">
+        <text>女性不育</text>
+      </view>
+    </view>
+    <view class="item" bindtap="aaa">
+      <image width="40" src="../../image/bing.png"></image>
+      <view class="classname">
+        <text>胃癌前期病变</text>
+      </view>
+      <contact-button>客服</contact-button>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <!--宣传图-->
+  <view class="advert">
+    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+  </view>
+  <!--医生列表-->
+  <view class="docList">
+    <view class="docItem" wx:for="{{docArray}}">
+      <view class="head">
+        <view class="avator">
+          <image src="../../image/bing.png"></image>
+        </view>
+        <view class="headR">
+          <view class="headRT">
+            <text class="name">{{item.name}}</text>
+            <text class="position">{{item.position}}</text>
+          </view>
+          <view class="headRD">
+            <text class="address">{{item.address}}</text>
+            <text class="praiseNum">{{item.praiseNum}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="btom">{{item.phrase}}</view>
+    </view>
   </view>
 </view>
