@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.apache.http.HttpResponse"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.bean.HttpResult"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.mapper.UserMapper"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.bean.User"/>
 </qualifiedTypeNameHistroy>

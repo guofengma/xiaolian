@@ -1,0 +1,11 @@
+com/lxg/springboot/controller/WxApiController.class
+com/lxg/springboot/http/HttpClient.class
+com/lxg/springboot/controller/QrcodeController.class
+com/lxg/springboot/bean/HttpResult.class
+com/lxg/springboot/util/MatrixToImageWriter.class
+com/lxg/springboot/SpringbootApplication.class
+com/lxg/springboot/util/CheckSumBuilder.class
+com/lxg/springboot/bean/Token.class
+com/lxg/springboot/controller/HttpClientController.class
+com/lxg/springboot/http/HttpAPIService.class
+com/lxg/springboot/http/IdleConnectionEvictor.class
