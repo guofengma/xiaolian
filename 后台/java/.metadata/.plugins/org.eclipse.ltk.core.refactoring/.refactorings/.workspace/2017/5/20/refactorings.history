@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;springboot-httpclient-master&apos; to &apos;springboot-master&apos;" description="Rename resource &apos;springboot-httpclient-master&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/springboot-httpclient-master" name="springboot-master" stamp="1495164442400" updateReferences="true"/>
+</session>
