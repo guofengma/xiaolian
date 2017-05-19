@@ -1,18 +1,50 @@
-// pages/classify/classify.js
+// pages/user/user.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    docArray: [
+      {
+        avator: "",
+        name: "张XX",
+        position: "主治医师",
+        address: "北京市三甲",
+        praiseNum: 90,
+        phrase: "中国男科带头人---男人有难题我来帮助你，中国男科带头人---男人有难题我来帮助你"
+      },
+      {
+        avator: "",
+        name: "张XX",
+        position: "主治医师",
+        address: "北京市三甲",
+        praiseNum: 90,
+        phrase: "你有问题,我来帮助你"
+      },
+      {
+        avator: "",
+        name: "张XX",
+        position: "主治医师",
+        address: "北京市三甲",
+        praiseNum: 90,
+        phrase: "你有问题,我来帮助你"
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad(options) {
+    app.getUserInfo((userInfo) => {
+      console.log(userInfo);
+      //更新数据
+      this.setData({
+        userInfo: userInfo
+      })
+    })
   },
 
   /**

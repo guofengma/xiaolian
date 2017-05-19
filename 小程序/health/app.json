@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/classify/classify",
-    "pages/personal/personal",
+    "pages/consult/consult",
+    "pages/user/user",
     "pages/detail/detail"
   ],
   "window":{
@@ -27,14 +27,14 @@
       {
         "selectedIconPath": "./image/node.png",
         "iconPath": "./image/node.png",
-        "pagePath": "pages/classify/classify",
+        "pagePath": "pages/consult/consult",
         "text": "咨询"
       },
       {
         "selectedIconPath": "./image/block.png",
         "iconPath": "./image/block.png",
-        "pagePath": "pages/personal/personal",
-        "text": "我的"
+        "pagePath": "pages/user/user",
+        "text": "用户"
       }
     ]
   }

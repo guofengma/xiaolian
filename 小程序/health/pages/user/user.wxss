@@ -1,0 +1,81 @@
+/* pages/user/user.wxss */
+.container{
+  height: 100vh;
+}
+.header{
+  padding: 40rpx 40rpx 60rpx 40rpx;
+  background-color: #fff;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  border-top: 1px #e3e3e3 solid;
+  border-bottom: 1px #e3e3e3 solid;
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.avatar image{
+  width: 100%;
+  height: 100%;
+}
+
+.info{
+  width: 40%;
+  margin-left: 30rpx;
+}
+.info .infoAs{
+  margin-top: 5rpx;
+  line-height: 35rpx;
+}
+.info .infoAs .sex{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+
+.score{
+  margin-left:20rpx;
+  font-size: 36rpx;
+}
+
+.content{
+  margin-top: 60rpx;
+  border-top: 1px #e3e3e3 solid;
+}
+
+.content .item{
+  padding: 20rpx 40rpx;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px #e3e3e3 solid;
+}
+
+.content .item .logo{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 35rpx;
+}
+
+.content .item .logo image{
+  width: 100%;
+  height: 100%;
+}
+
+.content .item .arrow{
+  width: 20rpx;
+  height: 30rpx;
+  position:absolute;
+  right: 20rpx;
+  top: 50%;
+  margin-top: -15rpx;
+}

@@ -7,24 +7,24 @@
 
   <!--顶部菜单-->
   <view class="nav">
-    <view class="item" bindtap="aaa">
+    <view class="item">
       <image width="40" src="../../image/bing.png"></image>
       <view class="classname">
         <text>男性不育</text>
       </view>
     </view>
-    <view class="item" bindtap="aaa">
+    <view class="item">
       <image width="40" src="../../image/bing.png"></image>
       <view class="classname">
         <text>女性不育</text>
       </view>
     </view>
-    <view class="item" bindtap="aaa">
+    <view class="item">
       <image width="40" src="../../image/bing.png"></image>
       <view class="classname">
         <text>胃癌前期病变</text>
       </view>
-      <contact-button>客服</contact-button>
+      <button class="contact" open-type="contact">客服</button>
     </view>
   </view>
   <!--宣传图-->
@@ -33,7 +33,7 @@
   </view>
   <!--医生列表-->
   <view class="docList">
-    <view class="docItem" wx:for="{{docArray}}">
+    <view class="docItem" wx:for="{{docArray}}" wx:key="index" bindtap="bindDetailTap">
       <view class="head">
         <view class="avator">
           <image src="../../image/bing.png"></image>
@@ -44,8 +44,11 @@
             <text class="position">{{item.position}}</text>
           </view>
           <view class="headRD">
-            <text class="address">{{item.address}}</text>
-            <text class="praiseNum">{{item.praiseNum}}</text>
+            <view class="address">{{item.address}}</view>
+            <view class="praise">
+              <view class="praiseNum">{{item.praiseNum}}</view>
+              <image class="praiseImg" src="../../image/praise.png"></image>
+            </view>
           </view>
         </view>
       </view>
