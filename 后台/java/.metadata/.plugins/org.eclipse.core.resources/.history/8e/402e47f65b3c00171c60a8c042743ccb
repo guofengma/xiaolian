@@ -1,0 +1,22 @@
+package com.lxg.springboot.mapper;
+
+import java.util.List;  
+
+import org.apache.ibatis.annotations.Mapper;  
+  
+import com.ibigsea.bootdao.entity.User;  
+  
+@Mapper  
+public interface UserMapper {  
+      
+    int save(User user);  
+      
+    User selectById(Integer id);  
+      
+    int updateById(User user);  
+      
+    int deleteById(Integer id);  
+      
+    List<User> queryAll();  
+      
+}  
