@@ -1,7 +1,7 @@
 package com.lxg.springboot.controller;
 
 import com.lxg.springboot.http.HttpAPIService;
-import com.lxg.springboot.http.HttpResult;
+import com.lxg.springboot.bean.HttpResult;
 import com.lxg.springboot.util.CheckSumBuilder;
 
 import org.springframework.web.bind.annotation.RequestMapping;

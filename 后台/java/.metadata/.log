@@ -365,3 +365,18 @@ java.library.path = /Users/mac/Library/Java/Extensions:/Library/Java/Extensions:
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 14:17:33.814
 !MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 15:38:02.510
+!MESSAGE The POM for org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.0.1-SNAPSHOT is missing, no dependency information available
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 15:38:02.608
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 15:38:47.491
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 15:38:50.219
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-19 15:38:55.256
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
