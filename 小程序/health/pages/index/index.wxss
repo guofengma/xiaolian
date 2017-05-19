@@ -1,21 +1,90 @@
 /**index.wxss**/
-.userinfo {
+/*轮播图*/
+@import "../../template/swiper/swiper.wxss";
+/*顶部菜单*/
+.nav{
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  padding: 30rpx 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.nav .item {
+  text-align: center;
+}
+.nav .item:nth-of-type(1){
+  width: 33%;
+  /*padding-right:35rpx;*/
+}
+.nav .item:nth-of-type(2){
+  border-left: 1px #e3e3e3 solid;
+  border-right: 1px #e3e3e3 solid;
+  width: 33%;
+}
+.nav .item:nth-of-type(3){
+  width: 34%;
+}
+.nav .item image{
+  width: 70px;
+  height: 55px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/*广告图*/
+.advert{
+  margin-top: 20rpx;
+  height: 300rpx;
+  overflow: hidden;
+}
+.advert image{
+  width: 100%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+/*医师列表*/
+.docItem{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding:30rpx;
+}
+.docItem:last-of-type{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  margin-bottom: 100rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.docItem .head{
+  display: flex;
+  display: -webkit-flex;
+}
+
+.docItem .head .avator{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+
+.docItem .head .avator image{
+  width: 100%;
+  height: 100%;
+}
+
+.docItem .head .headR{
+  width: 80%;
+  margin-left: 26rpx;
+  padding-top: 10rpx;
+  border-bottom: 1px #e3e3e3 solid;
+}
+
+.docItem .head .headR .name{
+  margin-right: 50rpx;
+}
+.docItem .head .headR .headRD{
+  padding: 15rpx 0;
+}
+.docItem .btom{
+  padding-top: 25rpx;
+  padding-left: 50rpx;
 }

@@ -1,26 +1,110 @@
 //index.js
-//获取应用实例
-var app = getApp()
+// request请求
+import fetch from "../../utils/fetch.js";
+//轮播图
+import swiperData from "../../template/swiper/swiper.js";
+
+
+var app = getApp();
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    swiperData:{},
+    docArray:[
+      {
+        avator: "",
+        name:"张XX",
+        position:"主治医师",
+        address: "北京市三甲",
+        praiseNum:90,
+        phrase: "中国男科带头人---男人有难题我来帮助你，中国男科带头人---男人有难题我来帮助你"
+      },
+      {
+        avator: "",
+        name: "张XX",
+        position: "主治医师",
+        address: "北京市三甲",
+        praiseNum: 90,
+        phrase: "你有问题,我来帮助你"
+      },
+      {
+        avator: "",
+        name: "张XX",
+        position: "主治医师",
+        address: "北京市三甲",
+        praiseNum: 90,
+        phrase: "你有问题,我来帮助你"
+      }
+    ]
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  aaa(){
+    fetch({
+      url: "aaaaaa",
+      data:{
+        bb:1
+      },
+      method:"POST",
+      header: { 'content-type': 'application/json' }
+    }).then(result => {
+
+    }).catch(err => {
+
+    });
+  },
+  //下拉刷新函数
+  onPullDownRefresh() {
+    this.onShow();
+  },
+  bindPayTap(){
+    wx.request({
+      url: 'https://health.lianlianchains.com/service/getPay',
+      method: 'POST',
+      data: {
+        bookingNo: bookingNo,  /*订单号*/
+        total_fee: total_fee,   /*订单金额*/
+        openid: openid
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        wx.requestPayment({
+          'timeStamp': new Date().getTime().toString(),
+          'nonceStr': utils.randomString(32),
+          'package': 'prepay_id=' + res.data.prepay_id,
+          'signType': 'MD5',
+          'paySign': res.data._paySignjs,
+          'success': function (res) {
+            console.log(res);
+          },
+          'fail': function (res) {
+            console.log('fail:' + JSON.stringify(res));
+          }
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
     })
   },
   onLoad: function () {
     console.log('onLoad')
-    var that = this
+    var that = this;
+    var user = wx.getStorageSync('user');
+    console.log(user);
     //调用应用实例的方法获取全局数据
+    that.setData({
+      swiperData: swiperData
+    })
     app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
         userInfo:userInfo
       })
     })
-  }
+  },
+  onShow: function () {
+    console.log(1111);
+    wx.stopPullDownRefresh();
+  },
 })

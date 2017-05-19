@@ -1,0 +1,9 @@
+/*轮播图*/
+swiper{
+  width: 100%;
+  overflow: hidden;
+}
+.slide-image{  
+    width: 100%; 
+    overflow: hidden; 
+}
