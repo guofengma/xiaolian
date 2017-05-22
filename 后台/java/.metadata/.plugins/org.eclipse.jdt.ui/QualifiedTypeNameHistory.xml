@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.mapper.UserMapper"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.bean.User"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.util.RandomStringGenerator"/>
 </qualifiedTypeNameHistroy>

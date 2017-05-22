@@ -1,0 +1,81 @@
+package com.lxg.springboot.controller;
+
+import com.lxg.springboot.model.HttpResult;
+import com.lxg.springboot.model.OrderInfo;
+import com.lxg.springboot.model.OrderReturnInfo;
+import com.lxg.springboot.model.Token;
+import com.lxg.springboot.service.HttpAPIService;
+import com.lxg.springboot.util.RandomStringGenerator;
+import com.lxg.springboot.util.Signature;
+import com.thoughtworks.xstream.XStream;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.HashMap;
+
+import javax.annotation.Resource;
+
+/**
+ * Created by zhenghong
+ * on 2017/4/25.
+ */
+@RestController
+public class WxPayController {
+	
+    @Value("${wx.appid}")
+    private String appid;
+    @Value("${wx.appSecret}")
+    private String appSecret;    
+    @Value("${wx.mch_id}")
+    private String mch_id;
+    @Value("${wx.key}")
+    private String key;      
+
+	@Resource
+    private HttpAPIService httpAPIService;
+
+    @RequestMapping("wxpay/prepay")
+    public String prepay(String openid, int fee, String info) throws Exception {
+
+		OrderInfo order = new OrderInfo();
+		order.setAppid(appid);
+		order.setMch_id(mch_id);
+		order.setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
+		order.setBody(info);
+		order.setOut_trade_no(RandomStringGenerator.getRandomStringByLength(32));
+		order.setTotal_fee(fee);
+		order.setSpbill_create_ip("123.57.218.54");
+		order.setNotify_url("https://health.lianlianchains.com/wxpay/result");
+		order.setTrade_type("JSAPI");
+		order.setOpenid(openid);
+		order.setSign_type("MD5");
+		//生成签名
+		String sign = Signature.getSign(order);
+		order.setSign(sign);
+		
+		
+		HttpResult result = httpAPIService.doPost("https://api.mch.weixin.qq.com/pay/unifiedorder", order);
+		System.out.println(result);
+		
+		XStream xStream = new XStream();
+		xStream.alias("xml", OrderReturnInfo.class); 
+
+		OrderReturnInfo returnInfo = (OrderReturnInfo)xStream.fromXML(result.getBody());
+		JSONObject json = new JSONObject();
+		json.put("prepay_id", returnInfo.getPrepay_id());
+
+		return json.toJSONString();	
+    }
+    
+
+    @RequestMapping("wxpay/result")
+    public String result(String openid, int fee, String info) throws Exception {
+    	
+    }
+    
+}

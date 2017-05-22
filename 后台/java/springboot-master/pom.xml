@@ -51,7 +51,6 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.3.1</version>
 		</dependency>
 
 		<dependency>
@@ -83,19 +82,21 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-        <!-- mysql 驱动 -->  
-        <dependency>  
-            <groupId>mysql</groupId>  
-            <artifactId>mysql-connector-java</artifactId>  
-            <version>5.1.38</version>  
-        </dependency>  
-        <!-- 数据库连接池 -->  
-        <dependency>  
-            <groupId>com.alibaba</groupId>  
-            <artifactId>druid</artifactId>  
-            <version>1.0.5</version>  
-        </dependency>		
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.7</version>
+        </dependency>	    
+    
 	</dependencies>
 
 	<build>

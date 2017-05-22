@@ -2,7 +2,7 @@ package com.lxg.springboot.mapper;
 
 import java.util.List;
 
-import com.lxg.springboot.bean.User;
+import com.lxg.springboot.model.User;
 
 public interface UserMapper {
 
