@@ -28,8 +28,10 @@
         <image src="../../image/about.png"></image>
         <text>个人简介</text>
       </view>
-      <view class="content">
-      
+      <view class="selfcont">
+        <view class="selftext">
+          <text>啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律</text>
+        </view>
       </view>
     </view>
     <view class="ill">
@@ -37,8 +39,35 @@
         <image src="../../image/about.png"></image>
         <text>患者病例</text>
       </view>
-      <view class="content">
-      
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
+      </view>
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
+      </view>
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
       </view>
     </view>
   </view>

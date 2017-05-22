@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/consult/consult",
     "pages/user/user",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/spread/spread",
+    "pages/sheet/sheet",
+    "pages/pay/pay"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,20 +23,20 @@
     "borderStyle": "#e3e3e3",
     "list": [
       {
-        "selectedIconPath": "./image/blocks.png",
-        "iconPath": "./image/blocks.png",
+        "selectedIconPath": "./image/homeAct.png",
+        "iconPath": "./image/home.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "./image/node.png",
-        "iconPath": "./image/node.png",
+        "selectedIconPath": "./image/consultAct.png",
+        "iconPath": "./image/consult.png",
         "pagePath": "pages/consult/consult",
         "text": "咨询"
       },
       {
-        "selectedIconPath": "./image/block.png",
-        "iconPath": "./image/block.png",
+        "selectedIconPath": "./image/userAct.png",
+        "iconPath": "./image/user.png",
         "pagePath": "pages/user/user",
         "text": "用户"
       }

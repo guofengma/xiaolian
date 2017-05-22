@@ -51,6 +51,16 @@
 .content .top .topR .title text{
   margin-right: 20rpx;
 }
+.content .self{
+  margin-top: 20rpx;
+}
+.content .self .selfcont .selftext{
+  margin-top: 20rpx;
+  background-color: #f7f7f7;
+}
+/*.content .self .selfcont text{
+  background-color: #f7f7f7;
+}*/
 .content .self .header,.content .ill .header{
   text-align: center;
 }
@@ -58,4 +68,24 @@
 .content .self .header image,.content .ill .header image{
   width:35rpx;
   height: 35rpx;
+}
+
+.content .ill{
+  margin-top: 30rpx;
+  border-bottom: 1px #e3e3e3 solid;
+}
+.content .ill .illcont{
+  margin-top: 20rpx;
+  border-top: 1px #e3e3e3 solid;
+  padding: 20rpx 0;
+}
+.content .ill .illcont .eval{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content .ill .illcont .desc,.content .ill .illcont .descont{
+  margin-top: 20rpx;
 }

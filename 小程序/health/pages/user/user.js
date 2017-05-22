@@ -33,7 +33,18 @@ Page({
       }
     ]
   },
-
+  //跳转到问诊单页
+  bindSheetTap(){
+    wx.navigateTo({
+      url: '/pages/sheet/sheet',
+    })
+  },
+  //跳转传播页
+  bindSpreadTap(){
+    wx.navigateTo({
+      url: '/pages/spread/spread',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

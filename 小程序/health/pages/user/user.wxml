@@ -18,7 +18,7 @@
     </view>
   </view>
   <view class="content">
-    <view class="item">
+    <view class="item" bindtap="bindSheetTap">
       <view class="logo">
         <image src="../../image/consultation.png"></image>
       </view>
@@ -27,7 +27,7 @@
       </view>
       <image class="arrow" src="../../image/arrow.png"></image>
     </view>
-    <view class="item">
+    <view class="item" bindtap="bindSpreadTap">
       <view class="logo">
         <image src="../../image/forward.png"></image>
       </view>
