@@ -1188,3 +1188,9 @@ Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-23 10:37:23.373
 !MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-23 10:54:21.258
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-05-23 10:54:32.245
+!MESSAGE The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details

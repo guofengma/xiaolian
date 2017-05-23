@@ -214,14 +214,14 @@ public class HttpAPIService {
 		
 		//解决XStream对出现双下划线的bug
         XStream xStreamForRequestPostData = new XStream(
-        		new DomDriver("UTF-8", new XmlFriendlyNameCoder("-_", "_")));
+        		new DomDriver("ISO8859-1", new XmlFriendlyNameCoder("-_", "_")));
         xStreamForRequestPostData.alias("xml", xmlObj.getClass());
         //将要提交给API的数据对象转换成XML格式数据Post给API
         String postDataXML = xStreamForRequestPostData.toXML(xmlObj);
 
         //得指明使用UTF-8编码，否则到API服务器XML的中文不能被成功识别
-        StringEntity postEntity = new StringEntity(postDataXML, "UTF-8");
-        httpPost.addHeader("Content-Type", "text/xml;charset=UTF-8");
+        StringEntity postEntity = new StringEntity(postDataXML, "ISO8859-1");
+        httpPost.addHeader("Content-Type", "text/xml;charset=ISO8859-1");
         httpPost.setEntity(postEntity);
         
         // 发起请求

@@ -57,7 +57,7 @@ public class WxPayController {
 		String sign = Signature.getSign(order);
 		order.setSign(sign);
 		
-		System.out.println("body===="+order.getBody());
+		System.out.println(order.getBody());
 		
 		HttpResult result = httpAPIService.doPost("https://api.mch.weixin.qq.com/pay/unifiedorder", order);
 		

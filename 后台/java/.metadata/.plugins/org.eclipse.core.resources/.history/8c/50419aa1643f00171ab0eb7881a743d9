@@ -45,7 +45,7 @@ public class WxPayController {
 		order.setAppid(appid);
 		order.setMch_id(mch_id);
 		order.setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
-		order.setBody(new String(info.getBytes(),"UTF-8"));
+		order.setBody(info);
 		order.setOut_trade_no(RandomStringGenerator.getRandomStringByLength(32));
 		order.setTotal_fee(fee);
 		order.setSpbill_create_ip("123.57.218.54");
@@ -56,8 +56,6 @@ public class WxPayController {
 		//生成签名
 		String sign = Signature.getSign(order);
 		order.setSign(sign);
-		
-		System.out.println("body===="+order.getBody());
 		
 		HttpResult result = httpAPIService.doPost("https://api.mch.weixin.qq.com/pay/unifiedorder", order);
 		
