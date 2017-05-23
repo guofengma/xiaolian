@@ -1,0 +1,27 @@
+<!--pages/spread/spread.wxml-->
+<view class="container">
+  <view class="headbg">
+    <image src="../../image/bing.png"></image>
+  </view>
+  <view class="rule">
+    <view class="title">规则:</view>
+    <view class="rulecont">
+      <view>XXXXXXXX</view>
+      <view>XXXXXXXXXXXXX</view>
+      <view>XXXXXXXXXXXXXXXXXXXXXXXXXXX</view>
+    </view>
+    <view class="ruleBtm">
+      <view class="times">
+        <text>累计转发：80次</text>
+      </view>
+      <view class="score">
+        <text>获取积分：800BAE</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="share foItem">转发分享</view>
+    <view class="about foItem">关于三医馆</view>
+    <view class="cancel foItem" bindtap="bindCancelTap">取消</view>
+  </view>
+</view>

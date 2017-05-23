@@ -1,0 +1,48 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="avatar">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="info">
+      <view class="nickName">
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <view class="infoAs">
+        <text class="age">24</text>
+        <image class="sex" src="../../image/man.png"></image>
+      </view>
+    </view>
+    <view class="score">
+      <text>积分 {{800}} BAE</text>
+    </view>
+  </view>
+  <view class="content">
+    <view class="item" bindtap="bindSheetTap">
+      <view class="logo">
+        <image src="../../image/consultation.png"></image>
+      </view>
+      <view class="name">
+        <text>问诊单</text>
+      </view>
+      <image class="arrow" src="../../image/arrow.png"></image>
+    </view>
+    <view class="item" bindtap="bindSpreadTap">
+      <view class="logo">
+        <image src="../../image/forward.png"></image>
+      </view>
+      <view class="name">
+        <text>传播使者</text>
+      </view>
+      <image class="arrow" src="../../image/arrow.png"></image>
+    </view>
+    <view class="item">
+      <view class="logo">
+        <image src="../../image/about.png"></image>
+      </view>
+      <view class="name">
+        <text>关于我们</text>
+      </view>
+    </view>
+  </view>
+</view>

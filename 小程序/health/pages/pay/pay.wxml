@@ -1,0 +1,15 @@
+<!--pages/pay/pay.wxml-->
+<view class="container">
+  <form bindsubmit="bindSubmitTap">
+        <view class="info">
+            <label>交易金额</label>
+            <input name="fee" bindinput="bindMobileChange" type="number" placeholder="请填写交易金额" />
+        </view>
+        <view class="info">
+            <label>商品信息</label>
+            <!--<input name="info" type="text" placeholder="请填写商品信息" />-->
+            <textarea name="info" auto-height placeholder="请填写商品信息" />
+        </view>                
+        <button type="primary" formType="submit" plain>支付</button>  
+    </form>
+</view>

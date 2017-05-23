@@ -1,0 +1,36 @@
+<!--pages/consult/consult.wxml-->
+<view class="container">
+  <view class="search">
+    <input type="text" confirm-type="search" placeholder="扁鹊"/>
+  </view>
+  <!--医生列表-->
+  <view class="docList">
+    <view class="docItem" wx:for="{{docArray}}" wx:key="index">
+      <view class="head">
+        <view class="avator">
+          <image src="../../image/bing.png"></image>
+        </view>
+        <view class="headR">
+          <view class="headRT">
+            <text class="name">{{item.name}}</text>
+          </view>
+          <view class="headRD">
+            <view class="address">{{item.address}}</view>
+            <text class="position">{{item.position}}</text>
+          </view>
+          <view class="btom">
+            <text wx:key="index" wx:for="{{docArray[index].tag}}">{{item.msg}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ill">
+      <view class="illItem" wx:for="{{illness}}">
+        <view class="illImg">
+          <image src="../../image/bing.png"></image>
+        </view>
+        <text class="illName">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

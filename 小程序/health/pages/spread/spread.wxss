@@ -1,0 +1,54 @@
+/* pages/spread/spread.wxss */
+
+.container {
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.container .headbg {
+  height: 400rpx;
+  overflow: hidden;
+}
+
+.container .headbg image {
+  width: 100%;
+}
+
+.container .rule {
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.container .rule .rulecont{
+  padding: 10rpx 50rpx;
+  line-height: 45rpx;
+}
+.container .rule .ruleBtm{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .footer {
+  position: fixed;
+  bottom: 0;
+}
+.container .footer{
+  width: 100%;
+}
+.container .footer .foItem {
+  width: 100%;
+  padding: 20rpx 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px #e3e3e3 solid;
+}
+.container .footer .share{
+  color: orangered;
+}
+.container .footer .about{
+  border-top: none;
+}
+.container .footer .cancel{
+  margin-top: 20rpx;
+}

@@ -1,2 +1,74 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="container">
+  <view class="header">
+    <view class="introImg">
+      <image src="../../image/bing.png"></image>
+    </view>
+    <view class="intro">
+      <p>不孕(育)由肾病变引起,原因多是由内伤所致,或因恣情纵欲,耗竭真阴,或由它脏病变,最终涉及于肾,或由本脏自病,病多属虚;外邪的侵袭亦或有之,或直接的侵犯本脏或它脏经少阳三焦传入,病多属实.</p>
+    </view>
+  </view>
+  <view class="content">
+    <view class="top">
+      <view class="avatar">
+        <image src="../../image/bing.png"></image>
+      </view>
+      <view class="topR">
+        <view class="title">
+          <image class="logo" src="../../image/consultation.png"></image>
+          <text>擅长调理</text>
+        </view>
+        <view class="classname">
+          <text></text>
+        </view>
+      </view>
+    </view>
+    <view class="self">
+      <view class="header">
+        <image src="../../image/about.png"></image>
+        <text>个人简介</text>
+      </view>
+      <view class="selfcont">
+        <view class="selftext">
+          <text>啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律啊胜利大街弗利萨大嫁风尚来得及法律手段法律手段法律手段家乐福介绍来的分解落实到法律</text>
+        </view>
+      </view>
+    </view>
+    <view class="ill">
+      <view class="header">
+        <image src="../../image/about.png"></image>
+        <text>患者病例</text>
+      </view>
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
+      </view>
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
+      </view>
+      <view class="illcont">
+        <view class="eval">
+          <text>很满意</text>
+          <text>2016/05/22 10:15</text>
+        </view>
+        <view class="desc">病情描述：</view>
+        <view class="descont">
+          <text>XXX、XXX.....</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

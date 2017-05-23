@@ -1,0 +1,30 @@
+<!--pages/sheet/sheet.wxml-->
+<view class="container">
+  <view class="search">
+    <input type="text" confirm-type="search" placeholder="单号"/>
+  </view>
+  <view class="sheetcont" wx:for="[1,2]">
+    <view class="sheetop">
+      <text class="num">#62298501</text>
+      <text class="time">2017/05/22 17:41</text>
+    </view>
+    <view class="sheeinfo info">
+      <view class="classname">
+        <text>医院:</text>
+        <text>东直门医院</text>
+      </view>
+      <view class="classname">
+        <text>医生:</text>
+        <text>张三</text>
+      </view>
+      <view class="classname">
+        <text>金额:</text>
+        <text>200</text>
+      </view>
+    </view>
+    <view class="classname info">病情描述</view>
+    <view class="classname info">
+      熟练度法撒旦你来撒多年来开发撒的能力开发你的思考两年分类考试都能分类考试都能分类考试都能分类考试都能菲利克斯当年老夫
+    </view>
+  </view>
+</view>

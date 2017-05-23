@@ -55,6 +55,11 @@ Page({
   onPullDownRefresh() {
     this.onShow();
   },
+  bindDetailTap(){
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+  },
   bindPayTap(){
     wx.request({
       url: 'https://health.lianlianchains.com/service/getPay',
@@ -106,5 +111,5 @@ Page({
   onShow: function () {
     console.log(1111);
     wx.stopPullDownRefresh();
-  },
+  }
 })
