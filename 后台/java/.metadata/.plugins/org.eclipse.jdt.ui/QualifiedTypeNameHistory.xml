@@ -6,5 +6,16 @@
 <fullyQualifiedTypeName name="com.lxg.springboot.mapper.UserMapper"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.bean.User"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.model.OrderInfo"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.util.RandomStringGenerator"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.util.Signature"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.model.OrderReturnInfo"/>
+<fullyQualifiedTypeName name="com.alibaba.fastjson.JSONObject"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.io.xml.XmlFriendlyNameCoder"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.io.xml.DomDriver"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.model.SignInfo"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.util.StreamUtil"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>

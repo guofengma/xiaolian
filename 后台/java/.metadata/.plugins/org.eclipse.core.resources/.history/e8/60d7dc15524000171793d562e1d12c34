@@ -15,9 +15,9 @@ public class User implements Serializable {
 	private String nickname;
 
 	private String sex;
-
+	
 	private String age;
-
+	
 	private String phoneno;
 
 	public String getOpenid() {
@@ -65,5 +65,9 @@ public class User implements Serializable {
 		return "User [openid=" + openid + ", nickname=" + nickname + ", sex=" + sex + ", age=" + age + ", phoneno="
 				+ phoneno + "]";
 	}
+
+
+	
+	
 
 }

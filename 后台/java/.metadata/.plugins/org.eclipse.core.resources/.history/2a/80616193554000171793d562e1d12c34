@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxg.springboot.mapper.UserMapper">
+
+	<insert id="save" parameterType="com.lxg.springboot.model.User">
+		insert into user(openid,nickname,sex,age,phoneno)
+		values (#{openid},#{nickname},#{sex},#{age},#{phoneno})
+	</insert>
+
+	<select id="selectById" resultType="com.lxg.springboot.model.User">
+		select * from t_user where id = #{id,jdbcType=NUMERIC}
+	</select>
+
+	<update id="updateById" parameterType="com.lxg.springboot.model.User">
+		update t_user set
+		username = #{userName,jdbcType=VARCHAR} ,
+		age = #{age,jdbcType=NUMERIC}
+		where id = #{id,jdbcType=NUMERIC}
+	</update>
+
+	<delete id="deleteById">
+		delete from t_user where id = #{id,jdbcType=NUMERIC}
+	</delete>
+
+	<select id="queryAll" resultType="com.lxg.springboot.model.User">
+		select * from t_user
+	</select>
+
+</mapper>  
