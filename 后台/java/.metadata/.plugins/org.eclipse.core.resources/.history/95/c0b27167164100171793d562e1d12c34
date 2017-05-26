@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxg.springboot.mapper.UserMapper">
+
+	<insert id="score" parameterType="com.lxg.springboot.model.Score">
+		insert into score(openid,type,score)
+		values (#{openid},#{type},#{score})
+	</insert>
+	
+	<update id="update" parameterType="int">
+		 update user 
+		 set openid=#{openid},type=#{type},score=#{score}
+		 where openid=#{openid}
+	</update>
+	
+	<select id="query" parameterType="String" resultType="com.lxg.springboot.model.User">
+		select * from user 
+		where openid=#{openid}
+	</select>	
+
+</mapper>  
