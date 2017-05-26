@@ -1,10 +1,12 @@
 /* pages/user/user.wxss */
 .container{
   height: 100vh;
+  background-color: #f7f7f7;
 }
 .header{
-  padding: 40rpx 40rpx 60rpx 40rpx;
-  background-color: #fff;
+  padding: 40rpx;
+  background-color: #ff5722;
+  color: #fff;
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -44,7 +46,7 @@
 }
 
 .content{
-  margin-top: 60rpx;
+  margin-top: 20rpx;
   border-top: 1px #e3e3e3 solid;
 }
 
@@ -58,6 +60,10 @@
   align-items: center;
   background-color: #fff;
   border-bottom: 1px #e3e3e3 solid;
+}
+
+.content .item:nth-of-type(3){
+  margin-top: 20rpx;
 }
 
 .content .item .logo{
