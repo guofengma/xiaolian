@@ -4,55 +4,35 @@
 <view class="container">
   <!--轮播图-->
   <template is="swiper" data="{{...swiperData}}"></template>
-
-  <!--顶部菜单-->
-  <view class="nav">
-    <view class="item">
-      <image width="40" src="../../image/bing.png"></image>
-      <view class="classname">
-        <text>男性不育</text>
-      </view>
+  <view class="section">
+    <view class="title">
+      <image src="../../image/slogan.png"></image>
+      <text class="cell">不孕不育,男女同治</text>
     </view>
-    <view class="item">
-      <image width="40" src="../../image/bing.png"></image>
-      <view class="classname">
-        <text>女性不育</text>
+    <view class="content">
+      <view class="left item">
+        <image src="../../image/bing.png"></image>
       </view>
-    </view>
-    <view class="item">
-      <image width="40" src="../../image/bing.png"></image>
-      <view class="classname">
-        <text>胃癌前期病变</text>
-      </view>
-      <button class="contact" open-type="contact">客服</button>
-    </view>
-  </view>
-  <!--宣传图-->
-  <view class="advert">
-    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
-  </view>
-  <!--医生列表-->
-  <view class="docList">
-    <view class="docItem" wx:for="{{docArray}}" wx:key="index" bindtap="bindDetailTap">
-      <view class="head">
-        <view class="avator">
-          <image src="../../image/bing.png"></image>
-        </view>
-        <view class="headR">
-          <view class="headRT">
-            <text class="name">{{item.name}}</text>
-            <text class="position">{{item.position}}</text>
+      <view class="right item">
+        <view class="diagno">
+          <view class="intro">
+            <view class="tit">男性不育</view>
+            <view class="desc">XXXXXXXXXXXXXXX</view>
           </view>
-          <view class="headRD">
-            <view class="address">{{item.address}}</view>
-            <view class="praise">
-              <view class="praiseNum">{{item.praiseNum}}</view>
-              <image class="praiseImg" src="../../image/praise.png"></image>
-            </view>
+          <view class="img">
+            <image src="../../image/bing.png"></image>
+          </view>
+        </view>
+        <view class="diagno">
+          <view class="intro">
+            <view class="tit">女性不孕</view>
+            <view class="desc">YYYYYYYYYYYYYYY</view>
+          </view>
+          <view class="img">
+            <image src="../../image/bing.png"></image>
           </view>
         </view>
       </view>
-      <view class="btom">{{item.phrase}}</view>
     </view>
   </view>
 </view>

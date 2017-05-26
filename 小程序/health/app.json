@@ -6,7 +6,8 @@
     "pages/detail/detail",
     "pages/spread/spread",
     "pages/sheet/sheet",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/up/up"
     
   ],
   "window":{
@@ -19,7 +20,7 @@
   "tabBar": {
     "color": "#a9b7b7",
     "backgroundColor":"light",
-    "selectedColor": "#333333",
+    "selectedColor": "#ff5722",
     "borderStyle": "#e3e3e3",
     "list": [
       {

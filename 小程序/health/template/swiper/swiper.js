@@ -7,7 +7,7 @@ var swiperData = {
   indicatorDots: true,
   autoplay: true,
   indicolor: "rgba(0,0,0,.3)",
-  colorAct: "#FFA500",
+  colorAct: "#ff5722",
   interval: 5000,
   duration: 600
 }

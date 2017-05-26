@@ -12,4 +12,6 @@
         </view>                
         <button type="primary" formType="submit" plain>支付</button>  
     </form>
+
+    <button open-type="share"  plain>转发</button>
 </view>

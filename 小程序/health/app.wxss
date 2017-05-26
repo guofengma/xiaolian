@@ -1,7 +1,16 @@
 /**app.wxss**/
 .container {
   height: 100%;
-  color: #333333;
+  color: #666666;
   font-size: 30rpx;
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
+}
+
+.clear{
+  zoom: 1;
 } 
+.clear:after{
+  content: "";
+  display: block;
+  clear: both;
+}
