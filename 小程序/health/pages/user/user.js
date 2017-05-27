@@ -53,14 +53,15 @@ Page({
     // 存数据
     // fetch({
     //   url: "/health/user/save",
-    //   baseUrl: "https://health.lianlianchains.com",
-    //   // baseUrl: "http://192.168.50.157:8888",
+    //   // baseUrl: "https://health.lianlianchains.com",
+    //   baseUrl: "http://192.168.50.157:8888",
     //   data: {
     //     'openid': '456',
     //     'nickname': '讲道理啊',
     //     'sex': "男",
     //     'age':12,
-    //     'phoneno': 16666666666
+    //     'phoneno': 16666666666,
+    //     'address': "朝阳区"  
     //   },
     //   method: "POST",
     //   header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -89,41 +90,42 @@ Page({
     // });
 
     //更新
-    // fetch({
-    //   url: "/health/user/update",
-    //   baseUrl: "https://health.lianlianchains.com",
-    //   // baseUrl: "http://192.168.50.157:8888",
-    //   data: {
-    //     'openid': '123',
-    //     'nickname': 'aabbbb',
-    //     'sex': 1,
-    //     'age':18,
-    //     'phoneno': 16666666668
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
+    fetch({
+      url: "/health/user/update",
+      baseUrl: "https://health.lianlianchains.com",
+      // baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'openid': '456',
+        'nickname': '蒋',
+        'sex': 0,
+        'age':28,
+        'phoneno': 16666555668,
+        'address': "海淀区" 
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      console.log(result);
 
-    //   fetch({
-    //   url: "/health/user/query",
-    //   baseUrl: "https://health.lianlianchains.com",
-    //   // baseUrl: "http://192.168.50.157:8888",
-    //   data: {
-    //     'openid': '123'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
+      fetch({
+      url: "/health/user/query",
+      baseUrl: "https://health.lianlianchains.com",
+      // baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'openid': '456'
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
 
     //积分
     // fetch({

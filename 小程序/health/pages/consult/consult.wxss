@@ -15,7 +15,7 @@
   text-align: center;
 }
 .container .contact{
-  background-color: #ff5722;
+  background-color: rgba(255, 87, 34, .7);
   overflow: hidden;
 }
 .container .contact button{
@@ -91,6 +91,9 @@
   border-color: red;
   box-sizing: border-box;
   background-color: transparent;
+}
+.container .content .diagList .shareBtn:after{
+  border:none;
 }
 .container .content .diagList .share{
   width: 54rpx;

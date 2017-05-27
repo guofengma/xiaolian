@@ -1,4 +1,5 @@
 // pages/consult/consult.js
+import fetch from '../../utils/fetch.js';
 Page({
 
   /**
@@ -6,62 +7,91 @@ Page({
    */
   data: {
     docArray: [
-      {
-        avator: "",
-        name: "张XX",
-        position: "主治医师",
-        address: "北京市三甲",
-        tag:[
-          {
-            msg: "妇科"
-          },
-          {
-            msg: "不孕不育"
-          },
-          {
-            msg: "外科"
-          }
-        ]
-      },
-      {
-        avator: "",
-        name: "张XX",
-        position: "主治医师",
-        address: "北京市三甲",
-        tag: [
-          {
-            msg: "内科"
-          },
-          {
-            msg: "不孕不育"
-          },
-          {
-            msg: "外科"
-          }
-        ]
-      }
-    ],
-    illness:[
-      {
-        img:"",
-        name: "男性不育"
-      },
-      {
-        img: "",
-        name: "女性不孕"
-      },
-      {
-        img: "",
-        name: "胃癌前期病变"
-      }
+      
     ]
   },
-
+  bindDownLoad: function () {
+    //   该方法绑定了页面滑动到底部的事件
+    console.log(333)
+    var that = this;
+    GetList(that);
+  },
+  scroll: function (event) {
+    console.log(222);
+    //   该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
+    this.setData({
+      scrollTop: event.detail.scrollTop
+    });
+  },
+  refreshs: function (event) {
+    // console.log(111);
+    //   该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
+    console.log(111);
+    page = 0;
+    this.setData({
+      list: [],
+      scrollTop: 0
+    });
+    GetList(this)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    fetch({
+      url: "/health/diagnosis/save",
+      baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'diagnosisid':"xrf110",
+        'openid':'asdfgh2',
+        'datetime':"2017",
+        'symptom':"很好",
+        'amt':"money",
+        'hospital':"sanhuan",
+        'doctor':'doctor',
+        'evaluate':0,
+        'label':'001'
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+    // fetch({
+    //   url: "/health/diagnosis/query",
+    //   baseUrl: "http://192.168.50.157:8888",
+    //   data: {
+    //     'diagnosisid': "xrf109",
+    //     'openid':'asdfgh2',
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
+    //querybypage
+    fetch({
+      url: "/health/diagnosis/querybypage",
+      baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'page': 0,
+        'openid':'asdfgh2',
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
   },
   /**
    * 生命周期函数--监听页面显示

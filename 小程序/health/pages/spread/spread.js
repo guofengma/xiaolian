@@ -7,6 +7,22 @@ Page({
   data: {
   
   },
+  onShareAppMessage() {
+    console.log("777777777777")
+    return {
+      title: '自定义转发标题',
+      path: '/pages/index/index?id=123',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
+  bindShareTap(){
+    console.log("点击");
+  },
   //取消/返回上一页
   bindCancelTap(){
     wx.navigateBack();

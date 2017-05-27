@@ -1,9 +1,9 @@
 <!--pages/sheet/sheet.wxml-->
 <view class="container">
   <view class="search">
-    <input type="text" confirm-type="search" placeholder="单号"/>
+    <input type="text" confirm-type="search" placeholder="单号" />
   </view>
-  <view class="sheetcont" wx:for="[1,2]">
+  <!--<view class="sheetcont" wx:for="[1,2]">
     <view class="sheetop">
       <text class="num">#62298501</text>
       <text class="time">2017/05/22 17:41</text>
@@ -25,6 +25,27 @@
     <view class="classname info">病情描述</view>
     <view class="classname info">
       熟练度法撒旦你来撒多年来开发撒的能力开发你的思考两年分类考试都能分类考试都能分类考试都能分类考试都能菲利克斯当年老夫
+    </view>
+  </view>-->
+  <view class="content">
+    <view class="diagList">
+      <view class="top">
+        <view class="eval">#67687870</view>
+        <view class="time">2017/05/21 13:48</view>
+      </view>
+      <view class="info">
+        <view class="classname">医院：东直门医院</view>
+        <view class="classname">医生：张XX</view>
+      </view>
+      <view class="desc">
+        <view class="descTit">症状描述</view>
+        <view class="descont">坎坎坷坷扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</view>
+      </view>
+      <view class="label">
+        <text>皮肤病</text>
+        <text>皮肤病</text>
+      </view>
+      <view class="classname">金额：200</view>
     </view>
   </view>
 </view>

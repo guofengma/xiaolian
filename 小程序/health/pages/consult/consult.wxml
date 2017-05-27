@@ -10,47 +10,34 @@
   </view>
   <view class="content">
     <view class="head">患者病例</view>
-    <view class="diagList">
-      <view class="top">
-        <view class="eval">很满意</view>
-        <view class="time">2017/05/21 13:48</view>
-      </view>
-      <view class="info">
-        <view class="classname">医院：东直门医院</view>
-        <view class="classname">医生：张XX</view>
-      </view>
-      <view class="desc">
-        <view class="descTit">症状描述</view>
-        <view class="descont">坎坎坷坷扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</view>
-      </view>
-      <view class="label">
-        <text>皮肤病</text>
-        <text>皮肤病</text>
-      </view>
-      <button class="shareBtn" open-type="share" type="default">
-        <image class="share" src="../../image/share.png"></image>
-      </button>
-    </view>
-    <view class="diagList">
-      <view class="top">
-        <view class="eval">很满意</view>
-        <view class="time">2017/05/21 13:48</view>
-      </view>
-      <view class="info">
-        <view class="classname">医院：东直门医院</view>
-        <view class="classname">医生：张XX</view>
-      </view>
-      <view class="desc">
-        <view class="descTit">症状描述</view>
-        <view class="descont">坎坎坷坷扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</view>
-      </view>
-      <view class="label">
-        <text>皮肤病</text>
-        <text>皮肤病</text>
-      </view>
-      <button class="shareBtn" open-type="share" type="default">
-        <image class="share" src="../../image/share.png"></image>
-      </button>
-    </view>
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        class="list" 
+        enable-back-to-top=true
+        bindscrolltolower="bindDownLoad" 
+        bindscroll="scroll" 
+        bindscrolltoupper="refreshs"
+        >
+        <view class="diagList">
+          <view class="top">
+            <view class="eval">很满意</view>
+            <view class="time">2017/05/21 13:48</view>
+          </view>
+          <view class="info">
+            <view class="classname">医院：东直门医院</view>
+            <view class="classname">医生：张XX</view>
+          </view>
+          <view class="desc">
+            <view class="descTit">症状描述</view>
+            <view class="descont">坎坎坷坷扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</view>
+          </view>
+          <view class="label">
+            <text>皮肤病</text>
+            <text>皮肤病</text>
+          </view>
+          <button class="shareBtn" open-type="share" type="default">
+            <image class="share" src="../../image/share.png"></image>
+          </button>
+        </view>
+    </scroll-view>
   </view>
 </view>
