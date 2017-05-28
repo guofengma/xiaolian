@@ -20,5 +20,7 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.mapper.ScoreMapper"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.model.Score"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.mapper.DiagnosisMapper"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.model.Diagnosis"/>
 </qualifiedTypeNameHistroy>
