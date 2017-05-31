@@ -2418,3 +2418,1136 @@ git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select
 2017-05-24 15:49:55,076 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2017-05-24 15:49:55,107 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-05-24 15:49:55,107 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:01:35,909 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:01:35,925 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:01:35,959 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:01:35,965 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:01:35,965 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:01:49,858 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:01:49,879 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:01:49,893 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:01:49,895 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:01:49,896 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:02:21,013 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:02:21,035 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:02:21,048 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:02:21,050 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:02:21,050 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:10:22,103 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:10:22,162 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:10:22,236 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:10:22,240 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:10:22,240 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:11:08,163 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:11:08,174 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:11:08,188 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:11:08,194 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:11:08,194 [Worker-151] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:12:01,571 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:12:01,597 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:12:01,645 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:12:01,649 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:12:01,649 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:13:01,184 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:13:01,209 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:13:01,223 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:13:01,227 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:13:01,227 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:14:23,445 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:14:23,454 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:14:23,501 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:14:23,505 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:14:23,506 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:22:16,744 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:22:16,745 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:22:16,762 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:22:16,770 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:22:16,770 [Worker-156] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:23:21,866 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:23:21,891 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:23:21,909 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:23:21,914 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:23:21,915 [Worker-159] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:24:30,202 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:24:30,218 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:24:30,232 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:24:30,235 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:24:30,236 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:24:40,193 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:24:40,207 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:24:40,220 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:24:40,318 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:24:40,318 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:25:50,343 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:25:50,352 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:25:50,387 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:25:50,391 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:25:50,391 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:26:15,282 [Worker-153] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 10:26:15,316 [Worker-153] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 10:32:59,573 [Worker-162] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:32:59,591 [Worker-162] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:32:59,604 [Worker-162] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:32:59,608 [Worker-162] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:32:59,608 [Worker-162] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 10:33:00,621 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:33:00,621 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:33:00,622 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 10:33:00,625 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 10:33:00,625 [Worker-154] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:04:19,941 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:04:19,981 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:04:19,982 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:04:20,007 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:04:20,008 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:04:58,999 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:04:59,026 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:04:59,027 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:04:59,032 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:04:59,033 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:05:44,614 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:05:44,638 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:05:44,638 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:05:44,665 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:05:44,666 [Worker-185] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:10:35,013 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:10:35,052 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:10:35,053 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:10:35,105 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:10:35,105 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:12:24,506 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:12:24,521 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:12:24,521 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:12:24,548 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:12:24,548 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:12:47,194 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:12:47,210 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:12:47,210 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:12:47,214 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:12:47,214 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:13:11,762 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:11,777 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:13:11,777 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:13:11,780 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:11,780 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:13:13,217 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:13,218 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:13:13,218 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:13:13,224 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:13,225 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:13:41,350 [Worker-187] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 11:13:41,350 [Worker-187] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 11:13:44,184 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:44,186 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:13:44,201 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:13:44,203 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:13:44,203 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:15:20,896 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:15:20,913 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:15:20,925 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:15:20,928 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:15:20,929 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:15:47,045 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:15:47,046 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:15:47,092 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:15:47,095 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:15:47,095 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:16:21,627 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:16:21,646 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:16:21,647 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:16:21,648 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:16:21,649 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:16:53,469 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:16:53,470 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 11:16:53,470 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:16:53,484 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:16:53,484 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:35:32,723 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:35:32,749 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:35:32,806 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:35:32,809 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:35:32,809 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:37:06,655 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:37:06,656 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:37:06,657 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:37:06,659 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:37:06,660 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:38:21,937 [Worker-205] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:38:21,982 [Worker-205] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:38:22,019 [Worker-205] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:38:22,025 [Worker-205] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:38:22,025 [Worker-205] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:38:45,125 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:38:45,138 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:38:45,151 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:38:45,153 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:38:45,153 [Worker-202] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:39:07,704 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:39:07,726 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:39:07,740 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:39:07,742 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:39:07,742 [Worker-206] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:43:46,781 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:43:46,817 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:43:46,853 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:43:46,856 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:43:46,856 [Worker-212] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:44:20,010 [Worker-214] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:44:20,028 [Worker-214] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:44:20,074 [Worker-214] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:44:20,077 [Worker-214] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:44:20,077 [Worker-214] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 11:45:32,084 [Worker-211] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:45:32,106 [Worker-211] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:45:32,120 [Worker-211] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 11:45:32,121 [Worker-211] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 11:45:32,122 [Worker-211] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:24:57,067 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:24:57,087 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:24:57,136 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:24:57,141 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:24:57,142 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:31:26,552 [Worker-227] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:31:26,588 [Worker-227] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:31:26,602 [Worker-227] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:31:26,605 [Worker-227] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:31:26,605 [Worker-227] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:32:51,753 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:32:51,767 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:32:51,780 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:32:51,783 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:32:51,783 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:33:08,895 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:33:08,912 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:33:08,925 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:33:08,927 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:33:08,927 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:33:17,790 [Worker-234] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:33:17,800 [Worker-234] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:33:17,813 [Worker-234] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:33:17,816 [Worker-234] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:33:17,816 [Worker-234] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:38:18,223 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:38:18,258 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:38:18,292 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:38:18,295 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:38:18,295 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:39:04,027 [Worker-237] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:39:04,035 [Worker-237] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:39:04,049 [Worker-237] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:39:04,052 [Worker-237] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:39:04,052 [Worker-237] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:40:34,991 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:40:35,024 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:40:35,037 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:40:35,045 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:40:35,045 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:40:58,615 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:40:58,635 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:40:58,649 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:40:58,651 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:40:58,651 [Worker-230] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:41:24,879 [Worker-240] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:41:24,914 [Worker-240] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:41:24,927 [Worker-240] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:41:24,931 [Worker-240] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:41:24,931 [Worker-240] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 12:46:47,620 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:46:47,637 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:46:47,651 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 12:46:47,654 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 12:46:47,655 [Worker-228] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 13:43:57,072 [Worker-277] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 13:43:57,086 [Worker-277] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 13:50:53,260 [Worker-274] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 13:50:53,276 [Worker-274] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 14:01:51,039 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:01:51,063 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:01:51,064 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:01:51,069 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:01:51,069 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:01:56,410 [Worker-287] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 14:01:56,410 [Worker-287] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 14:23:45,677 [Worker-298] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-25 14:23:45,691 [Worker-298] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-25 14:26:42,798 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:42,817 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:42,896 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:42,900 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:42,900 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:26:43,968 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:43,969 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:43,970 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:43,973 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:43,973 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:26:56,610 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:56,628 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:56,630 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:26:56,633 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:26:56,633 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:27:34,188 [Worker-307] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:27:34,229 [Worker-307] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:27:34,310 [Worker-307] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:27:34,315 [Worker-307] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:27:34,315 [Worker-307] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:28:27,488 [Worker-308] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:28:27,550 [Worker-308] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:28:27,684 [Worker-308] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:28:27,687 [Worker-308] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:28:27,687 [Worker-308] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:29:07,515 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:29:07,552 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:29:07,606 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:29:07,608 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:29:07,608 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:29:31,832 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:29:31,852 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:29:31,865 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:29:31,871 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:29:31,871 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:32:43,903 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:32:43,933 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:32:44,014 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:32:44,022 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:32:44,022 [Worker-306] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:34:16,179 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:34:16,211 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:34:16,212 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:34:16,232 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:34:16,232 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:36:58,436 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:36:58,474 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:36:58,475 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:36:58,480 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:36:58,480 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:37:19,030 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:37:19,047 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:37:19,048 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:37:19,051 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:37:19,052 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:37:30,547 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:37:30,547 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:37:30,548 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:37:30,551 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:37:30,551 [Worker-302] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:40:21,884 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:40:21,906 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:40:21,907 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:40:21,943 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:40:21,943 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:41:52,047 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:41:52,074 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:41:52,127 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:41:52,129 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:41:52,129 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:42:08,442 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:42:08,463 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:42:08,476 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:42:08,478 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:42:08,478 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:50:14,267 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:50:14,281 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:50:14,281 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:50:14,309 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:50:14,309 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:51:11,429 [Worker-325] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:11,459 [Worker-325] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:51:11,460 [Worker-325] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:51:11,482 [Worker-325] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:11,482 [Worker-325] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:51:24,674 [Worker-326] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:24,674 [Worker-326] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:51:24,674 [Worker-326] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:51:24,677 [Worker-326] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:24,677 [Worker-326] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:51:35,316 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:35,348 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:51:35,349 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:51:35,352 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:35,352 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:51:58,397 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:58,415 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:51:58,415 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:51:58,418 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:51:58,418 [Worker-328] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:52:09,823 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:52:09,823 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-25 14:52:09,823 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:52:09,825 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:52:09,826 [Worker-314] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:52:41,100 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:52:41,114 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:52:41,127 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:52:41,129 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:52:41,130 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:54:16,069 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:16,093 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:54:16,165 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:54:16,168 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:16,168 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:54:22,611 [Worker-332] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:22,612 [Worker-332] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:54:22,613 [Worker-332] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:54:22,616 [Worker-332] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:22,616 [Worker-332] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 14:54:42,840 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:42,840 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 14:54:42,841 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 14:54:42,843 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 14:54:42,843 [Worker-331] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 15:20:11,225 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:20:11,249 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 15:20:11,328 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 15:20:11,361 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:20:11,362 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 15:33:23,224 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:33:23,248 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 15:33:23,349 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 15:33:23,352 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:33:23,352 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-25 15:33:31,058 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:33:31,059 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-25 15:33:31,060 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-25 15:33:31,065 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-25 15:33:31,065 [Worker-359] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:01:37,143 [Thread-5] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-26 15:01:37,297 [Thread-6] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-26 15:03:07,286 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-05-26 15:03:22,077 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:03:22,154 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:03:22,262 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:03:22,339 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:03:22,339 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:17:37,295 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:17:37,377 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:17:37,378 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:17:37,409 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:17:37,409 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:26:46,233 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:26:46,246 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:26:46,247 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:26:46,252 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:26:46,252 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:26:59,959 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:26:59,960 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:26:59,960 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:26:59,964 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:26:59,964 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:27:15,118 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:27:15,134 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:27:15,134 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:27:15,139 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:27:15,139 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:35:18,967 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:35:18,981 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:35:18,982 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:35:19,003 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:35:19,003 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:39:25,628 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:39:25,643 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:39:25,644 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:39:25,664 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:39:25,665 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:39:57,034 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:39:57,034 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:39:57,035 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:39:57,047 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:39:57,047 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:42:40,348 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:42:40,397 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:42:40,449 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:42:40,453 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:42:40,453 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:43:13,826 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:43:13,903 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:43:13,958 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:43:13,961 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:43:13,961 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:44:10,725 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:44:10,747 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:44:10,761 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:44:10,765 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:44:10,765 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:44:57,777 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:44:57,803 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:44:57,804 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:44:57,807 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:44:57,808 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:45:25,683 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:45:25,693 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:45:25,706 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:45:25,710 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:45:25,710 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:45:42,330 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:45:42,331 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:45:42,333 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:45:42,340 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:45:42,341 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:46:40,860 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:46:40,883 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:46:40,929 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:46:40,932 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:46:40,933 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:46:51,248 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:46:51,272 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:46:51,284 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:46:51,289 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:46:51,290 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:47:18,411 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:18,439 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:47:18,452 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:47:18,454 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:18,454 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:47:21,440 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:21,442 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:47:21,443 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:47:21,448 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:21,449 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:47:35,520 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:35,521 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:47:35,522 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:47:35,526 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:47:35,526 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:48:02,417 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:02,428 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:48:02,429 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:48:02,431 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:02,431 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:48:11,362 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:11,363 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:48:11,365 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:48:11,369 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:11,370 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:48:21,267 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:21,268 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:48:21,269 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:48:21,271 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:48:21,271 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:50:36,661 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:50:36,709 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:50:36,766 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:50:36,770 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:50:36,770 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:52:36,575 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:52:36,589 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:52:36,623 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:52:36,626 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:52:36,626 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:53:05,022 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:53:05,045 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:53:05,057 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:53:05,060 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:53:05,060 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:53:41,221 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:53:41,234 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:53:41,246 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:53:41,248 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:53:41,248 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:54:40,720 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:54:40,757 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:54:40,781 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:54:40,783 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:54:40,784 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:55:37,312 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:55:37,335 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:55:37,392 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:55:37,395 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:55:37,395 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:55:54,454 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:55:54,455 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:55:54,456 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 15:55:54,459 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:55:54,459 [Worker-53] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:56:17,832 [Worker-48] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 15:56:17,849 [Worker-48] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 15:56:52,894 [Worker-48] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 15:56:52,904 [Worker-48] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 15:57:45,793 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:57:45,804 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 15:57:45,804 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 15:57:45,806 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 15:57:45,807 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 15:57:57,297 [Worker-54] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 15:57:57,297 [Worker-54] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:03:56,122 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:03:56,133 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:03:56,134 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:03:56,154 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:03:56,154 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:04:03,314 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:03,315 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:04:03,356 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:04:03,359 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:03,360 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:04:04,386 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:04,387 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:04:04,388 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:04:04,390 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:04,391 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:04:16,506 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:16,507 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:04:16,509 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:04:16,512 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:16,512 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:04:55,369 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:55,377 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:04:55,378 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:04:55,381 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:04:55,381 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:05:18,241 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:05:18,267 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:05:18,280 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:05:18,282 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:05:18,282 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:05:26,315 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:05:26,334 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:05:26,347 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:05:26,351 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:05:26,351 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:06:03,962 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:06:04,001 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:06:04,025 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:06:04,028 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:06:04,028 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:07:45,357 [Worker-55] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:07:45,380 [Worker-55] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:11:48,258 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:11:48,362 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:11:48,363 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:11:48,367 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:11:48,367 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:12:14,627 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:12:14,627 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:12:14,628 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:12:14,631 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:12:14,631 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:12:31,834 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:12:31,834 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:12:31,853 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:12:31,856 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:12:31,857 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:13:19,066 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:13:19,067 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:13:19,069 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:13:19,071 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:13:19,072 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:13:24,614 [Worker-56] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:13:24,614 [Worker-56] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:15:00,600 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:15:00,644 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:15:00,667 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:15:00,669 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:15:00,669 [Worker-57] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:15:20,025 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:15:20,026 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:18:19,502 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:18:19,513 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:18:19,514 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:18:19,534 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:18:19,534 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:18:38,595 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:18:38,596 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:18:38,616 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:18:38,619 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:18:38,619 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:19:06,484 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:19:06,485 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:19:06,486 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 16:19:06,492 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:19:06,492 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:19:13,300 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:19:13,301 [Worker-64] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:36:07,873 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:36:07,899 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:36:07,899 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:36:07,917 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:36:07,917 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:36:12,646 [Worker-58] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:36:12,647 [Worker-58] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 16:40:51,854 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:40:51,868 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:40:51,869 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:40:51,875 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:40:51,876 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:48:28,252 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:48:28,309 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 16:48:28,310 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 16:48:28,331 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 16:48:28,331 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 16:48:33,596 [Worker-84] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 16:48:33,597 [Worker-84] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-26 17:02:59,880 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:02:59,884 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 17:02:59,909 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:02:59,914 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:02:59,914 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 17:03:11,833 [Worker-94] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 17:03:11,834 [Worker-94] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2017-05-26 17:03:22,438 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:03:22,439 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 17:03:22,469 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 17:03:22,497 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:03:22,497 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 17:04:22,933 [Worker-95] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-26 17:04:22,933 [Worker-95] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-05-26 17:04:44,860 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:04:44,904 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-26 17:04:44,927 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-26 17:04:44,930 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:04:44,930 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 17:04:54,545 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:04:54,571 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:04:54,571 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:04:54,573 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:04:54,574 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 17:05:16,447 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:05:16,448 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:05:16,449 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:05:16,451 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:05:16,451 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-26 17:15:43,202 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:15:43,211 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:15:43,211 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-26 17:15:43,216 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-26 17:15:43,216 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:04:07,562 [Thread-9] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-27 10:04:07,716 [Thread-10] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-27 10:04:25,059 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-05-27 10:04:32,101 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:04:32,182 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:04:32,399 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-27 10:04:32,433 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:04:32,468 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:18:39,861 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:18:39,896 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:18:39,957 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-27 10:18:39,962 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:18:39,962 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:19:53,042 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:19:53,079 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:19:53,112 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2017-05-27 10:19:53,115 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:19:53,115 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:21:15,306 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:21:15,350 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 10:21:15,351 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:21:15,394 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:21:15,394 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:21:47,938 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:21:47,957 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 10:21:47,958 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:21:47,961 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:21:47,962 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:31:11,097 [Worker-25] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 10:31:11,128 [Worker-25] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-27 10:32:26,077 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:32:26,090 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:32:26,093 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 10:32:26,097 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:32:26,097 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:32:30,466 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 10:32:30,466 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-27 10:45:30,185 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:45:30,187 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 10:45:30,187 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:45:30,205 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:45:30,205 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:45:59,947 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:45:59,947 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:45:59,973 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:45:59,980 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:45:59,980 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:46:21,825 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:46:21,826 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:46:21,828 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:46:21,832 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:46:21,832 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:49:42,892 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:49:42,892 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:49:42,921 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:49:42,924 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:49:42,924 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:51:53,440 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:51:53,441 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:51:53,456 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:51:53,460 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:51:53,460 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:52:40,425 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:52:40,427 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:52:40,445 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:52:40,449 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:52:40,450 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:54:32,296 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:54:32,297 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:54:32,347 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 10:54:32,351 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:54:32,351 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 10:57:20,084 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:57:20,084 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 10:57:20,085 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 10:57:20,087 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 10:57:20,088 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:00:06,920 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:00:06,921 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:00:06,921 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:00:06,928 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:00:06,928 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:01:02,382 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:01:02,382 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:01:02,382 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:01:02,392 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:01:02,392 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:01:21,367 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:01:21,368 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:01:21,368 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:01:21,372 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:01:21,372 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:02:16,599 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:02:16,599 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:02:16,600 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:02:16,620 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:02:16,620 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:02:45,745 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:02:45,746 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:02:45,746 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:02:45,764 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:02:45,764 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:03:11,334 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:03:11,335 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:03:11,336 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:03:11,339 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:03:11,339 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:03:30,625 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:03:30,625 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:03:30,626 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:03:30,629 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:03:30,629 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:05:54,497 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:05:54,498 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:05:54,498 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:05:54,508 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:05:54,508 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:06:07,459 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:07,460 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:06:07,460 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:06:07,463 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:07,464 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:06:19,063 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:19,064 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:06:19,064 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:06:19,068 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:19,068 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 11:06:24,301 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:24,301 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 11:06:24,302 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 11:06:24,305 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 11:06:24,305 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 12:12:59,074 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 12:12:59,075 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 12:12:59,075 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 12:12:59,086 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 12:12:59,086 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 12:17:04,195 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 12:17:04,196 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 12:17:04,196 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 12:17:04,215 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 12:17:04,215 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:03:21,864 [Thread-15] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-27 14:03:22,112 [Thread-16] ERROR org.eclipse.jgit.util.FS - dyld: Library not loaded: @rpath/XCTest.framework/Versions/A/XCTest
+  Referenced from: /Applications/Xcode-beta 2.app/Contents/Frameworks/IDEFoundation.framework/Versions/A/IDEFoundation
+  Reason: image not found
+git: error: unable to locate xcodebuild, please make sure the path to the Xcode folder is set correctly!
+git: error: You can set the path to the Xcode folder using /usr/bin/xcode-select -switch
+
+2017-05-27 14:04:18,466 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.alibaba:druid:jar:1.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-05-27 14:04:23,852 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:04:23,890 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:04:24,012 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:04:24,047 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:04:24,073 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:09:39,537 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:09:39,584 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:09:39,585 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:09:39,605 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:09:39,605 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:10:04,920 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:10:04,921 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:10:04,921 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:10:04,924 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:10:04,924 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:10:24,995 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:10:25,026 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:10:25,027 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:10:25,031 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:10:25,031 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:12:09,295 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:12:09,316 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:12:09,316 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:12:09,320 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:12:09,321 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:12:20,013 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:12:20,014 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:12:20,014 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:12:20,017 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:12:20,018 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:13:08,089 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:13:08,105 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:13:08,106 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:13:08,110 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:13:08,110 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:14:34,646 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:14:34,663 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:14:34,708 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:14:34,713 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:14:34,713 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:16:15,757 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:16:15,772 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:16:15,833 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:16:15,837 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:16:15,837 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:17:00,305 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:17:00,339 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:17:00,353 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:17:00,355 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:17:00,355 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:18:24,099 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:18:24,117 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:18:24,117 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:18:24,140 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:18:24,141 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:18:52,184 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:18:52,196 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:18:52,197 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:18:52,200 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:18:52,201 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:19:16,594 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:19:16,595 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:19:16,619 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:19:16,622 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:19:16,622 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:20:15,658 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:15,673 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:20:15,686 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:20:15,689 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:15,689 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:20:29,482 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:29,483 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:20:29,497 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:20:29,501 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:29,502 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:20:33,488 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:33,517 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:20:33,518 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:20:33,522 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:33,549 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:20:50,882 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:50,883 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:20:50,884 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:20:50,887 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:20:50,887 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:22:27,109 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:27,129 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:22:27,143 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:22:27,147 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:27,148 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:22:29,997 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:29,998 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:22:29,999 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:22:30,003 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:30,004 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:22:42,364 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:42,365 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:22:42,366 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:22:42,368 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:42,368 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:22:48,633 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:48,633 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:22:48,634 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:22:48,637 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:22:48,637 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:23:02,972 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:23:02,974 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:23:02,976 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:23:02,979 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:23:02,979 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:24:04,051 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:04,084 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:24:04,121 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:24:04,124 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:04,124 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:24:08,333 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:08,333 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:24:08,334 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:24:08,336 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:08,336 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:24:33,669 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:33,685 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:24:33,700 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:24:33,703 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:24:33,703 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:25:01,487 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:25:01,488 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:25:01,490 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 14:25:01,492 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:25:01,492 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:25:27,689 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:25:27,689 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 14:25:27,690 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 14:25:27,693 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 14:25:27,694 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 14:25:46,546 [Worker-25] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 14:25:46,548 [Worker-25] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-27 15:13:21,324 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:13:21,361 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 15:13:21,387 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 15:13:21,390 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:13:21,391 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 15:13:22,582 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:13:22,583 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 15:13:22,584 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 15:13:22,587 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 15:13:22,587 [Worker-44] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 15:13:26,767 [Worker-46] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 15:13:26,768 [Worker-46] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-27 16:07:14,156 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:07:14,204 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:07:14,231 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 16:07:14,235 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:07:14,235 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 16:07:27,987 [Worker-67] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 16:07:27,987 [Worker-67] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-27 16:10:31,477 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:31,509 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:10:31,522 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 16:10:31,524 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:31,525 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 16:10:40,746 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:40,751 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:10:40,753 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-27 16:10:40,757 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:40,759 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 16:10:55,225 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:55,225 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-27 16:10:55,226 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-27 16:10:55,229 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-27 16:10:55,229 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-27 16:10:59,269 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-27 16:10:59,269 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-28 19:32:20,838 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:32:20,853 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 19:32:20,853 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:32:20,879 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:32:20,879 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:33:38,658 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:33:38,659 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:33:38,668 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 19:33:38,671 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:33:38,671 [Worker-93] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:34:09,476 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:34:09,477 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 19:34:09,477 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:34:09,480 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:34:09,480 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:35:05,462 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:35:05,464 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:35:05,466 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 19:35:05,468 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:35:05,469 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:36:03,206 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:36:03,207 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:36:03,208 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 19:36:03,214 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:36:03,214 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:36:32,651 [Worker-99] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-28 19:36:32,691 [Worker-99] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-28 19:58:27,766 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:58:27,881 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:58:28,024 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 19:58:28,081 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:58:28,082 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:59:22,664 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:59:22,697 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 19:59:22,697 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 19:59:22,699 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 19:59:22,699 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 19:59:30,891 [Worker-100] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-28 19:59:30,891 [Worker-100] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B spring-boot:run
+2017-05-28 20:01:02,689 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:02,766 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:01:02,766 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:01:02,794 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:02,794 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:01:29,651 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:29,652 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:01:29,676 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:01:29,679 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:29,680 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:01:30,698 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:30,699 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:01:30,700 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:01:30,702 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:01:30,702 [Worker-108] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:02:06,767 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:06,768 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:02:06,770 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:02:06,781 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:06,782 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:02:24,843 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:24,844 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:02:24,845 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:02:24,847 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:24,847 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:02:38,477 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:38,478 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:02:38,479 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:02:38,487 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:02:38,493 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:03:09,086 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:03:09,086 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:03:09,088 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:03:09,091 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:03:09,091 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:04:24,528 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:04:24,529 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:04:24,530 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:04:24,532 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:04:24,532 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:04:42,607 [Worker-108] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-28 20:04:42,608 [Worker-108] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2017-05-28 20:04:50,294 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:04:50,295 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:04:50,302 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:04:50,375 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:04:50,375 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources
+2017-05-28 20:05:29,845 [Worker-100] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/mac/Documents/work/xiaolian/后台/java/springboot-master
+2017-05-28 20:05:29,845 [Worker-100] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2017-05-28 20:06:34,264 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:06:34,265 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-05-28 20:06:34,300 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-05-28 20:06:34,304 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-05-28 20:06:34,304 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/mac/Documents/work/xiaolian/后台/java/springboot-master/src/test/resources

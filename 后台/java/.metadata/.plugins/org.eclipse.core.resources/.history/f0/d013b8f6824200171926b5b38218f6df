@@ -1,0 +1,27 @@
+package com.lxg.springboot.model;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+
+	/**
+	 * author zhenghong@xrfinance.com
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String openid;
+
+	private String nickname;
+
+	private String sex;
+
+	private String age;
+
+	private String phoneno;
+	
+	private String address;
+
+	
+
+}

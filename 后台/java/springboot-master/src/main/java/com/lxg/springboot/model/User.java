@@ -19,6 +19,8 @@ public class User implements Serializable {
 	private String age;
 
 	private String phoneno;
+	
+	private String address;
 
 	public String getOpenid() {
 		return openid;
@@ -60,10 +62,17 @@ public class User implements Serializable {
 		this.phoneno = phoneno;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "User [openid=" + openid + ", nickname=" + nickname + ", sex=" + sex + ", age=" + age + ", phoneno="
-				+ phoneno + "]";
+				+ phoneno + ", address=" + address + "]";
 	}
-
 }

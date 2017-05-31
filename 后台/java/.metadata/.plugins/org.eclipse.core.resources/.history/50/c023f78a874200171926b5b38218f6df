@@ -1,0 +1,12 @@
+package com.lxg.springboot.mapper;
+
+
+public interface DiagnosisMapper {
+
+	int save(User user);
+	
+	int update(User user);
+
+	User query(String id);
+	
+}
