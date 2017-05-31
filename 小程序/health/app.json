@@ -19,9 +19,9 @@
   },
   "tabBar": {
     "color": "#a9b7b7",
-    "backgroundColor":"light",
+    "backgroundColor":"#ffffff",
     "selectedColor": "#ff5722",
-    "borderStyle": "#e3e3e3",
+    "borderStyle": "#dddddd",
     "list": [
       {
         "selectedIconPath": "./image/homeAct.png",

@@ -1,5 +1,23 @@
 // pages/consult/consult.js
 import fetch from '../../utils/fetch.js';
+function GetList(){
+  fetch({
+      url: "/health/diagnosis/querybypage",
+      baseUrl: "https://health.lianlianchains.com",
+      // baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'page': 0,
+        'openid':'asdfgh2',
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      console.log(result);
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+}
 Page({
 
   /**
@@ -8,7 +26,11 @@ Page({
   data: {
     docArray: [
       
-    ]
+    ],
+    hidden: true,
+    list: [],
+    scrollTop: 0,
+    scrollHeight: 0
   },
   bindDownLoad: function () {
     //   该方法绑定了页面滑动到底部的事件
@@ -38,29 +60,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    fetch({
-      url: "/health/diagnosis/save",
-      baseUrl: "http://192.168.50.157:8888",
-      data: {
-        'diagnosisid':"xrf110",
-        'openid':'asdfgh2',
-        'datetime':"2017",
-        'symptom':"很好",
-        'amt':"money",
-        'hospital':"sanhuan",
-        'doctor':'doctor',
-        'evaluate':0,
-        'label':'001'
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-      // header: { 'content-type': 'application/json' }
-    }).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info(res.windowHeight);
+        that.setData({
+          scrollHeight: res.windowHeight
+        });
+      }
     });
+    // fetch({
+    //   url: "/health/diagnosis/save",
+    //   baseUrl: "http://192.168.50.157:8888",
+    //   data: {
+    //     'diagnosisid':"xrf110",
+    //     'openid':'asdfgh2',
+    //     'datetime':"2017",
+    //     'symptom':"很好",
+    //     'amt':"money",
+    //     'hospital':"sanhuan",
+    //     'doctor':'doctor',
+    //     'evaluate':0,
+    //     'label':'001'
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    //   // header: { 'content-type': 'application/json' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
     // fetch({
     //   url: "/health/diagnosis/query",
     //   baseUrl: "http://192.168.50.157:8888",
@@ -77,21 +108,21 @@ Page({
     //   console.log(err)
     // });
     //querybypage
-    fetch({
-      url: "/health/diagnosis/querybypage",
-      baseUrl: "http://192.168.50.157:8888",
-      data: {
-        'page': 0,
-        'openid':'asdfgh2',
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+    // fetch({
+    //   url: "/health/diagnosis/querybypage",
+    //   baseUrl: "http://192.168.50.157:8888",
+    //   data: {
+    //     'page': 0,
+    //     'openid':'asdfgh2',
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
   },
   /**
    * 生命周期函数--监听页面显示

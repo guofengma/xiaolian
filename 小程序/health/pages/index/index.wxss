@@ -27,13 +27,13 @@
 }
 .section .content{
   height: 87%;
-  border-top: 1px #e3e3e3 solid;
+  border-top: 1rpx #dddddd solid;
 }
 .section .content .left{
   width: 46%;
   height: 100%;
   float: left;
-  border-right: 1px #e3e3e3 solid;
+  border-right: 1rpx #dddddd solid;
   position: relative;
 }
 .section .content .left image{
@@ -57,10 +57,21 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
 .section .right .diagno:nth-of-type(1){
-  border-bottom: 1px #e3e3e3 solid;
+  position: relative;
 }
+.section .right .diagno:nth-of-type(1):after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #dddddd;
+    height: 1px;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+    
 .section .right .diagno .intro{
   width: 40%;
   word-wrap: break-word;
