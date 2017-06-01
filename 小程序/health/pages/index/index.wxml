@@ -7,7 +7,7 @@
   <view class="section">
     <view class="title">
       <image src="../../image/slogan.png"></image>
-      <text class="cell">不孕不育,男女同治</text>
+      <text class="cell">不孕不育,男女同治.</text>
     </view>
     <view class="content">
       <view class="left item">
@@ -24,6 +24,26 @@
           </view>
         </view>
         <view class="diagno">
+          <view class="intro">
+            <view class="tit">女性不孕</view>
+            <view class="desc">YYYYYYYYYYYYYYY</view>
+          </view>
+          <view class="img">
+            <image src="../../image/bing.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="btom">
+        <view class="diagno bleft">
+          <view class="intro">
+            <view class="tit">男性不育</view>
+            <view class="desc">XXXXXXXXXXXXXXX</view>
+          </view>
+          <view class="img">
+            <image src="../../image/bing.png"></image>
+          </view>
+        </view>
+        <view class="diagno bright">
           <view class="intro">
             <view class="tit">女性不孕</view>
             <view class="desc">YYYYYYYYYYYYYYY</view>

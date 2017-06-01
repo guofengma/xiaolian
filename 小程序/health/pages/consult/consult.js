@@ -1,22 +1,35 @@
 // pages/consult/consult.js
 import fetch from '../../utils/fetch.js';
-function GetList(){
+import {evalue} from '../../utils/filter.js'
+
+var page = 0;
+var num = 0;
+var iTime;
+var diagList = [];
+function GetList(that) {
   fetch({
-      url: "/health/diagnosis/querybypage",
-      baseUrl: "https://health.lianlianchains.com",
-      // baseUrl: "http://192.168.50.157:8888",
-      data: {
-        'page': 0,
-        'openid':'asdfgh2',
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+    url: "/health/diagnosis/querybypage",
+    // baseUrl: "https://health.lianlianchains.com",
+    baseUrl: "http://192.168.50.157:9999",
+    data: {
+      'page': 5 * num,
+      'openid': 'asdfgh2',
+    },
+    method: "POST",
+    header: { 'content-type': 'application/x-www-form-urlencoded' }
+  }).then(result => {
+    console.log(result);
+    for (var i = 0; i < result.length; i++) {
+      diagList.push(result[i]);
+    }
+    console.log(diagList);
+    that.setData({
+      diagList: diagList
+    })
+  }).catch(err => {
+    console.log("出错了")
+    console.log(err)
+  });
 }
 Page({
 
@@ -25,21 +38,25 @@ Page({
    */
   data: {
     docArray: [
-      
+
     ],
     hidden: true,
-    list: [],
+    diagList: [],
     scrollTop: 0,
     scrollHeight: 0
   },
   bindDownLoad: function () {
     //   该方法绑定了页面滑动到底部的事件
-    console.log(333)
     var that = this;
-    GetList(that);
+    clearTimeout(iTime);
+    iTime = setTimeout(function () {
+      //需要执行的事件
+      num++;
+      GetList(that);
+    }, 100);
   },
   scroll: function (event) {
-    console.log(222);
+    // console.log(222);
     //   该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
     this.setData({
       scrollTop: event.detail.scrollTop
@@ -51,7 +68,7 @@ Page({
     console.log(111);
     page = 0;
     this.setData({
-      list: [],
+      diagList: [],
       scrollTop: 0
     });
     GetList(this)
@@ -61,6 +78,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    GetList(this);
     wx.getSystemInfo({
       success: function (res) {
         console.info(res.windowHeight);
@@ -141,21 +159,21 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom() {
+    console.log(1111111111111111111111111);
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   }
 })

@@ -32,6 +32,9 @@
   outline: none;
   outline-color: white;
 }
+.container .contact button:after{
+  border: none;
+}
 .container .word{
   text-align: center;
   /*margin-top: 20rpx;*/
@@ -49,8 +52,18 @@
 }
 .container .content .diagList{
   padding: 28rpx 0;
-  border-bottom: 1px #e3e3e3 solid;
   position: relative;
+}
+.container .content .diagList:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #dddddd;
+    height: 1px;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
 }
 .container .content .diagList .top,.container .content .diagList .info{
   display: flex;

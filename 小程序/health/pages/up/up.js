@@ -1,6 +1,6 @@
 var url = "http://www.imooc.com/course/ajaxlist";
 var page = 0;
-var page_size = 20;
+var page_size = 2;
 var sort = "last";
 var is_easy = 0;
 var lange_id = 0;

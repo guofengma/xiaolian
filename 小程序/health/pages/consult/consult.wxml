@@ -5,30 +5,32 @@
   </view>-->
   <!--医生列表-->
 
-
-  <scroll-view scroll-top="{{scrollTop}}" scroll-y 
+  <scroll-view 
+  scroll-y
+  scroll-top="{{scrollTop}}"  
   style="height:{{scrollHeight}}px;" class="list"                         enable-back-to-top=true 
   bindscrolltolower="bindDownLoad" 
   bindscroll="scroll" 
-  bindscrolltoupper="refreshs">
+  bindscrolltoupper="refreshs"
+  >
     <view class="contact">
       <button open-type="contact">我要咨询</button>
       <view class="word">每天30000个问题被专业医生解答</view>
     </view>
     <view class="content">
       <view class="head">患者病例</view>
-      <view class="diagList" wx:for="[1,2,3]">
+      <view class="diagList" wx:for="{{diagList}}">
         <view class="top">
-          <view class="eval">很满意</view>
-          <view class="time">2017/05/21 13:48</view>
+          <view class="eval">{{item.evaluate}}</view>
+          <view class="time">{{item.datetime}}</view>
         </view>
         <view class="info">
-          <view class="classname">医院：东直门医院</view>
-          <view class="classname">医生：张XX</view>
+          <view class="classname">医院：{{item.hospital}}</view>
+          <view class="classname">医生：{{item.doctor}}</view>
         </view>
         <view class="desc">
           <view class="descTit">症状描述</view>
-          <view class="descont">坎坎坷坷扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩</view>
+          <view class="descont">{{item.symptom}}</view>
         </view>
         <view class="label">
           <text>皮肤病</text>
