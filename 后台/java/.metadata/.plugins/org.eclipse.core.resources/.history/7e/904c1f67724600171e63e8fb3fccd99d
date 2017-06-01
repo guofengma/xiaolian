@@ -15,7 +15,7 @@
 	<select id="querybypage" parameterType="com.lxg.springboot.model.Diagnosis" resultType="com.lxg.springboot.model.Diagnosis">
 		select * from diagnosis 
 		where openid=#{openid} 
-		limit #{page},5
+		limit #{page}*5,5
 	</select>	
 
 </mapper>  
