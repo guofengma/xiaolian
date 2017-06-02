@@ -1,8 +1,5 @@
 <!--pages/consult/consult.wxml-->
 <view class="container">
-  <!--<view class="search">
-    <input type="text" confirm-type="search" placeholder="扁鹊"/>
-  </view>-->
   <!--医生列表-->
 
   <scroll-view 
@@ -12,6 +9,7 @@
   bindscrolltolower="bindDownLoad" 
   bindscroll="scroll" 
   bindscrolltoupper="refreshs"
+  enable-back-to-top="true"
   >
     <view class="contact">
       <button open-type="contact">我要咨询</button>
@@ -40,7 +38,9 @@
           <image class="share" src="../../image/share.png"></image>
         </button>
       </view>
+      <view class="loading">{{loadingMsg}}</view>
     </view>
+    
   </scroll-view>
-
+  
 </view>

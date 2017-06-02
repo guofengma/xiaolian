@@ -1,11 +1,11 @@
 {
   "pages":[
-    
+    "pages/spread/spread",
     "pages/index/index",
     "pages/consult/consult",
     "pages/user/user",
     "pages/detail/detail",
-    "pages/spread/spread",
+    
     "pages/sheet/sheet",
     "pages/pay/pay",
     "pages/up/up"

@@ -16,8 +16,8 @@
       <view class="right item">
         <view class="diagno">
           <view class="intro">
-            <view class="tit">男性不育</view>
-            <view class="desc">XXXXXXXXXXXXXXX</view>
+            <view class="desc">家天下,专治男女不孕不育</view>
+            <view class="tit">了解更多</view>
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -25,8 +25,8 @@
         </view>
         <view class="diagno">
           <view class="intro">
-            <view class="tit">女性不孕</view>
-            <view class="desc">YYYYYYYYYYYYYYY</view>
+            <view class="desc">数以百万家庭成功受孕</view>
+            <view class="tit">了解更多</view>
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -36,8 +36,8 @@
       <view class="btom">
         <view class="diagno bleft">
           <view class="intro">
-            <view class="tit">男性不育</view>
-            <view class="desc">XXXXXXXXXXXXXXX</view>
+            <view class="desc">健康怀孕,原理你知多少</view>
+            <view class="tit">了解更多</view>
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -45,8 +45,8 @@
         </view>
         <view class="diagno bright">
           <view class="intro">
-            <view class="tit">女性不孕</view>
-            <view class="desc">YYYYYYYYYYYYYYY</view>
+            <view class="desc">科学管理,让孩子更健康</view>
+            <view class="tit">了解更多</view>
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>

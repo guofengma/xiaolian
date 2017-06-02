@@ -90,29 +90,49 @@ Page({
     // });
 
     //更新
+    // fetch({
+    //   url: "/health/user/update",
+    //   baseUrl: "https://health.lianlianchains.com",
+    //   // baseUrl: "http://192.168.50.157:8888",
+    //   data: {
+    //     'openid': '456',
+    //     'nickname': '蒋',
+    //     'sex': 0,
+    //     'age':28,
+    //     'phoneno': 16666555668,
+    //     'address': "海淀区" 
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+
+    //   fetch({
+    //   url: "/health/user/query",
+    //   baseUrl: "https://health.lianlianchains.com",
+    //   // baseUrl: "http://192.168.50.157:8888",
+    //   data: {
+    //     'openid': '456'
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
     fetch({
-      url: "/health/user/update",
+      url: "/health/diagnosis/querybypageopenid",
       baseUrl: "https://health.lianlianchains.com",
-      // baseUrl: "http://192.168.50.157:8888",
+      // baseUrl: "http://192.168.50.157:9999",
       data: {
-        'openid': '456',
-        'nickname': '蒋',
-        'sex': 0,
-        'age':28,
-        'phoneno': 16666555668,
-        'address': "海淀区" 
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-
-      fetch({
-      url: "/health/user/query",
-      baseUrl: "https://health.lianlianchains.com",
-      // baseUrl: "http://192.168.50.157:8888",
-      data: {
-        'openid': '456'
+        page:0,
+        'openid': 'asdfgh2'
       },
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -122,11 +142,6 @@ Page({
       console.log("出错了")
       console.log(err)
     });
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
-
     //积分
     // fetch({
     //   url: "/health/score/update",

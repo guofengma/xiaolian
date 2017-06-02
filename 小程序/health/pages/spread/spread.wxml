@@ -1,27 +1,17 @@
 <!--pages/spread/spread.wxml-->
 <view class="container">
-  <view class="headbg">
-    <image src="../../image/bing.png"></image>
-  </view>
-  <view class="rule">
-    <view class="title">规则:</view>
-    <view class="rulecont">
-      <view>分享获取30积分...哈哈哈哈哈哈哈</view>
-      <!--<view>XXXXXXXXXXXXX</view>
-      <view>XXXXXXXXXXXXXXXXXXXXXXXXXXX</view>-->
+  <view class="content">
+    <view class="headbg">
+      <image src="../../image/spreads.png"></image>
     </view>
-    <!--<view class="ruleBtm">
-      <view class="times">
-        <text>累计转发：80次</text>
+    <view class="rule">
+      <view class="title">规则:</view>
+      <view class="rulecont">
+        <view class="ruleitem">1.当b发生医疗行为事件,a可以得到相当消费金额4%虚拟货币</view>
+        <view class="ruleitem">2.当c发生医疗行为事件,b可以得到相当消费金额4%虚拟货币,a可获2%</view>
+        <view class="ruleitem">3.当d发生医疗行为事件,c可以得到相当消费金额4%虚拟货币,b可获2%,a无</view>
+        <view class="ruleitem">4.当a缴清500位,a看病可打9折,同时每次医疗行为发生，只要上传并评价5星,本身可获5%折扣优惠</view>
       </view>
-      <view class="score">
-        <text>获取积分：800BAE</text>
-      </view>
-    </view>-->
-  </view>
-  <view class="footer">
-    <button class="share foItem" open-type="share">转发分享</button>
-    <view class="about foItem">关于三医馆</view>
-    <view class="cancel foItem" bindtap="bindCancelTap">取消</view>
+    </view>
   </view>
 </view>

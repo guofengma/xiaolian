@@ -1,8 +1,13 @@
 /* pages/consult/consult.wxss */
 /*搜索框*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 .container{
   height: 100%;
-  padding-bottom: 100rpx;
+  /*padding-bottom: 100rpx;*/
   color: #333333;
 }
 .search{
@@ -43,7 +48,7 @@
 }
 
 .container .content{
-  padding: 28rpx 28rpx 100rpx 28rpx;
+  padding: 28rpx 28rpx 0 28rpx;
 }
 
 .container .content .head{
@@ -57,7 +62,7 @@
 .container .content .diagList:after{
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     background: #dddddd;
@@ -193,4 +198,10 @@
 }
 .illItem .illName{
   background-color: #fff;
+}
+
+.loading{
+  text-align: center;
+  margin-top: 50rpx;
+  padding: 0 0 30rpx;
 }
