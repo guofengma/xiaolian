@@ -34,11 +34,7 @@ public class RefereeController extends BaseController {
     	if (!refereeid.equals(referee1)){
     		
     		referee2 = refereeMapper.queryreferee(refereeid);
-    		
-    		// 相互推荐
-    		if (openid.equals(referee2)) 
-    			return referee;
-    		
+    		if (openid.equals(referee2)) return referee;
     		refereeMapper.save(openid, refereeid);
     		
     	} else {
