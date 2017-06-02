@@ -1,0 +1,6 @@
+package com.lxg.springboot.mapper;
+
+public interface RefereeMapper {
+
+	
+}

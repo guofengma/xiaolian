@@ -1,0 +1,8 @@
+package com.lxg.springboot.mapper;
+
+import com.lxg.springboot.model.User;
+
+public interface Referee {
+
+	
+}

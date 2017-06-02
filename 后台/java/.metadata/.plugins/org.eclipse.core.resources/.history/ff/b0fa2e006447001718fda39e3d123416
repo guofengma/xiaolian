@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxg.springboot.mapper.RefereeMapper">
+	
+	<insert id="save">
+		insert into referee(openid,referee1,referee2)
+		values (#{openid},#{referee1},#{referee2})
+	</insert>
+	
+	<update id="updatereferee1" parameterType="String">
+		 update referee 
+		 set referee1=#{referee1}
+		 where openid=#{openid}
+	</update>
+	
+	<update id="updatereferee2" parameterType="String">
+		 update referee 
+		 set referee2=#{referee2}
+		 where openid=#{openid}
+	</update>	
+
+	<select id="queryreferee1" parameterType="String" resultType="String">
+		select referee1 from referee 
+		where openid=#{openid}
+	</select>	
+	
+</mapper>  

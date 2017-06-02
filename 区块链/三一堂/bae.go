@@ -130,7 +130,6 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 		A = args[0]
 
 		// Get the state from the ledger
-		// TODO: will be nice to have a GetAllState call to ledger
 		Avalbytes, err := stub.GetState(A)
 		if err != nil {
 
@@ -150,6 +149,26 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 		}
 		Aval, _ = strconv.Atoi(string(Avalbytes))
 
+		// gloab bae
+		Gvalbytes, err := stub.GetState("gloab")
+		if err != nil {
+
+			//event
+			stub.SetEvent("error", []byte("Failed to get state"))
+
+			return nil, errors.New("Failed to get state")
+		}
+		if Gvalbytes == nil {
+
+			err := stub.PutState("gloab", []byte(strconv.Itoa(0)))
+
+			if err != nil {
+				return nil, err
+			}
+
+		}
+		Gval, _ = strconv.Atoi(string(Gvalbytes))
+
 		// Perform the execution
 		X, err = strconv.Atoi(args[1])
 		if err != nil {
@@ -164,6 +183,8 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 
 			fmt.Printf("Aval = %d, X = %d\n", Aval, X)
 			Aval = Aval + X
+
+			Gval = Gval + X
 		}
 
 		if function == "takeCash" {
@@ -178,10 +199,17 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 
 			fmt.Printf("Aval = %d, X = %d\n", Aval, X)
 			Aval = Aval - X
+
+			Gval = Gval - X
 		}
 
 		// Write the state back to the ledger
 		err = stub.PutState(A, []byte(strconv.Itoa(Aval)))
+		if err != nil {
+			return nil, err
+		}
+
+		err = stub.PutState("gloab", []byte(strconv.Itoa(Gval)))
 		if err != nil {
 			return nil, err
 		}

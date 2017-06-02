@@ -1,0 +1,20 @@
+package com.lxg.springboot.model;
+
+import java.io.Serializable;
+
+public class Referee implements Serializable {
+
+	/**
+	 * author zhenghong@xrfinance.com
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String openid;
+
+	private String referee1;
+
+	private String referee2;
+
+	
+}
