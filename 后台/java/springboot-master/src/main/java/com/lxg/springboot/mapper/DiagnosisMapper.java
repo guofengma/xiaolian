@@ -12,4 +12,10 @@ public interface DiagnosisMapper {
 	
 	List<Diagnosis> querybypage(Diagnosis diagnosis);
 	
+	int querytotalpage();
+	
+	List<Diagnosis> querybypageopenid(Diagnosis diagnosis);
+	
+	int querytotalpageopenid();	
+	
 }

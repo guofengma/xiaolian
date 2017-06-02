@@ -14,8 +14,22 @@
 	
 	<select id="querybypage" parameterType="com.lxg.springboot.model.Diagnosis" resultType="com.lxg.springboot.model.Diagnosis">
 		select * from diagnosis 
+		limit #{page},5
+	</select>	
+
+	<select id="querytotalpage" resultType="int">
+		select count(*) from diagnosis
+	</select>
+	
+	<select id="querybypageopenid" parameterType="com.lxg.springboot.model.Diagnosis" resultType="com.lxg.springboot.model.Diagnosis">
+		select * from diagnosis
 		where openid=#{openid} 
 		limit #{page},5
 	</select>	
 
+	<select id="querytotalpageopenid" resultType="int">
+		select count(*) from diagnosis
+		where openid=#{openid} 
+	</select>	
+	
 </mapper>  

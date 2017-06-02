@@ -2,12 +2,11 @@ package com.lxg.springboot.controller;
 
 import com.lxg.springboot.mapper.DiagnosisMapper;
 import com.lxg.springboot.model.Diagnosis;
+import com.lxg.springboot.model.Diagnosispage;
 import com.lxg.springboot.model.Result;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -32,16 +31,29 @@ public class DiagnosisController extends BaseController {
     @RequestMapping("query")
     public Diagnosis query(Diagnosis diagnosis) {
     	
-    	System.out.println(diagnosis.toString());
     	Diagnosis d = diagnosisMapper.query(diagnosis);
     	return d;  	
     }  
     
     @RequestMapping("querybypage")
-    public List<Diagnosis> querybypage(Diagnosis diagnosis) {
+    public Diagnosispage querybypage(Diagnosis diagnosis) {
     	
-    	List<Diagnosis> d = diagnosisMapper.querybypage(diagnosis);
-    	return d;  	
+    	Diagnosispage diagnosispage = new Diagnosispage();
+    	
+    	diagnosispage.setDiagnosis(diagnosisMapper.querybypage(diagnosis));
+    	diagnosispage.setTotalpage(diagnosisMapper.querytotalpage()/5 + 1);
+    
+    	return diagnosispage;  	
     } 
     
+    @RequestMapping("querybypageopenid")
+    public Diagnosispage querybypageopenid(Diagnosis diagnosis) {
+    	
+    	Diagnosispage diagnosispage = new Diagnosispage();
+    	
+    	diagnosispage.setDiagnosis(diagnosisMapper.querybypageopenid(diagnosis));
+    	diagnosispage.setTotalpage(diagnosisMapper.querytotalpageopenid()/5 + 1);
+    
+    	return diagnosispage;  	
+    } 
 }
