@@ -24,6 +24,8 @@ chain.setECDSAModeForGRPC(true);
 
 chain.eventHubConnect(EVENTHUB_ADDRESS);
 
+var eh = chain.getEventHub();
+
 process.on('exit', function (){
   chain.eventHubDisconnect();
 });
@@ -38,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())  
 
 // restfull
-app.get('/deploy',function(req, res){  
+app.get('/app/deploy',function(req, res){  
 
     chain.enroll('admin', 'Xurw3yU9zI0l', function (err, user) {
 
@@ -66,7 +68,7 @@ app.get('/deploy',function(req, res){
                 
                     fcn: "init",
                     args: [],
-                    chaincodePath: "/usr/local/llwork/api/ccpath"
+                    chaincodePath: "/usr/local/llwork/api/apiccpath"
                 };
 
                 // Trigger the deploy transaction
@@ -86,7 +88,7 @@ app.get('/deploy',function(req, res){
 
                 var body = {
 
-                    "results": "chaincode deploying... , wait about 2 minutes to check it"
+                    "results": "OK"
                 };
 
                 res.send(body)
@@ -98,7 +100,7 @@ app.get('/deploy',function(req, res){
 
 });  
 
-app.get('/syndata', function(req, res) { 
+app.get('/app/invoke', function(req, res) { 
 
     chain.enroll("admin", "Xurw3yU9zI0l", function (err, user) {
         
@@ -110,15 +112,17 @@ app.get('/syndata', function(req, res) {
         console.log("**** Enrolled ****");
 
         var ccId = req.query.ccId;
-        var txId = req.query.txId;
         var func = req.query.func;
-        var argsJson = req.query.argsJson;
+
+        var acc = req.query.acc;
+        var reacc = req.query.reacc;
+        var amt = req.query.amt;
 
         var invokeRequest = {
             
             chaincodeID: ccId,
             fcn: func,
-            args: [txId, argsJson, ccId]
+            args: [acc, amt, reacc]
         };   
         
         // invoke
@@ -127,20 +131,22 @@ app.get('/syndata', function(req, res) {
         tx.on('complete', function (results) {
             
             console.log("invoke completed successfully: request=%j, results=%j",invokeRequest,results.result.toString());
+            
+            res.send(results.result.toString()); 
 
         });
         tx.on('error', function (error) {
             
             console.log("Failed to invoke chaincode: request=%j, error=%k",invokeRequest,error);
 
-        });
+            res.send("tx error"); 
 
-        res.send('syndata successfully, wait notify....'); 
+        });
 
     });   
 });
 
-app.get('/checkdata', function(req, res) { 
+app.get('/app/query', function(req, res) { 
 
     chain.enroll("admin", "Xurw3yU9zI0l", function (err, user) {
         
@@ -152,14 +158,15 @@ app.get('/checkdata', function(req, res) {
         console.log("**** Enrolled ****");
   
         var ccId = req.query.ccId;
-        var txId = req.query.txId;
         var func = req.query.func;
+
+        var acc = req.query.acc;
 
         var queryRequest = {
             
             chaincodeID: ccId,
             fcn: func,
-            args: [txId]
+            args: [acc]
         };   
         
         // invoke
@@ -176,61 +183,15 @@ app.get('/checkdata', function(req, res) {
             
             console.log("Failed to query chaincode: request=%j, error=%k",queryRequest,error);
 
+            res.send("tx error"); 
+
         });
 
     });   
 });
 
-app.get('/subscribe', function(req, res) { 
-
-    res.set({'Content-Type':'text/json','Encodeing':'utf8'});   
-
-    var eh = chain.getEventHub();
-
-    var ccId = req.query.ccId;
-
-    // register for chaincode event
-    var regid = eh.registerChaincodeEvent(ccId, "notify", function(event) {
-            
-        console.log("event============ " + event.payload);
-        
-        var payload = JSON.parse(event.payload.toString());
-        
-        var superagent = require('superagent');
-
-        // url + params
-        // var url  = "http://localhost:8076/" + payload.func;
-
-        // var data = event.payload;
-        var url = "http://192.168.10.108:8080/sync/callback"
-        
-        var state = "2"
-        if(payload.error == "") state = "0"
-        else state = "1"
-
-        var data = "txId=" + payload.txid + "&state=" + state
-
-        console.log("url===== " + url);
-        console.log("data===== " + data);
-  
-        var sreq = superagent.post(url).send(data).end(function(err, resHt){
-
-            if (err || !resHt.ok) {
-                
-                // 异常重新提交策略 log
-                console.log("notify error...., url="+url+", data="+data)
-            }   
-
-        });
-
-    });
-
-    res.send('subscribe successfully, wait notify....'); 
-    
-});
-
  
-app.listen(8078, "127.0.0.1");
+app.listen(8088, "127.0.0.1");
 
-console.log("listen on 8078...");
+console.log("listen on 8088...");
 

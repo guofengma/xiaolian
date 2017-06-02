@@ -38,7 +38,7 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 		eventBody["error"] = "tx already commit"
 		eventPayload, err := json.Marshal(eventBody)
 
-		err = stub.SetEvent("notify", eventPayload)
+		err = stub.SetEvent("tx", eventPayload)
 		if err != nil {
 			return nil, err
 		}
@@ -58,7 +58,7 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 
 	if err != nil {
 
-		err = stub.SetEvent("notify", []byte("err @ gloab.go..."))
+		err = stub.SetEvent("tx", []byte("err @ tx.go..."))
 		if err != nil {
 			return nil, err
 		}
@@ -71,7 +71,7 @@ func (t *EventSender) Invoke(stub shim.ChaincodeStubInterface, function string, 
 
 	} else {
 
-		err = stub.SetEvent("notify", eventPayload)
+		err = stub.SetEvent("tx", eventPayload)
 		if err != nil {
 			return nil, err
 		}
