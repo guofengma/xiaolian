@@ -25,12 +25,14 @@ public class RefereeController extends BaseController {
     	Referee referee = new Referee();
     	referee.setOpenid(openid);
     	
+    	String referee1;
     	String referee2;
     
+    	// referee1 = refereeMapper.queryreferee(openid);
     	int count = refereeMapper.count(openid, refereeid);
     	
     	// 未被推荐过
-    	if (count == 0){
+    	if (!refereeid.equals(referee1)){
     		
     		referee2 = refereeMapper.queryreferee(refereeid);
     		

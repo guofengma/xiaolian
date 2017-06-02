@@ -18,9 +18,4 @@
 		where openid=#{openid}
 	</select>	
 	
-	<select id="count" resultType="int">
-		select count(*) from referee 
-		where openid=#{openid} and referee=#{referee} 
-	</select>
-	
 </mapper>  

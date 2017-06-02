@@ -27,6 +27,7 @@ public class RefereeController extends BaseController {
     	
     	String referee2;
     
+    	// referee1 = refereeMapper.queryreferee(openid);
     	int count = refereeMapper.count(openid, refereeid);
     	
     	// 未被推荐过
