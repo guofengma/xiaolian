@@ -34,6 +34,11 @@ Page({
       }
     ]
   },
+  bindUpdateTap(){
+    wx.navigateTo({
+      url: '/pages/userInfo/userInfo',
+    })
+  },
   //跳转到问诊单页
   bindSheetTap(){
     wx.navigateTo({
@@ -50,27 +55,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // 存数据
-    // fetch({
-    //   url: "/health/user/save",
-    //   // baseUrl: "https://health.lianlianchains.com",
-    //   baseUrl: "http://192.168.50.157:8888",
-    //   data: {
-    //     'openid': '456',
-    //     'nickname': '讲道理啊',
-    //     'sex': "男",
-    //     'age':12,
-    //     'phoneno': 16666666666,
-    //     'address': "朝阳区"  
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
+    var that = this;
+    var user = wx.getStorageSync('user');
+    app.getUserInfo((userInfo) => {
+      console.log(userInfo);
+      //更新数据
+      this.setData({
+        userInfo: userInfo
+      })
+      // 存数据
+      fetch({
+        url: "/health/user/save",
+        baseUrl: "https://health.lianlianchains.com",
+        // baseUrl: "http://192.168.50.157:8888",
+        data: {
+          'openid': user.openid,
+          'nickname': userInfo.nickName,
+          'sex': "",
+          'age':"",
+          'phoneno': "",
+          'address': ""  
+        },
+        method: "POST",
+        header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+        console.log(result);
+        console.log("送成功");
+        if(result.ec == "000000"){
+          
+        }
+      }).catch(err => {
+        console.log("出错了")
+        console.log(err)
+      });
+    })
 
     // 查询
     // fetch({
@@ -138,6 +156,9 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
       console.log(result);
+      that.setData({
+        
+      });
     }).catch(err => {
       console.log("出错了")
       console.log(err)
@@ -155,7 +176,7 @@ Page({
     //   method: "POST",
     //   header: { 'content-type': 'application/x-www-form-urlencoded' }
     // }).then(result => {
-    //   console.log(result);
+    // //   console.log(result);
 
     //   fetch({
     //     url: "/health/score/query",
@@ -178,27 +199,26 @@ Page({
     // });
 
     //获取积分总额
-    // fetch({
-    //   url: "/health/score/query",
-    //   baseUrl: "http://192.168.50.157:8888",
-    //   data: {
-    //     'openid': '123'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-    app.getUserInfo((userInfo) => {
-      console.log(userInfo);
-      //更新数据
-      this.setData({
-        userInfo: userInfo
-      })
-    })
+    fetch({
+      url: "/health/score/query",
+      // baseUrl: "http://192.168.50.157:8888",
+      baseUrl: "https://health.lianlianchains.com",
+      data: {
+        'openid': '123'
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      console.log(result);
+      that.setData({
+        score: result
+      });
+
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+    
   },
 
   /**

@@ -97,22 +97,22 @@ Page({
     console.log(11111111111111111111111111111111111111111)
     var that = this;
     var user = wx.getStorageSync('user');
-    fetch({
-      url: "/health/referee/query",
-      // baseUrl: "https://health.lianlianchains.com",
-      baseUrl: "http://192.168.50.157:9999",
-      data: {
-        'openid': "fff",
-        'refereeid': "eee"
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+    // fetch({
+    //   url: "/health/referee/query",
+    //   // baseUrl: "https://health.lianlianchains.com",
+    //   baseUrl: "http://192.168.50.157:9999",
+    //   data: {
+    //     'openid': "fff",
+    //     'refereeid': "eee"
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
     // if (options.openid){
     //   fetch({
     //     url: "/health/referee/query",

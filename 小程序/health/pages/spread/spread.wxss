@@ -31,17 +31,21 @@
 
 .container .rule {
   background-color: #fff;
-  padding: 60rpx 30rpx 30rpx;
+  padding: 60rpx 30rpx 30rpx 40rpx;
 }
 .container .rule .title{
   color: #ff5722;
 }
 .container .rule .rulecont{
   margin-top: 20rpx;
-  line-height: 40rpx;
+  line-height: 45rpx;
 }
 .container .rule .rulecont .ruleitem{
   margin-top: 10rpx;
+}
+.container .rule .rulecont .ruleitem text{
+  /*font-weight: bold;*/
+  padding-right: .5em;
 }
 .container .rule .ruleBtm{
   display: flex;
@@ -49,43 +53,3 @@
   flex-direction: row;
   justify-content: space-between;
 }
-/*.container .footer {
-  position: fixed;
-  bottom: 0;
-}
-.container .footer{
-  width: 100%;
-}
-.container .footer .foItem {
-  width: 100%;
-  padding: 20rpx 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px #e3e3e3 solid;
-}
-.container .footer .share{
-  color: orangered;
-  height: 80rpx;
-  line-height: 80rpx;
-  background-color: #fff;
-  border-top: 1px #e3e3e3 solid;
-}
-.container .footer .share:after{
-  border:none;
-}
-.container .footer .about{
-  border-top: none;
-  width: 100%;
-  padding: 20rpx 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px #e3e3e3 solid;
-}
-.container .footer .cancel{
-  margin-top: 20rpx;
-  width: 100%;
-  padding: 20rpx 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px #e3e3e3 solid;
-}*/

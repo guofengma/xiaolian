@@ -1,0 +1,45 @@
+/* pages/userInfo/userInfo.wxss */
+.container{
+  height: 100vh;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.container .elem{
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.container .elem .item{
+  position: relative;
+  margin-left:30rpx;
+  height: 110rpx;
+}
+
+.container .elem .item:first-of-type:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #dddddd;
+    height: 1px;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+
+.container .elem .item .tit{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container .elem input{
+  text-align: right;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}

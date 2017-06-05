@@ -1,0 +1,28 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="container">
+  <form>
+    <view class="elem">
+      <view class="item">
+        <view class="tit">性别</view>
+        <input type="text" value="{{sex}}" bindblur="bindSexTap" placeholder="未设置"/>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <view class="tit">年龄</view>
+        <input type="number" value="{{age}}" bindblur="bindAgeTap" placeholder="未设置"/>
+      </view>
+    </view>
+    <view class="elem">
+      <view class="item">
+        <view class="tit">电话</view>
+        <input type="number" value="{{phoneno}}" bindblur="bindTelTap" placeholder="未设置"/>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <view class="tit">地址</view>
+        <input type="text" value="{{address}}" bindblur="bindAddressTap" placeholder="未设置"/>
+      </view>
+    </view>
+  </form>
+  <button></button>
+</view>

@@ -14,7 +14,7 @@
         <image src="../../image/bing.png"></image>
       </view>
       <view class="right item">
-        <view class="diagno">
+        <view class="diagno" bindtap="first">
           <view class="intro">
             <view class="desc">家天下,专治男女不孕不育</view>
             <view class="tit">了解更多</view>
@@ -23,7 +23,7 @@
             <image src="../../image/bing.png"></image>
           </view>
         </view>
-        <view class="diagno">
+        <view class="diagno" bindtap="second">
           <view class="intro">
             <view class="desc">数以百万家庭成功受孕</view>
             <view class="tit">了解更多</view>
@@ -34,7 +34,7 @@
         </view>
       </view>
       <view class="btom">
-        <view class="diagno bleft">
+        <view class="diagno bleft" bindtap="third">
           <view class="intro">
             <view class="desc">健康怀孕,原理你知多少</view>
             <view class="tit">了解更多</view>
@@ -43,7 +43,7 @@
             <image src="../../image/bing.png"></image>
           </view>
         </view>
-        <view class="diagno bright">
+        <view class="diagno bright" bindtap="fouth">
           <view class="intro">
             <view class="desc">科学管理,让孩子更健康</view>
             <view class="tit">了解更多</view>

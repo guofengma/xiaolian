@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    intro:[
+      {
+        content: ""
+      },
+      {
+        content: ""
+      },
+      {
+        content: ""
+      },
+      {
+        content: ""
+      }
+    ]
   },
 
   /**

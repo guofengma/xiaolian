@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="header">
+  <view class="header" bindtap="bindUpdateTap">
     <view class="avatar">
       <image src="{{userInfo.avatarUrl}}"></image>
     </view>
@@ -23,7 +23,7 @@
         <text>我的积分</text>
       </view>
       <view class="score">
-        <text>{{800}} BAE</text>
+        <text>{{score}} BAE</text>
       </view>
     </view>
     <view class="item" bindtap="bindSheetTap">
@@ -40,7 +40,16 @@
         <image src="../../image/cd.png"></image>
       </view>
       <view class="name">
-        <text>传播使者</text>
+        <view class="nameInfo">
+          <text class="fir">传播能量</text>
+          <text>分享获取积分</text>
+        </view>
+
+        <view class="nameInfo nameInfo2">
+          <text class="fir">已分享:{{persons}}人</text>
+          <text>获积分:{{score}}</text>
+        </view>
+        
       </view>
       <image class="arrow" src="../../image/arrow.png"></image>
     </view>

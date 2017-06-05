@@ -4,7 +4,7 @@ import {evalue} from '../../utils/filter.js'
 
 var page = 0;
 var num = 0;
-var iTime;
+var iTime,iTime2;
 var diagList = [];
 function GetList(that, source) {
   fetch({
@@ -36,8 +36,14 @@ function GetList(that, source) {
       console.log(diagList);
       that.setData({
         diagList: diagList,
-        totalpage: result.totalpage
-      })
+        totalpage: result.totalpage,
+        loadingMsg: "查看更多"
+      });
+      if (source == "noMore"){
+        that.setData({
+          loadingMsg: "没有更多了"
+        });
+      }
     }
     
   }).catch(err => {
@@ -59,25 +65,38 @@ Page({
     scrollTop: 0,
     scrollHeight: 0,
     totalpage:0,
-    loadingMsg:"正在加载..."
+    loadingMsg:"查看更多"
   },
   bindDownLoad: function () {
     //   该方法绑定了页面滑动到底部的事件
     var that = this;
     clearTimeout(iTime);
-    if (num < that.data.totalpage-1){
-      iTime = setTimeout(function () {
-        //需要执行的事件
-        num++;
-        GetList(that);
-      }, 100);
-      
-    }else{
-      that.setData({
-        loadingMsg: "没有更多了"
-      });
-    }
-    
+    clearTimeout(iTime2);
+    var promise = new Promise((resolve, reject) => {
+      iTime2 = setTimeout(function () {
+        that.setData({
+          loadingMsg: "正在加载"
+        });
+        resolve();
+      }, 500);
+    });
+    promise.then(function(){
+      if (num < that.data.totalpage - 1) {
+        iTime = setTimeout(function () {
+          //需要执行的事件
+          num++;
+          GetList(that);
+        }, 100);
+
+      } else {
+        iTime = setTimeout(function () {
+          //需要执行的事件
+          num++;
+          GetList(that, "noMore");
+        }, 100);
+        
+      }
+    })
   },
   scroll (event) {
     // console.log(222);
@@ -110,7 +129,7 @@ Page({
       success: function (res) {
         console.info(res.windowHeight);
         that.setData({
-          scrollHeight: res.windowHeight
+          scrollHeight: res.windowHeight+50
         });
       }
     });
