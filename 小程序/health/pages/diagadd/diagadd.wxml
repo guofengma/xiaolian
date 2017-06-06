@@ -1,0 +1,49 @@
+<!--pages/diagadd/diagadd.wxml-->
+<view class="container">
+  <view class="title">完善诊疗单可获得5BAE哦</view>
+  <view class="content">
+    <view class="head">诊疗单</view>
+    <form>
+      <view class="cenCont">
+        <view class="diagsisid elem">
+          <view class="tit">单号:</view>
+          <view class="classname">
+            <input type="text" placeholder="请输入单号" />
+          </view>
+        </view>
+        <view class="hospital elem">
+          <view class="tit">医院:</view>
+          <view class="classname">
+            <input type="text" placeholder="请输入单号" />
+          </view>
+        </view>
+        <view class="doctor elem">
+          <view class="tit">医生:</view>
+          <view class="classname">
+            <input type="text" placeholder="请输入单号" />
+          </view>
+        </view>
+        <view class="money elem">
+          <view class="tit">金额:</view>
+          <view class="classname">
+            <input type="text" placeholder="请输入单号" />
+          </view>
+        </view>
+        <view class="types elem">
+          <view class="tit">类型:</view>
+          <view class="classname">
+            <view class="classname"></view>
+          </view>
+        </view>
+        <view class="description">
+          <view class="tit">病况描述:</view>
+          <view class="classname">
+
+          </view>
+        </view>
+      </view>
+
+    </form>
+  </view>
+
+</view>

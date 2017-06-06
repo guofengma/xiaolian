@@ -9,7 +9,7 @@
       <image src="../../image/slogan.png"></image>
       <text class="cell">不孕不育,男女同治.</text>
     </view>
-    <view class="content">
+    <view class="content" bindtap="bindDetailTap">
       <view class="left item">
         <image src="../../image/bing.png"></image>
       </view>

@@ -13,8 +13,7 @@ function GetList(that, source) {
     // baseUrl: "http://192.168.50.157:9999",
     data: {
       'page': 5 * num,
-      'openid': 'asdfgh2',
-      hasMore: false
+      'openid': 'asdfgh2'
     },
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }

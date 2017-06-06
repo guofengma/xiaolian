@@ -92,6 +92,11 @@ Page({
       }
     })
   },
+  bindDetailTap(){
+    wx.navigateTo({
+      url: '../detail/detail'
+    })
+  },
   onLoad: function (options) {
     console.log(options)
     console.log(11111111111111111111111111111111111111111)
