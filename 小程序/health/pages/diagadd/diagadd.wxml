@@ -3,18 +3,21 @@
   <view class="title">完善诊疗单可获得5BAE哦</view>
   <view class="content">
     <view class="head">诊疗单</view>
-    <form>
+    <form bindsubmit="formSubmit">
       <view class="cenCont">
         <view class="diagsisid elem">
           <view class="tit">单号:</view>
           <view class="classname">
-            <input type="text" placeholder="请输入单号" />
+            <input type="text" name="" placeholder="请输入单号" />
           </view>
         </view>
-        <view class="hospital elem">
+        <view class="hospital elem" bindchange="bindPickerChange">
           <view class="tit">医院:</view>
-          <view class="classname">
-            <input type="text" placeholder="请输入单号" />
+          <view class="section">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <input type="text" value="{{array[index]}}" placeholder="请输入单号" />
+            </picker>
+            <image class="arrow" src="../../image/arrow.png"></image>
           </view>
         </view>
         <view class="doctor elem">
@@ -31,19 +34,38 @@
         </view>
         <view class="types elem">
           <view class="tit">类型:</view>
-          <view class="classname">
-            <view class="classname"></view>
+          <view class="typecont">
+            <view class="row">
+              <text class="classname">皮肤病</text>
+              <text class="classname">皮肤病</text>
+              <text class="classname">皮肤病</text>
+            </view>
+            <view class="row">
+              <text class="classname">皮肤病</text>
+              <text class="classname">皮肤病</text>
+              <text class="classname">皮肤病</text>
+            </view>
           </view>
         </view>
         <view class="description">
           <view class="tit">病况描述:</view>
-          <view class="classname">
-
+          <view class="descont">
+            <textarea class="desc" cursor-spacing="10px" auto-height='true' placeholder="100字以内..." name="textarea" />
           </view>
         </view>
+
+        <button formType="submit" class="subBtn">完成</button>
       </view>
 
     </form>
   </view>
 
 </view>
+<!--<view class="section">
+  <view class="section__title">地区选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>-->

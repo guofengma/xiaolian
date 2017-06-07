@@ -4,6 +4,7 @@
   background-color: rgba(255, 87, 34, .7);
   overflow: hidden;
   font-size: 30rpx;
+  color: #333333;
 }
 .container .title{
   color: white;
@@ -46,6 +47,13 @@
   margin-top: 40rpx;
 }
 
+.content .cenCont .elem .tit{
+  margin-right: 8rpx;
+}
+.content .cenCont .types{
+  align-items:flex-start;
+}
+
 .content .cenCont .elem:not(.types):after{
   content: "";
   position: absolute;
@@ -56,4 +64,51 @@
   background-color: #dddddd;
   -webkit-transform: translateY(.5);
   transform: translateY(.5);
+}
+
+.content .cenCont .hospital{
+  padding-bottom: 8rpx;
+}
+.content .cenCont .hospital .picker{
+  width:430rpx;
+}
+.content .cenCont .hospital .arrow{
+  width: 20rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content .cenCont .elem .typecont{
+  width: 66%;
+}
+
+.content .cenCont .elem .typecont .row{
+  margin-bottom: 32rpx;
+}
+.content .cenCont .elem .typecont text{
+  margin-right:26rpx;
+}
+
+.content .cenCont .descont .desc{
+  border: 1rpx #dddddd solid;
+  width: 86%;
+  margin-left: 13%;
+  min-height: 200rpx;
+  margin-top: 12rpx;
+}
+
+.content .cenCont .subBtn{
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #ff5722;
+  color: white;
+  margin-top: 80rpx;
+}
+
+.content .cenCont .subBtn:after{
+  border: none;
 }
