@@ -1,6 +1,7 @@
 // pages/consult/consult.js
 import fetch from '../../utils/fetch.js';
-import {evalue} from '../../utils/filter.js'
+import {evalue} from '../../utils/filter.js';
+var formatTime = require('../../utils/util').formatTime;
 
 var page = 0;
 var num = 0;
@@ -13,7 +14,7 @@ function GetList(that, source) {
     // baseUrl: "http://192.168.50.157:9999",
     data: {
       'page': 5 * num,
-      'openid': 'asdfgh2'
+      'openid': wx.getStorageSync('user').openid
     },
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -22,7 +23,10 @@ function GetList(that, source) {
     if (source == "refreshs"){
       diagList.length = 0;
       for (var i = 0; i < result.diagnosis.length; i++) {
+        // diagList.push(result.diagnosis[i]);
+        result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
         diagList.push(result.diagnosis[i]);
+        console.log(result.diagnosis[i].evaluate);
       }
       that.setData({
         diagList: diagList,
@@ -30,7 +34,10 @@ function GetList(that, source) {
       })
     }else{
       for (var i = 0; i < result.diagnosis.length; i++) {
+        // diagList.push(result.diagnosis[i]);
+        result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
         diagList.push(result.diagnosis[i]);
+        console.log(result.diagnosis[i].evaluate);
       }
       console.log(diagList);
       that.setData({
@@ -58,6 +65,13 @@ Page({
   data: {
     docArray: [
 
+    ],
+    evalues: [
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" }
     ],
     hidden: true,
     diagList: [],
@@ -132,45 +146,7 @@ Page({
         });
       }
     });
-    // fetch({
-    //   url: "/health/diagnosis/save",
-    //   // baseUrl: "http://192.168.50.157:9999",
-    //   baseUrl: "https://health.lianlianchains.com",
-    //   data: {
-    //     'diagnosisid':"xrf670",
-    //     'openid':'asdfgh2',
-    //     'datetime':"2017",
-    //     'symptom':"很好",
-    //     'amt':"money",
-    //     'hospital':"sanhuan",
-    //     'doctor':'doctor',
-    //     'evaluate':0,
-    //     'label':'001'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    //   // header: { 'content-type': 'application/json' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-    // fetch({
-    //   url: "/health/diagnosis/query",
-    //   baseUrl: "http://192.168.50.157:9999",
-    //   data: {
-    //     'diagnosisid': "xrf109",
-    //     'openid':'asdfgh2',
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
+    
     //querybypage
     // fetch({
     //   url: "/health/diagnosis/querybypage",

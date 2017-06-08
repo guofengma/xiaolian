@@ -80,6 +80,13 @@
 .container .content .diagList .top .eval{
   color: #ff5722;
 }
+.container .content .diagList .top .eval .evalItem{
+  display: inline-block;
+}
+.container .content .diagList .top image{
+  width: 35rpx;
+  height: 33rpx;
+}
 .container .content .diagList .desc{
   margin-bottom: 30rpx;
 }

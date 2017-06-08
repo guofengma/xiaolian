@@ -1,6 +1,8 @@
 // pages/sheet/sheet.js
 import fetch from '../../utils/fetch.js';
+var formatTime = require('../../utils/util').formatTime;
 
+var user = wx.getStorageSync('user');
 var page = 0;
 var num = 0;
 var iTime, iTime2;
@@ -12,15 +14,15 @@ function GetList(that, source) {
     // baseUrl: "http://192.168.50.157:9999",
     data: {
       'page': 5 * num,
-      'openid': '1'
+      'openid': wx.getStorageSync('user').openid
     },
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
   }).then(result => {
     console.log(result);
-    console.log(333333333333333333333333333333333)
     for (var i = 0; i < result.diagnosis.length; i++) {
+      result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime*1));
       selfDiaglist.push(result.diagnosis[i]);
     }
     that.setData({
@@ -28,7 +30,7 @@ function GetList(that, source) {
       totalpage: result.totalpage,
       loadingMsg: "查看更多"
     });
-    if (source == "noMore") {
+    if (source == "noMore" || result.diagnosis.length<5) {
       that.setData({
         loadingMsg: "没有更多了"
       });
@@ -97,7 +99,7 @@ Page({
   },
   bindconfirm(e){
     var that = this;
-    var user = wx.getStorageSync('user');
+    console.log("搜索中");
     if(e.detail.value){
       fetch({
         url: "/health/diagnosis/query",
@@ -105,12 +107,13 @@ Page({
         // baseUrl: "http://192.168.50.157:9999",
         data: {
           'diagnosisid': e.detail.value,
-          'openid': '1',
+          'openid': user.openid,
         },
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
         console.log(result);
+        console.log("搜索成功");
         that.setData({
           selfDiaglist: result[0]
         });
@@ -118,6 +121,9 @@ Page({
         console.log("出错了")
         console.log(err)
       });
+    }else{
+      num=0;
+      GetList(this);
     }
     
   },
@@ -130,6 +136,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    selfDiaglist = [];
     GetList(this);
     wx.getSystemInfo({
       success: function (res) {
@@ -184,23 +191,23 @@ Page({
     //   console.log(err)
     // });
     //查询单号
-    fetch({
-      url: "/health/diagnosis/query",
-      // baseUrl: "http://192.168.50.157:9999",
-      baseUrl: 'https://health.lianlianchains.com',
-      data: {
-        'diagnosisid': "",
-        // page: 0,
-        'openid':'asdfgh2'
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+    // fetch({
+    //   url: "/health/diagnosis/query",
+    //   // baseUrl: "http://192.168.50.157:9999",
+    //   baseUrl: 'https://health.lianlianchains.com',
+    //   data: {
+    //     'diagnosisid': "",
+    //     // page: 0,
+    //     'openid':'asdfgh2'
+    //   },
+    //   method: "POST",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // }).then(result => {
+    //   console.log(result);
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
   },
 
   /**

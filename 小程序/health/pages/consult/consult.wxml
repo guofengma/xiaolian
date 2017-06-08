@@ -19,7 +19,10 @@
       <view class="head">患者病例</view>
       <view class="diagList" wx:for="{{diagList}}">
         <view class="top">
-          <view class="eval">{{item.evaluate}}</view>
+          <view class="eval">
+          <view class="evalItem" wx:for="{{evalues}}" wx:for-index="index">
+                <image data-idx="{{index}}" bindtap="bindEvalTap" src="{{item.starUrl}}"></image>
+              </view></view>
           <view class="time">{{item.datetime}}</view>
         </view>
         <view class="info">

@@ -1,6 +1,10 @@
 // pages/diagadd/diagadd.js
 import fetch from '../../utils/fetch.js';
-import Base64 from '../../utils/encode.js';
+
+let timer;
+let user = wx.getStorageSync('user');
+let label = [];
+
 Page({
 
   /**
@@ -27,17 +31,127 @@ Page({
       }
     ],
     index: 0,
-    date: '2016-09-01',
-    time: '12:01'
+    items: [
+      { name: '001', value: '皮肤病', id: 0 },
+      { name: '002', value: '皮肤病', id: 0 },
+      { name: '003', value: '皮肤病', id: 0 },
+      { name: '004', value: '皮肤病', id: 0 }
+    ],
+    evalues: [
+      { starUrl: "../../image/star.png"},
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" },
+      { starUrl: "../../image/star.png" }
+    ],
+    label:[],
+    className:"typeAct",
+    tipflag:false,
+    evaluate:0,
+    idx:0
+  },
+  bindTypeTap(e){
+    let index = e.target.dataset.index;
+    let items = this.data.items;
+    // console.log(items[index].name);
+    if (e.target.dataset.idx == 1){
+      items[index].id = 0;
+      // console.log(items[index].id);
+      // label.indexof(items[index].name);
+      let i = label.indexOf(items[index].name);
+      label.splice(i,1);
+      console.log(label);
+      this.setData({
+        items: items
+      });
+    }else{
+      items[index].id = 1;
+      console.log(items[index].id);
+      label.push(items[index].name);
+      console.log(label);
+      this.setData({
+        items: items
+      });
+    }
+  },
+  bindEvalTap(e){
+    console.log(e.target.dataset.idx);
+    let num = e.target.dataset.idx;
+    let evalues = this.data.evalues;
+    for (var i=0;i<evalues.length;i++){
+      if (i <= num){
+        evalues[i].starUrl = "../../image/starAct.png";
+      }else{
+        evalues[i].starUrl = "../../image/star.png";
+      }
+      this.setData({
+        evalues: evalues,
+        evaluate: num+1
+      });
+    }
   },
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
       index: e.detail.value
     })
   },
+  checkboxChange: function (e) {
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      label: e.detail.value
+    })
+  },
+  //提交诊疗单
   formSubmit(e){
-    console.log(e);
+    let that = this;
+    var info = e.detail.value;
+    for(var i in info){
+      console.log(info[i]);
+      if (info[i] == "") {
+        that.setData({
+          tipflag:true
+        });
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+          that.setData({
+            tipflag: false
+          });
+        },1000)
+        return;
+      }
+      
+    }
+    let timestamp = new Date().getTime();
+    fetch({
+      url: "/health/diagnosis/save",
+      // baseUrl: "http://192.168.50.157:9999",
+      baseUrl: "https://health.lianlianchains.com",
+      data: {
+        'diagnosisid': info.diagnosisid,
+        'openid': user.openid,
+        'datetime': timestamp,
+        'symptom': info.symptom,
+        'amt': info.amt,
+        'hospital': that.data.objectArray[info.hospital].name,
+        'doctor': info.doctor,
+        'evaluate': that.data.evaluate,
+        'label': label.join("|")
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      console.log(result);
+      console.log("添加成功");
+      wx.redirectTo({
+        url: '../sheet/sheet',
+      });
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+  
   },
   /**
    * 生命周期函数--监听页面加载
