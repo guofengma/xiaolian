@@ -23,7 +23,7 @@
         <text>我的积分</text>
       </view>
       <view class="score">
-        <text>{{score}} BAE</text>
+        <text>{{score}} 分</text>
       </view>
     </view>
     <view class="item" bindtap="bindSheetTap">

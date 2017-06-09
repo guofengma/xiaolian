@@ -1,5 +1,39 @@
 // pages/userInfo/userInfo.js
 import fetch from '../../utils/fetch.js';
+let timer, num = 10;
+let onoff = true;
+function sms(mobile){
+  wx.request({
+      url: 'https://lite.lianlianchains.com/sms/send',
+      data: {
+        mobile: mobile
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+
+        if (res.data.code != 200) {
+
+          that.setData({
+            'tipflag': true
+          })
+
+          that.setData({
+            'tip': res.data.msg
+          })
+
+          setTimeout(function () {
+            that.setData({
+              'tipflag': false
+            })
+          }
+            , 3000)
+
+        }
+      }
+    })
+}
 Page({
 
   /**
@@ -9,7 +43,8 @@ Page({
     sex: "",
     age: "",
     phoneno: "",
-    address: ""
+    address: "",
+    codemsg:"获取验证码"
   },
   bindSexTap(e) {
     // console.log(e.detail.value);
@@ -34,6 +69,29 @@ Page({
     this.setData({
       address: e.detail.value
     });
+  },
+  bindSmsTap(e){
+    console.log(this.data.phoneno);
+    // 发送验证码
+    if (onoff){
+      onoff = false
+      timer = setInterval(() => {
+        if (num < 1) {
+          clearInterval(timer);
+          this.setData({
+            codemsg: "获取验证码"
+          });
+          onoff = true
+        } else {
+          num--;
+          this.setData({
+            codemsg: num + "秒"
+          });
+        }
+      }, 1000);
+      //发送验证码
+      sms(mobile);
+    }  
   },
   formSubmit: function (e) {
 

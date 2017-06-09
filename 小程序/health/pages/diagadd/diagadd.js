@@ -4,7 +4,53 @@ import fetch from '../../utils/fetch.js';
 let timer;
 let user = wx.getStorageSync('user');
 let label = [];
-
+//数据库积分增加
+function healthAdd(amt){
+  fetch({
+    url: "/health/score/update",
+    baseUrl: "https://health.lianlianchains.com",
+    // baseUrl: "http://192.168.50.157:8888",
+    data: {
+      'openid': wx.getStorageSync('user').openid,
+      'score': amt,
+      'type': options.type
+    },
+    method: "POST",
+    header: { 'content-type': 'application/x-www-form-urlencoded' }
+  }).then(result => {
+    console.log(result);
+  }).catch(err => {
+    console.log("出错了")
+    console.log(err)
+  });
+}
+//区块链积分充值
+function chongzhi(amt) {
+  fetch({
+    url: "/app/invoke",
+    // baseUrl: "http://192.168.50.157:9999",
+    baseUrl: "https://health.lianlianchains.com",
+    data: {
+      acc: wx.getStorageSync('user').openid, //openid
+      // acc:"aaa",
+      amt: amt,
+      reacc: "",//对方的openid 转移积分时这个字段才有否则为空
+      ccId: "0543963f23223c54d6616a61631c8e9b40300f682545b337564db11085ff328b",
+      func: "recharge",//增加积分
+      // func:"transfer",//转移积分
+      // func: "takeCash",//减少积分
+    },
+    method: "GET",
+    header: { 'content-type': 'application/x-www-form-urlencoded' }
+    // header: { 'content-type': 'application/json' }
+  }).then(result => {
+    console.log(result);
+    console.log("交易成功");
+  }).catch(err => {
+    console.log("出错了")
+    console.log(err)
+  });
+}
 Page({
 
   /**
@@ -144,6 +190,12 @@ Page({
     }).then(result => {
       console.log(result);
       console.log("添加成功");
+      var amt = "5";
+      //数据库积分增加
+      healthAdd(amt)
+      //区块链增加积分
+      chongzhi(amt);
+
       wx.redirectTo({
         url: '../sheet/sheet',
       });

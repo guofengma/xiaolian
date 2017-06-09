@@ -97,9 +97,10 @@ Page({
       url: '../diagadd/diagadd',
     })
   },
-  bindconfirm(e){
+  bindSerchTap(e){
     var that = this;
     console.log("搜索中");
+    selfDiaglist = [];
     if(e.detail.value){
       fetch({
         url: "/health/diagnosis/query",
@@ -113,10 +114,12 @@ Page({
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
         console.log(result);
+        selfDiaglist.push(result);
         console.log("搜索成功");
         that.setData({
-          selfDiaglist: result[0]
+          selfDiaglist: selfDiaglist
         });
+        that.onload();
       }).catch(err => {
         console.log("出错了")
         console.log(err)

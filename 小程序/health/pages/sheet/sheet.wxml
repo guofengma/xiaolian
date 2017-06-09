@@ -11,7 +11,7 @@
   >
   <view class="search">
     <view class="inputs">
-      <input type="text" confirm-type="search" placeholder="搜索" />
+      <input type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
     </view>
     <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
   </view>
@@ -31,7 +31,7 @@
       </view>
       <view class="cBtm">
         <view class="label">
-          <text>皮肤病</text>
+          <text wx:for="">皮肤病</text>
         </view>
         <view class="money">金额：{{item.amt}}</view>
       </view>

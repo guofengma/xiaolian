@@ -109,8 +109,8 @@
   height: 50rpx;
   padding: 10rpx;
   position: absolute;
-  bottom: 6rpx;
-  right: 2rpx;
+  bottom: 12rpx;
+  right: 4rpx;
   /*background-color: white;*/
   border-radius: 0px;
   border-color: red;
@@ -121,8 +121,8 @@
   border:none;
 }
 .container .content .diagList .share{
-  width: 54rpx;
-  height: 54rpx;
+  width: 50rpx;
+  height: 50rpx;
   position: absolute;
   left: 0px;
   top: 0px;

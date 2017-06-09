@@ -20,8 +20,9 @@
       <view class="diagList" wx:for="{{diagList}}">
         <view class="top">
           <view class="eval">
-          <view class="evalItem" wx:for="{{evalues}}" wx:for-index="index">
-                <image data-idx="{{index}}" bindtap="bindEvalTap" src="{{item.starUrl}}"></image>
+          <view class="evalItem" wx:for="{{evalues}}" wx:for-index="index" wx:for-item="itemName">
+                <image data-idx="{{index}}" bindtap="bindEvalTap" 
+                src="{{ index<item.evaluate?'../../image/starAct.png':'../../image/star.png'}}" ></image>
               </view></view>
           <view class="time">{{item.datetime}}</view>
         </view>

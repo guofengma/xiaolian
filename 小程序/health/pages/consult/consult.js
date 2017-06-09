@@ -7,6 +7,7 @@ var page = 0;
 var num = 0;
 var iTime,iTime2;
 var diagList = [];
+var evalues = [];
 function GetList(that, source) {
   fetch({
     url: "/health/diagnosis/querybypage",
@@ -19,14 +20,13 @@ function GetList(that, source) {
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
   }).then(result => {
-    console.log(result);
+
     if (source == "refreshs"){
       diagList.length = 0;
       for (var i = 0; i < result.diagnosis.length; i++) {
         // diagList.push(result.diagnosis[i]);
         result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
         diagList.push(result.diagnosis[i]);
-        console.log(result.diagnosis[i].evaluate);
       }
       that.setData({
         diagList: diagList,
@@ -34,16 +34,17 @@ function GetList(that, source) {
       })
     }else{
       for (var i = 0; i < result.diagnosis.length; i++) {
-        // diagList.push(result.diagnosis[i]);
         result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
+    
         diagList.push(result.diagnosis[i]);
-        console.log(result.diagnosis[i].evaluate);
+        console.log(diagList);
+        // return;
+        // console.log(result.diagnosis[i].evaluate);
       }
-      console.log(diagList);
       that.setData({
         diagList: diagList,
         totalpage: result.totalpage,
-        loadingMsg: "查看更多"
+        loadingMsg: "查看更多"      
       });
       if (source == "noMore"){
         that.setData({
@@ -67,11 +68,11 @@ Page({
 
     ],
     evalues: [
-      { starUrl: "../../image/star.png" },
-      { starUrl: "../../image/star.png" },
-      { starUrl: "../../image/star.png" },
-      { starUrl: "../../image/star.png" },
-      { starUrl: "../../image/star.png" }
+      { starUrl: "../../image/star.png"},
+      { starUrl: "../../image/star.png"},
+      { starUrl: "../../image/star.png"},
+      { starUrl: "../../image/star.png"},
+      { starUrl: "../../image/star.png"}
     ],
     hidden: true,
     diagList: [],
@@ -189,7 +190,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '家福堂',
+      path: '/pages/index/index?type=0&openid=' + wx.getStorageSync('user').openid,
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功");
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   },
 
   /**

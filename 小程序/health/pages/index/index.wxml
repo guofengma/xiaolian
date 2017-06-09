@@ -7,7 +7,7 @@
   <view class="section">
     <view class="title">
       <image src="../../image/slogan.png"></image>
-      <text class="cell">不孕不育,男女同治.</text>
+      <text class="cell">不孕不育 男女同治</text>
     </view>
     <view class="content" bindtap="bindDetailTap">
       <view class="left item">
@@ -17,7 +17,7 @@
         <view class="diagno" bindtap="first">
           <view class="intro">
             <view class="desc">家天下,专治男女不孕不育</view>
-            <view class="tit">了解更多</view>
+            <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -26,7 +26,7 @@
         <view class="diagno" bindtap="second">
           <view class="intro">
             <view class="desc">数以百万家庭成功受孕</view>
-            <view class="tit">了解更多</view>
+            <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -37,7 +37,7 @@
         <view class="diagno bleft" bindtap="third">
           <view class="intro">
             <view class="desc">健康怀孕,原理你知多少</view>
-            <view class="tit">了解更多</view>
+            <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>
@@ -46,7 +46,7 @@
         <view class="diagno bright" bindtap="fouth">
           <view class="intro">
             <view class="desc">科学管理,让孩子更健康</view>
-            <view class="tit">了解更多</view>
+            <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
             <image src="../../image/bing.png"></image>

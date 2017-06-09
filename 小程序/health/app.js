@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     var that = this
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
@@ -27,7 +27,7 @@ App({
                 var obj = {};
                 obj.openid = res.data.openid;
                 obj.expires_in = Date.now() + res.data.expires_in;
-                console.log(obj);
+                // console.log(obj);
                 wx.setStorageSync('user', obj);//存储openid    
               }
             });
@@ -37,6 +37,8 @@ App({
         }
       });
     }
+
+   
   },
   getUserInfo:function(cb){
     var that = this

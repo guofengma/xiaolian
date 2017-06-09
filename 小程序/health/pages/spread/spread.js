@@ -73,9 +73,10 @@ Page({
    */
   onShareAppMessage() {
     var openid = wx.getStorageSync('user').openid;
+    console.log(openid);
     return {
-      title: '甲天下',
-      path: '/pages/index/index?openid=' + openid,
+      title: '家福堂',
+      path: '/pages/index/index?type=1&openid=' + openid,
       success: function (res) {
         // 转发成功
         console.log("转发成功");
