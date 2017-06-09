@@ -16,6 +16,6 @@ public interface DiagnosisMapper {
 	
 	List<Diagnosis> querybypageopenid(Diagnosis diagnosis);
 	
-	int querytotalpageopenid();	
+	int querytotalpageopenid(String openid);	
 	
 }

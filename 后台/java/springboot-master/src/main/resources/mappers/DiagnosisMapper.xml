@@ -14,22 +14,23 @@
 	
 	<select id="querybypage" parameterType="com.lxg.springboot.model.Diagnosis" resultType="com.lxg.springboot.model.Diagnosis">
 		select * from diagnosis 
+		order by datetime DESC
 		limit #{page},5
 	</select>	
 
 	<select id="querytotalpage" resultType="int">
-		select count(*) from diagnosis
+		select count(diagnosisid) from diagnosis
 	</select>
 	
 	<select id="querybypageopenid" parameterType="com.lxg.springboot.model.Diagnosis" resultType="com.lxg.springboot.model.Diagnosis">
 		select * from diagnosis
 		where openid=#{openid} 
+		order by datetime DESC
 		limit #{page},5
 	</select>	
 
-	<select id="querytotalpageopenid" resultType="int">
-		select count(*) from diagnosis
+	<select id="querytotalpageopenid" parameterType="String" resultType="int">
+		select count(diagnosisid) from diagnosis
 		where openid=#{openid} 
-	</select>	
-	
+	</select>
 </mapper>  

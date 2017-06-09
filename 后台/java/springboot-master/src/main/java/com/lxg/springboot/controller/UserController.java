@@ -24,7 +24,7 @@ public class UserController extends BaseController {
     public Result save(User user) {
     
     	userMapper.save(user);
-    	return re;
+    	return new Result();
     }    
     
     @RequestMapping("update")
@@ -32,7 +32,7 @@ public class UserController extends BaseController {
     	
     	// 用户数据存储
     	userMapper.update(user);
-    	return re;
+    	return new Result();
     }
     
     @RequestMapping("query")

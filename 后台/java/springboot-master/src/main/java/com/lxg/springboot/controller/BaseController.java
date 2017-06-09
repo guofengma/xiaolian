@@ -11,11 +11,11 @@ import com.lxg.springboot.model.Result;
  */
 @RestController
 public class BaseController {
-	
-	Result re = new Result();
-	
+		
 	@ExceptionHandler
 	public Result exp(Exception ex) {  
+		
+		Result re = new Result();
         
 		re.setEc("999999");
 		re.setEm(ex.getMessage());

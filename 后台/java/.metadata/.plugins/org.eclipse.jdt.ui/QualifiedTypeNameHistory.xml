@@ -23,4 +23,8 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.mapper.DiagnosisMapper"/>
 <fullyQualifiedTypeName name="com.lxg.springboot.model.Diagnosis"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.model.Diagnosispage"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.mapper.RefereeMapper"/>
+<fullyQualifiedTypeName name="com.lxg.springboot.model.Referee"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
 </qualifiedTypeNameHistroy>

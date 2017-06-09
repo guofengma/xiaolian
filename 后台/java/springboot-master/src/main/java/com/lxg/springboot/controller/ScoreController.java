@@ -29,7 +29,7 @@ public class ScoreController extends BaseController {
     	}else{
     		scoreMapper.update(score);
     	}
-    	return re;
+    	return new Result();
     }
     
     @RequestMapping("querybytype")
