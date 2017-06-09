@@ -139,7 +139,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    selfDiaglist = [];
+    // selfDiaglist = [];
     GetList(this);
     wx.getSystemInfo({
       success: function (res) {
