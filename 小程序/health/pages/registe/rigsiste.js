@@ -1,0 +1,250 @@
+// pages/registe/rigsiste.js
+import fetch from '../../utils/fetch.js';
+let timer, num = 60;
+let onoff = true;
+//发送短信函数
+function sms(mobile,that) {
+  wx.request({
+    url: 'https://health.lianlianchains.com/sms/send',
+    data: {
+      mobile: mobile
+    },
+    header: {
+      'content-type': 'application/json'
+    },
+    success: function (res) {
+
+      if (res.data.code != 200) {
+
+        that.setData({
+          'tipflag': true,
+          'tip': res.data.msg
+        })
+
+        setTimeout(function () {
+          that.setData({
+            'tipflag': false
+          })
+        }
+          , 3000)
+
+      }
+    }
+  })
+}
+//数据库积分增加
+function healthAdd(amt) {
+
+    fetch({
+      url: "/health/score/update",
+      baseUrl: "https://health.lianlianchains.com",
+      // baseUrl: "http://192.168.50.157:8888",
+      data: {
+        'openid': wx.getStorageSync('user').openid,
+        'score': amt,
+        'type': "3"
+      },
+      method: "POST",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then(result => {
+      // console.log(result);
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+
+}
+//区块链积分充值
+function chongzhi(amt) {
+
+    fetch({
+      url: "/app/invoke",
+      // baseUrl: "http://192.168.50.157:9999",
+      baseUrl: "https://health.lianlianchains.com",
+      data: {
+        acc: wx.getStorageSync('user').openid, //openid
+        // acc:"aaa",
+        amt: amt,
+        reacc: "",//对方的openid 转移积分时这个字段才有否则为空
+        ccId: "0543963f23223c54d6616a61631c8e9b40300f682545b337564db11085ff328b",
+        func: "recharge",//增加积分
+        // func:"transfer",//转移积分
+        // func: "takeCash",//减少积分
+      },
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      // console.log(result);
+      // console.log("交易成功");
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+
+}
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    tipflag: false,
+    tipmsg: "",
+    phoneno: "",
+    codemsg: "获取验证码"
+  },
+  //存储手机号字段
+  bindPhoneTap(e){
+    console.log(e);
+    this.setData({
+      phoneno: e.detail.value
+    });
+  },
+  //发送短信
+  bindSmsTap(e) {
+    var mobile = this.data.phoneno;
+    console.log(this.data.phoneno);
+    if (this.data.phoneno == ''){
+      this.setdata({
+        tipflag: true,
+        tipmsg: "手机号不能为空"
+      });
+      return;
+    }
+    else if (this.data.phoneno.length != 11){
+      this.setData({
+        tipflag: true,
+        tipmsg: "请输入正确的手机号码"
+      });
+      return;
+    }else{
+      if (this.data.tipflag == true){
+        this.setData({
+          tipflag: false
+        });
+      }
+    }
+    // 发送验证码
+    if (onoff) {
+      onoff = false
+      timer = setInterval(() => {
+        if (num < 1) {
+          clearInterval(timer);
+          this.setData({
+            codemsg: "获取验证码"
+          });
+          onoff = true
+        } else {
+          num--;
+          this.setData({
+            codemsg: num + "秒"
+          });
+        }
+      }, 1000);
+      //发送验证码
+      sms(mobile,this);
+    }
+  },
+  formSubmit(e){
+    console.log(e);
+    var that = this;
+    var mobile = e.detail.value.mobile;
+    var code = e.detail.value.code;
+
+    fetch({
+      url: "/sms/verify",
+      // baseUrl: "http://192.168.50.157:9999",
+      baseUrl: "https://health.lianlianchains.com",
+      data: {
+        mobile: mobile,
+        code: code
+      },
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      if (result.code != 200) {
+        that.setData({
+          'tipflag': true,
+          'tip': "请输入正确的验证码"
+        })
+
+        setTimeout(function () {
+          that.setData({
+            'tipflag': false
+          })
+        }
+          , 3000)
+
+      } else {
+        var amt = "10";
+        healthAdd(amt);
+        // chongzhi(amt);
+
+            console.log("你是对的");
+            wx.navigateBack({
+              
+            })
+      }
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  }
+})

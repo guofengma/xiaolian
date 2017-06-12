@@ -4,14 +4,13 @@
     "pages/index/index",
     "pages/consult/consult",
     "pages/user/user",
+    "pages/registe/rigsiste",
     "pages/userInfo/userInfo",
     "pages/detail/detail",
     "pages/spread/spread",
     "pages/sheet/sheet",
     "pages/diagadd/diagadd",
-    "pages/pay/pay",
-    "pages/up/up"
-    
+    "pages/pay/pay"    
   ],
   "window":{
     "backgroundTextStyle":"light",

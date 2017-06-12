@@ -13,7 +13,7 @@ function healthAdd(amt){
     data: {
       'openid': wx.getStorageSync('user').openid,
       'score': amt,
-      'type': options.type
+      'type': "2"
     },
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }

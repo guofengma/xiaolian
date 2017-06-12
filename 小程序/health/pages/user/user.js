@@ -36,8 +36,11 @@ Page({
   },
   bindUpdateTap(){
     wx.navigateTo({
-      url: '/pages/userInfo/userInfo',
+      url: '/pages/registe/rigsiste',
     })
+    // wx.navigateTo({
+    //   url: '/pages/userInfo/userInfo',
+    // })
   },
   //跳转到问诊单页
   bindSheetTap(){

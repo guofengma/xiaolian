@@ -1,4 +1,0 @@
-/* pages/up/up.wxss */
-.container{
-  height: 150vh;
-}

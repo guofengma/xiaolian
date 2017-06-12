@@ -1,0 +1,19 @@
+
+<view class="container">
+  <view class="tip" wx:if="{{tipflag}}">{{tipmsg}}</view>
+  <form bindsubmit="formSubmit">
+    <view class="elem">
+      <view class="item">
+        <view class="tit">手机号</view>
+        <input type="number" name="mobile" value="{{phoneno}}" bindblur="bindPhoneTap" placeholder="未设置"/>
+        <view class="butn" bindtap="bindSmsTap">{{codemsg}}</view>
+      </view>
+      <view class="line"></view>
+      <view class="item">
+        <view class="tit">验证码</view>
+        <input type="number" name="code" value="{{number}}" placeholder="请输入验证码"/>
+      </view>
+    </view>
+    <button formType="submit">提交</button>
+  </form>
+</view>

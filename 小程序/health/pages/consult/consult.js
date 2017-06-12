@@ -17,6 +17,7 @@ function GetList(that, source) {
       'page': 5 * num,
       'openid': wx.getStorageSync('user').openid
     },
+    noLoading: true,
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
   }).then(result => {

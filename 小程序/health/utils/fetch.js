@@ -1,11 +1,14 @@
 //request请求封装
 export default function(param) {
   console.log(param);
-  wx.showToast({
-    title: '加载中',
-    icon: 'loading',
-    duration: 10000
-  })
+  if (!param.noLoading){
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    })
+  }
+  
   return new Promise((resolve, reject) => {
     wx.request({
       url: param.baseUrl + param.url,

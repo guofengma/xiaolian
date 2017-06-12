@@ -16,6 +16,7 @@ function GetList(that, source) {
       'page': 5 * num,
       'openid': wx.getStorageSync('user').openid
     },
+    noLoading:true,
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
@@ -193,24 +194,7 @@ Page({
     //   console.log("出错了")
     //   console.log(err)
     // });
-    //查询单号
-    // fetch({
-    //   url: "/health/diagnosis/query",
-    //   // baseUrl: "http://192.168.50.157:9999",
-    //   baseUrl: 'https://health.lianlianchains.com',
-    //   data: {
-    //     'diagnosisid': "",
-    //     // page: 0,
-    //     'openid':'asdfgh2'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
+
   },
 
   /**

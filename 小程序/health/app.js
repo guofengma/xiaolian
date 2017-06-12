@@ -29,10 +29,13 @@ App({
                 obj.expires_in = Date.now() + res.data.expires_in;
                 // console.log(obj);
                 wx.setStorageSync('user', obj);//存储openid    
+                console.log(wx.getStorageSync('user'));
+                console.log(1111111111111111111111111111111111)
               }
             });
           } else {
-            //console.log('获取用户登录态失败！' + res.errMsg)
+            console.log('获取用户登录态失败！' + res.errMsg)
+            
           }
         }
       });
