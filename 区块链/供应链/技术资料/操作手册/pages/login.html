@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>天阳科技</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/idnex.css" rel="stylesheet" type="text/css" />
+<link href="../css/usercenter.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="login_body">
+  <div class="login_wraper">
+    <div class="lg_header"><a class="logo" href="index.html"></a></div>
+    <div class="lg_content">
+      <div class="lg_contain">
+        <div class="lg_box">
+          <div class="lg_title">用户登录</div>
+          <div class="lg_form">
+            <!--错误提示-->
+            <div class="lg_tips"> <i class="icon_20 icon-error"></i> <span>请输入正确的账号</span> </div>
+            <!--用户名-->
+            <div id="usertext" class="login-name-length username-box login-name-margintop"><i class="username-left-icon username-posit-y"></i>
+              <input type="text" id="username" name="username" class="login-input-width" placeholder="请输入用户名" datatype="*" dataflag="username">
+              <a id="clear-input" href="javascript:;"></a></div>
+            <!--密码-->  
+            <div class="login-name-length username-box mt20"><i class="username-left-icon pwd-posit-y"></i>
+              <input type="password" id="passWord" name="passWord" class="login-input-width" datatype="*" dataflag="psd" placeholder="请输入密码" >
+             
+            </div>
+            <!--验证码-->
+            <div class="captcha-area2 mt20" style="display:block">
+              <div class="login-captcha"><i class="username-left-icon captcha-posit-y"></i>
+                <input id="imgCode" name="imgCode" type="text" placeholder="请输入验证码" datatype="*" nullmsg="请输入验证码">
+              </div>
+              <img src="../images/codepic.jpg" width="91" height="43" /><a class="update"></a></div>
+            <button class="btn_login" onclick="location='admin_welcome.html'">登录</button>
+          </div>
+          <!--自动登录-->
+          <div class="auto-login-area clearBoth">
+            <label class="fl">自动登录</label>
+            <label class="fr"><a href="javascript:void(0)">忘记密码</a>|<a href="javascript:void(0)">找回密码</a></label>
+          </div>
+        </div>
+        <div class="lg_regist"> <span class="">没有账号?</span> <a class="" href="register.html">免费注册</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>天阳科技</title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<link href="../css/idnex.css" rel="stylesheet" type="text/css" />
+<link href="../css/usercenter.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../js/jquery.jslides.js" type="text/javascript"></script>
+<script src="../js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="../js/jquery.min.js" type="text/javascript"></script>
+<script src="../js/marquee.js" type="text/javascript"></script>
+<script src="../js/ScrollPic.js" type="text/javascript"></script>
+<script src="../js/laydate.js" type="text/javascript"></script>
+<script src="../js/jquery.page.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--Header 头部菜单-->
+<div class="admin_header">
+  <div class="topnav">
+    <h1><a class="logo" href="index.html" title="天阳金服"></a></h1>
+    <div class="top-panel">
+      <ul class="top-menu pandect-menu">
+        <li><a href="admin_welcome_adopt.html">链易付</a></li>
+        <li><a href="javascript:void(0)">链票融</a></li>
+        <li><a href="javascript:void(0)">应收贷</a></li>
+        <li><a href="javascript:void(0)">理财</a></li>
+      </ul>
+      <ul class="top-menu user-menu">
+        <li id="userInfo" class="link"> <a href=""><i class="icon_20 icon_centeradmin"></i><span class="user-name">zero</span><i class="top-menu-arrows"></i></a>
+          <div class="drop-down-layer admin-center">
+            <ul>
+              <li><a href="admin_epCertificate.html"><i class="icon_16 icon_userinfo"></i>账户管理</a></li>
+              <li><a><i class="icon_16 icon_pwdChange"></i>修改密码</a></li>
+            </ul>
+            <div class="exit"><a href="login.html">退出</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--Header End--> 
+
+<!--Container-->
+<div class="admin_container container-project"> 
+  <!--Aside 左菜单-->
+  <div class="aside">
+    <div class="admin_menu">
+      <h2><span>账户管理</span></h2>
+      <hr class="line-mod" />
+      <dl class="menu-list def-scroll keyboard-focus-obj">
+            <dd class="act"> <a class="menu-lv2 act" href="admin_epCertificate.html"><span>企业认证</span></a></dd>
+            <dd> <a class="menu-lv2" href="javascript:void(0);"><span>我的银行账户</span></a></dd>
+            <dd> <a class="menu-lv2" href="admin_security.html"><span>安全设置</span></a></dd>
+            <dd> <a class="menu-lv2" href="javascript:void(0);"><span>角色管理</span></a></dd>
+            <dd> <a class="menu-lv2" href="javascript:void(0);"> <span>用户管理</span></a></dd>
+            <dd> <a class="menu-lv2" href="javascript:void(0);"> <span>流程配置</span></a></dd>
+     	</dl>
+      
+      
+      
+      
+    </div>
+    <a class="btn-fold-menu retract" id="show_hide_menu"></a> </div>
+  <!--Aside End--> 
+  <!--Main 容器体-->
+  <div class="main">
+    <div class="main-area"> 
+      <!--标题 start-->
+      <div class="main-area-title secondary-title"> 
+        <h2>企业认证</h2>
+      </div>
+      <!--标题 end--> 
+      <!--容器内容 start-->
+      <div class="main-area-content"> 
+        <!--查询条件 start-->
+        <div class="certf_info">
+          <div class="certf_info_pic"><img src="../images/user.gif" width="75" height="69" /></div>
+          <h1>您好，<a href="#">张三</a></h1>
+          <p>公司名称：供应商001<span><a href="#" class="green">（已认证）</a></span></p>
+        </div>
+        <!--查询条件 end--> 
+        <!--认证表单 start-->
+          <table class="title_table">
+            <tr>
+              <td><h2 class="title_table_name">认证信息</h2></td>
+              <td class="tr"></td>
+            </tr>
+          </table>
+          <!--认证信息 start-->
+          <table class="formtable">
+            <tr>
+              <th width="20%"><span class="red">*</span>客户类型：</th>
+              <td width="80%"><div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="gys" checked="checked">
+                    <span></span>供应商 </label>
+                </div>
+                <div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="gys">
+                    <span></span>核心企业 </label>
+                </div>
+                <div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="gys">
+                    <span></span>保理商 </label>
+                </div></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>企业名称：</th>
+              <td width="80%"><input class="input input_common" type="text" value="供应商001 "/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>证件类型：</th>
+              <td width="80%"><input class="input input_common" type="text" value="统一社会信用代码"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>证件号码：</th>
+              <td width="80%"><input class="input input_common" type="text" value="98989898-1"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>营业执照号：</th>
+              <td width="80%"><input class="input input_common" type="text" value="YYZZH0001"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>税务登记号：</th>
+              <td width="80%"><input class="input input_common" type="text" value="SWDJH213101"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>营业执照附件：</th>
+              <td width="80%"><a class="text-btnSee">[查看]</a></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>税务登记证附件：</th>
+              <td width="80%"><a class="text-btnSee">[查看]</a></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>组织机构代码证附件：</th>
+              <td width="80%"><a class="text-btnSee">[查看]</a></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>组织类别：</th>
+              <td width="80%"><select>
+                  <option selected="selected">有限公司</option>
+                  <option>--</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>企业规模：</th>
+              <td width="80%"><select>
+                  <option selected="selected">大型</option>
+                  <option>--</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>注册资金：</th>
+              <td width="80%"><input class="input input_common" type="text" value="100,000,000.00"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>企业成立时间：</th>
+              <td width="80%"><input class="input input_common" type="text" value="2011-01-01"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>企业注册地址：</th>
+              <td width="80%"><input class="input input_common" type="text" value="福建省厦门市"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>企业注册详细地址：</th>
+              <td width="80%"><input class="input input_common" type="text" value="福建省厦门市思明区"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>经营范围：</th>
+              <td width="80%"><input class="input input_common" type="text" value="大型电子设备供应"/></td>
+            </tr>
+            <tr>
+              <th width="20%">电话：</th>
+              <td width="80%"><input class="input input_common" type="text" value="0592-99998888"/></td>
+            </tr>
+            <tr>
+              <th width="20%">传真：</th>
+              <td width="80%"><input class="input input_common" type="text" value="0592-99998888"/></td>
+            </tr>
+          </table>
+          <!--认证信息 end--> 
+          <table class="title_table">
+            <tr>
+              <td><h2 class="title_table_name">法人代表信息</h2></td>
+              <td class="tr"></td>
+            </tr>
+          </table>
+          <!--认证信息 start-->
+          <table class="formtable">
+            <tr>
+              <th width="20%"><span class="red">*</span>姓名：</th>
+              <td width="80%"><input class="input input_common" type="text" value="张三"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>身份证号码：</th>
+              <td width="80%"><input class="input input_common" type="text" value="220322197511241576"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>身份证正面：</th>
+              <td width="80%"><a class="text-btnSee">[查看]</a></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>身份证反面：</th>
+              <td width="80%"><a class="text-btnSee">[查看]</a></td>
+            </tr>
+            <tr>
+              <th width="20%">实际控制人：</th>
+              <td width="80%"><div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="who" checked="checked">
+                    <span></span>是 </label>
+                </div><div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="who">
+                    <span></span> 否</label>
+                </div></td>
+            </tr>
+            <tr>
+              <th width="20%">担任职务：</th>
+              <td width="80%"><input class="input input_common" type="text" value="法人代表"/></td>
+            </tr>
+            <tr>
+              <th width="20%">担任时间：</th>
+              <td width="80%"><input class=" inputdatepicker"  id="datepicker"  type="text" value="2011-01-01"/></td>
+            </tr>
+            <tr>
+              <th width="20%">性别：</th>
+              <td width="80%"><div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="sex" checked="checked">
+                    <span></span>男</label>
+                </div><div class="i-radio l-ml10">
+                  <label>
+                    <input type="radio" value="0" name="sex">
+                    <span></span>女</label>
+                </div></td>
+            </tr>
+            <tr>
+              <th width="20%">出生日期：</th>
+              <td width="80%"><input class="inputdatepicker" type="text" id="datepicker2" value="1967-01-01"/></td>
+            </tr>
+            <tr>
+              <th width="20%">手机号码：</th>
+              <td width="80%"><input class="input input_common" type="text" value="15960243243"/></td>
+            </tr>
+           </table> 
+          <!--认证信息 end-->
+          <table class="title_table">
+            <tr>
+              <td><h2 class="title_table_name">联系人信息</h2></td>
+              <td class="tr"></td>
+            </tr>
+          </table>
+          <!--认证信息 start-->
+          <table class="formtable">
+            <tr>
+              <th width="20%"><span class="red">*</span>姓名：</th>
+              <td width="80%"><input class="input input_common" type="text" value="李四"/></td>
+            </tr>
+            <tr>
+              <th width="20%">担任职务：</th>
+              <td width="80%"><input class="input input_common" type="text" value="财务主管"/></td>
+            </tr>
+            <tr>
+              <th width="20%">固定电话：</th>
+              <td width="80%"><input class="input input_common" type="text" value="18960243243"/></td>
+            </tr>
+            <tr>
+              <th width="20%">手机号码：</th>
+              <td width="80%"><input class="input input_common" type="text" value="18960243211"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>联系地址：</th>
+              <td width="80%"><input class="input input_common" type="text" value="福建省厦门市思明区"/></td>
+            </tr>
+            <tr>
+              <th width="20%"><span class="red">*</span>邮箱：</th>
+              <td width="80%"><input class="input input_common" type="text" value="23333@qq.com"/></td>
+            </tr>
+            <tr>
+              <th width="20%">邮政编码：</th>
+              <td width="80%"><input class="input input_common" type="text" value="360000"/></td>
+            </tr>
+            </table>
+            <!--认证信息 end-->
+            
+            <div class="button_table">
+              <button class="btn btn_public">保存</button>
+              <button class="btn btn_public">提交</button>
+            </div>
+        </div>
+        <!--认证表单 end--> 
+        
+      </div>
+      <!--容器内容 end--> 
+    </div>
+  </div>
+  <!--Main End--> 
+</div>
+<!--Container End--> 
+
+<script type="text/javascript" src="../js/common.js"></script> 
+<script>
+  $('#mytable,#mytable1,#mytable2').pager({"total":10,"onselectpage":function(i,len){		
+  }});
+  
+  
+  !function(){
+	 laydate.skin('molv');
+	 laydate({
+		elem: '#datepicker'
+	 });
+	 laydate({
+		elem: '#datepicker1'
+	 });
+	 laydate({
+		elem: '#datepicker2'
+	 });
+	 laydate({
+		elem: '#datepicker3'
+	 });
+   }();
+
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@
 		 where openid=#{openid} and type=#{type}
 	</update>
 	
-	<select id="querybytype" parameterType="com.lxg.springboot.model.Score" resultType="com.lxg.springboot.model.Score">
+	<select id="querybytype" parameterType="com.lxg.springboot.model.Score" resultType="int">
 		select score from score 
 		where openid=#{openid} and type=#{type}
 	</select>	
