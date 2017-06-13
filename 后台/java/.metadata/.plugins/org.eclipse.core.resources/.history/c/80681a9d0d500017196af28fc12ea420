@@ -53,8 +53,6 @@ public class RefereeController extends BaseController {
     @RequestMapping("refereecount")
     public int refereecount(String openid) {
     	
-    	int count = refereeMapper.refereecount(openid);
-    	return count;
     }
        
 }

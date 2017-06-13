@@ -35,10 +35,6 @@ public class ScoreController extends BaseController {
     @RequestMapping("querybytype")
     public int querybytype(Score score) {
     	
-    	int count = scoreMapper.count(score);
-    	if (count == 0)
-    		return 0;
-    	
     	int s = scoreMapper.querybytype(score);
     	return s;  	
     }   

@@ -48,13 +48,5 @@ public class RefereeController extends BaseController {
     	referee.setReferee2(referee2);
     	
     	return referee;  	
-    }  
-    
-    @RequestMapping("refereecount")
-    public int refereecount(String openid) {
-    	
-    	int count = refereeMapper.refereecount(openid);
-    	return count;
-    }
-       
+    }    
 }
