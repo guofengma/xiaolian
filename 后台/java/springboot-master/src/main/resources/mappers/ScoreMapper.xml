@@ -14,12 +14,12 @@
 	</update>
 	
 	<select id="querybytype" parameterType="com.lxg.springboot.model.Score" resultType="int">
-		select score from score 
+		select IFNULL(sum(score),0) from score 
 		where openid=#{openid} and type=#{type}
 	</select>	
 	
 	<select id="query" parameterType="com.lxg.springboot.model.Score" resultType="int">
-		select sum(score) from score 
+		select IFNULL(sum(score),0) from score 
 		where openid=#{openid}
 	</select>	
 
