@@ -3,7 +3,6 @@
 import fetch from "../../utils/fetch.js";
 //轮播图
 import swiperData from "../../template/swiper/swiper.js";
-
 //区块链积分充值
 function chongzhi(refereeid,amt) {
   fetch({
@@ -127,7 +126,7 @@ Page({
   },
   onLoad: function (options) {
     console.log(options)
-    console.log("22222222222222222222222222222222222222222")
+
     var that = this;
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};

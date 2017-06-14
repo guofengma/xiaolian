@@ -11,7 +11,7 @@
     </view>
     <view class="content" bindtap="bindDetailTap">
       <view class="left item">
-        <image src="../../image/bing.png"></image>
+        <image src="../../image/all.png"></image>
       </view>
       <view class="right item">
         <view class="diagno" bindtap="first">
@@ -20,7 +20,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/bing.png"></image>
+            <image src="../../image/major.png"></image>
           </view>
         </view>
         <view class="diagno" bindtap="second">
@@ -29,7 +29,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/bing.png"></image>
+            <image src="../../image/family.png"></image>
           </view>
         </view>
       </view>
@@ -40,7 +40,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/bing.png"></image>
+            <image src="../../image/use.png"></image>
           </view>
         </view>
         <view class="diagno bright" bindtap="fouth">
@@ -49,7 +49,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/bing.png"></image>
+            <image src="../../image/manage.png"></image>
           </view>
         </view>
       </view>

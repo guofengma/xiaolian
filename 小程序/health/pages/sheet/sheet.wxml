@@ -16,24 +16,24 @@
     <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
   </view>
   <view class="content">
-    <view class="diagList" wx:for="{{selfDiaglist}}">
+    <view class="diagList" wx:for="{{selfDiaglist}}" wx:for-index="index" wx:for-item="itemDiag">
       <view class="top">
-        <view class="eval">{{item.diagnosisid}}</view>
-        <view class="time">{{item.datetime}}</view>
+        <view class="eval">{{itemDiag.diagnosisid}}</view>
+        <view class="time">{{itemDiag.datetime}}</view>
       </view>
       <view class="info">
-        <view class="classname">医院：{{item.hospital}}</view>
-        <view class="classname">医生：{{item.doctor}}</view>
+        <view class="classname">医院：{{itemDiag.hospital}}</view>
+        <view class="classname">医生：{{itemDiag.doctor}}</view>
       </view>
       <view class="desc">
         <view class="descTit">症状描述</view>
-        <view class="descont">{{item.symptom}}</view>
+        <view class="descont">{{itemDiag.symptom}}</view>
       </view>
       <view class="cBtm">
         <view class="label">
-          <text wx:for="">皮肤病</text>
+          <text class="text" wx:for="{{itemDiag.label}}">{{item}}</text>
         </view>
-        <view class="money">金额：{{item.amt}}</view>
+        <view class="money">金额：{{itemDiag.amt}}</view>
       </view>
       
     </view>

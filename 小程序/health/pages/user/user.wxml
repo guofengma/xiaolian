@@ -47,7 +47,7 @@
 
         <view class="nameInfo nameInfo2">
           <text class="fir">已分享:{{persons}}人</text>
-          <text>获积分:{{score}}</text>
+          <text>获积分:{{scoretype}}</text>
         </view>
         
       </view>

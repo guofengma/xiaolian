@@ -176,27 +176,6 @@ Page({
       console.log("出错了")
       console.log(err)
     });
-
-    // if (that.data.phoneno != ""){
-    //   //奖励积分
-    //   fetch({
-    //     url: "/health/score/update",
-    //     baseUrl: "https://health.lianlianchains.com",
-    //     // baseUrl: "http://192.168.50.157:8888",
-    //     data: {
-    //       'openid': that.data.openid,
-    //       'score': 10,
-    //       'type': 1
-    //     },
-    //     method: "POST",
-    //     header: { 'content-type': 'application/x-www-form-urlencoded' }
-    //   }).then(result => {
-    //     console.log(result);
-    //   }).catch(err => {
-    //     console.log("出错了")
-    //     console.log(err)
-    //   });
-    // }
   },
 
   /**
@@ -210,13 +189,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

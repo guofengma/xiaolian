@@ -102,12 +102,16 @@
   margin-bottom: 16rpx;
   color: #666666;
 }
-.container .content .diagList .label text{
+.container .content .diagList .label .text{
+  display: inline-block;
   margin-right: 14rpx;
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   background-color: rgba(255, 87, 34, .3);
   color: #ff5722;
-  border-radius: 3px;
-  padding: 3rpx 5rpx;
+  border-radius: 4px;
+  padding: 0 10rpx;
 }
 .container .content .diagList .shareBtn{
   width: 50rpx;

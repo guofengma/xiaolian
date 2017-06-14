@@ -23,20 +23,22 @@ function GetList(that, source) {
   }).then(result => {
     console.log(result);
     for (var i = 0; i < result.diagnosis.length; i++) {
-      result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime*1));
+      result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
+      result.diagnosis[i].label = result.diagnosis[i].label.split('|');
       selfDiaglist.push(result.diagnosis[i]);
     }
+    console.log(result);
+    console.log(666666)
     that.setData({
       selfDiaglist: selfDiaglist,
       totalpage: result.totalpage,
       loadingMsg: "查看更多"
     });
-    if (source == "noMore" || result.diagnosis.length<5) {
+    if (result.diagnosis.length < 5){
       that.setData({
         loadingMsg: "没有更多了"
       });
     }
-    
   }).catch(err => {
     console.log("出错了")
     console.log(err)
@@ -50,7 +52,16 @@ Page({
    */
   data: {
     selfDiaglist:[],
-    loadingMsg: "查看更多"
+    loadingMsg: "查看更多",
+    item:[
+
+    ],
+    items: [
+      { name: '001', value: '皮肤病', id: 0 },
+      { name: '002', value: '骨科病', id: 0 },
+      { name: '003', value: '精神病', id: 0 },
+      { name: '004', value: '软骨病', id: 0 }
+    ],
   },
   bindDownLoad: function () {
     //   该方法绑定了页面滑动到底部的事件
@@ -76,8 +87,10 @@ Page({
       } else {
         iTime = setTimeout(function () {
           //需要执行的事件
-          num++;
-          GetList(that, "noMore");
+          that.setData({
+            loadingMsg: "没有更多了"
+          });
+          // GetList(that, "noMore");
         }, 100);
 
       }
@@ -131,17 +144,8 @@ Page({
     }
     
   },
-  /**
-   * 生命周期函数--监听页面加载',
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  bindReHeight(){
     var that = this;
-    // selfDiaglist = [];
-    GetList(this);
     wx.getSystemInfo({
       success: function (res) {
         console.info(res.windowHeight);
@@ -150,51 +154,17 @@ Page({
         });
       }
     });
-    // fetch({
-    //   url: "/health/diagnosis/save",
-    //   baseUrl: "http://192.168.50.157:9999",
-    //   // baseUrl: "https://health.lianlianchains.com",
-    //   data: {
-    //     'diagnosisid':"xrf785",
-    //     'openid':'asdfgh2',
-    //     'datetime':"2017",
-    //     'symptom':"很好",
-    //     'amt':"money",
-    //     'hospital':"sanhuan",
-    //     'doctor':'doctor',
-    //     'evaluate':0,
-    //     'label':'001'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    //   // header: { 'content-type': 'application/json' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-    //查询所有
-    // fetch({
-    //   url: "/health/diagnosis/querybypageopenid",
-    //   // baseUrl: "https://health.lianlianchains.com",
-    //   baseUrl: "http://192.168.50.157:9999",
-    //   data: {
-    //     page: 0,
-    //     'openid': '1'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    //   that.setData({
-
-    //   });
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-
+  },
+  /**
+   * 生命周期函数--监听页面加载',
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.bindReHeight();
+    
   },
 
   /**
@@ -208,7 +178,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    num = 0;
+    selfDiaglist = [];
+    GetList(this)
+    that.bindReHeight();
   },
 
   /**
@@ -236,13 +210,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })

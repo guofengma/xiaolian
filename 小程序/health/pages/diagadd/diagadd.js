@@ -4,6 +4,7 @@ import fetch from '../../utils/fetch.js';
 let timer;
 let user = wx.getStorageSync('user');
 let label = [];
+let diagnosis = [];
 //数据库积分增加
 function healthAdd(amt){
   fetch({
@@ -51,6 +52,84 @@ function chongzhi(amt) {
     console.log(err)
   });
 }
+//健康档案接口
+function health(param){
+  fetch({
+      url: "/ehr/invoke",
+      // baseUrl: "http://192.168.50.157:9999",
+      baseUrl: "https://health.lianlianchains.com",
+      data: {
+        acc: wx.getStorageSync('user').openid,
+        ehr: param,
+        ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
+        func: "save",//存数据
+        // func:"transfer",//转移积分
+        // func: "takeCash",//减少积分
+      },
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      console.log(result);
+      console.log("交易成功");
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+    });
+}
+
+//  fetch({
+//       url: "/ehr/query",
+//       // baseUrl: "http://192.168.50.157:9999",
+//       baseUrl: "https://health.lianlianchains.com",
+//       data: {
+//         // acc: user.openid, //openid
+//         acc: "ppp",
+//         ehr: "",
+//         ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
+//         func: "query",//增加积分
+//         // func:"transfer",//转移积分
+//         // func: "takeCash",//减少积分
+//       },
+//       method: "GET",
+//       header: { 'content-type': 'application/x-www-form-urlencoded' }
+//       // header: { 'content-type': 'application/json' }
+//     }).then(result => {
+//       console.log(result);
+//       console.log("交易成功666666666");
+//     }).catch(err => {
+//       console.log("出错了")
+//       console.log(err)
+//     });
+    var param = {
+      diagnosis:[
+          {
+            diagnosisid: "bbbbbbbbbb",
+            datetime: "20170208",
+            hospital: "",
+            doctor: "",
+            amt: "",
+            label: "fff",
+            symptom: ""
+          },
+          {
+            diagnosisid: "bbbbbbbbbb",
+            datetime: "20170208",
+            hospital: "",
+            doctor: "aa",
+            amt: "",
+            label: "fff",
+            symptom: ""
+          }
+      ],
+      userInfo:{
+        sex:"",
+        age:"",
+        phoneno:"",
+        address:""
+      }
+    }
+// health(param);
 Page({
 
   /**
@@ -79,9 +158,9 @@ Page({
     index: 0,
     items: [
       { name: '001', value: '皮肤病', id: 0 },
-      { name: '002', value: '皮肤病', id: 0 },
-      { name: '003', value: '皮肤病', id: 0 },
-      { name: '004', value: '皮肤病', id: 0 }
+      { name: '002', value: '骨科病', id: 0 },
+      { name: '003', value: '精神病', id: 0 },
+      { name: '004', value: '软骨病', id: 0 }
     ],
     evalues: [
       { starUrl: "../../image/star.png"},
@@ -196,9 +275,10 @@ Page({
       //区块链增加积分
       chongzhi(amt);
 
-      wx.redirectTo({
-        url: '../sheet/sheet',
-      });
+      wx.navigateBack();
+      // wx.redirectTo({
+      //   url: '../sheet/sheet',
+      // });
     }).catch(err => {
       console.log("出错了")
       console.log(err)
@@ -387,23 +467,23 @@ Page({
     }
     // zhuanyi();
 
-    var param = {
-      diagnosis:{
-        diagnosisid: "bbbbbbbbbb",
-        datetime: "20170208",
-        hospital: "",
-        doctor: "",
-        amt: "",
-        label: "fff",
-        symptom: ""
-      },
-      userInfo:{
-        sex:"",
-        age:"",
-        phoneno:"",
-        address:""
-      }
-    }
+    // var param = {
+    //   diagnosis:{
+    //     diagnosisid: "bbbbbbbbbb",
+    //     datetime: "20170208",
+    //     hospital: "",
+    //     doctor: "",
+    //     amt: "",
+    //     label: "fff",
+    //     symptom: ""
+    //   },
+    //   userInfo:{
+    //     sex:"",
+    //     age:"",
+    //     phoneno:"",
+    //     address:""
+    //   }
+    // }
 
     // var b = new Base64();
     // var str = b.encode(param);
@@ -436,29 +516,29 @@ Page({
     //   console.log("出错了")
     //   console.log(err)
     // });
-    fetch({
-      url: "/ehr/query",
-      // baseUrl: "http://192.168.50.157:9999",
-      baseUrl: "https://health.lianlianchains.com",
-      data: {
-        // acc: user.openid, //openid
-        acc: "ppp",
-        ehr: "",
-        ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
-        func: "query",//增加积分
-        // func:"transfer",//转移积分
-        // func: "takeCash",//减少积分
-      },
-      method: "GET",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-      // header: { 'content-type': 'application/json' }
-    }).then(result => {
-      console.log(result);
-      console.log("交易成功");
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+    // fetch({
+    //   url: "/ehr/query",
+    //   // baseUrl: "http://192.168.50.157:9999",
+    //   baseUrl: "https://health.lianlianchains.com",
+    //   data: {
+    //     // acc: user.openid, //openid
+    //     acc: "ppp",
+    //     ehr: "",
+    //     ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
+    //     func: "query",//增加积分
+    //     // func:"transfer",//转移积分
+    //     // func: "takeCash",//减少积分
+    //   },
+    //   method: "GET",
+    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+    //   // header: { 'content-type': 'application/json' }
+    // }).then(result => {
+    //   console.log(result);
+    //   console.log("交易成功");
+    // }).catch(err => {
+    //   console.log("出错了")
+    //   console.log(err)
+    // });
     
   },
 
@@ -501,13 +581,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })

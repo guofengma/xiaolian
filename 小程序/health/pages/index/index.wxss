@@ -22,9 +22,7 @@
   height: 34rpx;
   padding-right: 12rpx;
 }
-.section .title .cell{
-  
-}
+
 .section .content{
   height: 87%;
   position: relative;

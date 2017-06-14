@@ -27,29 +27,33 @@ function GetList(that, source) {
       for (var i = 0; i < result.diagnosis.length; i++) {
         // diagList.push(result.diagnosis[i]);
         result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
+        
         diagList.push(result.diagnosis[i]);
       }
+      console.log(diagList);
       that.setData({
         diagList: diagList,
         totalpage: result.totalpage
       })
     }else{
-      for (var i = 0; i < result.diagnosis.length; i++) {
-        result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
-    
-        diagList.push(result.diagnosis[i]);
-        console.log(diagList);
-        // return;
-        // console.log(result.diagnosis[i].evaluate);
-      }
-      that.setData({
-        diagList: diagList,
-        totalpage: result.totalpage,
-        loadingMsg: "查看更多"      
-      });
+     
       if (source == "noMore"){
         that.setData({
           loadingMsg: "没有更多了"
+        });
+      }else{
+        for (var i = 0; i < result.diagnosis.length; i++) {
+          result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
+          result.diagnosis[i].label = result.diagnosis[i].label.split('|');
+          diagList.push(result.diagnosis[i]);
+          console.log(diagList);
+          // return;
+          // console.log(result.diagnosis[i].evaluate);
+        }
+        that.setData({
+          diagList: diagList,
+          totalpage: result.totalpage,
+          loadingMsg: "查看更多"
         });
       }
     }
@@ -106,7 +110,6 @@ Page({
       } else {
         iTime = setTimeout(function () {
           //需要执行的事件
-          num++;
           GetList(that, "noMore");
         }, 100);
         
@@ -184,7 +187,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    console.log(1111111111111111111111111);
+    
   },
 
   /**
@@ -193,7 +196,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '家福堂',
-      path: '/pages/index/index?type=0&openid=' + wx.getStorageSync('user').openid,
+      path: '/pages/index/index?type=1&openid=' + wx.getStorageSync('user').openid,
       success: function (res) {
         // 转发成功
         console.log("转发成功");

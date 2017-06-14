@@ -66,7 +66,7 @@ function chongzhi(amt) {
         // acc:"aaa",
         amt: amt,
         reacc: "",//对方的openid 转移积分时这个字段才有否则为空
-        ccId: "0543963f23223c54d6616a61631c8e9b40300f682545b337564db11085ff328b",
+        ccId: "7f8b9e49d99ce701a1a2185270fb05d807a24231dc8a609c5628bfd8ae990b56",
         func: "recharge",//增加积分
         // func:"transfer",//转移积分
         // func: "takeCash",//减少积分
@@ -92,7 +92,8 @@ Page({
     tipflag: false,
     tipmsg: "",
     phoneno: "",
-    codemsg: "获取验证码"
+    codemsg: "获取验证码",
+    showDiag: false
   },
   //存储手机号字段
   bindPhoneTap(e){
@@ -152,6 +153,20 @@ Page({
     var mobile = e.detail.value.mobile;
     var code = e.detail.value.code;
 
+    if (mobile == "" || code == ""){
+      that.setData({
+        'tipflag': true,
+        'tipmsg': "手机号或验证码为空"
+      })
+
+      setTimeout(function () {
+        that.setData({
+          'tipflag': false
+        })
+      }
+        , 3000)
+        return;
+    }
     fetch({
       url: "/sms/verify",
       // baseUrl: "http://192.168.50.157:9999",
@@ -167,7 +182,7 @@ Page({
       if (result.code != 200) {
         that.setData({
           'tipflag': true,
-          'tip': "请输入正确的验证码"
+          'tipmsg': "请输入正确的验证码"
         })
 
         setTimeout(function () {
@@ -180,17 +195,48 @@ Page({
       } else {
         var amt = "10";
         healthAdd(amt);
-        // chongzhi(amt);
+        chongzhi(amt);
+        console.log("你是对的");
+        fetch({
+        url: "/health/user/update",
+        baseUrl: "https://health.lianlianchains.com",
+        // baseUrl: "http://192.168.50.157:8888",
+        data: {
+          'openid': wx.getStorageSync('user').openid,
+          'nickname': wx.getStorageSync('userInfo').nickName,
+          'sex': "",
+          'age':"",
+          'phoneno': mobile,
+          'address': ""  
+        },
+        method: "POST",
+        header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+        console.log(result);
+        that.setData({
+          showDiag: true
+        });
+      }).catch(err => {
+        console.log("出错了")
+        console.log(err)
+      });
+        
 
-            console.log("你是对的");
-            wx.navigateBack({
-              
-            })
       }
     }).catch(err => {
       console.log("出错了")
       console.log(err)
     });
+  },
+  bindYesTap(){
+    wx.redirectTo({
+      url: '../userInfo/userInfo'
+    })
+  },
+  bindBackTap() {
+    wx.switchTab({
+      url: '/pages/user/user',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -238,13 +284,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
   }
 })
