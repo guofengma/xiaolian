@@ -16,7 +16,7 @@
     <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
   </view>
   <view class="content">
-    <view class="diagList" wx:for="{{selfDiaglist}}" wx:for-index="index" wx:for-item="itemDiag">
+    <view class="diagList" wx:for="{{selfDiaglist}}" wx:key="unique" wx:for-index="index" wx:for-item="itemDiag">
       <view class="top">
         <view class="eval">{{itemDiag.diagnosisid}}</view>
         <view class="time">{{itemDiag.datetime}}</view>

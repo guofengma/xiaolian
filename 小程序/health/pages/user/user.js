@@ -88,31 +88,50 @@ Page({
         userInfo: userInfo
       });
       wx.setStorageSync('userInfo', userInfo);
-      // 存数据
+      // 查询
       fetch({
-        url: "/health/user/save",
+        url: "/health/user/query",
         baseUrl: "https://health.lianlianchains.com",
         // baseUrl: "http://192.168.50.157:8888",
         data: {
-          'openid': user.openid,
-          'nickname': userInfo.nickName,
-          'sex': "",
-          'age':"",
-          'phoneno': "",
-          'address': ""  
+          'openid': user.openid
         },
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
         console.log(result);
-        console.log("送成功");
-        if(result.ec == "000000"){
-          
+        if (!result){
+          // 存数据
+          fetch({
+            url: "/health/user/save",
+            baseUrl: "https://health.lianlianchains.com",
+            // baseUrl: "http://192.168.50.157:8888",
+            data: {
+              'openid': user.openid,
+              'nickname': userInfo.nickName,
+              'sex': "",
+              'age': "",
+              'phoneno': "",
+              'address': ""
+            },
+            method: "POST",
+            header: { 'content-type': 'application/x-www-form-urlencoded' }
+          }).then(result => {
+            console.log(result);
+            console.log("送成功");
+            if (result.ec == "000000") {
+
+            }
+          }).catch(err => {
+            console.log("出错了")
+            console.log(err)
+          });
         }
       }).catch(err => {
         console.log("出错了")
         console.log(err)
       });
+      
     })
 
     // 查询

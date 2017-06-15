@@ -48,7 +48,8 @@
   transform: translateY(-50%);
 }
 
-.container .elem input{
+.container .elem input,.container .elem .section{
+  width: 100%;
   color: #999999;
   text-align: left;
   position: absolute;

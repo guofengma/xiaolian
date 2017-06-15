@@ -57,14 +57,25 @@
     transform: scaleX(.5);
 }
 .section .content .left image{
-  width: 92%;
-  height: 90%;
-  position: absolute;
+  width: 100%;
+  height: 240rpx;
+  /*position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
 }
-
+.section .left .intro{
+  width: 50%;
+  word-wrap: break-word;
+  background-color: #fff;
+  margin-top: 4%;
+  margin-left: 4%;
+  padding-left: 5rpx;
+}
+.section .left .intro text{
+  font-size: 36rpx;
+  color: #ff5722;
+}
 .section .content .right{
   height: 66%;
   margin-left: 46%;
@@ -111,14 +122,13 @@
 }
 
 .section .right .diagno .img{
-  /*width: 40rpx;
-  height: 120rpx;
-  overflow: hidden;*/
+  width: 160rpx;
+  height: 178rpx;
 }
 .section .right .diagno .img image{
-  width: 140rpx;
-  height: 80%;
-  margin-top: 25rpx;
+  width: 100%;
+  height: 100%;
+  margin-top: 20rpx;
   margin-right: 20rpx;
 }
 
@@ -173,9 +183,13 @@
   margin-top: 4%;
   margin-left: 4%;
 }
+.section .btom .diagno .img{
+  width: 160rpx;
+  height: 178rpx;
+}
 .section .btom .diagno image{
-  width: 140rpx;
-  height: 80%;
+  width: 160rpx;
+  height: 178rpx;
   margin-top: 25rpx;
   margin-right: 20rpx;
   

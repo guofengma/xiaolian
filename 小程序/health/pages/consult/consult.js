@@ -25,12 +25,10 @@ function GetList(that, source) {
     if (source == "refreshs"){
       diagList.length = 0;
       for (var i = 0; i < result.diagnosis.length; i++) {
-        // diagList.push(result.diagnosis[i]);
         result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
         
         diagList.push(result.diagnosis[i]);
       }
-      console.log(diagList);
       that.setData({
         diagList: diagList,
         totalpage: result.totalpage
@@ -46,9 +44,6 @@ function GetList(that, source) {
           result.diagnosis[i].datetime = formatTime(new Date(result.diagnosis[i].datetime * 1));
           result.diagnosis[i].label = result.diagnosis[i].label.split('|');
           diagList.push(result.diagnosis[i]);
-          console.log(diagList);
-          // return;
-          // console.log(result.diagnosis[i].evaluate);
         }
         that.setData({
           diagList: diagList,
@@ -117,7 +112,6 @@ Page({
     })
   },
   scroll (event) {
-    // console.log(222);
     //   该方法绑定了页面滚动时的事件，我这里记录了当前的position.y的值,为了请求数据之后把页面定位到这里来。
     this.setData({
       scrollTop: event.detail.scrollTop
@@ -173,7 +167,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(1111);
     wx.stopPullDownRefresh();
   },
   /**

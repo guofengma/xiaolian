@@ -36,7 +36,7 @@ function chongzhi(amt) {
       // acc:"aaa",
       amt: amt,
       reacc: "",//对方的openid 转移积分时这个字段才有否则为空
-      ccId: "0543963f23223c54d6616a61631c8e9b40300f682545b337564db11085ff328b",
+      ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
       func: "recharge",//增加积分
       // func:"transfer",//转移积分
       // func: "takeCash",//减少积分
@@ -78,58 +78,8 @@ function health(param){
     });
 }
 
-//  fetch({
-//       url: "/ehr/query",
-//       // baseUrl: "http://192.168.50.157:9999",
-//       baseUrl: "https://health.lianlianchains.com",
-//       data: {
-//         // acc: user.openid, //openid
-//         acc: "ppp",
-//         ehr: "",
-//         ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
-//         func: "query",//增加积分
-//         // func:"transfer",//转移积分
-//         // func: "takeCash",//减少积分
-//       },
-//       method: "GET",
-//       header: { 'content-type': 'application/x-www-form-urlencoded' }
-//       // header: { 'content-type': 'application/json' }
-//     }).then(result => {
-//       console.log(result);
-//       console.log("交易成功666666666");
-//     }).catch(err => {
-//       console.log("出错了")
-//       console.log(err)
-//     });
-    var param = {
-      diagnosis:[
-          {
-            diagnosisid: "bbbbbbbbbb",
-            datetime: "20170208",
-            hospital: "",
-            doctor: "",
-            amt: "",
-            label: "fff",
-            symptom: ""
-          },
-          {
-            diagnosisid: "bbbbbbbbbb",
-            datetime: "20170208",
-            hospital: "",
-            doctor: "aa",
-            amt: "",
-            label: "fff",
-            symptom: ""
-          }
-      ],
-      userInfo:{
-        sex:"",
-        age:"",
-        phoneno:"",
-        address:""
-      }
-    }
-// health(param);
+
+ 
 Page({
 
   /**
@@ -274,7 +224,55 @@ Page({
       healthAdd(amt)
       //区块链增加积分
       chongzhi(amt);
-
+      fetch({
+        url: "/ehr/query",
+        // baseUrl: "http://192.168.50.157:9999",
+        baseUrl: "https://health.lianlianchains.com",
+        data: {
+          // acc: user.openid, //openid
+          acc: wx.getStorageSync('user').openid,
+          ehr: "",
+          ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
+          func: "query"
+        },
+        method: "GET",
+        header: { 'content-type': 'application/x-www-form-urlencoded' }
+        // header: { 'content-type': 'application/json' }
+      }).then(result => {
+        console.log(result);
+        console.log("交易成功666666666");
+          console.log('插入数据');
+          var attr = {
+            'diagnosisid': info.diagnosisid,
+            'openid': user.openid,
+            'datetime': timestamp,
+            'symptom': info.symptom,
+            'amt': info.amt,
+            'hospital': that.data.objectArray[info.hospital].name,
+            'doctor': info.doctor,
+            'evaluate': that.data.evaluate,
+            'label': label.join("|")
+          };
+          if (result.diagnosis){
+            var arr = [];
+            arr = result.diagnosis;
+            arr.push(attr)
+          }else{
+            var arr = [];
+            arr.push(attr)
+          }
+          var param = {
+            diagnosis: arr,
+            userInfo: result.userInfo
+          }
+          console.log(param)
+          health(param);
+     
+      }).catch(err => {
+        console.log("出错了")
+        console.log(err)
+      });
+      
       wx.navigateBack();
       // wx.redirectTo({
       //   url: '../sheet/sheet',

@@ -19,10 +19,10 @@
     </view>
     <view class="content">
       <view class="head">患者病例</view>
-      <view class="diagList" wx:for="{{diagList}}">
+      <view class="diagList" wx:key="index" wx:for="{{diagList}}">
         <view class="top">
           <view class="eval">
-          <view class="evalItem" wx:for="{{evalues}}" wx:for-index="index" wx:for-item="itemName">
+          <view class="evalItem" wx:for="{{evalues}}" wx:key="index" wx:for-index="index" wx:for-item="itemName">
                 <image data-idx="{{index}}" bindtap="bindEvalTap" 
                 src="{{ index<item.evaluate?'../../image/starAct.png':'../../image/star.png'}}" ></image>
               </view></view>
@@ -37,7 +37,7 @@
           <view class="descont">{{item.symptom}}</view>
         </view>
         <view class="label">
-          <view class="labs" wx:for="{{item.label}}" wx:for-item="label">{{label}}</view>
+          <view class="labs" wx:key="index" wx:for="{{item.label}}" wx:for-item="label">{{label}}</view>
         </view>
         <button class="shareBtn" open-type="share" type="default">
           <image class="share" src="../../image/share.png"></image>

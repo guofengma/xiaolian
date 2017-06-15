@@ -128,7 +128,10 @@ Page({
     }
     // 发送验证码
     if (onoff) {
-      onoff = false
+      onoff = false;
+      this.setData({
+        codemsg: num + "秒"
+      });
       timer = setInterval(() => {
         if (num < 1) {
           clearInterval(timer);

@@ -1,8 +1,8 @@
 var swiperData = {
   imgUrls: [
-    '../../image/lunbo1.jpg',
-    '../../image/lunbo2.jpg',
-    '../../image/lunbo3.jpg'
+    'https://health.lianlianchains.com/banner1.png',
+    'https://health.lianlianchains.com/banner2.png',
+    'https://health.lianlianchains.com/banner3.png'
   ],
   indicatorDots: true,
   autoplay: true,

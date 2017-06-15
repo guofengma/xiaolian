@@ -1,5 +1,0 @@
-<template name="docItem">
-  <view class="classname">
-    <view class="classname">aa</view>
-  </view>
-</template>

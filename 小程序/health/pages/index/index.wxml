@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <import src="../../template/swiper/swiper.wxml" />
-<import src="../../template/docItem/docItem.wxml" />
 <view class="container">
   <!--轮播图-->
   <template is="swiper" data="{{...swiperData}}"></template>
@@ -11,7 +10,11 @@
     </view>
     <view class="content" bindtap="bindDetailTap">
       <view class="left item">
-        <image src="../../image/all.png"></image>
+        <image src="https://health.lianlianchains.com/all.png"></image>
+        <view class="intro">
+          <view class="classname">夫妻同治</view>
+          <view class="classname">好<text>孕</text>自然来</view>
+        </view>
       </view>
       <view class="right item">
         <view class="diagno" bindtap="first">
@@ -20,7 +23,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/major.png"></image>
+            <image src="https://health.lianlianchains.com/major.png"></image>
           </view>
         </view>
         <view class="diagno" bindtap="second">
@@ -29,7 +32,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/family.png"></image>
+            <image src="https://health.lianlianchains.com/family.png"></image>
           </view>
         </view>
       </view>
@@ -40,7 +43,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/use.png"></image>
+            <image src="https://health.lianlianchains.com/use.png"></image>
           </view>
         </view>
         <view class="diagno bright" bindtap="fouth">
@@ -49,7 +52,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="../../image/manage.png"></image>
+            <image src="https://health.lianlianchains.com/manage.png"></image>
           </view>
         </view>
       </view>
