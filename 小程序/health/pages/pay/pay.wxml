@@ -1,17 +1,22 @@
 <!--pages/pay/pay.wxml-->
 <view class="container">
   <form bindsubmit="bindSubmitTap">
-        <view class="info">
-            <label>交易金额</label>
-            <input name="fee" bindinput="bindMobileChange" type="number" placeholder="请填写交易金额" />
+      <view class="content">
+        <view class="tit">请输入金额：</view>
+        <view class="moneycont">
+          <view class="money">
+            <image src="../../image/money.png"></image>
+          </view>
+          <view class="num">
+            <input name="fee" bindinput="bindInputTap" type="number" placeholder="金额" placeholder-style="color:#dddddd;" />
+          </view>
         </view>
-        <view class="info">
-            <label>商品信息</label>
-            <!--<input name="info" type="text" placeholder="请填写商品信息" />-->
-            <textarea name="info" auto-height placeholder="请填写商品信息" />
-        </view>                
-        <button type="primary" formType="submit" plain>支付</button>  
+        <view class="score">
+          <image src="{{chectAct? '../../image/checkact.png':'../../image/check.png'}}" bindtap="isUseScore"></image>
+          <text>使用积分</text>
+        </view>
+        <view class="info">当前积分{{score}}分，可抵扣{{cashMoney}}元诊金</view>
+      </view>
+      <button type="primary" formType="submit">去支付</button> 
     </form>
-
-    <button open-type="share"  plain>转发</button>
 </view>
