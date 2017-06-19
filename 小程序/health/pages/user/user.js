@@ -96,6 +96,7 @@ Page({
         data: {
           'openid': user.openid
         },
+        noLoading: true,
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
@@ -114,6 +115,7 @@ Page({
               'phoneno': "",
               'address': ""
             },
+            noLoading: true,
             method: "POST",
             header: { 'content-type': 'application/x-www-form-urlencoded' }
           }).then(result => {
@@ -160,6 +162,7 @@ Page({
         'openid': wx.getStorageSync("user").openid
       },
       method: "POST",
+      noLoading: true,
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
       console.log(result);
@@ -182,6 +185,7 @@ Page({
         'openid': wx.getStorageSync("user").openid
       },
       method: "POST",
+      noLoading: true,
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
       console.log(result);
@@ -202,6 +206,7 @@ Page({
         'openid': wx.getStorageSync("user").openid
       },
       method: "GET",
+      noLoading: true,
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
       console.log(result);

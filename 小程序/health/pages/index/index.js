@@ -18,6 +18,7 @@ function chongzhi(refereeid, amt) {
       ccId: "7f8b9e49d99ce701a1a2185270fb05d807a24231dc8a609c5628bfd8ae990b56",
       func: "query",//查询积分
     },
+    noLoading: true,
     method: "GET",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
@@ -45,6 +46,7 @@ function chongzhi(refereeid,amt) {
       // func:"transfer",//转移积分
       // func: "takeCash",//减少积分
     },
+    noLoading: true,
     method: "GET",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
@@ -104,10 +106,6 @@ Page({
     }).catch(err => {
 
     });
-  },
-  //下拉刷新函数
-  onPullDownRefresh() {
-    this.onShow();
   },
   bindDetailTap(){
     wx.navigateTo({
@@ -181,7 +179,75 @@ Page({
                 obj.openid = res.data.openid;
                 obj.expires_in = Date.now() + res.data.expires_in;
                 // console.log(obj);
-                wx.setStorageSync('user', obj);//存储openid    
+                wx.setStorageSync('user', obj);//存储openid   
+                if (options.openid) {
+                  fetch({
+                    url: "/health/referee/query",
+                    baseUrl: "https://health.lianlianchains.com",
+                    // baseUrl: "http://192.168.50.157:8888",
+                    data: {
+                      'openid': wx.getStorageSync('user').openid,
+                      'refereeid': options.openid
+                    },
+                    noLoading: true,
+                    method: "POST",
+                    header: { 'content-type': 'application/x-www-form-urlencoded' }
+                  }).then(result => {
+                    console.log(6666666666666666666)
+                    console.log(result);
+
+                    //推荐人1
+                    if (result.referee1) {
+                      fetch({
+                        url: "/health/score/update",
+                        baseUrl: "https://health.lianlianchains.com",
+                        // baseUrl: "http://192.168.50.157:8888",
+                        data: {
+                          'openid': result.referee1,
+                          'score': 30,
+                          'type': options.type
+                        },
+                        method: "POST",
+                        header: { 'content-type': 'application/x-www-form-urlencoded' }
+                      }).then(result => {
+                        console.log(result);
+                      }).catch(err => {
+                        console.log("出错了")
+                        console.log(err)
+                      });
+                      chongzhi(result.referee1, "30");
+                    }
+
+                    //推荐人2
+                    if (result.referee2) {
+                      fetch({
+                        url: "/health/score/update",
+                        baseUrl: "https://health.lianlianchains.com",
+                        // baseUrl: "http://192.168.50.157:8888",
+                        data: {
+                          'openid': result.referee2,
+                          'score': 10,
+                          'type': options.type
+                        },
+                        noLoading: true,
+                        method: "POST",
+                        header: { 'content-type': 'application/x-www-form-urlencoded' }
+                      }).then(result => {
+                        console.log(result);
+                      }).catch(err => {
+                        console.log("出错了")
+                        console.log(err)
+                      });
+                      chongzhi(result.referee2, "10");
+                    }
+
+                    console.log("加分成功");
+
+                  }).catch(err => {
+                    console.log("出错了")
+                    console.log(err)
+                  });
+                } 
               }
             });
           } else {
@@ -208,72 +274,7 @@ Page({
     // });
 
       //分享上传
-    if (options.openid){
-      fetch({
-        url: "/health/referee/query",
-        baseUrl: "https://health.lianlianchains.com",
-        // baseUrl: "http://192.168.50.157:8888",
-        data: {
-          'openid': wx.getStorageSync('user').openid,
-          'refereeid': options.openid
-        },
-        method: "POST",
-        header: { 'content-type': 'application/x-www-form-urlencoded' }
-      }).then(result => {
-        console.log(6666666666666666666)
-        console.log(result);
-
-        //推荐人1
-        if (result.referee1) {
-          fetch({
-            url: "/health/score/update",
-            baseUrl: "https://health.lianlianchains.com",
-            // baseUrl: "http://192.168.50.157:8888",
-            data: {
-              'openid': result.referee1,
-              'score': 30,
-              'type': options.type
-            },
-            method: "POST",
-            header: { 'content-type': 'application/x-www-form-urlencoded' }
-          }).then(result => {
-            console.log(result);
-          }).catch(err => {
-            console.log("出错了")
-            console.log(err)
-          });
-          chongzhi(result.referee1, "30");
-        }
-
-        //推荐人2
-        if (result.referee2) {
-          fetch({
-            url: "/health/score/update",
-            baseUrl: "https://health.lianlianchains.com",
-            // baseUrl: "http://192.168.50.157:8888",
-            data: {
-              'openid': result.referee2,
-              'score': 10,
-              'type': options.type
-            },
-            method: "POST",
-            header: { 'content-type': 'application/x-www-form-urlencoded' }
-          }).then(result => {
-            console.log(result);
-          }).catch(err => {
-            console.log("出错了")
-            console.log(err)
-          });
-          chongzhi(result.referee2, "10");
-        }
-
-        console.log("加分成功");
-
-      }).catch(err => {
-        console.log("出错了")
-        console.log(err)
-      });
-    }
+    
       
 
     

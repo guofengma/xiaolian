@@ -28,7 +28,6 @@ function GetList(that, source) {
       selfDiaglist.push(result.diagnosis[i]);
     }
     console.log(result);
-    console.log(666666)
     that.setData({
       selfDiaglist: selfDiaglist,
       totalpage: result.totalpage,
@@ -71,7 +70,7 @@ Page({
     var promise = new Promise((resolve, reject) => {
       iTime2 = setTimeout(function () {
         that.setData({
-          loadingMsg: "正在加载"
+          loadingMsg: "正在加载..."
         });
         resolve();
       }, 500);
@@ -179,6 +178,7 @@ Page({
    */
   onShow: function () {
     var that = this;
+    page=0;
     num = 0;
     selfDiaglist = [];
     GetList(this)

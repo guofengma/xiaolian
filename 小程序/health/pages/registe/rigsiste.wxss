@@ -6,7 +6,7 @@
   height: 40rpx;
   font-size: 32rpx;
   color: #ff5722;
-  line-height: 40rpx;
+  line-height: 50rpx;
 }
 .dialog{
   width: 100%;

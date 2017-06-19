@@ -10,7 +10,7 @@
     </view>
     <view class="content" bindtap="bindDetailTap">
       <view class="left item">
-        <image src="https://health.lianlianchains.com/all.png"></image>
+        <image src="https://health.lianlianchains.com/all.png?v=201706161035"></image>
         <view class="intro">
           <view class="classname">夫妻同治</view>
           <view class="classname">好<text>孕</text>自然来</view>
@@ -23,7 +23,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="https://health.lianlianchains.com/major.png"></image>
+            <image src="https://health.lianlianchains.com/major.png?v=201706161035"></image>
           </view>
         </view>
         <view class="diagno" bindtap="second">
@@ -32,7 +32,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="https://health.lianlianchains.com/family.png"></image>
+            <image src="https://health.lianlianchains.com/family.png?v=201706161035"></image>
           </view>
         </view>
       </view>
@@ -43,7 +43,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="https://health.lianlianchains.com/use.png"></image>
+            <image src="https://health.lianlianchains.com/use.png?v=201706161035"></image>
           </view>
         </view>
         <view class="diagno bright" bindtap="fouth">
@@ -52,7 +52,7 @@
             <!--<view class="tit">了解更多</view>-->
           </view>
           <view class="img">
-            <image src="https://health.lianlianchains.com/manage.png"></image>
+            <image src="https://health.lianlianchains.com/manage.png?v=201706161035"></image>
           </view>
         </view>
       </view>

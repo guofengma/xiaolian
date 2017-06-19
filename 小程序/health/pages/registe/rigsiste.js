@@ -44,6 +44,7 @@ function healthAdd(amt) {
         'score': amt,
         'type': "3"
       },
+      noLoading: true,
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
@@ -71,6 +72,7 @@ function chongzhi(amt) {
         // func:"transfer",//转移积分
         // func: "takeCash",//减少积分
       },
+      noLoading: true,
       method: "GET",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       // header: { 'content-type': 'application/json' }
@@ -178,6 +180,7 @@ Page({
         mobile: mobile,
         code: code
       },
+      noLoading: true,
       method: "GET",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       // header: { 'content-type': 'application/json' }
@@ -212,6 +215,7 @@ Page({
           'phoneno': mobile,
           'address': ""  
         },
+        noLoading: true,
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {

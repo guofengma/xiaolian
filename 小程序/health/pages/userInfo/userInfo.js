@@ -48,6 +48,7 @@ function health(param) {
       // func:"transfer",//转移积分
       // func: "takeCash",//减少积分
     },
+    noLoading: true,
     method: "GET",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
@@ -145,6 +146,7 @@ Page({
       data: {
         'openid': user.openid
       },
+      noLoading: true,
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
@@ -204,6 +206,7 @@ Page({
         'phoneno': that.data.phoneno,
         'address': that.data.address
       },
+      noLoading: true,
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {

@@ -25,7 +25,7 @@
         <view class="doctor elem">
           <view class="tit">医生:</view>
           <view class="classname">
-            <input type="text" name="doctor" placeholder="请输入医生的姓名" />
+            <input maxlength="16" type="text" name="doctor" placeholder="请输入医生的姓名" />
           </view>
         </view>
         <view class="money elem">
@@ -37,7 +37,7 @@
         <view class="types elem">
           <view class="tit">类型:</view>
           <view class="typecont">
-              <view class="{{item.id?'typeAct':'typeItem'}}" wx:for="{{items}}" bindtap="bindTypeTap" data-idx="{{item.id}}" wx:key="unique" wx:for-index="index">
+              <view class="{{item.id?'typeAct':'typeItem'}}" wx:for="{{items}}" bindtap="bindTypeTap" data-idx="{{item.id}}"  wx:for-index="index">
                 <view class="text" data-index="{{index}}" data-idx="{{item.id}}">{{item.value}}</view>
               </view>
           </view>

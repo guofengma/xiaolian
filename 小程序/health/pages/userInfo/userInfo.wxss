@@ -28,6 +28,10 @@
     -webkit-transform: scaleY(.5);
     transform: scaleY(.5);
 }
+.container .sex .picker{
+  margin-top: -29rpx;
+  padding: 30rpx 0;
+}
 
 .container .age:after{
     content: '';

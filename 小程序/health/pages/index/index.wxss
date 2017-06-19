@@ -1,6 +1,8 @@
 /**index.wxss**/
 .container{
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 /*轮播图*/
 @import "../../template/swiper/swiper.wxss";
@@ -43,6 +45,7 @@
   height: 66%;
   float: left;
   position: relative;
+  font-size: 28rpx;
 }
 .section .content .left:after{
     content: '';
@@ -122,8 +125,8 @@
 }
 
 .section .right .diagno .img{
-  width: 160rpx;
-  height: 178rpx;
+  width: 178rpx;
+  height: 160rpx;
 }
 .section .right .diagno .img image{
   width: 100%;
@@ -184,12 +187,12 @@
   margin-left: 4%;
 }
 .section .btom .diagno .img{
-  width: 160rpx;
-  height: 178rpx;
+  width: 178rpx;
+  height: 160rpx;
 }
 .section .btom .diagno image{
-  width: 160rpx;
-  height: 178rpx;
+  width: 178rpx;
+  height: 160rpx;
   margin-top: 25rpx;
   margin-right: 20rpx;
   

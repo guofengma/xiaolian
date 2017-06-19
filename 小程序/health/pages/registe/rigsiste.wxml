@@ -21,7 +21,7 @@
     <view class="elem">
       <view class="item">
         <view class="tit">手机号</view>
-        <input type="number" name="mobile" value="{{phoneno}}" bindblur="bindPhoneTap" placeholder="请输入手机号"/>
+        <input type="number" maxlength="11" name="mobile" value="{{phoneno}}" bindblur="bindPhoneTap" placeholder="请输入手机号"/>
         <view class="butn" bindtap="bindSmsTap">{{codemsg}}</view>
       </view>
       <view class="line"></view>

@@ -16,6 +16,7 @@ function healthAdd(amt){
       'score': amt,
       'type': "2"
     },
+    noLoading: true,
     method: "POST",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
   }).then(result => {
@@ -41,6 +42,7 @@ function chongzhi(amt) {
       // func:"transfer",//转移积分
       // func: "takeCash",//减少积分
     },
+    noLoading: true,
     method: "GET",
     header: { 'content-type': 'application/x-www-form-urlencoded' }
     // header: { 'content-type': 'application/json' }
@@ -66,6 +68,7 @@ function health(param){
         // func:"transfer",//转移积分
         // func: "takeCash",//减少积分
       },
+      noLoading: true,
       method: "GET",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       // header: { 'content-type': 'application/json' }
@@ -148,6 +151,7 @@ Page({
         items: items
       });
     }
+    console.log(items);
   },
   bindEvalTap(e){
     console.log(e.target.dataset.idx);
@@ -213,6 +217,7 @@ Page({
         'evaluate': that.data.evaluate,
         'label': label.join("|")
       },
+      noLoading: true,
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       // header: { 'content-type': 'application/json' }
@@ -235,6 +240,7 @@ Page({
           ccId: "5e02ae2fd549edc9f7510221e13798de200a31a4b5f438a710fb49b877dc5bb2",
           func: "query"
         },
+        noLoading: true,
         method: "GET",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
         // header: { 'content-type': 'application/json' }
@@ -305,6 +311,7 @@ Page({
           // func:"transfer",//转移积分
           // func: "takeCash",//减少积分
         },
+        noLoading: true,
         method: "GET",
         header: { 'content-type': 'application/x-www-form-urlencoded' }
         // header: { 'content-type': 'application/json' }
@@ -325,6 +332,7 @@ Page({
             // func:"transfer",//转移积分
             // func: "takeCash",//减少积分
           },
+          noLoading: true,
           method: "GET",
           header: { 'content-type': 'application/x-www-form-urlencoded' }
           // header: { 'content-type': 'application/json' }
@@ -551,7 +559,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    label = [];
   },
 
   /**

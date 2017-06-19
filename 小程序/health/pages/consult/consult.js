@@ -89,7 +89,7 @@ Page({
     var promise = new Promise((resolve, reject) => {
       iTime2 = setTimeout(function () {
         that.setData({
-          loadingMsg: "正在加载"
+          loadingMsg: "正在加载..."
         });
         resolve();
       }, 500);
@@ -106,6 +106,9 @@ Page({
         iTime = setTimeout(function () {
           //需要执行的事件
           GetList(that, "noMore");
+          that.setData({
+            loadingMsg: "没有更多了"
+          })
         }, 100);
         
       }
@@ -135,16 +138,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    GetList(this);
-    wx.getSystemInfo({
-      success: function (res) {
-        console.info(res.windowHeight);
-        that.setData({
-          scrollHeight: res.windowHeight+50
-        });
-      }
-    });
+    // var that = this;
+    // GetList(this);
+    // wx.getSystemInfo({
+    //   success: function (res) {
+    //     console.info(res.windowHeight);
+    //     that.setData({
+    //       scrollHeight: res.windowHeight+50
+    //     });
+    //   }
+    // });
     
     //querybypage
     // fetch({
@@ -167,7 +170,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.stopPullDownRefresh();
+    var that = this;
+    page = 0;
+    num = 0;
+    diagList = [];
+    GetList(this);
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info(res.windowHeight);
+        that.setData({
+          scrollHeight: res.windowHeight + 50
+        });
+      }
+    });
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作

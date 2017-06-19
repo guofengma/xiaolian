@@ -44,6 +44,7 @@
   width: 552rpx;
   height: 100%;
   padding-left: 64rpx;
+  text-indent: 220rpx;
 }
 
 .search .add{

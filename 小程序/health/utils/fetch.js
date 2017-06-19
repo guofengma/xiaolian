@@ -2,11 +2,11 @@
 export default function(param) {
   console.log(param);
   if (!param.noLoading){
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading',
-      duration: 10000
-    })
+    // wx.showToast({
+    //   title: '加载中',
+    //   icon: 'loading',
+    //   duration: 10000
+    // })
   }
   
   return new Promise((resolve, reject) => {
@@ -23,7 +23,7 @@ export default function(param) {
       fail: function (msg) {
         console.log('reqest error', msg)
         // wx.hideNavigationBarLoading()
-        wx.hideToast();
+        // wx.hideToast();
         reject('fail')
       }
     })
