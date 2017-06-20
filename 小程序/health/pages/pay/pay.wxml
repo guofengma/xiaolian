@@ -1,6 +1,6 @@
 <!--pages/pay/pay.wxml-->
 <view class="container">
-  <form bindsubmit="bindSubmitTap">
+  <form report-submit="true" bindsubmit="bindSubmitTap">
       <view class="content">
         <view class="tit">请输入金额：</view>
         <view class="moneycont">

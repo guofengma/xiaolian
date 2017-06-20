@@ -61,6 +61,7 @@ Page({
       { name: '003', value: '精神病', id: 0 },
       { name: '004', value: '软骨病', id: 0 }
     ],
+    isShow:true
   },
   bindDownLoad: function () {
     //   该方法绑定了页面滑动到底部的事件
@@ -163,7 +164,15 @@ Page({
    */
   onLoad: function (options) {
     this.bindReHeight();
-    
+    if (wx.getStorageSync('user').openid == "odTAM0UI14TaQ-6X09UAOgJqxBlo"){
+      this.setData({
+        isShow: true
+      })
+    }else{
+      this.setData({
+        isShow: false
+      })
+    }
   },
 
   /**

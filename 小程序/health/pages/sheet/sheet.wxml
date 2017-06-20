@@ -13,7 +13,7 @@
     <view class="inputs">
       <input type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
     </view>
-    <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
+    <image wx:if="{{isShow}}" class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
   </view>
   <view class="content">
     <view class="diagList" wx:for="{{selfDiaglist}}" wx:key="unique" wx:for-index="index" wx:for-item="itemDiag">
