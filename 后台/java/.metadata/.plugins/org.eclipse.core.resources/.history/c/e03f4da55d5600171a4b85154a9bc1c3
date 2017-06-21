@@ -204,7 +204,7 @@ public class HttpAPIService {
      * @return
      * @throws Exception
      */
-    public byte[] doPostImg(String url, Map<String, Object> map, Map<String, Object> header) throws Exception {
+    public CloseableHttpResponse doPostImg(String url, Map<String, Object> map, Map<String, Object> header) throws Exception {
         // 声明httpPost请求
         HttpPost httpPost = new HttpPost(url);
         // 加入配置信息
@@ -225,7 +225,7 @@ public class HttpAPIService {
 
         // 发起请求
         CloseableHttpResponse response = this.httpClient.execute(httpPost);
-        return EntityUtils.toByteArray(response.getEntity());
+        return response;
     }  
     
     /**

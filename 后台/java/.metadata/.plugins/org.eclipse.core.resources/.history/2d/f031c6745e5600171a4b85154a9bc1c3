@@ -77,7 +77,8 @@ public class WxApiController {
 	}
 	
 	@RequestMapping("wx/getTwoBarCodes")
-	public void  getTwoBarCodes(String page ,String parameter, int width,HttpServletResponse response) throws Exception {
+	public void  getTwoBarCodes(String page ,String parameter, int width) throws Exception {
+		HttpServletResponse response = null;
 		// 获取token
 		String urltoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&" + "appid=" + appid
 				+ "&" + "secret=" + appSecret;
