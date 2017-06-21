@@ -50,6 +50,22 @@ public class RefereeController extends BaseController {
     	return referee;  	
     }  
     
+    @RequestMapping("queryReferee")
+    public Referee queryReferee(String openid) {
+      		
+    	Referee referee = new Referee();
+    	referee.setOpenid(openid);
+    	
+    	String referee1 = refereeMapper.queryreferee(openid); 
+    	String referee2 = refereeMapper.queryreferee(referee1);
+    	
+
+    	referee.setReferee1(referee1);
+    	referee.setReferee2(referee2);
+    	
+    	return referee;  	
+    }  
+    
     @RequestMapping("refereecount")
     public int refereecount(String openid) {
     	
