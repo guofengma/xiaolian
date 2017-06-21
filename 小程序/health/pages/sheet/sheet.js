@@ -128,6 +128,7 @@ Page({
         header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
         console.log(result);
+        result.label = result.label.split('|');
         selfDiaglist.push(result);
         console.log("搜索成功");
         that.setData({

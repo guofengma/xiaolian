@@ -48,7 +48,7 @@
 .score text{
   font-size: 28rpx;
   position: relative;
-  top: -4rpx;
+  top: -8rpx;
 }
 .info{
   margin-top: 30rpx;
@@ -66,4 +66,10 @@ button{
 }
 button:after{
   border: none;
+}
+.active{
+   background-color: #ff5722 !important;
+}
+.noAble{
+   background-color: #dddddd !important;
 }

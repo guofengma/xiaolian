@@ -1,5 +1,6 @@
 // pages/registe/rigsiste.js
 import fetch from '../../utils/fetch.js';
+import { transfer } from '../../template/lite.js';
 let timer, num = 60;
 let onoff = true;
 //发送短信函数
@@ -55,36 +56,36 @@ function healthAdd(amt) {
     });
 
 }
-//区块链积分充值
-function chongzhi(amt) {
+// //区块链积分充值
+// function chongzhi(amt) {
 
-    fetch({
-      url: "/app/invoke",
-      // baseUrl: "http://192.168.50.157:9999",
-      baseUrl: "https://health.lianlianchains.com",
-      data: {
-        acc: wx.getStorageSync('user').openid, //openid
-        // acc:"aaa",
-        amt: amt,
-        reacc: "",//对方的openid 转移积分时这个字段才有否则为空
-        ccId: "7f8b9e49d99ce701a1a2185270fb05d807a24231dc8a609c5628bfd8ae990b56",
-        func: "recharge",//增加积分
-        // func:"transfer",//转移积分
-        // func: "takeCash",//减少积分
-      },
-      noLoading: true,
-      method: "GET",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-      // header: { 'content-type': 'application/json' }
-    }).then(result => {
-      // console.log(result);
-      // console.log("交易成功");
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+//     fetch({
+//       url: "/app/invoke",
+//       // baseUrl: "http://192.168.50.157:9999",
+//       baseUrl: "https://health.lianlianchains.com",
+//       data: {
+//         acc: wx.getStorageSync('user').openid, //openid
+//         // acc:"aaa",
+//         amt: amt,
+//         reacc: "",//对方的openid 转移积分时这个字段才有否则为空
+//         ccId: "7f8b9e49d99ce701a1a2185270fb05d807a24231dc8a609c5628bfd8ae990b56",
+//         func: "recharge",//增加积分
+//         // func:"transfer",//转移积分
+//         // func: "takeCash",//减少积分
+//       },
+//       noLoading: true,
+//       method: "GET",
+//       header: { 'content-type': 'application/x-www-form-urlencoded' }
+//       // header: { 'content-type': 'application/json' }
+//     }).then(result => {
+//       // console.log(result);
+//       // console.log("交易成功");
+//     }).catch(err => {
+//       console.log("出错了")
+//       console.log(err)
+//     });
 
-}
+// }
 Page({
 
   /**
@@ -201,7 +202,7 @@ Page({
       } else {
         var amt = "10";
         healthAdd(amt);
-        chongzhi(amt);
+        transfer(wx.getStorageSync('user').openid,amt);
         console.log("你是对的");
         fetch({
         url: "/health/user/update",

@@ -9,11 +9,16 @@
   bindscrolltoupper="refreshs"
   enable-back-to-top="true"
   >
-  <view class="search">
+  <view class="search" wx:if="{{isShow}}">
     <view class="inputs">
       <input type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
     </view>
-    <image wx:if="{{isShow}}" class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
+    <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
+  </view>
+  <view class="search search2" wx:if="{{!isShow}}">
+    <view class="inputs">
+      <input  type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
+    </view>
   </view>
   <view class="content">
     <view class="diagList" wx:for="{{selfDiaglist}}" wx:key="unique" wx:for-index="index" wx:for-item="itemDiag">

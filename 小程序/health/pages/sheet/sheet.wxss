@@ -55,6 +55,19 @@
   transform: translateY(-50%);
   right: 40rpx;
 }
+.search2 .inputs{
+  width: 711rpx;
+  height: 70rpx;
+  background-color: #f7f7f7;
+  border-radius: 35rpx;
+  overflow: hidden;
+}
+.search2 input{
+  width: 711rpx;
+  height: 70rpx;
+  padding-left: 64rpx;
+  text-indent: 280rpx;
+}
 
 .container .content .diagList{
   padding: 28rpx 0;

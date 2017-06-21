@@ -1,5 +1,6 @@
 // pages/diagadd/diagadd.js
 import fetch from '../../utils/fetch.js';
+import { transfer } from '../../template/lite.js';
 
 let timer;
 let user = wx.getStorageSync('user');
@@ -26,6 +27,7 @@ function healthAdd(amt){
     console.log(err)
   });
 }
+
 //区块链积分充值
 function chongzhi(amt) {
   fetch({
@@ -224,11 +226,11 @@ Page({
     }).then(result => {
       console.log(result);
       console.log("添加成功");
-      var amt = "5";
-      //数据库积分增加
-      healthAdd(amt)
-      //区块链增加积分
-      chongzhi(amt);
+      // var amt = "5";
+      // //数据库积分增加
+      // healthAdd(amt)
+      // //区块链增加积分
+      // transfer(wx.getStorageSync('user').openid,amt);
       fetch({
         url: "/ehr/query",
         // baseUrl: "http://192.168.50.157:9999",

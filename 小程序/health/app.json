@@ -1,6 +1,9 @@
 {
   "pages":[
     
+    "pages/pay/pay",
+    "pages/code/code",
+    
     "pages/index/index",
     "pages/consult/consult",
     "pages/user/user",
@@ -9,8 +12,8 @@
     "pages/detail/detail",
     "pages/spread/spread",
     "pages/sheet/sheet",
-    "pages/diagadd/diagadd",
-    "pages/pay/pay"
+    "pages/diagadd/diagadd"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
