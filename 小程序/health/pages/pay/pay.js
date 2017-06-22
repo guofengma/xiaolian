@@ -18,6 +18,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     console.log(options);
+    wx.setStorageSync(options, options);
     wx.login({
       success: function (res) {
         if (res.code) {
@@ -230,13 +231,14 @@ Page({
     var that = this;
     fetch({
       url: "/wxpay/prepay",
-      baseUrl: "http://192.168.50.57:9999",
-      // baseUrl: "https://health.lianlianchains.com",
+      // baseUrl: "http://192.168.50.57:9999",
+      baseUrl: "https://health.lianlianchains.com",
       data: {
         'openid': openId,
         'fee': payMoney,
         'description': "诊疗收费单",
-        'usedScore': that.data.cashMoney
+        'usedScore': that.data.cashMoney,
+        'mch_id': wx.getStorageSync('options').mch_id
       },
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -311,8 +313,8 @@ Page({
         console.log(111);
         fetch({
           url: "/health/referee/queryReferee",
-          // baseUrl: "https://health.lianlianchains.com",
-          baseUrl: "http://192.168.50.57:9999",
+          baseUrl: "https://health.lianlianchains.com",
+          // baseUrl: "http://192.168.50.57:9999",
           data: {
             'openid': wx.getStorageSync('user').openid
           },
