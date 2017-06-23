@@ -44,7 +44,7 @@
   width: 552rpx;
   height: 100%;
   padding-left: 64rpx;
-  text-indent: 220rpx;
+  text-indent: 190rpx;
 }
 
 .search .add{
@@ -66,7 +66,7 @@
   width: 711rpx;
   height: 70rpx;
   padding-left: 64rpx;
-  text-indent: 280rpx;
+  text-indent: 220rpx;
 }
 
 .container .content .diagList{

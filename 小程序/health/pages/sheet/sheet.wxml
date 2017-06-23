@@ -11,13 +11,13 @@
   >
   <view class="search" wx:if="{{isShow}}">
     <view class="inputs">
-      <input type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
+      <input type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="请输入单号" />
     </view>
     <image class="add" bindtap="bindAddTap" src="../../image/more.png"></image>
   </view>
   <view class="search search2" wx:if="{{!isShow}}">
     <view class="inputs">
-      <input  type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="搜索" />
+      <input  type="text" bindconfirm="bindSerchTap" confirm-type="search" placeholder="请输入单号" />
     </view>
   </view>
   <view class="content">

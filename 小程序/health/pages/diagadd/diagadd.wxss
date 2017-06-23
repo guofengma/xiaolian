@@ -19,6 +19,7 @@
   text-align: center;
   font-size: 24rpx;
   line-height: 90rpx;
+  opacity: 0;
 }
 .content{
   background-color: white;

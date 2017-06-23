@@ -1,6 +1,7 @@
 <!--pages/diagadd/diagadd.wxml-->
 <view class="tip" wx:if="{{tipflag}}">信息填写不完整</view>
 <view class="container">
+  <!--<view class="title"></view>-->
   <view class="title">完善诊疗单可获得5分哦</view>
   <view class="content">
     <view class="head">诊疗单</view>

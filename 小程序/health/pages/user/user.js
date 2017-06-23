@@ -1,5 +1,6 @@
 // pages/user/user.js
 import fetch from '../../utils/fetch.js';
+
 var app = getApp();
 Page({
 
@@ -62,6 +63,12 @@ Page({
     });
     
     
+  },
+  //跳转到订单页
+  bindOrderTap(){
+    wx.navigateTo({
+      url: '/pages/order/order'
+    })
   },
   //跳转到问诊单页
   bindSheetTap(){

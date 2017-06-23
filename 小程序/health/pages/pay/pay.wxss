@@ -22,7 +22,7 @@
   position: relative;
 }
 .moneycont .num{
-  font-size: 72rpx;
+  font-size: 60rpx;
   color: #333333;
 }
 .moneycont .num input{
@@ -44,6 +44,7 @@
 .score image{
   width: 34rpx;
   height: 34rpx;
+  margin-right: 10rpx;
 }
 .score text{
   font-size: 28rpx;
@@ -72,4 +73,13 @@ button:after{
 }
 .noAble{
    background-color: #dddddd !important;
+}
+.home{
+  position: absolute;
+  bottom: 60rpx;
+  color: #333333;
+  font-size: 34rpx;
+  border-bottom: 1px #333333 solid;
+  left: 50%;
+  transform: translateX(-50%);
 }

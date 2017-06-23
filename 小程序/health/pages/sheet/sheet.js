@@ -38,6 +38,11 @@ function GetList(that, source) {
         loadingMsg: "没有更多了"
       });
     }
+    if (result.diagnosis.length == 0) {
+      that.setData({
+        loadingMsg: "没有更多了"
+      });
+    }
   }).catch(err => {
     console.log("出错了")
     console.log(err)

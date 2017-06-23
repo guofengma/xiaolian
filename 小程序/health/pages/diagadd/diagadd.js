@@ -203,6 +203,18 @@ Page({
       }
       
     }
+    if (label.length == 0){
+      that.setData({
+        tipflag: true
+      });
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        that.setData({
+          tipflag: false
+        });
+      }, 1000)
+      return;
+    }
     let timestamp = new Date().getTime();
     fetch({
       url: "/health/diagnosis/save",
@@ -210,7 +222,7 @@ Page({
       baseUrl: "https://health.lianlianchains.com",
       data: {
         'diagnosisid': info.diagnosisid,
-        'openid': user.openid,
+        'openid': wx.getStorageSync('user').openid,
         'datetime': timestamp,
         'symptom': info.symptom,
         'amt': info.amt,

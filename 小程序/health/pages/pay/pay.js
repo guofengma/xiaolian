@@ -98,6 +98,11 @@ Page({
     });
 
   },
+  bindHomeTap(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   isUseScore() {
     var that = this;
     if (this.data.paynum){
@@ -227,7 +232,7 @@ Page({
   },
   //下单
   xiadan(openId, payMoney) {
-
+    console.log("支付钱数：" + payMoney);
     var that = this;
     fetch({
       url: "/wxpay/prepay",
@@ -273,6 +278,7 @@ Page({
   },
   //签名
   sign: function (prepay_id, payMoney) {
+    console.log("支付钱数：" + payMoney);
     var that = this;
     fetch({
       url: "/wxpay/sign",
@@ -283,7 +289,7 @@ Page({
       method: "POST",
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(result => {
-      that.requestPayment(result);
+      that.requestPayment(result, payMoney);
     }).catch(err => {
 
     });
@@ -303,6 +309,7 @@ Page({
   },
   //申请支付
   requestPayment: function (obj, payMoney) {
+    console.log("支付钱数：" + payMoney);
     wx.requestPayment({
       'timeStamp': obj.timeStamp,
       'nonceStr': obj.nonceStr,
@@ -325,14 +332,14 @@ Page({
           console.log(6666666666666666666)
           console.log(result);
           //推荐人1
-          if (result.referee1) {
+          if (result.referee1 && payMoney >= 1) {
             fetch({
               url: "/health/score/update",
               baseUrl: "https://health.lianlianchains.com",
               // baseUrl: "http://192.168.50.157:8888",
               data: {
                 'openid': result.referee1,
-                'score': 30,
+                'score': payMoney * 100 * 0.04,
                 'type': 1
               },
               method: "POST",
@@ -343,18 +350,18 @@ Page({
               console.log("出错了")
               console.log(err)
             });
-            transfer(result.referee1, payMoney*0.4);
+            transfer(result.referee1, payMoney*100*0.04);
           }
 
           //推荐人2
-          if (result.referee2) {
+          if (result.referee2 && payMoney >= 1) {
             fetch({
               url: "/health/score/update",
               baseUrl: "https://health.lianlianchains.com",
               // baseUrl: "http://192.168.50.157:8888",
               data: {
                 'openid': result.referee2,
-                'score': 10,
+                'score': payMoney * 100 * 0.02,
                 'type': 1
               },
               noLoading: true,
@@ -366,7 +373,12 @@ Page({
               console.log("出错了")
               console.log(err)
             });
-            transfer(result.referee2, payMoney*0.2);
+            transfer(result.referee2, payMoney * 100*0.02);  
+          }
+          if (result.referee2 && payMoney >= 1 || result.referee1 && payMoney >= 1){
+            if (payMoney * 100 * 0.02 * 0.3 >= 1) {
+              transfer("Lianlian", Math.ceil(payMoney * 100 * 0.02 * 0.3));
+            }
           }
 
         }).catch(err => {

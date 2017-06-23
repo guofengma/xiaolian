@@ -1,0 +1,20 @@
+/* pages/order/order.wxss */
+page{height:100%}
+.container{
+   height: 100%;
+   background-color: #f7f7f7;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+}
+.container .orderItem{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.container .elem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.time{
+  text-align: right;
+}

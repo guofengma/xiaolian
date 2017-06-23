@@ -1,0 +1,14 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="orderItem" wx:for="{{orderList}}">
+    <view class="elem">
+      <view class="classname">订单编号：345342663536</view>
+      <view class="classname">交易成功</view>
+    </view>
+    <view class="elem">
+      <view class="classname">北京骨伤医院</view>
+      <view class="classname">金额：¥20</view>
+    </view>
+    <view class="time">2017-02-18 17:12</view>
+  </view>
+</view>

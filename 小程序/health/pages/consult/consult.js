@@ -51,6 +51,11 @@ function GetList(that, source) {
           loadingMsg: "查看更多"
         });
       }
+      if (result.diagnosis.length == 0) {
+        that.setData({
+          loadingMsg: "没有更多了"
+        });
+      }
     }
     
   }).catch(err => {
@@ -203,7 +208,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '家福堂',
+      title: '',
       path: '/pages/index/index?type=1&openid=' + wx.getStorageSync('user').openid,
       success: function (res) {
         // 转发成功

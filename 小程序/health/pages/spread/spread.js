@@ -75,7 +75,7 @@ Page({
     var openid = wx.getStorageSync('user').openid;
     console.log(openid);
     return {
-      title: '家福堂',
+      title: '',
       path: '/pages/index/index?type=1&openid=' + openid,
       success: function (res) {
         // 转发成功

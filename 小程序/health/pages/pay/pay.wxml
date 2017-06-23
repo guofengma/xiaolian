@@ -19,4 +19,5 @@
       </view>
       <button disabled="{{isActive ? false : true}}" class="{{isActive ? 'active' : 'noAble'}}" type="primary" formType="submit">去支付</button> 
     </form>
+    <view class="home" bindtap="bindHomeTap">返回首页</view>
 </view>
