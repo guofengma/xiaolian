@@ -1,4 +1,5 @@
 // pages/demo/demo.js
+import fetch from '../../utils/fetch.js';
 Page({
 
   /**
@@ -29,7 +30,50 @@ Page({
       }
     ]
   },
-
+  tixian(){
+      fetch({
+          url: "/wxpay/withdraw",
+          baseUrl: "http://192.168.50.57:9999",
+        //   baseUrl: "https://health.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid, //openid
+              fee:'1',
+              description: '提现'   
+          },
+          noLoading: true,
+          method: "POST",
+          header: { 'content-type': 'application/x-www-form-urlencoded' }
+        //   header: { 'content-type': 'application/json' }
+      }).then(result => {
+          console.log(result);
+          console.log("交易成功");
+      }).catch(err => {
+          console.log("出错了")
+          console.log(err)
+      });
+  },
+  tuikuan(){
+      fetch({
+          url: "/wxpay/refund",
+          baseUrl: "http://192.168.50.57:9999",
+          //   baseUrl: "https://health.lianlianchains.com",
+          data: {
+            //   openid: wx.getStorageSync('user').openid, //openid
+              fee: '0.01',
+              orderNo: '提现'
+          },
+          noLoading: true,
+          method: "POST",
+          header: { 'content-type': 'application/x-www-form-urlencoded' }
+          //   header: { 'content-type': 'application/json' }
+      }).then(result => {
+          console.log(result);
+          console.log("交易成功");
+      }).catch(err => {
+          console.log("出错了")
+          console.log(err)
+      });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -13,12 +13,12 @@
   >
     <view class="contact">
       <view class="bord">
-        <button open-type="contact">我要咨询</button>
+        <button open-type="contact">联系客服</button>
       </view>
-      <view class="word">每天30000个问题被专业医生解答</view>
+      <view class="word"></view>
     </view>
     <view class="content">
-      <view class="head">患者病例</view>
+      <view class="head">案例</view>
       <view class="diagList" wx:key="index" wx:for="{{diagList}}">
         <view class="top">
           <view class="eval">

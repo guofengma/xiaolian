@@ -8,9 +8,9 @@
         <text>{{userInfo.nickName}}</text>
       </view>
       
-      <view class="infoAs">
+      <!--<view class="infoAs">
         <view class="age">完善信息可获得积奖励分</view>
-      </view>
+      </view>-->
     </view>
     <image class="arrow" src="../../image/arrowL.png"></image>
   </view>
@@ -49,10 +49,10 @@
         <image src="../../image/cd.png"></image>
       </view>
       <view class="name">
-        <view class="nameInfo">
+        <!--<view class="nameInfo">
           <text class="fir">传播能量</text>
           <text>分享获取积分</text>
-        </view>
+        </view>-->
 
         <view class="nameInfo nameInfo2">
           <text class="fir">已分享:{{persons}}人</text>

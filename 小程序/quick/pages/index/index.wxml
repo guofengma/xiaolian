@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="rule">
+            
+        </view>
+        <view class="buy {{useShadow? 'shadow':''}}" bindlongtap="addShadow" bindtouchend="removeShadow">
+            <image bindtap="bindScanTap" class="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498544381869&di=ec4a1901a5819314e8e39d09a7dea3d3&imgtype=0&src=http%3A%2F%2Fimg.25pp.com%2Fuploadfile%2Fapp%2Ficon%2F20160401%2F1459475515514888.jpg"></image>
+            <view class="tit">扫码购物</view>
+        </view>
+    </view>
+</view>

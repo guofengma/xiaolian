@@ -4,3 +4,5 @@
         <image src="{{item.pic}}" class="recommend_hot_image"></image>
       </view>
     </scroll-view>
+    <button bindtap="tixian">提现</button>
+    <button bindtap="tuikuan">退款</button>

@@ -1,17 +1,22 @@
 {
   "pages":[ 
+      "pages/index/index",
+        "pages/demo/demo",
+      
+      "pages/sheet/sheet",
+    "pages/diagadd/diagadd",
+    
     "pages/order/order",
-    "pages/index/index",
     "pages/pay/pay",
-    "pages/demo/demo",
+    
     "pages/consult/consult",
     "pages/user/user",
     "pages/registe/rigsiste",
     "pages/userInfo/userInfo",
     "pages/detail/detail",
-    "pages/spread/spread",
-    "pages/sheet/sheet",
-    "pages/diagadd/diagadd"
+    "pages/spread/spread"
+    
+   
     
   ],
   "window":{
