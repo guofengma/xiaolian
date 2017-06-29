@@ -8,11 +8,11 @@ public class Order implements Serializable {
 	private String mch_id;// 商户号
 	private String orderNo;// 商户订单号
 	private String description;// 商品描述
-	private int fee;// 标价金额 ,单位为分
+	private double fee;// 标价金额 ,单位为分
 	private String openid;// 用户标识
 	private int usedScore;// 抵扣积分
 	private int bonusScore;// 奖励积分
-	private int charges;//手续费
+	private double charges;//手续费
 	private int state;//状态
 	private String time;//时间
 
@@ -50,11 +50,11 @@ public class Order implements Serializable {
 		this.description = description;
 	}
 
-	public int getFee() {
+	public double getFee() {
 		return fee;
 	}
 
-	public void setFee(int fee) {
+	public void setFee(double fee) {
 		this.fee = fee;
 	}
 
@@ -74,11 +74,11 @@ public class Order implements Serializable {
 		this.bonusScore = bonusScore;
 	}
 
-	public int getCharges() {
+	public double getCharges() {
 		return charges;
 	}
 
-	public void setCharges(int charges) {
+	public void setCharges(double charges) {
 		this.charges = charges;
 	}
 

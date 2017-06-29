@@ -1,17 +1,26 @@
 package com.lxg.springboot.controller;
 
 import com.lxg.springboot.mapper.OrderMapper;
-import com.lxg.springboot.mapper.ScoreMapper;
+import com.lxg.springboot.mapper.RefundMapper;
+import com.lxg.springboot.mapper.WithDrawMapper;
 import com.lxg.springboot.model.HttpResult;
 import com.lxg.springboot.model.Order;
 import com.lxg.springboot.model.OrderInfo;
 import com.lxg.springboot.model.OrderReturnInfo;
+import com.lxg.springboot.model.PayReturnInfo;
+import com.lxg.springboot.model.RefundReturnInfo;
 import com.lxg.springboot.model.SignInfo;
 import com.lxg.springboot.model.Token;
+import com.lxg.springboot.model.User;
 import com.lxg.springboot.service.HttpAPIService;
+import com.lxg.springboot.util.CollectionUtil;
+import com.lxg.springboot.util.HttpUtils;
+import com.lxg.springboot.util.MD5Utils;
+import com.lxg.springboot.util.PayUtil;
 import com.lxg.springboot.util.RandomStringGenerator;
 import com.lxg.springboot.util.Signature;
 import com.lxg.springboot.util.StreamUtil;
+import com.lxg.springboot.util.WebUtil;
 import com.lxg.springboot.util.XmlUtil;
 import com.thoughtworks.xstream.XStream;
 
@@ -22,15 +31,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.List;  
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -54,12 +68,15 @@ public class WxPayController {
     private HttpAPIService httpAPIService;
 	@Resource
     private OrderMapper orderMapper;
-
+	@Resource
+	private WithDrawMapper withDrawMapper;
+	@Resource
+	private RefundMapper refundMapper;
+	
     @RequestMapping("wxpay/prepay")
     public String prepay(Order Order) throws Exception {	
 		OrderInfo order = new OrderInfo();
 		String orderNo = RandomStringGenerator.getRandomStringByLength(32);
-		Order.setMch_id(mch_id);
 		Order.setOrderNo(orderNo);
 		Date date=new Date(); 
 		DateFormat format=new SimpleDateFormat("yyyyMMddHHmmss"); 
@@ -67,13 +84,14 @@ public class WxPayController {
 		Order.setTime(time);
 		Order.setState(2);
 		orderMapper.save(Order);
-		
+		int totalfee=(int) (Order.getFee()*100);
+		int charge=(int) (Order.getCharges()*100);
 		order.setAppid(appid);
 		order.setMch_id(mch_id);
 		order.setNonce_str(RandomStringGenerator.getRandomStringByLength(32));
 		order.setBody(new String(Order.getDescription().getBytes(),"UTF-8"));
 		order.setOut_trade_no(orderNo);
-		order.setTotal_fee(Order.getFee());
+		order.setTotal_fee(totalfee);
 		order.setSpbill_create_ip("123.57.218.54");
 		order.setNotify_url("https://health.lianlianchains.com/wxpay/result");
 		order.setTrade_type("JSAPI");
@@ -159,4 +177,116 @@ public class WxPayController {
 		orderMapper.update(Order);        
     }
     
+    
+    @RequestMapping("wxpay/queryOrder")
+    public List<Order> queryOrder(String openid) throws IOException {
+    	List<Order> allOrder;
+    	allOrder=orderMapper.query(openid);
+    	return allOrder;  	       
+    }
+    
+    
+    @RequestMapping(value = "wxpay/withdraw")
+	public String transferPay(Order Order,HttpServletResponse response) {
+    	int fee = (int) (Order.getFee()*100); 
+    	String feeS = Integer.toString(fee);
+    	String paternerKey="79m1jyaofjonvahln1wnoq606rvbk2gi";
+		Map<String, String> parm = new HashMap<String, String>();
+		String orderNo = RandomStringGenerator.getRandomStringByLength(32);
+		Order.setOrderNo(orderNo);
+		try{		
+		parm.put("mch_appid", appid); //公众账号appid
+		parm.put("mchid", "1472139902"); //商户号
+		parm.put("nonce_str", RandomStringGenerator.getRandomStringByLength(32)); //随机字符串
+		parm.put("partner_trade_no",orderNo); //商户订单号
+		parm.put("openid", Order.getOpenid()); //用户openid	
+		parm.put("check_name", "FORCE_CHECK"); //校验用户姓名选项 OPTION_CHECK
+		parm.put("re_user_name", "安迪"); //check_name设置为FORCE_CHECK或OPTION_CHECK，则必填
+		parm.put("amount", feeS); //转账金额
+		parm.put("desc", Order.getDescription()); //企业付款描述信息		
+		parm.put("spbill_create_ip", InetAddress.getLocalHost().getHostAddress());
+		parm.put("sign", PayUtil.getSign(parm, paternerKey));
+		Order.setMch_id("1472139902");
+		Date date=new Date(); 
+		DateFormat format=new SimpleDateFormat("yyyyMMddHHmmss"); 
+		String time=format.format(date);
+		Order.setTime(time);
+		Order.setState(2);
+		withDrawMapper.save(Order);
+		
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		HttpResult result = HttpUtils.posts("https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers", XmlUtil.xmlFormat(parm, false));
+			
+
+		XStream xStream = new XStream();
+		xStream.alias("xml", PayReturnInfo.class); 
+
+		PayReturnInfo returnInfo = (PayReturnInfo)xStream.fromXML(result.getBody());
+		JSONObject json = new JSONObject();
+		json.put("return_code", returnInfo.getReturn_code());
+		json.put("return_msg", returnInfo.getReturn_msg());
+		if (returnInfo.getReturn_code().equals("SUCCESS")) {
+        	Order.setState(1);		
+        }
+        else{
+        	Order.setState(0);	
+        }               
+		withDrawMapper.update(Order);  	
+		return json.toJSONString();	
+	}
+    
+    @RequestMapping("wxpay/refund")
+    public String refund(Order Order,HttpServletResponse response) throws Exception {	
+    	int fee = (int) (Order.getFee()*100); 
+    	String feeS = Integer.toString(fee);
+    	String paternerKey="79m1jyaofjonvahln1wnoq606rvbk2gi";
+		Map<String, String> parm = new HashMap<String, String>();
+		try{		
+		parm.put("appid", appid); //公众账号appid
+		parm.put("mchid", mch_id); //商户号
+		//parm.put("device_info", device_info); 
+		parm.put("nonce_str", RandomStringGenerator.getRandomStringByLength(32)); //随机字符串
+		parm.put("transaction_id", Order.getOrderNo()); //商户订单号
+		parm.put("out_trade_no", RandomStringGenerator.getRandomStringByLength(32)); //用户openid	
+		parm.put("total_fee", feeS); //金额
+		parm.put("refund_fee", feeS); //退款金额	
+		parm.put("op_user_id",mch_id);
+		parm.put("sign", PayUtil.getSign(parm, paternerKey));
+		Order.setMch_id("1472139902");
+		Date date=new Date(); 
+		DateFormat format=new SimpleDateFormat("yyyyMMddHHmmss"); 
+		String time=format.format(date);
+		Order.setTime(time);
+		Order.setState(2);
+		refundMapper.save(Order);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+
+		HttpResult result = HttpUtils.posts("https://api.mch.weixin.qq.com/secapi/pay/refund", XmlUtil.xmlFormat(parm, false));
+			
+
+		XStream xStream = new XStream();
+		xStream.alias("xml", RefundReturnInfo.class); 
+
+		RefundReturnInfo returnInfo = (RefundReturnInfo)xStream.fromXML(result.getBody());
+		JSONObject json = new JSONObject();
+		json.put("return_code", returnInfo.getReturn_code());
+		json.put("return_msg", returnInfo.getReturn_msg());
+		if (returnInfo.getReturn_code().equals("SUCCESS")) {
+        	Order.setState(1);		
+        }
+        else{
+        	Order.setState(0);	
+        }               
+		refundMapper.update(Order);  		
+		return json.toJSONString();	
+    }
 }

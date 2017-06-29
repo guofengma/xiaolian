@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.lxg.springboot.model.Order;
 
-public interface OrderMapper {
+public interface WithDrawMapper {
 
 	int save(Order order);
 	

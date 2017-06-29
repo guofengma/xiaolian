@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.lxg.springboot.model.Order;
 
-public interface OrderMapper {
+public interface RefundMapper {
 
 	int save(Order order);
 	
