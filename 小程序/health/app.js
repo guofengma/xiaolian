@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function (options) {
+    console.log("加载")
     var that = this
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
@@ -30,7 +31,7 @@ App({
                 // console.log(obj);
                 wx.setStorageSync('user', obj);//存储openid    
                 console.log(wx.getStorageSync('user'));
-                console.log(1111111111111111111111111111111111)
+                console.log('年后')
               }
             });
           } else {

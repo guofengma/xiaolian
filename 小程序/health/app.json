@@ -1,16 +1,23 @@
 {
-  "pages":[
+  "pages":[ 
+      "pages/index/index",
+        "pages/demo/demo",
+      
+      "pages/sheet/sheet",
+    "pages/diagadd/diagadd",
     
-    "pages/index/index",
+    "pages/order/order",
+    "pages/pay/pay",
+    
     "pages/consult/consult",
     "pages/user/user",
     "pages/registe/rigsiste",
     "pages/userInfo/userInfo",
     "pages/detail/detail",
-    "pages/spread/spread",
-    "pages/sheet/sheet",
-    "pages/diagadd/diagadd",
-    "pages/pay/pay"
+    "pages/spread/spread"
+    
+   
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
