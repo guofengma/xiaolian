@@ -1,13 +1,14 @@
 {
   "pages":[ 
+     "pages/pay/pay", 
       "pages/index/index",
-        "pages/demo/demo",
+    "pages/demo/demo",
       
       "pages/sheet/sheet",
     "pages/diagadd/diagadd",
     
     "pages/order/order",
-    "pages/pay/pay",
+    
     
     "pages/consult/consult",
     "pages/user/user",

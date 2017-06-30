@@ -8,80 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    docArray: [
-      {
-        avator: "",
-        name: "张XX",
-        position: "主治医师",
-        address: "北京市三甲",
-        praiseNum: 90,
-        phrase: "中国男科带头人---男人有难题我来帮助你，中国男科带头人---男人有难题我来帮助你"
-      },
-      {
-        avator: "",
-        name: "张XX",
-        position: "主治医师",
-        address: "北京市三甲",
-        praiseNum: 90,
-        phrase: "你有问题,我来帮助你"
-      },
-      {
-        avator: "",
-        name: "张XX",
-        position: "主治医师",
-        address: "北京市三甲",
-        praiseNum: 90,
-        phrase: "你有问题,我来帮助你"
-      }
-    ]
-  },
-  bindUpdateTap(){
-    // 查询
-    fetch({
-      url: "/health/user/query",
-      baseUrl: "https://health.lianlianchains.com",
-      // baseUrl: "http://192.168.50.157:8888",
-      data: {
-        'openid': wx.getStorageSync('user').openid
-      },
-      method: "POST",
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-      if (result.phoneno){
-        wx.navigateTo({
-          url: '/pages/userInfo/userInfo',
-        })
-      }else{
-        wx.navigateTo({
-          url: '/pages/registe/rigsiste',
-        })
-      }
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
-    
     
   },
-  //跳转到订单页
-  bindOrderTap(){
-    wx.navigateTo({
-      url: '/pages/order/order'
-    })
-  },
-  //跳转到问诊单页
-  bindSheetTap(){
-    wx.navigateTo({
-      url: '/pages/sheet/sheet',
-    })
-  },
-  //跳转传播页
-  bindSpreadTap(){
-    wx.navigateTo({
-      url: '/pages/spread/spread',
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -143,88 +72,7 @@ Page({
       
     })
 
-    // 查询
-    // fetch({
-    //   url: "/health/user/query",
-    //   baseUrl: "https://health.lianlianchains.com",
-    //   // baseUrl: "http://192.168.50.157:8888",
-    //   data: {
-    //     'openid': '123'
-    //   },
-    //   method: "POST",
-    //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-    // }).then(result => {
-    //   console.log(result);
-    // }).catch(err => {
-    //   console.log("出错了")
-    //   console.log(err)
-    // });
-
-    //获取积分总额
-    fetch({
-      url: "/health/score/query",
-      // baseUrl: "http://192.168.50.157:8888",
-      baseUrl: "https://health.lianlianchains.com",
-      data: {
-        'openid': wx.getStorageSync("user").openid
-      },
-      method: "POST",
-      noLoading: true,
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-      that.setData({
-        score: result
-      });
-
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
-
-    //获取转发获取的积分
-    fetch({
-      url: "/health/score/querybytype",
-      // baseUrl: "http://192.168.50.157:9999",
-      baseUrl: "https://health.lianlianchains.com",
-      data: {
-        'type': "1",
-        'openid': wx.getStorageSync("user").openid
-      },
-      method: "POST",
-      noLoading: true,
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-      that.setData({
-        scoretype: result
-      });
-
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
-    //获取分享多少人
-    fetch({
-      url: "/health/referee/refereecount",
-      // baseUrl: "http://192.168.50.157:9999",
-      baseUrl: "https://health.lianlianchains.com",
-      data: {
-        'openid': wx.getStorageSync("user").openid
-      },
-      method: "GET",
-      noLoading: true,
-      header: { 'content-type': 'application/x-www-form-urlencoded' }
-    }).then(result => {
-      console.log(result);
-      that.setData({
-        persons: result
-      });
-
-    }).catch(err => {
-      console.log("出错了")
-      console.log(err)
-    });
+   
     
   },
 
@@ -239,7 +87,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+    //   const array = [11, 22, 33,55555];
+    //   const arrayBuffer = new Uint8Array(array)
+    //   const base64 = wx.arrayBufferToBase64(arrayBuffer)
+    //   const arrayBuffers = wx.base64ToArrayBuffer(base64)
+    //   console.log(base64);
+    //   console.log(arrayBuffers);
+      const base64 = 'CxYh'
+      const arrayBuffer = wx.base64ToArrayBuffer(base64)
+      console.log(arrayBuffer)
   },
 
   /**

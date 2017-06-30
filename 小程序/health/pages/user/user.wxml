@@ -8,9 +8,9 @@
         <text>{{userInfo.nickName}}</text>
       </view>
       
-      <!--<view class="infoAs">
-        <view class="age">完善信息可获得积奖励分</view>
-      </view>-->
+      <view class="infoAs">
+        <view class="age"></view>
+      </view>
     </view>
     <image class="arrow" src="../../image/arrowL.png"></image>
   </view>
@@ -44,23 +44,6 @@
       </view>
       <image class="arrow" src="../../image/arrow.png"></image>
     </view>
-    <view class="item" bindtap="bindSpreadTap">
-      <view class="logo">
-        <image src="../../image/cd.png"></image>
-      </view>
-      <view class="name">
-        <!--<view class="nameInfo">
-          <text class="fir">传播能量</text>
-          <text>分享获取积分</text>
-        </view>-->
-
-        <view class="nameInfo nameInfo2">
-          <text class="fir">已分享:{{persons}}人</text>
-          <text>获积分:{{scoretype}}</text>
-        </view>
-        
-      </view>
-      <image class="arrow" src="../../image/arrow.png"></image>
-    </view>
+    
   </view>
 </view>

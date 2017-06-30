@@ -27,7 +27,7 @@ Page({
     // hiddenLoading:false;
     // 节点信息
     wx.request({
-      url: 'https://lite.lianlianchains.com/network/peers',
+      url: 'https://health.lianlianchains.com/network/peers',
       data: {
       },
       header: {
@@ -43,7 +43,7 @@ Page({
 
     // 区块信息
     wx.request({
-      url: 'https://lite.lianlianchains.com/chain',
+      url: 'https://health.lianlianchains.com/chain',
       data: {
       },
       header: {
@@ -58,7 +58,7 @@ Page({
         for (var i = res.data.height - 1, index = 0; i > res.data.height - 5; i-- , index++) {
 
           wx.request({
-            url: 'https://lite.lianlianchains.com/chain/blocks/' + i,
+            url: 'https://health.lianlianchains.com/chain/blocks/' + i,
             data: {
             },
             header: {
@@ -93,9 +93,12 @@ Page({
     that.onCommenEvent();
   },
   onLoad: function (options) {
-    // 页面初始化 options为页面跳转所带来的参数
-    var that = this;
-    that.onCommenEvent();
+    
+  },
+  onShow(){
+      // 页面初始化 options为页面跳转所带来的参数
+      var that = this;
+      that.onCommenEvent();
   },
   // 事件处理
   bindBlockTap: function (event) {
