@@ -1,11 +1,13 @@
-// pages/detail/detail.js
+// pages/cart/cart.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+      amount: 1, //购物车购买数量
+      reduceSrc: '../../image/reduce.png',
+      increaseSrc: '../../image/increase.png'
   },
 
   /**

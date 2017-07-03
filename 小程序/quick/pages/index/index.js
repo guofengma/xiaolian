@@ -6,15 +6,38 @@ var timer = null;
 var app = getApp();
 Page({
     data: {
-        useShadow:false
+        useShadow:false,
+        step: [
+            {
+                image: "../../image/step1.png",
+                tit: '定位门店',
+                info: '扫描店铺二维码'
+            },
+            {
+                image: "../../image/step2.png",
+                tit: '添加商品',
+                info: '扫商品条码并支付'
+            },
+            {
+                image: "../../image/step3.png",
+                tit: '前台校验',
+                info: '向前台出示订单'
+            }
+        ]
     },
     //扫码
     bindScanTap() {
-        wx.scanCode({
-            success: (res) => {
-                console.log(res)
-            }
+        wx.navigateTo({
+            url: '../store/store',
         })
+        // if() {
+
+        // }
+        // wx.scanCode({
+        //     success: (res) => {
+        //         console.log(res)
+        //     }
+        // })
     },
     addShadow() {
         this.setData({

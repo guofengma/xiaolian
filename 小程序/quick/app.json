@@ -1,7 +1,15 @@
 {
-  "pages":[ 
+  "pages":[
+      "pages/detail/detail",
+      "pages/success/success",
+      "pages/check/check",
+      "pages/cart/cart",
       "pages/index/index",
       "pages/sheet/sheet",
+      "pages/store/store",
+      
+      "pages/info/info",
+    
     "pages/diagadd/diagadd",
       "pages/demo/demo",
     "pages/order/order",
@@ -10,8 +18,6 @@
     "pages/consult/consult",
     "pages/user/user",
     "pages/registe/rigsiste",
-    "pages/userInfo/userInfo",
-    "pages/detail/detail",
     "pages/spread/spread"
     
    
@@ -20,14 +26,14 @@
   "window":{
     "backgroundTextStyle":"light",
     "backgroundColor": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "color": "#999999",
     "backgroundColor":"#ffffff",
-    "selectedColor": "#ff5722",
+    "selectedColor": "#0D8FEF",
     "borderStyle": "#dddddd",
     "list": [
       {
@@ -38,8 +44,8 @@
       },
       
       {
-        "selectedIconPath": "./image/userAct.png",
-        "iconPath": "./image/user.png",
+        "selectedIconPath": "./image/mineAct.png",
+        "iconPath": "./image/mine.png",
         "pagePath": "pages/user/user",
         "text": "我的"
       }

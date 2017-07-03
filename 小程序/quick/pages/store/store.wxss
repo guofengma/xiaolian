@@ -1,0 +1,27 @@
+/* pages/store/store.wxss */
+.container{
+    background-color: #f8f8f8;
+    text-align: center;
+}
+image{
+    width: 208rpx;
+    height: 202rpx;
+    margin-top: 200rpx;
+}
+.location{
+    margin-top: 40rpx;
+    font-size: 34rpx;
+}
+.scan{
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    color: #999999;
+}
+button{
+    margin-top: 80rpx;
+    width: 400rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #0D8FEF;
+    color: #fff;
+}

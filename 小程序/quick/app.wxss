@@ -6,7 +6,7 @@ page{
   height: 100%;
   color: #333333;
   font-size: 30rpx;
-  background-color: #fdfdfd;
+  background-color: #f8f8f8;
  overflow: hidden;
 }
 

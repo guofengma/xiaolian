@@ -1,4 +1,4 @@
-// pages/detail/detail.js
+// pages/success/success.js
 Page({
 
   /**

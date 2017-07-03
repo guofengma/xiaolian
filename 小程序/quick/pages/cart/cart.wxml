@@ -1,0 +1,19 @@
+<!--pages/cart/cart.wxml-->
+<view class="container">
+    <view class="item">
+        <view class="name">伊利百利包牛奶100L</view>
+        <view class="bottom">
+            <view class="info">
+                <view class="guige">规格：100ml</view>
+                <view class="money"><text class="symbol">¥</text><text class="singMoney">89</text></view>
+            </view>
+            <view class="total">
+                <image bindtouchstart="bindReduleTap" bindtouchend="Toredule" src="{{reduceSrc}}"></image>
+                <view class="amount">{{amount}}</view>
+                <image bindtouchstart="bindIncreaseTap" bindtouchend="Toincrease" src="{{increaseSrc}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="button">立即支付</view>
+</view>
+

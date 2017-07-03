@@ -1,12 +1,23 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="content">
-        <view class="rule">
-            
+  <view class="content">
+    <view class="rule">
+      <view class="rule_top">用快点 不排队</view>
+      <view class="rule_content">
+        <view class="rule_item" wx:for="{{step}}" wx:key="index" wx:for-index="index" wx:for-item="rule">
+          <image src="{{rule.image}}"></image>
+          <view class="rule_tit">{{rule.tit}}</view>
+          <view class="rule_info">{{rule.info}}</view>
         </view>
-        <view class="buy {{useShadow? 'shadow':''}}" bindlongtap="addShadow" bindtouchend="removeShadow">
-            <image bindtap="bindScanTap" class="" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498544381869&di=ec4a1901a5819314e8e39d09a7dea3d3&imgtype=0&src=http%3A%2F%2Fimg.25pp.com%2Fuploadfile%2Fapp%2Ficon%2F20160401%2F1459475515514888.jpg"></image>
-            <view class="tit">扫码购物</view>
-        </view>
+      </view>
     </view>
+    <view class="buy {{useShadow? 'shadow':''}}" bindlongtap="addShadow" bindtouchend="removeShadow">
+      <image class="homebg" src="../../image/homebg.png"></image>
+      <view class="scanCode">
+        <view class="scan_tit">扫码</view>
+        <image class="scan_img" bindtap="bindScanTap" class="" src="../../image/scanCode.png"></image>
+      </view>
+      
+    </view>
+  </view>
 </view>

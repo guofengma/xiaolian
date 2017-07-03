@@ -1,0 +1,6 @@
+<!--pages/check/check.wxml-->
+<view class="container">
+    <view class="tit">核验订单</view>
+    <view class="show">向店员出示二维码</view>
+    <image class="code" src="{{code}}"></image>
+</view>

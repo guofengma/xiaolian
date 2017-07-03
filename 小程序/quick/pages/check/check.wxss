@@ -1,0 +1,21 @@
+/* pages/check/check.wxss */
+.container{
+    overflow: hidden;
+    text-align: center;
+}
+.container .tit{
+    font-size: 48rpx;
+    color: #0D8FEF;
+    text-align: center;
+    margin-top: 110rpx;
+}
+.container .show{
+    text-align: center;
+    font-size: 34rpx;
+    margin-top: 40rpx;
+}
+.container image{
+    width: 300rpx;
+    height: 300rpx;
+    margin-top: 90rpx;
+}
