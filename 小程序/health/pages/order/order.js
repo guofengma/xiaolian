@@ -21,7 +21,7 @@ Page({
     }
   },
   hospitalMap(id){
-    return '北京骨伤医院'
+    return '北京**医院'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -44,8 +44,8 @@ Page({
     var that = this;
     fetch({
       url: "/wxpay/queryOrder",
-      // baseUrl: "https://health.lianlianchains.com",
-      baseUrl: "http://192.168.50.57:9999",
+      baseUrl: "https://health.lianlianchains.com",
+    //   baseUrl: "http://192.168.50.57:9999",
       data: {
         'openid': wx.getStorageSync('user').openid,
       },
@@ -99,7 +99,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage() {
+      var openid = wx.getStorageSync('user').openid;
+      console.log(openid);
+      return {
+          title: '',
+          path: '/pages/index/index?type=1&openid=' + openid,
+          success: function (res) {
+              // 转发成功
+              console.log("转发成功");
+              //积分
+          },
+          fail: function (res) {
+              // 转发失败
+          }
+      }
   }
 })

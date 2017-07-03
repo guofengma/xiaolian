@@ -207,6 +207,78 @@ Page({
 
           }
         })
+      
+            wx.request({
+                url: 'https://health.lianlianchains.com/wx/send',
+                data: {
+                    "openid": "odTAM0UI14TaQ-6X09UAOgJqxBlo",
+                    "templateid": "LprMgvbE-gJu-KLv1o72CNpGYL0WtXqGpTQTMyRNjvo",
+                    "page": "pages/index/index",
+                    "formid": e.detail.formId,
+                    "data": {
+                        "keyword1": {
+                            "value": 66 + " S",
+                            "color": "#000000"
+                        },
+                        "keyword2": {
+                            "value": "2017",
+                            "color": "#333333"
+                        },
+                        "keyword3": {
+                            "value": "积分交易",
+                            "color": "#333333"
+                        },
+                        "keyword4": {
+                            "value": 3245346457457,
+                            "color": "#333333"
+                        }
+                    },
+                    "emphasis_keyword": "keyword1.DATA"
+                },
+                method: 'GET',
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                success: function (res) {
+
+                }
+            })
+
+            wx.request({
+                url: 'https://health.lianlianchains.com/wx/send',
+                data: {
+                    "openid": "odTAM0UI14TaQ-6X09UAOgJqxBlo",
+                    "templateid": "LprMgvbE-gJu-KLv1o72CNpGYL0WtXqGpTQTMyRNjvo",
+                    "page": "pages/index/index",
+                    "formid": e.detail.formId,
+                    "data": {
+                        "keyword1": {
+                            "value": 77 + " S",
+                            "color": "#000000"
+                        },
+                        "keyword2": {
+                            "value": "2017",
+                            "color": "#333333"
+                        },
+                        "keyword3": {
+                            "value": "积分交易",
+                            "color": "#333333"
+                        },
+                        "keyword4": {
+                            "value": 3245346457457,
+                            "color": "#333333"
+                        }
+                    },
+                    "emphasis_keyword": "keyword1.DATA"
+                },
+                method: 'GET',
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                success: function (res) {
+
+                }
+            })
         console.log(111)
   },
   bindSubmitTap(e) {
@@ -350,6 +422,7 @@ Page({
               console.log("出错了")
               console.log(err)
             });
+            
             transfer(result.referee1, payMoney*100*0.04);
           }
 
@@ -380,7 +453,9 @@ Page({
               transfer("Lianlian", Math.ceil(payMoney * 100 * 0.02 * 0.3));
             }
           }
-
+          wx.redirectTo({
+              url: '../order/order'
+          })
         }).catch(err => {
           console.log("出错了")
           console.log(err)

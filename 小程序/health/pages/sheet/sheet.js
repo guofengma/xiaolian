@@ -226,5 +226,21 @@ Page({
    */
   onReachBottom: function () {
   
+  },
+  onShareAppMessage() {
+      var openid = wx.getStorageSync('user').openid;
+      console.log(openid);
+      return {
+          title: '',
+          path: '/pages/index/index?type=1&openid=' + openid,
+          success: function (res) {
+              // 转发成功
+              console.log("转发成功");
+              //积分
+          },
+          fail: function (res) {
+              // 转发失败
+          }
+      }
   }
 })

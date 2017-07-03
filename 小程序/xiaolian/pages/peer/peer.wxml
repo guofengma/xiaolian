@@ -25,11 +25,11 @@
     <!--底部导航-->
     <view class="peerTabbar">
         <!--区块-->
-        <view class="nav" style="background-color:{{BlockbgColor}};" bindtap="bindBlockNavTap">
+        <view class="nav" style="background-color:{{BlockbgColor}};" bindtouchstart="bindBlockNavTap">
             <image src="../../image/blocks.png" class="navImg"></image>
         </view>
         <!--节点-->
-        <view class="nav" style="background-color:{{NodebgColor}};" bindtap="bindNodeNavTap">
+        <view class="nav" style="background-color:{{NodebgColor}};" bindtouchstart="bindNodeNavTap">
             <image src="../../image/node.png" class="navImg"></image>
         </view>
     </view>

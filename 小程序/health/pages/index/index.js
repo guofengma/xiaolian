@@ -153,55 +153,7 @@ Page({
                     method: "POST",
                     header: { 'content-type': 'application/x-www-form-urlencoded' }
                   }).then(result => {
-                    // console.log(6666666666666666666)
-                    // console.log(result);
-
-                    // //推荐人1
-                    // if (result.referee1) {
-                    //   fetch({
-                    //     url: "/health/score/update",
-                    //     baseUrl: "https://health.lianlianchains.com",
-                    //     // baseUrl: "http://192.168.50.157:8888",
-                    //     data: {
-                    //       'openid': result.referee1,
-                    //       'score': 30,
-                    //       'type': options.type
-                    //     },
-                    //     method: "POST",
-                    //     header: { 'content-type': 'application/x-www-form-urlencoded' }
-                    //   }).then(result => {
-                    //     console.log(result);
-                    //   }).catch(err => {
-                    //     console.log("出错了")
-                    //     console.log(err)
-                    //   });
-                    //   chongzhi(result.referee1, "30");
-                    // }
-
-                    // //推荐人2
-                    // if (result.referee2) {
-                    //   fetch({
-                    //     url: "/health/score/update",
-                    //     baseUrl: "https://health.lianlianchains.com",
-                    //     // baseUrl: "http://192.168.50.157:8888",
-                    //     data: {
-                    //       'openid': result.referee2,
-                    //       'score': 10,
-                    //       'type': options.type
-                    //     },
-                    //     noLoading: true,
-                    //     method: "POST",
-                    //     header: { 'content-type': 'application/x-www-form-urlencoded' }
-                    //   }).then(result => {
-                    //     console.log(result);
-                    //   }).catch(err => {
-                    //     console.log("出错了")
-                    //     console.log(err)
-                    //   });
-                    //   chongzhi(result.referee2, "10");
-                    // }
-
-                    // console.log("加分成功");
+                    console.log("存成功");
 
                   }).catch(err => {
                     console.log("出错了")
@@ -255,5 +207,21 @@ Page({
   },
   onLaunch(options){
     
+  },
+  onShareAppMessage() {
+      var openid = wx.getStorageSync('user').openid;
+      console.log(openid);
+      return {
+          title: '',
+          path: '/pages/index/index?type=1&openid=' + openid,
+          success: function (res) {
+              // 转发成功
+              console.log("转发成功");
+              //积分
+          },
+          fail: function (res) {
+              // 转发失败
+          }
+      }
   }
 })
