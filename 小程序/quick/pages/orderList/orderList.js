@@ -1,34 +1,18 @@
-// pages/user/user.js
-import fetch from '../../utils/fetch.js';
-
-var app = getApp();
+// pages/orderList/orderList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+      hasOrder:true
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    var that = this;
-    var user = wx.getStorageSync('user');
-    app.getUserInfo((userInfo) => {
-      console.log(userInfo);
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      });
-      wx.setStorageSync('userInfo', userInfo);
-      
-    })
-
-   
-    
+  onLoad: function (options) {
+  
   },
 
   /**
@@ -42,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+  
   },
 
   /**
@@ -74,16 +58,9 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函数
+   * 用户点击右上角分享
    */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  onShareAppMessage: function () {
   
   }
 })

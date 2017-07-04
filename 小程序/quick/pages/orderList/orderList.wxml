@@ -1,0 +1,36 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="container">
+  <view class="noOrder" wx:if="{{!hasOrder}}">
+    <image src="../../image/noOrder.png"></image>
+    <view class="info">暂无订单</view>
+  </view>
+  <view class="hasOrder">
+    <view class="item" wx:for="[1]">
+      <view class="elem top">
+        <view class="time">2017</view>
+        <view class="classname">待支付</view>
+      </view>
+      <view class="center">
+        <view class="elem">
+          <view class="classname">
+            <text class="classname">伊利百利包牛奶100L</text>
+            <text class="classname">X1</text>
+          </view>
+          <view class="classname">¥89</view>
+        </view>
+        <view class="elem">
+          <view class="classname">
+            <text class="classname">伊利百利包牛奶100L</text>
+            <text class="classname">X1</text>
+          </view>
+          <view class="classname">¥89</view>
+        </view>
+      </view>
+
+      <view class="elem bottom">
+        <view class="check">待核验</view>
+        <view class="classname">共8件商品 ¥89</view>
+      </view>
+    </view>
+  </view>
+</view>

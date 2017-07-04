@@ -1,17 +1,23 @@
 /* pages/user/user.wxss */
 .header{
-  padding: 40rpx;
+  padding: 40rpx 0 148rpx;
   background-color: #fff;
   border-top: 1px #e3e3e3 solid;
   border-bottom: 1px #e3e3e3 solid;
   position: relative;
   text-align: center;
 }
+.header .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .avatar{
   border:2rpx #ffffff solid;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -21,15 +27,17 @@
 }
 
 .submit{
-    width: 180rpx;
-    height: 40rpx;
-    border: 1rpx solid #ff5722;
-    margin: 20rpx auto;
-    line-height: 40rpx;
-    color: #ff5722;
+    width: 230rpx;
+    height: 60rpx;
+    border: 1rpx solid #0D8FEF;
+    margin: 40rpx auto 0;
+    line-height: 60rpx;
+    color: #0D8FEF;
     background-color: #fff;
     font-size: 30rpx;
-    border-radius: 0;
+    border-radius: 6px;
+    position: relative;
+    z-index: 10;
 }
 
 .submit:after{
@@ -37,14 +45,14 @@
 }
 
 .submit-button-hover{
-    background-color: #ff5722;
+    background-color: #0D8FEF;
     color: #fff;
 }
 
 .order{
     background-color: #fff;
     height: 90rpx;
-    margin-top: 40rpx;
+    margin-top: 20rpx;
     border-radius: 0;
     font-size: 30rpx;
     line-height: 90rpx;
@@ -58,6 +66,6 @@
 
 /** 添加自定义button点击态样式类**/
 .other-button-hover {
-  background-color: #ff5722;
+  background-color: #0D8FEF;
   color: #fff;
 }
