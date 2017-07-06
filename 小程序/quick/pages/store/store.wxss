@@ -3,19 +3,37 @@
     background-color: #f8f8f8;
     text-align: center;
 }
-image{
-    width: 208rpx;
+.image{
+    width: 248rpx;
     height: 202rpx;
-    margin-top: 200rpx;
+    margin: 200rpx auto 0;
+    position: relative;
 }
+.house{
+    width: 248rpx;
+    height: 202rpx;
+}
+.shake{
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: -80rpx;
+    left: -40rpx;
+}
+
 .location{
     margin-top: 40rpx;
-    font-size: 34rpx;
+    font-size: 34rpx; 
 }
 .scan{
     margin-top: 30rpx;
     font-size: 28rpx;
     color: #999999;
+}
+.scan_img{
+    width: 148rpx;
+    height: 148rpx;
+    margin: 140rpx auto;
 }
 button{
     margin-top: 80rpx;

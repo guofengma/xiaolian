@@ -8,15 +8,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+      isSubmit: false
   },
-  
+  orderView(){
+      wx.navigateTo({
+          url: '../orderList/orderList'
+      })
+  },
+  bindSubmitTap(){
+      wx.navigateTo({
+          url: '../submit/submit'
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     var that = this;
     var user = wx.getStorageSync('user');
+    var mobile = wx.getStorageSync('mobile');
+    if(mobile){
+        that.setData({
+            isSubmit: true,
+            mobile: mobile
+        });
+    }
     app.getUserInfo((userInfo) => {
       console.log(userInfo);
       //更新数据

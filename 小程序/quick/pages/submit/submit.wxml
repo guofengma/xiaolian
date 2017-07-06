@@ -7,7 +7,7 @@
     <view class="info" wx:if="{{isPhone}}">请输入正确的手机号</view>
     <view class="checkCode item">
       <input bindinput="bindPwdTap" maxlength="4" name="pwd" type="number" placeholder="验证码" />
-      <text class="msg" catchtap="sendmsg">|{{sendmsg}}</text>
+      <view class="msg" catchtap="bindPresendTap">|{{sendmsg}}</view>
     </view>
     <view class="info" wx:if="{{isPwd}}">密码不能为空</view>
     <button form-type="submit" disabled="{{disabled}}">登录</button>

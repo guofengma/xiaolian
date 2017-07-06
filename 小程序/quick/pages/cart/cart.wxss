@@ -28,6 +28,10 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.item.total{
+    text-align: right;
+    font-size: 28rpx;
+}
 .info{
     display: flex;
     flex-direction: row;

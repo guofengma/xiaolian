@@ -1,8 +1,6 @@
 //index.js
-// request请求
 import fetch from "../../utils/fetch.js";
 
-var timer = null;
 var app = getApp();
 Page({
     data: {
@@ -27,17 +25,22 @@ Page({
     },
     //扫码
     bindScanTap() {
-        wx.navigateTo({
-            url: '../store/store',
-        })
-        // if() {
-
-        // }
-        // wx.scanCode({
-        //     success: (res) => {
-        //         console.log(res)
-        //     }
-        // })
+        
+        if (wx.getStorageSync('StoreId')) {
+            wx.scanCode({
+                success: (res) => {
+                    console.log(res);
+                    wx.navigateTo({
+                        url: '../info/info'
+                    })
+                }
+            })
+        }else{
+            wx.navigateTo({
+                url: '../store/store'
+            })
+        }
+        
     },
     addShadow() {
         this.setData({

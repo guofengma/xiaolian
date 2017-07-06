@@ -7,7 +7,12 @@ Page({
   data: {
       amount: 1, //购物车购买数量
       reduceSrc: '../../image/reduce.png',
-      increaseSrc: '../../image/increase.png'
+      increaseSrc: '../../image/increase.png',
+      name: "伊利纯真酸牛奶",
+      guige: "100ml",
+      price:9.9, //物品单价
+      total:0
+
   },
   bindDeleteTap(){
       wx.showModal({
@@ -16,10 +21,8 @@ Page({
           success: function (res) {
               if (res.confirm) {
                   console.log('用户点击确定')
-                  wx.showToast({
-                      title: '删除成功',
-                      icon: 'success',
-                      duration: 2000
+                  wx.switchTab({
+                      url: '../index/index'
                   })
               } else if (res.cancel) {
                   console.log('用户点击取消')
@@ -31,7 +34,8 @@ Page({
       this.data.amount++
       this.setData({
           amount: this.data.amount,
-          increaseSrc: '../../image/increaseAct.png'
+          increaseSrc: '../../image/increaseAct.png',
+          total: (this.data.price * this.data.amount).toFixed(2)
       })
   },
   bindReduleTap(){
@@ -44,6 +48,7 @@ Page({
       this.setData({
           amount: this.data.amount,
           reduceSrc: '../../image/reduceAct.png',
+          total: (this.data.price * this.data.amount).toFixed(2)
       })
   },
   Toincrease(){
@@ -54,6 +59,28 @@ Page({
   Toredule(){
       this.setData({
           reduceSrc: '../../image/reduce.png'
+      })
+  },
+  //继续购物
+  bindScanTap(){
+      //查看购物车是否已达上限
+
+      //如果达到上限将提示购物车已满
+
+
+      //没达到上限情况下继续购物
+      wx.scanCode({
+          success: (res) => {
+              console.log(res);
+              wx.navigateTo({
+                  url: '../info/info'
+              })
+          }
+      })
+  },
+  bindCartTap(){
+      wx.navigateTo({
+          url: '../cart/cart'
       })
   },
   /**

@@ -18,6 +18,9 @@
     line-height: 90rpx;
     position: relative;
 }
+.container .content .header .title{
+    color: #0D8FEF;
+}
 .container .content .header .delete{
     position: absolute;
     right: 40rpx;

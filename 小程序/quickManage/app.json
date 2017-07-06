@@ -1,0 +1,37 @@
+{
+  "pages":[
+      "pages/index/index", 
+      "pages/submit/submit",
+      "pages/check/check",
+      "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor": "light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "backgroundColor":"#ffffff",
+    "selectedColor": "#0D8FEF",
+    "borderStyle": "#dddddd",
+    "list": [
+      {
+        "selectedIconPath": "./image/homeAct.png",
+        "iconPath": "./image/home.png",
+        "pagePath": "pages/index/index",
+        "text": "库存管理"
+      },
+      
+      {
+        "selectedIconPath": "./image/mineAct.png",
+        "iconPath": "./image/mine.png",
+        "pagePath": "pages/check/check",
+        "text": "订单核查"
+      }
+    ]
+  }
+  
+}

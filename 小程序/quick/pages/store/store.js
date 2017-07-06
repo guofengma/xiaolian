@@ -10,7 +10,17 @@ Page({
   bindScanTap(){
     wx.scanCode({
         success: (res) => {
-            console.log(res)
+            console.log(res);
+            if (res.path){
+                var StoreId = res.path.split('?')[1].split('=')[1];
+                if (StoreId){
+                    wx.setStorageSync('StoreId', StoreId)
+                }  
+            }
+            console.log(wx.getStorageSync('StoreId'));
+            wx.switchTab({
+                url: '../index/index'
+            })
         }
     })
   },

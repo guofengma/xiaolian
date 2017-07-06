@@ -2,14 +2,14 @@
 <view class="container">
     <view class="content">
         <view class="header">
-            成功加入购入车
+            <text class="title">成功加入购入车</text>
             <text bindtouchstart="bindDeleteTap" class="delete">删除</text>
         </view>
-        <view class="name">伊利纯真酸牛奶</view>
-        <view class="guige">规格：250ml</view>
+        <view class="name">{{name}}</view>
+        <view class="guige">规格：{{guige}}</view>
         <view class="money">
             <text class="symbol">¥</text>
-            <text class="num">9.9</text>
+            <text class="num">{{total}}</text>
         </view>
         <view class="total">
             <image bindtouchstart="bindReduleTap" bindtouchend="Toredule" src="{{reduceSrc}}"></image>
@@ -20,6 +20,6 @@
     
 </view>
 <view class="footer">
-    <view class="buy">继续购物</view>
-    <view class="cart">前往购物车</view>
+    <view class="buy" bindtap="bindScanTap">继续购物</view>
+    <view class="cart" bindtap="bindCartTap">前往购物车</view>
 </view>
