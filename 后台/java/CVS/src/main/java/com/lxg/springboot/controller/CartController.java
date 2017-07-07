@@ -31,9 +31,8 @@ public class CartController extends BaseController {
     
     @RequestMapping("querycart")
     public List<Cart> querybypage(Cart cart) {
-    	List<Cart> cartA;  
-    	cartA = cartMapper.querybypage(cart.getOpenid());  
-    	return cartA;
+    	    
+    	return cartMapper.querybypage(cart.getOpenid());  	
     } 
 
 }
