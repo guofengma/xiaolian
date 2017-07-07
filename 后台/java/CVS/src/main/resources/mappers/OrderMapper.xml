@@ -18,7 +18,7 @@
 		where openid=#{openid}
 	</select>
 	
-	<select id="query" parameterType="String" resultType="com.lxg.springboot.model.OrderGood">
+	<select id="queryGood" parameterType="String" resultType="com.lxg.springboot.model.OrderGood">
 		select * from orders 
 		where orderNo=#{orderNo}
 	</select>

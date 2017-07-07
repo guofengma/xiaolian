@@ -11,4 +11,8 @@
 		select * from goodonsale where code=#{code};
 	</select>
 	
+	<select id="querybyCode" parameterType="com.lxg.springboot.model.Good"  resultType="com.lxg.springboot.model.Good">
+		select * from goodonsale where code=#{code};
+	</select>
+	
 </mapper>  

@@ -10,4 +10,6 @@ public interface GoodMapper {
 	
 	Good query(Good good);
 	
+	Good querybyCode(Good good);
+	
 }
