@@ -1,9 +1,11 @@
 {
   "pages":[
+      "pages/info/info",
       "pages/index/index", 
       "pages/submit/submit",
       "pages/check/check",
       "pages/detail/detail"
+      
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,15 +21,15 @@
     "borderStyle": "#dddddd",
     "list": [
       {
-        "selectedIconPath": "./image/homeAct.png",
-        "iconPath": "./image/home.png",
+        "selectedIconPath": "./image/manageAct.png",
+        "iconPath": "./image/manage.png",
         "pagePath": "pages/index/index",
         "text": "库存管理"
       },
       
       {
-        "selectedIconPath": "./image/mineAct.png",
-        "iconPath": "./image/mine.png",
+        "selectedIconPath": "./image/checkAct.png",
+        "iconPath": "./image/check.png",
         "pagePath": "pages/check/check",
         "text": "订单核查"
       }

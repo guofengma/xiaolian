@@ -57,8 +57,8 @@ Page({
   sendSms(mobile){
       fetch({
           url: "/sms/send",
-          baseUrl: "http://192.168.50.57:9888",
-          //   baseUrl: "https://health.lianlianchains.com",
+        //   baseUrl: "http://192.168.50.57:9888",
+            baseUrl: "https://store.lianlianchains.com",
           data: {
               mobile: mobile
           },
@@ -87,8 +87,8 @@ Page({
       console.log(e)
       fetch({
           url: "/sms/verify",
-          baseUrl: "http://192.168.50.57:9888",
-        //   baseUrl: "https://health.lianlianchains.com",
+        //   baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
           data: {
               mobile: e.detail.value.phoneno,
               code: e.detail.value.pwd

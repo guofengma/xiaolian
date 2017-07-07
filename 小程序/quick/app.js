@@ -5,7 +5,7 @@ App({
     var that = this
     var user = wx.getStorageSync('user') || {};
     var userInfo = wx.getStorageSync('userInfo') || {};
-    // if ((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600)) && (!userInfo.nickName)) {
+    if ((!user.openid || (user.expires_in || Date.now()) < (Date.now() + 600)) && (!userInfo.nickName)) {
       wx.login({
         success: function (res) {
             console.log(res.code)
@@ -19,7 +19,7 @@ App({
               }
             });
             var d = that.globalData;//这里存储了appid、secret、token串    
-            var l = 'http://192.168.50.57:9888/wx/getopenid?code=' + res.code;
+            var l = 'https://store.lianlianchains.com/wx/getopenid?code=' + res.code;
             wx.request({
               url: l,
               data: {},
@@ -41,7 +41,7 @@ App({
           }
         }
       });
-    // }
+    }
 
    
   },

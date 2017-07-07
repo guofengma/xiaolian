@@ -1,4 +1,5 @@
 // pages/info/info.js
+import fetch from '../../utils/fetch.js'
 Page({
 
   /**
@@ -11,22 +12,17 @@ Page({
       name: "伊利纯真酸牛奶",
       guige: "100ml",
       price:9.9, //物品单价
-      total:0
+      total:0,
+      result:{}
 
   },
   bindDeleteTap(){
-      wx.showModal({
-          title: '提示',
-          content: '您确定要删除吗',
-          success: function (res) {
-              if (res.confirm) {
-                  console.log('用户点击确定')
-                  wx.switchTab({
-                      url: '../index/index'
-                  })
-              } else if (res.cancel) {
-                  console.log('用户点击取消')
-              }
+      wx.scanCode({
+          success: (res) => {
+              console.log(res);
+              wx.navigateTo({
+                  url: '../info/info'
+              })
           }
       })
   },
@@ -101,7 +97,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+      let cartArray = wx.getStorageSync('cartArray');
+      let already = wx.getStorageSync('already');
+      let index = wx.getStorageSync('index');
+      if (already){
+          console.log(111)
+          this.setData({
+              result: cartArray[index],
+              price: cartArray[index].price - 0
+          })
+      }else{
+          console.log(222)
+          this.setData({
+              result: cartArray[cartArray.length - 1],
+              price: cartArray[cartArray.length - 1].price - 0,
+              total: cartArray[cartArray.length - 1].price - 0
+          })
+      }
+      
   },
 
   /**

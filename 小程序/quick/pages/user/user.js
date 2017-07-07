@@ -24,26 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    var that = this;
-    var user = wx.getStorageSync('user');
-    var mobile = wx.getStorageSync('mobile');
-    if(mobile){
-        that.setData({
-            isSubmit: true,
-            mobile: mobile
-        });
-    }
-    app.getUserInfo((userInfo) => {
-      console.log(userInfo);
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      });
-      wx.setStorageSync('userInfo', userInfo);
-      
-    })
-
-   
+    
     
   },
 
@@ -58,7 +39,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+      var that = this;
+      var user = wx.getStorageSync('user');
+      var mobile = wx.getStorageSync('mobile');
+      if (mobile) {
+          that.setData({
+              isSubmit: true,
+              mobile: mobile
+          });
+      }
+      app.getUserInfo((userInfo) => {
+          console.log(userInfo);
+          //更新数据
+          that.setData({
+              userInfo: userInfo
+          });
+          wx.setStorageSync('userInfo', userInfo);
+
+      })
+
+
   },
 
   /**
