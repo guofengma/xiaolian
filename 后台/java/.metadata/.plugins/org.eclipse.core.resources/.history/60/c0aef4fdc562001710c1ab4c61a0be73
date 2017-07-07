@@ -33,13 +33,5 @@ public class GoodController extends BaseController {
     	return returngood;  	
     }  
 
-    @RequestMapping("querybyCode")
-    public Good querybyCode(Good good) {
-      		
-    	Good returngood = new Good();
-    	returngood=goodMapper.querybyCode(good);
-    	return returngood;  	
-    }  
-
        
 }

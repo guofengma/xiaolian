@@ -37,7 +37,7 @@ public class GoodController extends BaseController {
     public Good querybyCode(Good good) {
       		
     	Good returngood = new Good();
-    	returngood=goodMapper.querybyCode(good);
+    	returngood=goodMapper.query(good);
     	return returngood;  	
     }  
 

@@ -52,13 +52,5 @@ public class Good implements Serializable {
 		this.amount = amount;
 	}
 
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
 	
 }

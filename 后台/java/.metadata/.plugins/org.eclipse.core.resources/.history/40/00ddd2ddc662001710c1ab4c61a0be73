@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="querybyCode" parameterType="com.lxg.springboot.model.Good"  resultType="com.lxg.springboot.model.Good">
-		select * from goodonsale where code=#{code};
+		select * from goods where code=#{code};
 	</select>
 	
 </mapper>  

@@ -7,7 +7,7 @@
 		values (#{openid},#{code},#{amount})
 	</insert>
 	
-	<select id="querybypage"  parameterType="String" resultType="com.lxg.springboot.model.Cart">
+	<select id="querybypage" parameterType="String" resultType="com.lxg.springboot.model.Cart">
 		select * from cart
 		where openid=#{openid} 
 	</select>	

@@ -7,12 +7,12 @@
 		values (#{openid},#{code},#{amount})
 	</insert>
 	
-	<select id="querybypage"  parameterType="String" resultType="com.lxg.springboot.model.Cart">
+	<select id="querybypage" parameterType="com.lxg.springboot.model.Cart" resultType="com.lxg.springboot.model.Cart">
 		select * from cart
 		where openid=#{openid} 
 	</select>	
 
-	 <delete id="delete" parameterType="com.lxg.springboot.model.Cart">
+	 <delete id="delete" parameterType="String" resultType="com.lxg.springboot.model.Cart">
         delete from cart where openid=#{openid} and code=#{code}
     </delete>
 
