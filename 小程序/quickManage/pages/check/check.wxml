@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="classname">订单核验</view>
-    <view class="classname">扫顾客二维码</view>
-    <image src="../../image/scanCode.png"></image>
+    <view class="title">订单核验</view>
+    <view class="info">扫顾客二维码</view>
+    <image bindtouchstart="scanCode" src="../../image/scanCode.png"></image>
 </view>

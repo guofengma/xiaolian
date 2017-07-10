@@ -1,6 +1,8 @@
 {
   "pages":[
       "pages/index/index",
+      "pages/info/info",
+      
       "pages/submit/submit", 
       "pages/cart/cart",  
       
@@ -19,7 +21,7 @@
       "pages/sheet/sheet",
       "pages/store/store",
       
-      "pages/info/info",
+      
       "pages/demo/demo",
     "pages/order/order",
     "pages/pay/pay"

@@ -1,23 +1,5 @@
-<!--index.wxml-->
 <view class="container">
-  <view class="content">
-    <view class="rule">
-      <view class="rule_top">用快点 不排队</view>
-      <view class="rule_content">
-        <view class="rule_item" wx:for="{{step}}" wx:key="index" wx:for-index="index" wx:for-item="rule">
-          <image src="{{rule.image}}"></image>
-          <view class="rule_tit">{{rule.tit}}</view>
-          <view class="rule_info">{{rule.info}}</view>
-        </view>
-      </view>
-    </view>
-    <view class="buy {{useShadow? 'shadow':''}}" bindlongtap="addShadow" bindtouchend="removeShadow">
-      <image class="homebg" src="../../image/homebg.png"></image>
-      <view class="scanCode">
-        <view class="scan_tit">扫码</view>
-        <image class="scan_img" bindtap="bindScanTap" class="" src="../../image/scanCode.png"></image>
-      </view>
-      
-    </view>
-  </view>
+    <view class="title">库存管理</view>
+    <view class="info">扫货品二维码</view>
+    <image bindtouchstart="scanCode" src="../../image/scanCode.png"></image>
 </view>
