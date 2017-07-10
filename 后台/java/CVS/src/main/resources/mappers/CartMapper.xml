@@ -3,8 +3,15 @@
 <mapper namespace="com.lxg.springboot.mapper.CartMapper">
 
 	<insert id="save" parameterType="com.lxg.springboot.model.Cart">
-		insert into cart(openid,code,amount)
-		values (#{openid},#{code},#{amount})
+		insert into cart(openid,code,amount,price)
+		values (#{openid},#{code},#{amount},#{price})
+	</insert>
+	
+	
+	<insert id="edit" parameterType="com.lxg.springboot.model.Cart">
+		 update cart 
+		 set amount=#{amount}
+		 where openid=#{openid} and code=#{code}
 	</insert>
 	
 	<select id="querybypage"  parameterType="String" resultType="com.lxg.springboot.model.Cart">
@@ -14,6 +21,10 @@
 
 	 <delete id="delete" parameterType="com.lxg.springboot.model.Cart">
         delete from cart where openid=#{openid} and code=#{code}
+    </delete>
+    
+    <delete id="deleteall" parameterType="com.lxg.springboot.model.Cart">
+        delete from cart where openid=#{openid}}
     </delete>
 
 </mapper>  

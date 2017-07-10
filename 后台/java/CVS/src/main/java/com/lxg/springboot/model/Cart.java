@@ -16,7 +16,8 @@ public class Cart implements Serializable {
 	
 	private int amount;
 	
-
+	private double price;
+	
 	public String getCode() {
 		return code;
 	}
@@ -39,6 +40,14 @@ public class Cart implements Serializable {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	

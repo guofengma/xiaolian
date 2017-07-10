@@ -16,7 +16,7 @@ public class Good implements Serializable {
 
 	private String code;
 	
-	private String price;
+	private double price;
 	
 	private int amount;
 
@@ -52,11 +52,11 @@ public class Good implements Serializable {
 		this.amount = amount;
 	}
 
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

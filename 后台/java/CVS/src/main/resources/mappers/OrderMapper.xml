@@ -18,8 +18,13 @@
 		where openid=#{openid}
 	</select>
 	
+	<insert id="savegood" parameterType="com.lxg.springboot.model.OrderGood">
+		insert into ordergood(orderNo,code,amount)
+		values (#{orderNo},#{code},#{amount})
+	</insert>
+	
 	<select id="queryGood" parameterType="String" resultType="com.lxg.springboot.model.OrderGood">
-		select * from orders 
+		select * from ordergood 
 		where orderNo=#{orderNo}
 	</select>
 	

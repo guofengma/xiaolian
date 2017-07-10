@@ -8,8 +8,12 @@ public interface CartMapper {
 
 	int save(Cart cart);
 	
+	int edit(Cart cart);
+	
 	List<Cart> querybypage(String openid);
 	
 	int delete(Cart cart);
+	
+	int deleteall(Cart cart);
 		
 }

@@ -110,7 +110,7 @@ public class WxPayController {
 		order.setOut_trade_no(orderNo);
 		order.setTotal_fee(totalfee);
 		order.setSpbill_create_ip("123.57.218.54");
-		order.setNotify_url("https://health.lianlianchains.com/wxpay/result");
+		order.setNotify_url("https://store.lianlianchains.com/wxpay/result");
 		order.setTrade_type("JSAPI");
 		order.setOpenid(Order.getOpenid());
 		order.setSign_type("MD5");
