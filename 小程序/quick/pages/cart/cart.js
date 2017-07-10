@@ -32,7 +32,13 @@ Page({
       cartList:[
           
       ],
-      total:0
+      total:0,
+      moveLeft:false
+  },
+  moveLeft(){
+    this.setData({
+        moveLeft: true
+    })
   },
   bindReduceTap(e){
       var param = {};
@@ -64,21 +70,21 @@ Page({
   },
   //下单
   order(){
-      prepay()
+      this.prepay(wx.getStorageSync('user').openid, 0.01)
   },
   prepay(openId, payMoney) {
       console.log("支付钱数：" + payMoney);
       var that = this;
       fetch({
           url: "/wxpay/prepay",
-          // baseUrl: "http://192.168.50.57:9999",
-          baseUrl: "https://health.lianlianchains.com",
+        //   baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
           data: {
               'openid': openId,
               'fee': payMoney,
-              'description': "诊疗收费单",
-              'usedScore': that.data.cashMoney,
-              'mch_id': wx.getStorageSync('options').mch_id
+              'description': "快点支付",
+              'usedScore': 0,
+              'mch_id': 123
           },
           method: "POST",
           header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -97,7 +103,8 @@ Page({
       var that = this;
       fetch({
           url: "/wxpay/sign",
-          baseUrl: "https://health.lianlianchains.com",
+          baseUrl: "http://211.159.174.113:9888",
+        //   baseUrl: "https://health.lianlianchains.com",
           data: {
               'repay_id': prepay_id
           },
@@ -120,6 +127,25 @@ Page({
           'paySign': obj.paySign,
           'success': function (res) {
               console.log(111);
+              fetch({
+                  url: "/CVS/cart/deleteall",
+                  baseUrl: "http://192.168.50.57:9888",
+                  //   baseUrl: "https://store.lianlianchains.com",
+                  data: {
+                      openid: wx.getStorageSync('user').openid,
+                      amount: this.data.amounts,
+                      code: '6901121300298'
+                  },
+                  noLoading: true,
+                  method: "POST",
+                  header: { 'content-type': 'application/x-www-form-urlencoded' }
+                  //   header: { 'content-type': 'application/json' }
+              }).then(carts => {
+                  console.log("删除成功")
+                  wx.redirectTo({
+                      url: '../orderList/orderList'
+                  })
+              })
           },
           'fail': function (res) {
               console.log(res);
@@ -141,15 +167,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-      this.setData({
-          cartList: [...list]
+      fetch({
+          url: "/CVS/cart/querycart",
+          baseUrl: "http://192.168.50.57:9888",
+        //   baseUrl: "https://store.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid
+          },
+          noLoading: true,
+          method: "GET",
+          //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+          header: { 'content-type': 'application/json' }
+      }).then(carts => {
+          this.setData({
+              cartList: carts
+          })
+          for (var i = 0; i < this.data.cartList.length; i++) {
+              this.data.total += this.data.cartList[i].price * this.data.cartList[i].amount
+          }
+          this.setData({
+              total: this.data.total
+          })
       })
-      for (var i = 0; i < this.data.cartList.length; i++) {
-          this.data.total += this.data.cartList[i].price * this.data.cartList[i].amount
-      }
-      this.setData({
-          total: this.data.total
-      })
+      
   },
 
   /**

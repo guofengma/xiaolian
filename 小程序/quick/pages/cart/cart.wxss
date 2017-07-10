@@ -4,6 +4,15 @@
     font-size: 28rpx;
     padding: 40rpx;
     position: relative;
+    
+}
+@keyframes myfirst
+{
+from {left: 0;}
+to {left: -50px;}
+}
+.left{
+    animation: myfirst 2s;
 }
 .item:after{
     content: '';

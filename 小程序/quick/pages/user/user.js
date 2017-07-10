@@ -11,9 +11,17 @@ Page({
       isSubmit: false
   },
   orderView(){
-      wx.navigateTo({
-          url: '../orderList/orderList'
-      })
+      let mobile = wx.getStorageSync('mobile');
+      if(mobile.length > 0) {
+          wx.navigateTo({
+              url: '../orderList/orderList'
+          })
+      }else{
+          wx.navigateTo({
+              url: '../submit/submit'
+          })
+      }
+      
   },
   bindSubmitTap(){
       wx.navigateTo({
@@ -42,7 +50,9 @@ Page({
       var that = this;
       var user = wx.getStorageSync('user');
       var mobile = wx.getStorageSync('mobile');
-      if (mobile) {
+      console.log(typeof mobile)
+      mobile = mobile.substr(0, 3) + "****" + 　mobile.substr(7);
+      if (mobile.length > 0) {
           that.setData({
               isSubmit: true,
               mobile: mobile

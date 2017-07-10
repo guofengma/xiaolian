@@ -77,6 +77,9 @@
     width: 56rpx;
     height: 56rpx;
 } 
+.container .content .total image:first-of-type{
+    /*padding: 0 0 40rpx 40rpx;*/
+}
 .footer{
     position: fixed;
     bottom: 0;

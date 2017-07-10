@@ -57,6 +57,7 @@
 .mobile{
     margin-top: 20rpx;
     font-size: 28rpx;
+    letter-spacing: 0;
 }
 .nav{
     position: absolute;

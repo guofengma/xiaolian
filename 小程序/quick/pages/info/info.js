@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+      amounts: 0,
       amount: 1, //购物车购买数量
       reduceSrc: '../../image/reduce.png',
       increaseSrc: '../../image/increase.png',
@@ -17,34 +18,42 @@ Page({
 
   },
   bindDeleteTap(){
-      wx.scanCode({
-          success: (res) => {
-              console.log(res);
-              wx.navigateTo({
-                  url: '../info/info'
-              })
-          }
+    //   CVS / cart / delete
+      fetch({
+          url: "/CVS/cart/delete",
+        //   baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid,
+              code: '6901121300298'
+          },
+          noLoading: true,
+          method: "GET",
+          //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+          header: { 'content-type': 'application/json' }
+      }).then(result => {
+          this.ScanCode();
       })
+      
   },
   bindIncreaseTap(){
-      this.data.amount++
-      this.setData({
-          amount: this.data.amount,
-          increaseSrc: '../../image/increaseAct.png',
-          total: (this.data.price * this.data.amount).toFixed(2)
-      })
+    this.data.amounts++;
+    this.setData({
+        amounts: this.data.amounts,
+        increaseSrc: '../../image/increaseAct.png',
+        total: ((wx.getStorageSync('price') - 0) * this.data.amounts).toFixed(2)
+    })
   },
   bindReduleTap(){
-      if (this.data.amount == 1){
+      if (this.data.amounts == 1){
         return
       }else{
-          this.data.amount--
+          this.data.amounts--
       }
-      
       this.setData({
-          amount: this.data.amount,
+          amounts: this.data.amounts,
           reduceSrc: '../../image/reduceAct.png',
-          total: (this.data.price * this.data.amount).toFixed(2)
+          total: ((wx.getStorageSync('price') - 0) * this.data.amounts).toFixed(2)
       })
   },
   Toincrease(){
@@ -57,6 +66,110 @@ Page({
           reduceSrc: '../../image/reduce.png'
       })
   },
+  ScanCode(){
+      wx.scanCode({
+          success: (res) => {
+              console.log(res);
+              //查库
+              fetch({
+                  url: "/CVS/good/querybyCode",
+                //   baseUrl: "http://192.168.50.57:9888",
+                  baseUrl: "https://store.lianlianchains.com",
+                  data: {
+                      code: '6901121300298'
+                  },
+                  noLoading: true,
+                  method: "GET",
+                  //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+                  header: { 'content-type': 'application/json' }
+              }).then(result => {
+                  console.log(result)
+                  //查询购物车
+                  wx.setStorageSync('price', result.price);
+                  fetch({
+                      url: "/CVS/cart/querycart",
+                    //   baseUrl: "http://192.168.50.57:9888",
+                      baseUrl: "https://store.lianlianchains.com",
+                      data: {
+                          openid: wx.getStorageSync('user').openid
+                      },
+                      noLoading: true,
+                      method: "GET",
+                      //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+                      header: { 'content-type': 'application/json' }
+                  }).then(carts => {
+                      console.log(carts)
+                      if (carts.length) {
+                          console.log(1111)
+                          console.log()
+                          let index = carts.findIndex((value, index, arr) => {
+                              return value.code == '6901121300298';
+                          });
+                          if (index >= 0) {
+                              wx.setStorageSync('already', true);
+                              wx.setStorageSync('index', index);
+                              wx.navigateTo({
+                                  url: '../info/info'
+                              })
+                          } else {
+                              wx.setStorageSync('already', false);
+                              fetch({
+                                  url: "/CVS/cart/addtocart",
+                                //   baseUrl: "http://192.168.50.57:9888",
+                                  baseUrl: "https://store.lianlianchains.com",
+                                  data: {
+                                      openid: wx.getStorageSync('user').openid,
+                                      amount: 1,
+                                      code: '6901121300298'
+                                  },
+                                  noLoading: true,
+                                  method: "POST",
+                                  header: { 'content-type': 'application/x-www-form-urlencoded' }
+                                  // header: { 'content-type': 'application/json' }
+                              }).then(addCarts => {
+                                  wx.navigateTo({
+                                      url: '../info/info'
+                                  })
+                              })
+                          }
+                      } else {
+                          console.log(2222)
+                          wx.setStorageSync('already', false);
+                          fetch({
+                              url: "/CVS/cart/addtocart",
+                            //   baseUrl: "http://192.168.50.57:9888",
+                              baseUrl: "https://store.lianlianchains.com",
+                              data: {
+                                  openid: wx.getStorageSync('user').openid,
+                                  amount: 1,
+                                  code: '6901121300298'
+                              },
+                              noLoading: true,
+                              method: "POST",
+                              header: { 'content-type': 'application/x-www-form-urlencoded' }
+                              // header: { 'content-type': 'application/json' }
+                          }).then(addCarts => {
+                              wx.navigateTo({
+                                  url: '../info/info'
+                              })
+                          })
+                      }
+                  })
+
+                  console.log(wx.getStorageSync('cartArray'))
+                  // return
+
+              }).catch(err => {
+                  console.log("出错了")
+                  wx.showToast({
+                      title: '网络繁忙'
+                  })
+                  console.log(err)
+              });
+
+          }
+      })
+  },
   //继续购物
   bindScanTap(){
       //查看购物车是否已达上限
@@ -65,19 +178,45 @@ Page({
 
 
       //没达到上限情况下继续购物
-      wx.scanCode({
-          success: (res) => {
-              console.log(res);
-              wx.navigateTo({
-                  url: '../info/info'
-              })
-          }
+      fetch({
+          url: "/CVS/cart/edit",
+        //   baseUrl: "http://192.168.50.57:9888",
+            baseUrl: "https://store.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid,
+              amount: this.data.amounts,
+              code: '6901121300298'
+          },
+          noLoading: true,
+          method: "POST",
+          header: { 'content-type': 'application/x-www-form-urlencoded' }
+          //   header: { 'content-type': 'application/json' }
+      }).then(carts => {
+          this.ScanCode();
       })
+      
   },
+  //前往购物车
   bindCartTap(){
-      wx.navigateTo({
-          url: '../cart/cart'
+      fetch({
+          url: "/CVS/cart/edit",
+        //   baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid,
+              amount: this.data.amounts,
+              code: '6901121300298'
+          },
+          noLoading: true,
+          method: "POST",
+          header: { 'content-type': 'application/x-www-form-urlencoded' }
+        //   header: { 'content-type': 'application/json' }
+      }).then(carts => {
+          wx.navigateTo({
+              url: '../cart/cart'
+          })
       })
+      
   },
   /**
    * 生命周期函数--监听页面加载
@@ -97,23 +236,42 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-      let cartArray = wx.getStorageSync('cartArray');
       let already = wx.getStorageSync('already');
       let index = wx.getStorageSync('index');
-      if (already){
-          console.log(111)
-          this.setData({
-              result: cartArray[index],
-              price: cartArray[index].price - 0
-          })
-      }else{
-          console.log(222)
-          this.setData({
-              result: cartArray[cartArray.length - 1],
-              price: cartArray[cartArray.length - 1].price - 0,
-              total: cartArray[cartArray.length - 1].price - 0
-          })
-      }
+      console.log(index);
+      fetch({
+          url: "/CVS/cart/querycart",
+        //   baseUrl: "http://211.159.174.113:9888",
+          baseUrl: "https://store.lianlianchains.com",
+          data: {
+              openid: wx.getStorageSync('user').openid
+          },
+          noLoading: true,
+          method: "GET",
+          //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+          header: { 'content-type': 'application/json' }
+      }).then(carts => {
+          console.log(carts);
+          if (already) {
+              this.setData({
+                  total: (wx.getStorageSync('price') - 0) * carts[index].amount,
+                  amounts: carts[index].amount
+              })
+          } else {
+              console.log(222)
+              this.setData({
+                  total: wx.getStorageSync('price') - 0,
+                  amounts: 1
+              })
+            //   console.log(typeof cartArray)
+            //   cartArray[cartArray.length - 1].amounts = 1;
+            //   cartArray[cartArray.length - 1].total = cartArray[cartArray.length - 1].price - 0;
+            //   wx.setStorageSync('cartArray', cartArray)
+          }
+      })
+    //   let cartArray = wx.getStorageSync('cartArray');
+      
+      
       
   },
 

@@ -1,10 +1,13 @@
 {
   "pages":[
       "pages/index/index",
+      "pages/cart/cart",
+    
+      
       "pages/info/info",
       
       "pages/submit/submit", 
-      "pages/cart/cart",  
+       
       
       "pages/yao/yao",
       

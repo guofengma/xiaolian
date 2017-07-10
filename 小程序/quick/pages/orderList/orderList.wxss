@@ -28,6 +28,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.hasOrder .elem .amount{
+    margin-left: 20rpx;
+}
 .hasOrder .top{
     padding: 28rpx;
     position: relative;

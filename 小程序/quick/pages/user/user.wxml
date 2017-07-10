@@ -3,10 +3,10 @@
     <view class="avatar">
       <image src="{{userInfo.avatarUrl}}"></image>
     </view>
-     <button wx:if="{{!isSubmit}}" class="submit" hover-class="submit-button-hover"  bindtap="bindSubmitTap"> 登录 </button>
-     <view class="mobile" wx:if="{{isSubmit}}" class="mobile">{{mobile}}</view>
+     <button wx:if="{{!isSubmit || mobile.length == 0}}" class="submit" hover-class="submit-button-hover"  bindtap="bindSubmitTap"> 登录 </button>
+     <view class="mobile" wx:if="{{isSubmit && mobile.length}}" class="mobile">{{mobile}}</view>
      <image class="bg" src="../../image/wodebg.png"></image>
-     <view class="nav">
+     <view class="nav" wx:if="{{isSubmit && mobile.length}}">
         <view class="elem">
             <view class="num">0</view>
             <view class="name">账户余额</view>
