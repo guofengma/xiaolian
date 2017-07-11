@@ -1,33 +1,25 @@
 {
   "pages":[
       "pages/index/index",
-      "pages/cart/cart",
-    
-      
-      "pages/info/info",
-      
-      "pages/submit/submit", 
-       
-      
-      "pages/yao/yao",
-      
-      "pages/user/user",
-      
-      
+      "pages/store/store",
       "pages/orderList/orderList",
       
+      "pages/submit/submit",
+      "pages/cart/cart",
+      "pages/info/info",
+      "pages/yao/yao",
+      "pages/user/user",
       "pages/detail/detail",
       "pages/success/success",
       "pages/check/check",
       
       
       "pages/sheet/sheet",
-      "pages/store/store",
+      
       
       
       "pages/demo/demo",
-    "pages/order/order",
-    "pages/pay/pay"
+    "pages/order/order"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -40,7 +32,7 @@
     "color": "#999999",
     "backgroundColor":"#ffffff",
     "selectedColor": "#0D8FEF",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "list": [
       {
         "selectedIconPath": "./image/homeAct.png",

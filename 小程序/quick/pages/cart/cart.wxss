@@ -4,7 +4,7 @@
     font-size: 28rpx;
     padding: 40rpx;
     position: relative;
-    
+    letter-spacing: 0;
 }
 @keyframes myfirst
 {
@@ -77,4 +77,5 @@ to {left: -50px;}
     background-color: #0D8FEF;
     text-align: center;
     line-height: 100rpx;
+    border-radius: 0;
 }

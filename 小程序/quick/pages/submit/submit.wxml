@@ -1,4 +1,4 @@
-<!--pages/submit/submit.wxml-->
+`<!--pages/submit/submit.wxml-->
 <view class="container">
   <form bindsubmit="formSubmit">
     <view class="phone item">

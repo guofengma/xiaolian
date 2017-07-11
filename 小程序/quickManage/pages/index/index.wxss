@@ -11,7 +11,7 @@
     letter-spacing: -0.41px;
 }
 .info{
-    margin-top: 40rpx;
+    margin-top: 314rpx;
     font-family: PingFangSC-Regular;
     font-size: 34rpx;
     color: #333333;

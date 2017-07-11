@@ -1,10 +1,10 @@
 <!--pages/cart/cart.wxml-->
 <view class="container">
     <view class="item {{moveLeft?'left':''}}" wx:for="{{cartList}}" wx:for-index="index" bindtouchmove="moveLeft">
-        <view class="name">伊利百利包牛奶100L</view>
+        <view class="name">{{item.name}}</view>
         <view class="bottom">
             <view class="info">
-                <view class="guige">规格：100ml</view>
+                <view class="guige">规格：{{item.specifi}}</view>
                 <view class="money"><text class="symbol">¥</text><text class="singMoney">{{item.price}}</text></view>
             </view>
             <view class="total">

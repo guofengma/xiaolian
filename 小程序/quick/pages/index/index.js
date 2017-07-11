@@ -31,22 +31,29 @@ Page({
             wx.scanCode({
                 success: (res) => {
                     console.log(res);
+                    wx.setStorageSync('code', res.code);
+                    console.log("扫码成功");
+                    
+                    
                     //查库
                     fetch({
                         url: "/CVS/good/querybyCode",
                         // baseUrl: "http://192.168.50.57:9888",
                           baseUrl: "https://store.lianlianchains.com",
                         data: {
-                            code: '6901121300298'
+                            // code: res.code
+                            code: "6901121300298"
                         },
                         noLoading: true,
                         method: "GET",
-                        //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-                        header: { 'content-type': 'application/json' }
+                          header: { 'content-type': 'application/x-www-form-urlencoded' }
+                        // header: { 'content-type': 'application/json' }
                     }).then(result => {
                         console.log(result)
+                        console.log("查库成功");
                         //查询购物车
                         wx.setStorageSync('price', result.price);
+                        wx.setStorageSync('name', result.name);
                         fetch({
                             url: "/CVS/cart/querycart",
                             // baseUrl: "http://192.168.50.57:9888",
@@ -56,15 +63,16 @@ Page({
                             },
                             noLoading: true,
                             method: "GET",
-                            //   header: { 'content-type': 'application/x-www-form-urlencoded' }
-                            header: { 'content-type': 'application/json' }
+                              header: { 'content-type': 'application/x-www-form-urlencoded' }
+                            // header: { 'content-type': 'application/json' }
                         }).then(carts => {
                             console.log(carts)
+                            console.log("购物车查询成功")
                             if (carts.length){
                                 console.log(1111)
                                 console.log()
                                 let index = carts.findIndex((value, index, arr) => {
-                                    return value.code == '6901121300298';
+                                    return value.code == "6901121300298";
                                 });
                                 if (index >= 0){
                                     wx.setStorageSync('already', true);
@@ -81,7 +89,8 @@ Page({
                                         data: {
                                             openid: wx.getStorageSync('user').openid,
                                             amount: 1,
-                                            code:'6901121300298'
+                                            // code: res.code
+                                            code: "6901121300298"
                                         },
                                         noLoading: true,
                                         method: "POST",
@@ -103,7 +112,8 @@ Page({
                                     data: {
                                         openid: wx.getStorageSync('user').openid,
                                         amount: 1,
-                                        code: '6901121300298'
+                                        // code: res.code
+                                        code: "6901121300298"
                                     },
                                     noLoading: true,
                                     method: "POST",
@@ -162,6 +172,12 @@ Page({
         
     },
     onLaunch(options) {
+
+    },
+    /**
+   * 用户点击右上角分享
+   */
+    onShareAppMessage: function () {
 
     }
 })

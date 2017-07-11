@@ -1,11 +1,10 @@
 {
   "pages":[
-      "pages/info/info",
-      "pages/index/index", 
+      "pages/index/index",
       "pages/submit/submit",
+      "pages/info/info",
       "pages/check/check",
       "pages/detail/detail"
-      
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -18,7 +17,8 @@
     "color": "#999999",
     "backgroundColor":"#ffffff",
     "selectedColor": "#0D8FEF",
-    "borderStyle": "#dddddd",
+    "borderStyle": "white",
+    "position": "top",
     "list": [
       {
         "selectedIconPath": "./image/manageAct.png",

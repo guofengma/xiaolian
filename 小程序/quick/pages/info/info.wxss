@@ -1,6 +1,7 @@
 /* pages/info/info.wxss */
 .container{
-    padding: 80rpx 40rpx 60rpx;
+    padding: 0 40rpx;
+    overflow: hidden;
 }
 
 .container .content{
@@ -9,6 +10,7 @@
     border: 1rpx #eee solid;
     border-radius: 5px;
     position: relative;
+    margin-top: 80rpx;
 }
 .container .content view{
     text-align: center;

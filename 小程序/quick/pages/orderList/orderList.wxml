@@ -5,9 +5,9 @@
     <view class="info">暂无订单</view>
   </view>
   <view class="hasOrder" wx:if="{{hasOrder}}">
-    <view class="item" wx:for="[1]">
+    <view class="item" wx:for="{{orderList}}">
       <view class="elem top">
-        <view class="time">2017</view>
+        <view class="time">{{item.time}}</view>
         <view class="classname">待支付</view>
       </view>
       <view class="center">

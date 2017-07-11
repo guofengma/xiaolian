@@ -10,7 +10,7 @@ Page({
       amount: 1, //购物车购买数量
       reduceSrc: '../../image/reduce.png',
       increaseSrc: '../../image/increase.png',
-      name: "伊利纯真酸牛奶",
+      name: "",
       guige: "100ml",
       price:9.9, //物品单价
       total:0,
@@ -25,7 +25,8 @@ Page({
           baseUrl: "https://store.lianlianchains.com",
           data: {
               openid: wx.getStorageSync('user').openid,
-              code: '6901121300298'
+              code: "6901121300298"
+            //   code: wx.getStorageSync('code')
           },
           noLoading: true,
           method: "GET",
@@ -70,13 +71,15 @@ Page({
       wx.scanCode({
           success: (res) => {
               console.log(res);
+              wx.setStorageSync('code', res.code);
               //查库
               fetch({
                   url: "/CVS/good/querybyCode",
                 //   baseUrl: "http://192.168.50.57:9888",
                   baseUrl: "https://store.lianlianchains.com",
                   data: {
-                      code: '6901121300298'
+                    //   code: res.code
+                      code: "6901121300298"
                   },
                   noLoading: true,
                   method: "GET",
@@ -86,6 +89,7 @@ Page({
                   console.log(result)
                   //查询购物车
                   wx.setStorageSync('price', result.price);
+                  wx.setStorageSync('name', result.name);
                   fetch({
                       url: "/CVS/cart/querycart",
                     //   baseUrl: "http://192.168.50.57:9888",
@@ -103,12 +107,12 @@ Page({
                           console.log(1111)
                           console.log()
                           let index = carts.findIndex((value, index, arr) => {
-                              return value.code == '6901121300298';
+                              return value.code == "6901121300298";
                           });
                           if (index >= 0) {
                               wx.setStorageSync('already', true);
                               wx.setStorageSync('index', index);
-                              wx.navigateTo({
+                              wx.redirectTo({
                                   url: '../info/info'
                               })
                           } else {
@@ -120,14 +124,15 @@ Page({
                                   data: {
                                       openid: wx.getStorageSync('user').openid,
                                       amount: 1,
-                                      code: '6901121300298'
+                                    //   code: res.code
+                                      code: "6901121300298"
                                   },
                                   noLoading: true,
                                   method: "POST",
                                   header: { 'content-type': 'application/x-www-form-urlencoded' }
                                   // header: { 'content-type': 'application/json' }
                               }).then(addCarts => {
-                                  wx.navigateTo({
+                                  wx.redirectTo({
                                       url: '../info/info'
                                   })
                               })
@@ -142,14 +147,15 @@ Page({
                               data: {
                                   openid: wx.getStorageSync('user').openid,
                                   amount: 1,
-                                  code: '6901121300298'
+                                //   code: res.code
+                                  code: "6901121300298"
                               },
                               noLoading: true,
                               method: "POST",
                               header: { 'content-type': 'application/x-www-form-urlencoded' }
                               // header: { 'content-type': 'application/json' }
                           }).then(addCarts => {
-                              wx.navigateTo({
+                              wx.redirectTo({
                                   url: '../info/info'
                               })
                           })
@@ -185,7 +191,8 @@ Page({
           data: {
               openid: wx.getStorageSync('user').openid,
               amount: this.data.amounts,
-              code: '6901121300298'
+            //   code: wx.getStorageSync('code')
+              code: "6901121300298"
           },
           noLoading: true,
           method: "POST",
@@ -205,7 +212,8 @@ Page({
           data: {
               openid: wx.getStorageSync('user').openid,
               amount: this.data.amounts,
-              code: '6901121300298'
+            //   code: wx.getStorageSync('code')
+              code: "6901121300298"
           },
           noLoading: true,
           method: "POST",
@@ -215,7 +223,13 @@ Page({
           wx.navigateTo({
               url: '../cart/cart'
           })
-      })
+        }).catch(err => {
+            console.log("出错了")
+            wx.showToast({
+                title: '网络繁忙'
+            })
+            console.log(err)
+        });
       
   },
   /**
@@ -238,10 +252,14 @@ Page({
   onShow: function () {
       let already = wx.getStorageSync('already');
       let index = wx.getStorageSync('index');
+      let name = wx.getStorageSync('name');
+      this.setData({
+          name: name
+      })
       console.log(index);
       fetch({
           url: "/CVS/cart/querycart",
-        //   baseUrl: "http://211.159.174.113:9888",
+        //   baseUrl: "http://192.168.50.57:9888",
           baseUrl: "https://store.lianlianchains.com",
           data: {
               openid: wx.getStorageSync('user').openid
@@ -268,7 +286,13 @@ Page({
             //   cartArray[cartArray.length - 1].total = cartArray[cartArray.length - 1].price - 0;
             //   wx.setStorageSync('cartArray', cartArray)
           }
-      })
+        }).catch(err => {
+            console.log("出错了")
+            wx.showToast({
+                title: '网络繁忙'
+            })
+            console.log(err)
+        });
     //   let cartArray = wx.getStorageSync('cartArray');
       
       

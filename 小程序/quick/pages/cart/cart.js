@@ -103,8 +103,8 @@ Page({
       var that = this;
       fetch({
           url: "/wxpay/sign",
-          baseUrl: "http://211.159.174.113:9888",
-        //   baseUrl: "https://health.lianlianchains.com",
+        //   baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
           data: {
               'repay_id': prepay_id
           },
@@ -129,12 +129,10 @@ Page({
               console.log(111);
               fetch({
                   url: "/CVS/cart/deleteall",
-                  baseUrl: "http://192.168.50.57:9888",
-                  //   baseUrl: "https://store.lianlianchains.com",
+                //   baseUrl: "http://192.168.50.57:9888",
+                    baseUrl: "https://store.lianlianchains.com",
                   data: {
-                      openid: wx.getStorageSync('user').openid,
-                      amount: this.data.amounts,
-                      code: '6901121300298'
+                      openid: wx.getStorageSync('user').openid
                   },
                   noLoading: true,
                   method: "POST",
@@ -142,10 +140,19 @@ Page({
                   //   header: { 'content-type': 'application/json' }
               }).then(carts => {
                   console.log("删除成功")
-                  wx.redirectTo({
-                      url: '../orderList/orderList'
+                  if (carts == 1 || carts == 0) {
+                      wx.redirectTo({
+                          url: '../orderList/orderList'
+                      })
+                  }
+
+              }).catch(err => {
+                  console.log("出错了")
+                  wx.showToast({
+                      title: '网络繁忙'
                   })
-              })
+                  console.log(err)
+              });
           },
           'fail': function (res) {
               console.log(res);
@@ -169,8 +176,8 @@ Page({
   onShow: function () {
       fetch({
           url: "/CVS/cart/querycart",
-          baseUrl: "http://192.168.50.57:9888",
-        //   baseUrl: "https://store.lianlianchains.com",
+        //   baseUrl: "http://192.168.50.57:9888", 
+          baseUrl: "https://store.lianlianchains.com",
           data: {
               openid: wx.getStorageSync('user').openid
           },
@@ -188,7 +195,13 @@ Page({
           this.setData({
               total: this.data.total
           })
-      })
+        }).catch(err => {
+            console.log("出错了")
+            wx.showToast({
+                title: '网络繁忙'
+            })
+            console.log(err)
+        });
       
   },
 
@@ -220,10 +233,5 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
-  }
 })

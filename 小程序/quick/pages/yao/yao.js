@@ -12,28 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      wx.onAccelerometerChange(function (e) {
-          console.log(e.x)
-          console.log(e.y)
-          console.log(e.z)
-          if (e.x > 1 && e.y > 1) {
-              wx.showToast({
-                  title: '摇一摇成功',
-                  icon: 'success',
-                  duration: 1000
-              })
-              wx.vibrateLong({
-                  success:function(){
-
-                  }
-              })
-              wx.getClipboardData({
-                  success: function (res) {
-                      console.log(res.data)
-                  }
-              })
-          }
-      })
+      
   },
 
   /**
