@@ -1,6 +1,6 @@
 // pages/sheet/sheet.js
 import fetch from '../../utils/fetch.js';
-var formatTime = require('../../utils/util').formatTime;
+
 
 var user = wx.getStorageSync('user');
 var page = 0;

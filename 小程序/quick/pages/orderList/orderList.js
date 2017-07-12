@@ -1,6 +1,6 @@
 // pages/orderList/orderList.js
 import fetch from '../../utils/fetch';
-import { formatTime } from '../../utils/filter'
+import { formatTime, formatState } from '../../utils/filter'
 Page({
 
   /**
@@ -10,7 +10,9 @@ Page({
       hasOrder:true,
       orderList:[]
   },
+  checkView(){
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -21,14 +23,15 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function (param) {
+   console.log(param)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+      
       fetch({
           url: "/wxpay/queryOrder",
         //   baseUrl: "http://192.168.50.57:9888",
@@ -46,9 +49,16 @@ Page({
                   hasOrder: false
               })
           }
-        //   for(var i=0; i< result.length; i++){
-        //       result[i].time = formatTime(result[i].time)
-        //   }
+          for(var i=0; i< result.length; i++){
+              result[i].time = formatTime(new Date(result[i].time/1000))
+              result[i].state = formatState(result[i].state);
+              result[i].totalNum = 0;
+              result[i].totalPrice = 0;
+              for (var j = 0; j < result[i].temp.length;j++){
+                  result[i].totalNum = result[i].temp[j].amount
+                  result[i].totalPrice += result[i].temp[j].amount * result[i].temp[j].price
+              }
+          }
           this.setData({
               orderList: result
           })

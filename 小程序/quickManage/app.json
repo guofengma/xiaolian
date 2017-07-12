@@ -1,16 +1,17 @@
 {
   "pages":[
+     "pages/detail/detail",
       "pages/index/index",
       "pages/submit/submit",
       "pages/info/info",
-      "pages/check/check",
-      "pages/detail/detail"
+      "pages/check/check"
+      
   ],
   "window":{
     "backgroundTextStyle":"light",
     "backgroundColor": "light",
     "navigationBarBackgroundColor": "#f8f8f8",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "快点Boss",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

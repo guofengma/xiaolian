@@ -1,13 +1,15 @@
- export let evalue = (param) => {
+ export let formatState = (param) => {
   if (param == "0"){
-    return "非常满意"
+    return "支付失败"
   } else if (param == "1"){
-    return "满意"
+    return "支付成功"
   } else if (param == "2"){
-    return "不满意"
+    return "待支付"
   }
 };
 
+
+//时间格式化
 export function formatTime(date) {
      var year = date.getFullYear()
      var month = date.getMonth() + 1
@@ -24,6 +26,18 @@ export function formatTime(date) {
 
      return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
  }
+
+//随机32位字符串
+export function randomString(len) {
+    len = len || 32;
+    var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    //****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****//
+    var maxPos = $chars.length;
+    var pwd = '';
+    for (var i = 0; i < len; i++) {
+        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    }
+    return pwd;
+}
 
  
 

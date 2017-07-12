@@ -1,23 +1,17 @@
 {
   "pages":[
-      "pages/index/index",
-      "pages/store/store",
-      "pages/orderList/orderList",
+     "pages/index/index",
+     "pages/check/check",
       
+      "pages/orderList/orderList",
+      "pages/store/store",
       "pages/submit/submit",
       "pages/cart/cart",
       "pages/info/info",
-      "pages/yao/yao",
       "pages/user/user",
       "pages/detail/detail",
       "pages/success/success",
-      "pages/check/check",
-      
-      
       "pages/sheet/sheet",
-      
-      
-      
       "pages/demo/demo",
     "pages/order/order"
   ],

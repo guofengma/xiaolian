@@ -8,28 +8,24 @@
     <view class="item" wx:for="{{orderList}}">
       <view class="elem top">
         <view class="time">{{item.time}}</view>
-        <view class="classname">待支付</view>
+        <view class="classname">{{item.state}}</view>
       </view>
       <view class="center">
-        <view class="elem">
+        <view class="elem" wx:for="{{item.temp}}" wx:for-item="goods">
           <view class="classname">
-            <text class="name">伊利百利包牛奶100L</text>
-            <text class="amount">X1</text>
+            <text class="name">{{goods.name}}</text>
+            <text class="amount">x{{goods.amount}}</text>
           </view>
-          <view class="classname">¥89</view>
-        </view>
-        <view class="elem">
-          <view class="classname">
-            <text class="name">伊利百利包牛奶100L</text>
-            <text class="amount">X1</text>
-          </view>
-          <view class="classname">¥89</view>
+          <view class="classname">¥{{goods.amount * goods.price}}</view>
         </view>
       </view>
 
-      <view class="elem bottom">
-        <view class="check">待核验</view>
-        <view class="classname">共8件商品 ¥89</view>
+      <view class="elem bottom" wx:if="{{item.checkstate == 0}}">
+        <view class="check" bindtouchstart="checkView">{{item.checkstate == 0 ? '待核验': ''}}</view>
+        <view>共{{item.totalNum}}件商品 ¥{{item.totalPrice}}</view>
+      </view>
+      <view class="elem bottom" wx:if="{{item.checkstate == 1}}">
+        <view class="hasCheck">共{{item.totalNum}}件商品 ¥{{item.totalPrice}}</view>
       </view>
     </view>
   </view>

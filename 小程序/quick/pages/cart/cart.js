@@ -142,7 +142,7 @@ Page({
                   console.log("删除成功")
                   if (carts == 1 || carts == 0) {
                       wx.redirectTo({
-                          url: '../orderList/orderList'
+                          url: '../check/check'
                       })
                   }
 

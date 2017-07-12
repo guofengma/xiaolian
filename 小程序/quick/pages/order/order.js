@@ -1,6 +1,7 @@
 // pages/order/order.js
 import fetch from '../../utils/fetch.js';
-var formatTime = require('../../utils/util.js').formatTime;
+import { formatTime } from '../../utils/filter'
+
 Page({
 
   /**

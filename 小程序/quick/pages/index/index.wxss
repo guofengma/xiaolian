@@ -5,9 +5,6 @@
     background-color: #f8f8f8;
 }
 
-.container .content{
-    
-}
 .container .content .rule{
     background-color: #fff;
     border: 1px #eeeeee solid;
@@ -30,8 +27,8 @@
     text-align: center;
 }
 .container .content .rule_content .rule_item image{
-    width: 124.8rpx;
-    height: 105.2rpx;
+    width: 120rpx;
+    height: 120rpx;
 } 
 .container .content .rule_content .rule_item .rule_tit{
     font-size: 28rpx;
@@ -62,30 +59,31 @@
     0 -2px 10px #999999,  
     0 2px 10px #999999;  
 }
-/*.container .content .buy:before{
-    position: absolute;
-    content: "";
-    height: 1px;
-    background-color: #dddddd;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: scaleY(.5);
-}
-.container .content .buy:after{
-    position: absolute;
-    content: "";
-    height: 1px;
-    background-color: #dddddd;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: scaleY(.5);
-}*/
+
+
 
 .container .content .buy image{
-    width: 108rpx;
-    height: 108rpx;
+    width: 128rpx;
+    height: 128rpx;
+}
+.container .content .buy .store{
+   text-align: left;
+}
+.container .content .buy .store{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   font-size: 28rpx;
+   padding: 30rpx 0 0 36rpx;
+   color: #999999;
+   position: relative;
+   z-index: 1000;
+}
+.container .content .buy .store image{
+   width: 38rpx;
+   height: 38rpx;
+   margin-right: 8rpx;
 }
 .container .content .buy .scan_tit{
     font-size: 34rpx;
@@ -95,9 +93,25 @@
 .container .content .buy .scanCode{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 62%;
     transform: translate(-50%, -50%);
     z-index: 2;
+}
+
+.container .content .buy .scanCode .scan_img{
+   position: relative;
+}
+.container .content .buy .scanCode .num{
+   position: absolute;
+   right: -16rpx;
+   top: -16rpx;
+   background-color: #F02E51;
+   width: 40rpx;
+   height: 40rpx;
+   border-radius: 20rpx;
+   font-family: PingFangSC-Regular;
+   color: #FFFFFF;
+   letter-spacing: -0.41px;
 }
 
 .container .content .buy .homebg{

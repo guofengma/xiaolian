@@ -4,7 +4,9 @@ let cartArray = [];
 var app = getApp();
 Page({
     data: {
+       store: "../../image/store.png",
         useShadow: false,
+        totalNum:0,
         step: [
             {
                 image: "../../image/step1.png",
@@ -23,11 +25,15 @@ Page({
             }
         ]
     },
-
+    ReScanTap(){
+       wx.navigateTo({
+          url: '../store/store'
+       })
+    },
     //扫码
     bindScanTap() {
 
-        if (wx.getStorageSync('StoreId')) {
+       if (wx.getStorageSync('storeId')) {
             wx.scanCode({
                 success: (res) => {
                     console.log(res);
@@ -169,7 +175,39 @@ Page({
         })
     },
     onShow: function () {
-        
+       var storeId = wx.getStorageSync('storeId');
+       if (storeId){
+          this.setData({
+             'storeId': storeId,
+             'storeName': wx.getStorageSync('storeName')
+          })
+       }
+      
+       fetch({
+          url: "/CVS/cart/querycart",
+          //   baseUrl: "http://192.168.50.57:9888", 
+          baseUrl: "https://store.lianlianchains.com",
+          data: {
+             openid: wx.getStorageSync('user').openid
+          },
+          noLoading: true,
+          method: "GET",
+            header: { 'content-type': 'application/x-www-form-urlencoded' }
+         //  header: { 'content-type': 'application/json' }
+       }).then(carts => {
+          for (var i = 0; i < carts.length; i++) {
+             this.data.totalNum += carts[i].price * carts[i].amount
+          }
+          this.setData({
+             totalNum: this.data.total
+          })
+       }).catch(err => {
+          console.log("出错了")
+          wx.showToast({
+             title: '网络繁忙'
+          })
+          console.log(err)
+       });
     },
     onLaunch(options) {
 
