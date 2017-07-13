@@ -12,14 +12,21 @@
       </view>
     </view>
     <view class="buy {{useShadow? 'shadow':''}}" bindlongtap="addShadow" bindtouchend="removeShadow">
-      <view class="store" wx:if="{{storeId}}" bindtouchstart="ReScanTap">
-         <image src="{{store}}"></image>
-         <view class="classname">{{storeName ? '链链' : ''}}</view>
+      <view class="bar">
+         <view class="store" wx:if="{{storeId}}" bindtouchstart="ReScanTap">
+            <image src="{{store}}"></image>
+            <view class="classname">{{storeName ? '链链' : ''}}</view>
+         </view>
+         <view class="cart" wx:if="{{totalNum > 0}}" bindtouchstart="cartView">
+            <image src="{{cart}}"></image>
+            <view class="num" wx:if="{{totalNum > 0}}">{{totalNum}}</view>
+         </view>
       </view>
+      
       <image class="homebg" src="../../image/homebg.png"></image>
       <view class="scanCode">
         <image class="scan_img" bindtap="bindScanTap" class="" src="../../image/scanCode.png"></image>
-        <view class="num" wx:if="{{totalNum > 0}}">{{totalNum}}</view>
+        <!-- <view class="num" wx:if="{{totalNum > 0}}">{{totalNum}}</view> -->
       </view>
       
     </view>

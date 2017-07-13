@@ -25,7 +25,8 @@ Page({
           baseUrl: "https://store.lianlianchains.com",
           data: {
               openid: wx.getStorageSync('user').openid,
-              code: "6901121300298"
+              code: "6901121300298",
+              storeid: getApp().globalData.storeid
             //   code: wx.getStorageSync('code')
           },
           noLoading: true,
@@ -79,7 +80,8 @@ Page({
                   baseUrl: "https://store.lianlianchains.com",
                   data: {
                     //   code: res.code
-                      code: "6901121300298"
+                      code: "6901121300298",
+                      storeid: getApp().globalData.storeid
                   },
                   noLoading: true,
                   method: "GET",
@@ -95,7 +97,8 @@ Page({
                     //   baseUrl: "http://192.168.50.57:9888",
                       baseUrl: "https://store.lianlianchains.com",
                       data: {
-                          openid: wx.getStorageSync('user').openid
+                          openid: wx.getStorageSync('user').openid,
+                          storeid: getApp().globalData.storeid
                       },
                       noLoading: true,
                       method: "GET",
@@ -125,7 +128,8 @@ Page({
                                       openid: wx.getStorageSync('user').openid,
                                       amount: 1,
                                     //   code: res.code
-                                      code: "6901121300298"
+                                      code: "6901121300298",
+                                      storeid: getApp().globalData.storeid
                                   },
                                   noLoading: true,
                                   method: "POST",
@@ -148,7 +152,8 @@ Page({
                                   openid: wx.getStorageSync('user').openid,
                                   amount: 1,
                                 //   code: res.code
-                                  code: "6901121300298"
+                                  code: "6901121300298",
+                                  storeid: getApp().globalData.storeid
                               },
                               noLoading: true,
                               method: "POST",
@@ -166,11 +171,11 @@ Page({
                   // return
 
               }).catch(err => {
-                  console.log("出错了")
-                  wx.showToast({
-                      title: '网络繁忙'
-                  })
-                  console.log(err)
+                  // console.log("出错了")
+                  // wx.showToast({
+                  //     title: '网络繁忙'
+                  // })
+                  // console.log(err)
               });
 
           }
@@ -192,7 +197,8 @@ Page({
               openid: wx.getStorageSync('user').openid,
               amount: this.data.amounts,
             //   code: wx.getStorageSync('code')
-              code: "6901121300298"
+              code: "6901121300298",
+              storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "POST",
@@ -213,7 +219,8 @@ Page({
               openid: wx.getStorageSync('user').openid,
               amount: this.data.amounts,
             //   code: wx.getStorageSync('code')
-              code: "6901121300298"
+              code: "6901121300298",
+              storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "POST",
@@ -224,11 +231,11 @@ Page({
               url: '../cart/cart'
           })
         }).catch(err => {
-            console.log("出错了")
-            wx.showToast({
-                title: '网络繁忙'
-            })
-            console.log(err)
+            // console.log("出错了")
+            // wx.showToast({
+            //     title: '网络繁忙'
+            // })
+            // console.log(err)
         });
       
   },
@@ -262,7 +269,8 @@ Page({
         //   baseUrl: "http://192.168.50.57:9888",
           baseUrl: "https://store.lianlianchains.com",
           data: {
-              openid: wx.getStorageSync('user').openid
+              openid: wx.getStorageSync('user').openid,
+              storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "GET",
@@ -287,11 +295,11 @@ Page({
             //   wx.setStorageSync('cartArray', cartArray)
           }
         }).catch(err => {
-            console.log("出错了")
-            wx.showToast({
-                title: '网络繁忙'
-            })
-            console.log(err)
+            // console.log("出错了")
+            // wx.showToast({
+            //     title: '网络繁忙'
+            // })
+            // console.log(err)
         });
     //   let cartArray = wx.getStorageSync('cartArray');
       

@@ -14,11 +14,11 @@ Page({
         wx.scanCode({
             success: (res) => {
                 console.log(res);
-                this.detailView();
+                this.infoView();
             }
         })
     },
-    detailView() {
+    infoView() {
         wx.navigateTo({
             url: '../info/info'
         })

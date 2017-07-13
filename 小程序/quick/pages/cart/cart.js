@@ -84,7 +84,8 @@ Page({
               'fee': payMoney,
               'description': "快点支付",
               'usedScore': 0,
-              'mch_id': 123
+              'mch_id': 123,
+              storeid: getApp().globalData.storeid
           },
           method: "POST",
           header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -106,7 +107,8 @@ Page({
         //   baseUrl: "http://192.168.50.57:9888",
           baseUrl: "https://store.lianlianchains.com",
           data: {
-              'repay_id': prepay_id
+              'repay_id': prepay_id,
+              storeid: getApp().globalData.storeid
           },
           method: "POST",
           header: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -132,7 +134,8 @@ Page({
                 //   baseUrl: "http://192.168.50.57:9888",
                     baseUrl: "https://store.lianlianchains.com",
                   data: {
-                      openid: wx.getStorageSync('user').openid
+                      openid: wx.getStorageSync('user').openid,
+                      storeid: getApp().globalData.storeid
                   },
                   noLoading: true,
                   method: "POST",
@@ -179,7 +182,8 @@ Page({
         //   baseUrl: "http://192.168.50.57:9888", 
           baseUrl: "https://store.lianlianchains.com",
           data: {
-              openid: wx.getStorageSync('user').openid
+              openid: wx.getStorageSync('user').openid,
+              storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "GET",
@@ -216,7 +220,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+   
   },
 
   /**

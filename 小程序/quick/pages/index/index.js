@@ -5,6 +5,7 @@ var app = getApp();
 Page({
     data: {
        store: "../../image/store.png",
+       cart: "../../image/cart.png",
         useShadow: false,
         totalNum:0,
         step: [
@@ -30,6 +31,11 @@ Page({
           url: '../store/store'
        })
     },
+    cartView(){
+       wx.navigateTo({
+          url: '../cart/cart'
+       })
+    },
     //扫码
     bindScanTap() {
 
@@ -48,7 +54,8 @@ Page({
                           baseUrl: "https://store.lianlianchains.com",
                         data: {
                             // code: res.code
-                            code: "6901121300298"
+                            code: "6901121300298",
+                            storeid: getApp().globalData.storeid
                         },
                         noLoading: true,
                         method: "GET",
@@ -65,7 +72,8 @@ Page({
                             // baseUrl: "http://192.168.50.57:9888",
                             baseUrl: "https://store.lianlianchains.com",
                             data: {
-                                openid: wx.getStorageSync('user').openid
+                                openid: wx.getStorageSync('user').openid,
+                                storeid: getApp().globalData.storeid
                             },
                             noLoading: true,
                             method: "GET",
@@ -96,7 +104,8 @@ Page({
                                             openid: wx.getStorageSync('user').openid,
                                             amount: 1,
                                             // code: res.code
-                                            code: "6901121300298"
+                                            code: "6901121300298",
+                                            storeid: getApp().globalData.storeid
                                         },
                                         noLoading: true,
                                         method: "POST",
@@ -119,7 +128,8 @@ Page({
                                         openid: wx.getStorageSync('user').openid,
                                         amount: 1,
                                         // code: res.code
-                                        code: "6901121300298"
+                                        code: "6901121300298",
+                                        storeid: getApp().globalData.storeid
                                     },
                                     noLoading: true,
                                     method: "POST",
@@ -175,7 +185,10 @@ Page({
         })
     },
     onShow: function () {
+       console.log(getApp().globalData.storeid)
        var storeId = wx.getStorageSync('storeId');
+       console.log(storeId)
+       console.log("获取商户ID成功")
        if (storeId){
           this.setData({
              'storeId': storeId,
@@ -188,19 +201,22 @@ Page({
           //   baseUrl: "http://192.168.50.57:9888", 
           baseUrl: "https://store.lianlianchains.com",
           data: {
-             openid: wx.getStorageSync('user').openid
+             openid: wx.getStorageSync('user').openid,
+             storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "GET",
             header: { 'content-type': 'application/x-www-form-urlencoded' }
          //  header: { 'content-type': 'application/json' }
        }).then(carts => {
+          this.data.totalNum = 0;
           for (var i = 0; i < carts.length; i++) {
-             this.data.totalNum += carts[i].price * carts[i].amount
+             this.data.totalNum += carts[i].amount
           }
           this.setData({
-             totalNum: this.data.total
+             totalNum: this.data.totalNum
           })
+          console.log("购物车商品数量" + this.data.totalNum)
        }).catch(err => {
           console.log("出错了")
           wx.showToast({

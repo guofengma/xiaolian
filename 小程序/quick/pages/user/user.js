@@ -12,7 +12,7 @@ Page({
   },
   orderView(){
       let mobile = wx.getStorageSync('mobile');
-      if(mobile.length > 0) {
+      if(this.data.mobile !== '') {
           wx.navigateTo({
               url: '../orderList/orderList'
           })
@@ -47,17 +47,48 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   //   CVS / user / query
       var that = this;
-      var user = wx.getStorageSync('user');
-      var mobile = wx.getStorageSync('mobile');
-      console.log(typeof mobile)
-      mobile = mobile.substr(0, 3) + "****" + 　mobile.substr(7);
-      if (mobile.length > 0) {
-          that.setData({
-              isSubmit: true,
-              mobile: mobile
-          });
-      }
+      fetch({
+         url: "/CVS/user/query",
+           baseUrl: "http://192.168.50.57:9888",
+         // baseUrl: "https://store.lianlianchains.com",
+         data: {
+            openid: wx.getStorageSync('user').openid,
+            storeid: getApp().globalData.storeid
+         },
+         noLoading: true,
+         method: "GET",
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+         //   header: { 'content-type': 'application/json' }
+      }).then(result => {
+         console.log(result)
+         if(result){
+            this.setData({
+               mobile: result.phoneno
+            })
+         }else{
+            this.setData({
+               mobile: ""
+            })
+         }
+      }).catch(err => {
+         console.log("出错了")
+         wx.showToast({
+            title: '密码错误'
+         })
+         console.log(err)
+      });
+      // var user = wx.getStorageSync('user');
+      // let mobile = wx.getStorageSync('mobile');
+      // console.log(typeof mobile)
+      // mobile = mobile.substr(0, 3) + "****" + 　mobile.substr(7);
+      // if (mobile.length > 0) {
+      //     that.setData({
+      //         isSubmit: true,
+      //         mobile: mobile
+      //     });
+      // }
       app.getUserInfo((userInfo) => {
           console.log(userInfo);
           //更新数据

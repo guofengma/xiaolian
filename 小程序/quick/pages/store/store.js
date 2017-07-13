@@ -13,12 +13,12 @@ Page({
          success: (res) => {
             console.log(res);
             if (res.path) {
-               var StoreId = res.path.split('?')[1].split('=')[1];
-               if (StoreId) {
-                  wx.setStorageSync('StoreId', StoreId)
+               var storeId = res.path.split('?')[1].split('=')[1];
+               if (storeId) {
+                  wx.setStorageSync('storeId', storeId)
                }
             }
-            console.log(wx.getStorageSync('StoreId'));
+            console.log(wx.getStorageSync('storeId'));
             wx.switchTab({
                url: '../index/index'
             })

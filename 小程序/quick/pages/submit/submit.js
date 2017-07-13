@@ -83,6 +83,36 @@ Page({
           console.log(err)
       });
   },
+  saveInfo(mobile){
+     fetch({
+        url: "/CVS/user/save",
+        //   baseUrl: "http://192.168.50.57:9888",
+        baseUrl: "https://store.lianlianchains.com",
+        data: {
+           openid: wx.getStorageSync('user').openid,
+           phoneno: mobile,
+           nickname: '',
+           storeid: getApp().globalData.storeid
+        },
+        noLoading: true,
+        method: "POST",
+          header: { 'content-type': 'application/x-www-form-urlencoded' }
+      //   header: { 'content-type': 'application/json' }
+     }).then(result => {
+        var timer = setTimeout(() => {
+           wx.switchTab({
+              url: '../user/user'
+           })
+           clearTimeout(timer);
+        }, 1000)
+     }).catch(err => {
+        console.log("出错了")
+        wx.showToast({
+           title: '密码错误'
+        })
+        console.log(err)
+     });
+  },
   formSubmit(e){
       console.log(e)
       fetch({
@@ -91,7 +121,8 @@ Page({
           baseUrl: "https://store.lianlianchains.com",
           data: {
               mobile: e.detail.value.phoneno,
-              code: e.detail.value.pwd
+              code: e.detail.value.pwd,
+              storeid: getApp().globalData.storeid
           },
           noLoading: true,
           method: "GET",
@@ -99,21 +130,7 @@ Page({
           // header: { 'content-type': 'application/json' }
       }).then(result => {
           if (result.code == 200) {
-              wx.showToast({
-                  title: '登录成功',
-                  icon: 'success',
-                  duration: 1000,
-                  mask: true,
-                  success: function (res) {
-                      var timer = setTimeout(() => {
-                          wx.setStorageSync('mobile', e.detail.value.phoneno);
-                          wx.switchTab({
-                              url: '../user/user'
-                          })
-                          clearTimeout(timer);
-                      },1000)
-                  }
-              })
+             this.saveInfo(e.detail.value.phoneno)
           }
       }).catch(err => {
           console.log("出错了")

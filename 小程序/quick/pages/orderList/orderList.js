@@ -37,7 +37,8 @@ Page({
         //   baseUrl: "http://192.168.50.57:9888",
           baseUrl: "https://store.lianlianchains.com",
           data: {
-              'openid': wx.getStorageSync("user").openid
+              'openid': wx.getStorageSync("user").openid,
+               storeid: getApp().globalData.storeid
           },
           method: "GET",
           noLoading: true,
