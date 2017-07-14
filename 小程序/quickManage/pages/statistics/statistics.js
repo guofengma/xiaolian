@@ -1,5 +1,4 @@
-// pages/check/check.js
-import fetch from '../../utils/fetch'
+// pages/statistics/statistics.js
 Page({
 
   /**
@@ -27,29 +26,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-     var that = this;
-     var orderNo = wx.getStorageSync('orderNo');
-   
-     that.setData({
-        orderCode: "https://store.lianlianchains.com/qrcode?data="+orderNo+"&width=202&height=202"
-     })
-
+  
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-     wx.switchTab({
-        url: '../index/index'
-     })
+  
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-     
+  
   },
 
   /**

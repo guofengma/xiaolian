@@ -22,3 +22,32 @@ image{
     height: 160rpx;
     margin-top: 86rpx;
 }
+
+.moreView{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-top: 180rpx;
+}
+
+.moreView .item{
+   width:270rpx;
+   height: 80rpx;
+   line-height: 80rpx;
+   text-align: center; 
+   font-size: 32rpx;
+}
+
+.orderList{
+   background: #0D8FEF;
+   border-radius: 6px;
+   margin-right: 50rpx;
+   color: #fff;
+}
+
+.statistics{
+   background: #fff;
+   border-radius: 6px;
+   border: 1px #ECECEC solid;
+   color: #333333;
+}

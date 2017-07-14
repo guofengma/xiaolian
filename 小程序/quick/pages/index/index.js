@@ -225,9 +225,6 @@ Page({
           console.log(err)
        });
     },
-    onLaunch(options) {
-
-    },
     /**
    * 用户点击右上角分享
    */

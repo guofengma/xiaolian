@@ -1,0 +1,18 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="container">
+   <view class="nav">
+      <view class="classname">今天</view>
+      <view class="classname">昨天</view>
+      <view class="classname">最近7天</view>
+   </view>
+   <view class="content">
+      <view class="num item">
+         <view class="tit">销量 (件)</view>
+         <view class="value">{{680}}</view>
+      </view>
+      <view class="money item">
+         <view class="tit">总金额 (元)</view>
+         <view class="value">{{12900}}</view>
+      </view>
+   </view>
+</view>

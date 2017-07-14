@@ -1,7 +1,7 @@
 {
   "pages":[
-      "pages/index/index",
-      "pages/check/check",
+     "pages/index/index",
+     "pages/check/check",
       "pages/orderList/orderList",
       "pages/store/store",
       "pages/submit/submit",
@@ -12,7 +12,7 @@
       "pages/success/success",
       "pages/sheet/sheet",
       "pages/demo/demo",
-    "pages/order/order"
+      "pages/order/order"
   ],
   "window":{
     "backgroundTextStyle":"light",

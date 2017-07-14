@@ -1,4 +1,11 @@
 <view class="container">
     <view class="info">扫顾客二维码</view>
     <image bindtouchstart="scanCode" src="../../image/scanCode.png"></image>
+
+    <view class="moreView">
+      <view class="item orderList" bindtouchstart="orderView">订单流水</view>
+      <view class="item statistics" bindtouchstart="staticView">销量统计</view>
+    </view>
 </view>
+
+

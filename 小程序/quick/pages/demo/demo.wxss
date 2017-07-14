@@ -1,6 +1,9 @@
 /* pages/demo/demo.wxss */
+page{
+   height: 100%;
+}
 .recommend_scroll_x_box {
-  height: 245rpx;
+   height: 245rpx; 
   white-space: nowrap;
   display: flex;
   overflow:auto;/* winphone8和android4+ */

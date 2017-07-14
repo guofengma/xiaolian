@@ -14,7 +14,7 @@ Page({
       wx.scanCode({
           success: (res) => {
               console.log(res);
-              this.detailView();
+            //   this.detailView();
           }
       })
   },
@@ -22,6 +22,16 @@ Page({
       wx.navigateTo({
           url: '../detail/detail'
       })
+  },
+  orderView(){
+     wx.navigateTo({
+        url: '../orderList/orderList'
+     })
+  },
+  staticView(){
+     wx.navigateTo({
+        url: '../statistics/statistics'
+     })
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,12 +1,12 @@
 {
   "pages":[
+     "pages/check/check",
      "pages/index/index",
      "pages/detail/detail",
-      
-      "pages/submit/submit",
-      "pages/info/info",
-      "pages/check/check"
-      
+     "pages/submit/submit",
+     "pages/info/info",
+     "pages/orderList/orderList",
+     "pages/statistics/statistics"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,18 +22,17 @@
     "borderStyle": "white",
     "position": "top",
     "list": [
+       {
+         "selectedIconPath": "./image/checkAct.png",
+         "iconPath": "./image/check.png",
+         "pagePath": "pages/check/check",
+         "text": "订单核查"
+      },
       {
         "selectedIconPath": "./image/manageAct.png",
         "iconPath": "./image/manage.png",
         "pagePath": "pages/index/index",
         "text": "库存管理"
-      },
-      
-      {
-        "selectedIconPath": "./image/checkAct.png",
-        "iconPath": "./image/check.png",
-        "pagePath": "pages/check/check",
-        "text": "订单核查"
       }
     ]
   }
