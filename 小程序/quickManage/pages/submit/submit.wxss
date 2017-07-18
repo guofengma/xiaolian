@@ -48,3 +48,8 @@ button{
     background-color: #0D8FEF;
     color: #fff;
 }
+.info{
+   color: red;
+   font-size: 24rpx;
+   line-height: 40rpx;
+}

@@ -1,12 +1,13 @@
 {
   "pages":[
      "pages/check/check",
-     "pages/index/index",
+     "pages/chat/chat",   
+     "pages/statistics/statistics",
      "pages/detail/detail",
-     "pages/submit/submit",
      "pages/info/info",
-     "pages/orderList/orderList",
-     "pages/statistics/statistics"
+     "pages/submit/submit",
+     "pages/index/index",
+     "pages/orderList/orderList"
   ],
   "window":{
     "backgroundTextStyle":"light",

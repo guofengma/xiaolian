@@ -77,8 +77,8 @@ Page({
       var that = this;
       fetch({
           url: "/wxpay/prepay",
-          baseUrl: "http://192.168.50.57:9888",
-         //  baseUrl: "https://store.lianlianchains.com",
+         //  baseUrl: "http://192.168.50.57:9888",
+          baseUrl: "https://store.lianlianchains.com",
           data: {
               'openid': openId,
               'fee': payMoney,

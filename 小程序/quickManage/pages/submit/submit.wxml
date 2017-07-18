@@ -7,13 +7,14 @@
     <view class="content">
         <view class="mobile">
             <image src="../../image/mobile.png"></image>
-            <input maxlength="11" type="number" placeholder="手机号" />
+            <input name="phoneno" bindinput="mobHandler" maxlength="11" type="number" placeholder="手机号" />
         </view>
         <view class="password">
             <image src="../../image/pwd.png"></image>
-            <input maxlength="6" type="number" placeholder="密码" />
+            <input name="pwd" bindinput="pwdHandler" maxlength="6" type="password" placeholder="密码" />
         </view>
+        <text class="info" hidden="{{hidden}}">账号或密码不正确</text>
     </view>
-    <button>登录</button>
+    <button form-type="submit" disabled="{{isPhone == true && isPassword == true ? false : true}}" class="{{isPhone == true && isPassword == true ? 'active' : ''}}">登录</button>
   </form>
 </view>

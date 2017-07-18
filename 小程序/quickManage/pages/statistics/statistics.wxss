@@ -18,6 +18,9 @@
    /* border: 1px solid #ECECEC; */
    border-radius: 5px 5px 0 0;
 }
+.nav view{
+   opacity: 0.5;
+}
 .content{
    display: flex;
    flex-direction: row;
@@ -53,4 +56,9 @@
    right: 0;
    transform: scaleX(.5);
    background-color: #ECECEC;
+}
+
+.nav .active{
+   color: #ffffff;
+   opacity: 1;
 }

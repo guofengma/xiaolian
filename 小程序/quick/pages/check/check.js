@@ -13,7 +13,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+     var self = this;
+     console.log("将要连接服务器。");
+     wx.connectSocket({
+        url: 'wss://store.lianlianchains.com/websocket'
+     });
+
+     wx.onSocketOpen(function (res) {
+        console.log("连接服务器成功。");
+     });
+
+     wx.onSocketMessage(function (res) {
+        console.log('收到服务器内容：' + res.data);
+        var data = res.data;
+        if(data == wx.getStorageSync('usr')){
+
+        }
+     });
   },
 
   /**
@@ -28,10 +44,11 @@ Page({
    */
   onShow: function () {
      var that = this;
-     var orderNo = wx.getStorageSync('orderNo');
-   
+   //   var orderNo = wx.getStorageSync('orderNo');
+   var orderNo = "123456"
+     var openid = wx.getStorageSync('user').openid;
      that.setData({
-        orderCode: "https://store.lianlianchains.com/qrcode?data="+orderNo+"&width=202&height=202"
+        orderCode: "https://store.lianlianchains.com/qrcode?data=" + orderNo + "_" + openid +"&width=202&height=202"
      })
 
   },

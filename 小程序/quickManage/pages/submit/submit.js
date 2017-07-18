@@ -1,131 +1,71 @@
 // pages/submit/submit.js
-
-function send(mobile){
-    wx.request({
-        url: 'https://health.lianlianchains.com/sms/send',
-        data: {
-            mobile: mobile
-        },
-        header: {
-            'content-type': 'application/json'
-        },
-        success: function (res) {
-
-            if (res.data.code != 200) {
-
-                wx.showToast({
-                    title: '发送失败',
-                })
-
-            }
-        }
-    })
-}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      sendmsg: '发送验证码',
       disabled: true,
-      mobile:0,
-      isPhone: false,
-      isPwd: false,
-      phoneno:'',
-      pwd:'',
-      onoff: true,
-      num: 60,
-      text: "秒后重新发送"
+      isPhone:false,
+      isPassword: false,
+      hidden: true
   },
-  //发短信
-  bindSendTap(){
-      if(this.data.onoff){
-          if (!this.data.phoneno) {
-              this.setData({
-                  isPhone: true
-              })
-              return
-          }
-          this.setData({
-              sendmsg: this.data.num + this.data.text
-          })
-          var timer = setInterval(() => {
-              this.setData({
-                  sendmsg: this.data.num + this.data.text
-              })
-              if (this.data.num >= 2) {
-                  this.data.num--
-              }
-              if (this.data.num < 2) {
-                  this.setData({
-                      sendmsg: "再次发送",
-                      onoff: true
-                  })
-              }
-
-          }, 1000);
-          send(this.data.phoneno)
-      }
-      this.setData({
-          onoff: false
-      });
-      
-  },
-  formSubmit(e){
-    wx.switchTab({
-        url: '../user/user',
-    })
-  },
-  bindPhoneTap(e){
-      console.log(e)
-    this.setData({
-        phoneno: e.detail.value
-    })
-    console.log(this.data.phoneno)
-    if (e.detail.value.length != 11){
-        this.setData({
+  mobHandler(e){
+      let mobile = e.detail.value.length;
+      if (mobile == 11){
+         this.setData({
             isPhone: true
-        });
-    }else{
-        this.setData({
-            isPhone: false
-        });
-    }
-    if (this.data.isPhone || this.data.isPwd || this.data.phoneno == '' || this.data.pwd == '') {
-        this.setData({
-            disabled: true
-        });
-    } 
-    if (!this.data.isPhone && !this.data.isPwd && this.data.phoneno != '' && this.data.pwd != '')  {
-        this.setData({
-            disabled: false
-        });
-    }
+         })
+      }else {
+         if (this.data.isPhone == true){
+            this.setData({
+               isPhone: false
+            })
+         }
+      }
   },
-  bindPwdTap(e){
-      this.setData({
-          pwd: e.detail.value
-      })
-      if (e.detail.value.length == 0) {
-          this.setData({
-              isPwd: true
-          });
-      } else {
-          this.setData({
-              isPwd: false
-          });
-      }
-      if (this.data.isPhone || this.data.isPwd) {
-          this.setData({
-              disabled: true
-          });
-      }
-      if (this.data.isPhone == false && this.data.isPwd == false && this.data.phoneno != '' && this.data.pwd != '') {
-          this.setData({
-              disabled: false
-          });
-      }
+  pwdHandler(e){
+     let pwd = e.detail.value.length;
+     if (pwd == 6) {
+        this.setData({
+           isPassword: true
+        })
+     } else {
+        if (this.data.isPassword == true) {
+           this.setData({
+              isPassword: false
+           })
+        }
+     }
+  },
+  formSubmit(e) {
+      console.log(e);
+      //检查账号和密码是否正确
+      fetch({
+         url: "/wxpay/queryOrder",
+         //   baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            'openid': wx.getStorageSync("user").openid,
+            storeid: getApp().globalData.storeid
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         wx.switchTab({
+            url: '../check/check',
+         })
+
+      }).catch(err => {
+         console.log("出错了")
+         wx.showToast({
+            title: '出错了',
+         })
+         console.log(err)
+      });
+     
   },
   /**
    * 生命周期函数--监听页面加载
