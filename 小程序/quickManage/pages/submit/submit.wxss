@@ -7,8 +7,8 @@
     text-align: center;
 }
 .logo .img{
-    width: 120rpx;
-    height: 120rpx;
+    width: 160rpx;
+    height: 160rpx;
     margin-top: 222rpx;
 }
 .content view{
@@ -16,9 +16,14 @@
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
+    padding-bottom: 5rpx;
 }
 .content view input{
     width: 474rpx;
+    font-size: 36rpx;
+}
+.resetStyle{
+   font-size: 30rpx;
 }
 .content view:first-of-type{
     margin-top: 136rpx;

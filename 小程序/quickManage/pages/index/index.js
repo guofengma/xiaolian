@@ -14,6 +14,8 @@ Page({
         wx.scanCode({
             success: (res) => {
                 console.log(res);
+                wx.setStorageSync('code', res.result)
+                console.log(wx.getStorageSync('code'))
                 this.infoView();
             }
         })

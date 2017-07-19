@@ -21,6 +21,9 @@
     height: 52.5rpx;
     line-height: 40.5rpx;
 }
+.checkCode .msg .line{
+   margin-right: 10rpx;
+}
 .item{
     position: relative;
     padding-bottom: 12rpx;

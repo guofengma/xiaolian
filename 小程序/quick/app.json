@@ -1,8 +1,9 @@
 {
   "pages":[
-     "pages/check/check",
-     "pages/index/index",
      
+      "pages/index/index",
+      "pages/leftCancel/leftCancel",
+      "pages/check/check",
       "pages/orderList/orderList",
       "pages/store/store",
       "pages/submit/submit",

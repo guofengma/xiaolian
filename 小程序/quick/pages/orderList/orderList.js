@@ -10,8 +10,11 @@ Page({
       hasOrder:true,
       orderList:[]
   },
-  checkView(){
-
+  checkView(e){
+     console.log(e)
+   wx.navigateTo({
+      url: '../check/check?orderno=' + e.target.dataset.orderno
+   })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -84,7 +87,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+     wx.switchTab({
+        url: '../user/user'
+     })
   },
 
   /**

@@ -16,7 +16,7 @@ Page({
       pwd:'',
       onoff: true,
       num: 60,
-      text: "秒后重新发送"
+      text: ""
   },
   //发短信
   bindPresendTap(){

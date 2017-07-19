@@ -21,7 +21,7 @@
       </view>
 
       <view class="elem bottom" wx:if="{{item.checkstate == 0}}">
-        <view class="check" bindtouchstart="checkView">{{item.checkstate == 0 ? '待核验': ''}}</view>
+        <view class="check" bindtouchstart="checkView" data-orderno="{{item.orderNo}}">{{item.checkstate == 0 ? '待核验': ''}}</view>
         <view>共{{item.totalNum}}件商品 ¥{{item.totalPrice}}</view>
       </view>
       <view class="elem bottom" wx:if="{{item.checkstate == 1}}">

@@ -28,8 +28,8 @@ Page({
    getShop(latitude, longitude) {
       fetch({
          url: "/CVS/getshop",
-         baseUrl: "http://192.168.50.57:9888",
-         // baseUrl: "https://store.lianlianchains.com",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
          data: {
             lat: latitude,
             lng: longitude

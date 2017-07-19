@@ -152,9 +152,7 @@ Page({
 
               }).catch(err => {
                   console.log("出错了")
-                  wx.showToast({
-                      title: '网络繁忙'
-                  })
+                  
                   console.log(err)
               });
           },
@@ -202,9 +200,7 @@ Page({
           })
         }).catch(err => {
             console.log("出错了")
-            wx.showToast({
-                title: '网络繁忙'
-            })
+            
             console.log(err)
         });
       

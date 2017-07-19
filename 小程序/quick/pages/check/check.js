@@ -6,14 +6,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+     hasCheck:false
   },
-
+  orderView() {
+     wx.redirectTo({
+        url: '../orderList/orderList'
+     })
+  },
+  homeView() {
+     wx.switchTab({
+        url: '../index/index'
+     })
+  },
+  CodeView(orderNo){
+     var openid = wx.getStorageSync('user').openid;
+     this.setData({
+        orderCode: "https://store.lianlianchains.com/qrcode?data=" + orderNo + "_" + openid + "&width=202&height=202"
+     })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     console.log(options)
+     var orderNo = options.orderno;
+     if (orderNo){
+        this.CodeView(orderNo)
+     }
      var self = this;
+     
      console.log("将要连接服务器。");
      wx.connectSocket({
         url: 'wss://store.lianlianchains.com/websocket'
@@ -26,12 +47,13 @@ Page({
      wx.onSocketMessage(function (res) {
         console.log('收到服务器内容：' + res.data);
         var data = res.data;
-        if(data == wx.getStorageSync('usr')){
-
+        if(data == wx.getStorageSync('user').openid){
+            self.setData({
+               hasCheck: true
+            })
         }
      });
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -43,30 +65,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-     var that = this;
-   //   var orderNo = wx.getStorageSync('orderNo');
-   var orderNo = "123456"
-     var openid = wx.getStorageSync('user').openid;
-     that.setData({
-        orderCode: "https://store.lianlianchains.com/qrcode?data=" + orderNo + "_" + openid +"&width=202&height=202"
-     })
-
+     var orderNo = wx.getStorageSync('orderNo');
+     this.CodeView(orderNo)
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-     wx.switchTab({
-        url: '../index/index'
-     })
+     
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-     
+
   },
 
   /**

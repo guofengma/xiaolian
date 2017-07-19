@@ -1,12 +1,12 @@
 {
   "pages":[
-     "pages/check/check",
-     "pages/chat/chat",   
-     "pages/statistics/statistics",
-     "pages/detail/detail",
-     "pages/info/info",
      "pages/submit/submit",
+     "pages/statistics/statistics",
+     "pages/info/info",
+     "pages/check/check",
      "pages/index/index",
+     "pages/chat/chat",   
+     "pages/detail/detail",
      "pages/orderList/orderList"
   ],
   "window":{

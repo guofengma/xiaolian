@@ -32,22 +32,32 @@ image{
 
 .moreView .item{
    width:270rpx;
-   height: 80rpx;
-   line-height: 80rpx;
+   height: 90rpx;
+   line-height: 90rpx;
    text-align: center; 
    font-size: 32rpx;
+   border: 1px #ECECEC solid;
+}
+
+.moreView .item::after{
+   border: none;
 }
 
 .orderList{
-   background: #0D8FEF;
+   background-color: #fff;
    border-radius: 6px;
-   margin-right: 50rpx;
-   color: #fff;
+   color: #333333;
 }
 
 .statistics{
    background: #fff;
    border-radius: 6px;
-   border: 1px #ECECEC solid;
+   /* border: 1px #ECECEC solid; */
    color: #333333;
+}
+
+.other-button-hover{
+   background: #0D8FEF;
+   border-radius: 6px;
+   color: #fff;
 }

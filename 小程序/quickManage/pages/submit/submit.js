@@ -1,4 +1,5 @@
 // pages/submit/submit.js
+import fetch from '../../utils/fetch'
 Page({
 
   /**
@@ -42,21 +43,40 @@ Page({
       console.log(e);
       //检查账号和密码是否正确
       fetch({
-         url: "/wxpay/queryOrder",
+         url: "/CVS/user/login",
          //   baseUrl: "http://192.168.50.57:9888",
          baseUrl: "https://store.lianlianchains.com",
          data: {
-            'openid': wx.getStorageSync("user").openid,
-            storeid: getApp().globalData.storeid
+            'phoneno': e.detail.value.phoneno,
+            'password': e.detail.value.pwd
          },
-         method: "GET",
+         method: "POST",
          noLoading: true,
          header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
          console.log(result);
-         wx.switchTab({
-            url: '../check/check',
-         })
+         if(result){
+            wx.showToast({
+               title: '登陆成功',
+               duration: 1600
+            })
+            wx.setStorageSync('storeid', result)
+            setTimeout(() => {
+               wx.switchTab({
+                  url: '../check/check',
+               })
+            },1600)
+         } else if (result == '登陆失败') {
+            this.setData({
+               hidden: false
+            })
+            setTimeout(() => {
+               this.setData({
+                  hidden: true
+               })
+            }, 2000)
+         }
+         
 
       }).catch(err => {
          console.log("出错了")

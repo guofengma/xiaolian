@@ -1,4 +1,5 @@
 // pages/statistics/statistics.js
+import fetch from '../../utils/fetch'
 Page({
 
    /**
@@ -15,6 +16,26 @@ Page({
          selectedB: false,
          selectedC: false
       })
+      fetch({
+         url: "/CVS/total",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            storeid: wx.getStorageSync('storeid')
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         this.setData({
+            count: result.count,
+            totlefee: result.totlefee.toFixed(2)
+         })
+      }).catch(err => {
+         console.log("出错了")
+         console.log(err)
+      });
    },
    selectyestoday() {
       this.setData({
@@ -22,6 +43,26 @@ Page({
          selectedB: true,
          selectedC: false
       })
+      fetch({
+         url: "/CVS/totallastday",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            storeid: wx.getStorageSync('storeid')
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         this.setData({
+            count: result.count,
+            totlefee: result.totlefee.toFixed(2)
+         })
+      }).catch(err => {
+         console.log("出错了")
+         console.log(err)
+      });
    },
    selectrencent() {
       this.setData({
@@ -29,6 +70,26 @@ Page({
          selectedB: false,
          selectedC: true
       })
+      fetch({
+         url: "/CVS/totallastseven",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            storeid: wx.getStorageSync('storeid')
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         this.setData({
+            count: result.count,
+            totlefee: result.totlefee.toFixed(2)
+         })
+      }).catch(err => {
+         console.log("出错了")
+         console.log(err)
+      });
    },
    /**
     * 生命周期函数--监听页面加载
@@ -48,7 +109,47 @@ Page({
     * 生命周期函数--监听页面显示
     */
    onShow: function () {
-
+      fetch({
+         url: "/CVS/total",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            storeid: wx.getStorageSync('storeid')
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         this.setData({
+            count: result.count,
+            totlefee: result.totlefee
+         })
+      }).catch(err => {
+         console.log("出错了")
+         console.log(err)
+      });
+      
+      fetch({
+         url: "/CVS/allgood",
+         // baseUrl: "http://192.168.50.57:9888",
+         baseUrl: "https://store.lianlianchains.com",
+         data: {
+            storeid: wx.getStorageSync('storeid')
+         },
+         method: "GET",
+         noLoading: true,
+         header: { 'content-type': 'application/x-www-form-urlencoded' }
+      }).then(result => {
+         console.log(result);
+         this.setData({
+            amounts: result.count,
+            totalcost: result.totle
+         })
+      }).catch(err => {
+         console.log("出错了")
+         console.log(err)
+      });
    },
 
    /**
