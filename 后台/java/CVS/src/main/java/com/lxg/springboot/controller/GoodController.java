@@ -21,8 +21,8 @@ public class GoodController extends BaseController {
     private GoodMapper goodMapper;
     
     @RequestMapping("queryall")
-    public List<Good> query() {	
-    	return goodMapper.queryall();  	
+    public List<Good> query(Good good) {	
+    	return goodMapper.queryall(good);  	
     }  
     
     @RequestMapping("query")

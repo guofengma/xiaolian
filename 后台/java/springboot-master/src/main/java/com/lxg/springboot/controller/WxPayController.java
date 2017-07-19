@@ -186,7 +186,7 @@ public class WxPayController {
     }
     
     
-    @RequestMapping(value = "wxpay/withdraw")
+/*    @RequestMapping(value = "wxpay/withdraw")
 	public String transferPay(Order Order,HttpServletResponse response) {
     	int fee = (int) (Order.getFee()*100); 
     	String feeS = Integer.toString(fee);
@@ -288,5 +288,5 @@ public class WxPayController {
         }               
 		refundMapper.update(Order);  		
 		return json.toJSONString();	
-    }
+    }*/
 }

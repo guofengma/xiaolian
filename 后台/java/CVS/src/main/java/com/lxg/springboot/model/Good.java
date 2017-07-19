@@ -2,7 +2,7 @@ package com.lxg.springboot.model;
 
 import java.io.Serializable;
 
-public class Good implements Serializable {
+public class Good extends BasicObject {
 
 	/**
 	 * author xuhuadong

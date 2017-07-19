@@ -2,7 +2,7 @@ package com.lxg.springboot.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User extends BasicObject {
 
 	/**
 	 * author zhenghong@xrfinance.com
@@ -21,6 +21,8 @@ public class User implements Serializable {
 	private String phoneno;
 	
 	private String address;
+	
+	private String password;
 
 	public String getOpenid() {
 		return openid;
@@ -74,5 +76,13 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [openid=" + openid + ", nickname=" + nickname + ", sex=" + sex + ", age=" + age + ", phoneno="
 				+ phoneno + ", address=" + address + "]";
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

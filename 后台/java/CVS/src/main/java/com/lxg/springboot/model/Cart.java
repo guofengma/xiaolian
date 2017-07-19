@@ -2,7 +2,8 @@ package com.lxg.springboot.model;
 
 import java.io.Serializable;
 
-public class Cart implements Serializable {
+
+public class Cart extends BasicObject {
 
 	/**
 	 * author xuhuadong
@@ -17,6 +18,10 @@ public class Cart implements Serializable {
 	private int amount;
 	
 	private double price;
+	
+	private String name;
+	
+	private String specifi;
 	
 	public String getCode() {
 		return code;
@@ -48,6 +53,22 @@ public class Cart implements Serializable {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSpecifi() {
+		return specifi;
+	}
+
+	public void setSpecifi(String specifi) {
+		this.specifi = specifi;
 	}
 	
 	

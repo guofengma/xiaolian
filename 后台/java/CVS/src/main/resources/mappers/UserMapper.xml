@@ -3,20 +3,30 @@
 <mapper namespace="com.lxg.springboot.mapper.UserMapper">
 
 	<insert id="save" parameterType="com.lxg.springboot.model.User">
-		insert into user(openid,nickname,sex,age,phoneno,address)
-		values (#{openid},#{nickname},#{sex},#{age},#{phoneno},#{address})
+		insert into user(openid,nickname,sex,age,phoneno,address,storeid)
+		values (#{openid},#{nickname},#{sex},#{age},#{phoneno},#{address},#{storeid})
 	</insert>
 	
 	<update id="update" parameterType="com.lxg.springboot.model.User">
 		 update user 
 		 set openid=#{openid},nickname=#{nickname},
 		 sex=#{sex},age=#{age},phoneno=#{phoneno},address=#{address} 
-		 where openid=#{openid}
+		 where openid=#{openid} and storeid=#{storeid}
 	</update>
 	
-	<select id="query" parameterType="String" resultType="com.lxg.springboot.model.User">
+	<select id="query" parameterType="com.lxg.springboot.model.User" resultType="com.lxg.springboot.model.User">
 		select * from user 
-		where openid=#{openid}
+		where openid=#{openid} and storeid=#{storeid}
+	</select>
+	
+	<select id="count" parameterType="com.lxg.springboot.model.User" resultType="int">
+		select count(*) from user 
+		where phoneno=#{phoneno} and password=#{password} 
 	</select>	
+	
+	<select id="querybyno" parameterType="com.lxg.springboot.model.User" resultType="com.lxg.springboot.model.User">
+		select * from user 
+		where phoneno=#{phoneno}
+	</select>
 
 </mapper>  

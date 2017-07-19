@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * on 2017/4/25.
  */
 @RestController
-@RequestMapping("health/user/")
+@RequestMapping("CVS/user/")
 public class UserController extends BaseController {
 	
 	@Resource
@@ -36,9 +36,20 @@ public class UserController extends BaseController {
     }
     
     @RequestMapping("query")
-    public User query(String openid) {
+    public User query(User user) {
     	
-    	User user = userMapper.query(openid);
-    	return user;  	
+    	User userf = userMapper.query(user);
+    	return userf;  	
+    }  
+    
+    @RequestMapping("login")
+    public String login(User user) {    	
+    	if(userMapper.count(user)==1){
+    		User userf = userMapper.querybyno(user);
+    		return userf.getStoreid();
+    	}
+    	else{
+    		return "登陆失败";
+    	}
     }    
 }

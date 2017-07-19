@@ -10,7 +10,7 @@ public interface CartMapper {
 	
 	int edit(Cart cart);
 	
-	List<Cart> querybypage(String openid);
+	List<Cart> querybypage(Cart cart);
 	
 	int delete(Cart cart);
 	

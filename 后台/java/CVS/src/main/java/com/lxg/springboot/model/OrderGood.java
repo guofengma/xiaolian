@@ -2,7 +2,7 @@ package com.lxg.springboot.model;
 
 import java.io.Serializable;
 
-public class OrderGood implements Serializable {
+public class OrderGood extends BasicObject {
 
 	/**
 	 * author xuhuadong
@@ -16,6 +16,11 @@ public class OrderGood implements Serializable {
 	
 	private int amount;
 	
+	private String name;
+
+	private String specifi;
+	
+	private double price;
 
 	public String getCode() {
 		return code;
@@ -40,6 +45,30 @@ public class OrderGood implements Serializable {
 
 	public void setOrderNo(String orderNo) {
 		this.orderNo = orderNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSpecifi() {
+		return specifi;
+	}
+
+	public void setSpecifi(String specifi) {
+		this.specifi = specifi;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	

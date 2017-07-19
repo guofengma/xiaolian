@@ -3,29 +3,40 @@
 <mapper namespace="com.lxg.springboot.mapper.OrderMapper">
 
 	<insert id="save" parameterType="com.lxg.springboot.model.Order">
-		insert into orders(orderNo,mch_id,openid,description,fee,charges,time,usedScore,bonusScore,state)
-		values (#{orderNo},#{mch_id},#{openid},#{description},#{fee},#{charges},#{time},#{usedScore},#{bonusScore},#{state})
+		insert into orders(orderNo,mch_id,openid,description,fee,charges,time,usedScore,bonusScore,state,checkstate,storeid)
+		values (#{orderNo},#{mch_id},#{openid},#{description},#{fee},#{charges},#{time},#{usedScore},#{bonusScore},#{state},#{checkstate},#{storeid})
 	</insert>
 	
 	<update id="update" parameterType="com.lxg.springboot.model.Order">
 		 update orders 
 		 set state=#{state}
-		 where orderNo=#{orderNo}
+		 where orderNo=#{orderNo} and storeid=#{storeid}
 	</update>
 	
-	<select id="query" parameterType="String" resultType="com.lxg.springboot.model.Order">
+	<update id="updatecheck" parameterType="com.lxg.springboot.model.Order">
+		 update orders 
+		 set checkstate=#{checkstate}
+		 where orderNo=#{orderNo}  and storeid=#{storeid}
+	</update>
+	
+	<select id="query" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
 		select * from orders 
-		where openid=#{openid}
+		where openid=#{openid} and storeid=#{storeid}
+	</select>
+	
+	<select id="queryshop" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
+		select * from orders 
+		where storeid=#{storeid}
 	</select>
 	
 	<insert id="savegood" parameterType="com.lxg.springboot.model.OrderGood">
-		insert into ordergood(orderNo,code,amount)
-		values (#{orderNo},#{code},#{amount})
+		insert into ordergood(orderNo,code,amount,storeid)
+		values (#{orderNo},#{code},#{amount},#{storeid})
 	</insert>
 	
-	<select id="queryGood" parameterType="String" resultType="com.lxg.springboot.model.OrderGood">
+	<select id="queryGood" parameterType="com.lxg.springboot.model.OrderGood" resultType="com.lxg.springboot.model.OrderGood">
 		select * from ordergood 
-		where orderNo=#{orderNo}
+		where orderNo=#{orderNo} and storeid=#{storeid}
 	</select>
 	
 </mapper>  

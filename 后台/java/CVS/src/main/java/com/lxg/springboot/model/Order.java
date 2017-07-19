@@ -1,8 +1,9 @@
 package com.lxg.springboot.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-public class Order implements Serializable {
+public class Order extends BasicObject {
 
 	private static final long serialVersionUID = 1L;
 	private String mch_id;// 商户号
@@ -14,7 +15,11 @@ public class Order implements Serializable {
 	private int bonusScore;// 奖励积分
 	private double charges;//手续费
 	private int state;//状态
+	private int checkstate;//状态
 	private String time;//时间
+	private List<OrderGood> temp;
+	private String startDate;//时间
+	private String endDate;//时间
 
 	
 	public String getOpenid() {
@@ -96,6 +101,38 @@ public class Order implements Serializable {
 
 	public void setTime(String time) {
 		this.time = time;
+	}
+
+	public List<OrderGood> getTemp() {
+		return temp;
+	}
+
+	public void setTemp(List<OrderGood> temp) {
+		this.temp = temp;
+	}
+
+	public int getCheckstate() {
+		return checkstate;
+	}
+
+	public void setCheckstate(int checkstate) {
+		this.checkstate = checkstate;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 
 

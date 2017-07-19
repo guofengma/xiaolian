@@ -24,12 +24,7 @@ public class CartController extends BaseController {
     private GoodMapper goodMapper;
 
     @RequestMapping("addtocart")
-    public int save(Cart cart) { 	
-    	Good good = new Good();
-    	Good returngood = new Good();
-    	good.setCode(cart.getCode());
-    	returngood=goodMapper.query(good);
-    	cart.setPrice(returngood.getPrice());
+    public int save(Cart cart) { 
     	return cartMapper.save(cart);
     }    
     
@@ -51,7 +46,17 @@ public class CartController extends BaseController {
     @RequestMapping("querycart")
     public List<Cart> querybypage(Cart cart) {
     	List<Cart> cartA;  
-    	cartA = cartMapper.querybypage(cart.getOpenid());  
+    	cartA = cartMapper.querybypage(cart);    
+    	for(int i=0 ;i<cartA.size();i++){
+    		Good good = new Good();
+        	Good returngood = new Good();
+        	good.setCode(cartA.get(i).getCode());
+        	good.setStoreid(cart.getStoreid());
+        	returngood=goodMapper.query(good);
+        	cartA.get(i).setPrice(returngood.getPrice());
+        	cartA.get(i).setName(returngood.getName());
+        	cartA.get(i).setSpecifi(returngood.getSpecifi()); 		
+    	}
     	return cartA;
     } 
 

@@ -127,9 +127,4 @@ public class MD5Utils {
 	        return md5StrBuff.toString();
 	    }
 
-	public static void main(String[] args) {
-		String content = getMD5("24358");
-		System.out.println(content);
-	}
-
 }

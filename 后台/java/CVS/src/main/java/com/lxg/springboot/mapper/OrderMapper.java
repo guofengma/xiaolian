@@ -11,10 +11,14 @@ public interface OrderMapper {
 	
 	int update(Order order);
 	
-	List<Order> query(String id);
+	int updatecheck(Order order);
+	
+	List<Order> query(Order order);
+	
+	List<Order> queryshop(Order order);
 	
 	int savegood(OrderGood ordergood);
 	
-	List<OrderGood> queryGood(String orderNo);
+	List<OrderGood> queryGood(Order order);
 	
 }

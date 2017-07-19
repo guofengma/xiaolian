@@ -34,7 +34,7 @@ public class CVSOrderController extends BaseController {
 	@Resource
 	private CartMapper cartMapper;
     @RequestMapping("createOrder")
-    public int createOrder(String openid) {
+    public int createOrder(String openid,String storeid) {
     	Order order = new Order();
     	String OrderNo = RandomStringGenerator.getRandomStringByLength(32);
     	order.setOpenid(openid);
@@ -44,21 +44,25 @@ public class CVSOrderController extends BaseController {
 		DateFormat format=new SimpleDateFormat("yyyyMMddHHmmss"); 
 		String time=format.format(date);
 		order.setTime(time);
+		Cart temp = new Cart();
+		temp.setOpenid(openid);
+		temp.setStoreid(storeid);
 		List<Cart> cart;
 		List<OrderGood> ordergood;
-		cart = cartMapper.querybypage(openid);
+		cart = cartMapper.querybypage(temp);
 		for(int i = 0 ; i < cart.size() ; i++) {
-			OrderGood temp = new OrderGood();
-			temp.setAmount(cart.get(i).getAmount());
-			temp.setCode(cart.get(i).getCode());
-			temp.setOrderNo(OrderNo);
-			OrderMapper.savegood(temp);		 
+			OrderGood tempA = new OrderGood();
+			tempA.setAmount(cart.get(i).getAmount());
+			tempA.setCode(cart.get(i).getCode());
+			tempA.setOrderNo(OrderNo);
+			tempA.setStoreid(storeid);
+			OrderMapper.savegood(tempA);		 
         }
 		return OrderMapper.save(order);
     }
     
     @RequestMapping("query")
-    public List<Order> query(String openid) {	
-    	return OrderMapper.query(openid);  	
+    public List<Order> query(Order order) {	
+    	return OrderMapper.query(order);  	
     }  
 }
