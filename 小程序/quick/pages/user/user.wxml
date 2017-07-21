@@ -16,12 +16,12 @@
         </view>
      </view> -->
   </view>
-   <view class="cart" hover-class="other-button-hover" bindtouchstart="cartView" data-totalNum="{{totalNum}}">
+   <view class="cart" hover-class="{{totalNum > 0 ? 'other-button-hover' : ''}}" bindtouchstart="cartView" data-totalNum="{{totalNum}}">
       <view class="tit" data-totalNum="{{totalNum}}">
          购物车
          <text class="num" wx:if="{{totalNum > 0}}">{{totalNum}}</text>
       </view>
       
    </view>
-  <button bindtap="orderView" class="order" hover-class="other-button-hover"> 查看全部订单 </button>
+  <button bindtap="orderView" class="order" hover-class="other-button-hover"> 查看订单 </button>
 </view>

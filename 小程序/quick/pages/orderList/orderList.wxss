@@ -83,3 +83,16 @@ page{
    text-align: right;
    width: 100%;
 }
+
+.loadmore{
+   text-align: center;
+}
+.loadmore image{
+   text-align: center;
+   width: 80rpx;
+   height: 80rpx;
+}
+
+.nomore{
+   padding: 20rpx 0 50rpx;
+}

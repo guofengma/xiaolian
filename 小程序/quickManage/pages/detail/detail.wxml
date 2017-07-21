@@ -2,28 +2,27 @@
 <view class="container">
     <view class="header">
         <view class="left">
-            <view class="name">永辉超市欢乐谷</view>
-            <view class="address">北京市朝阳区欢乐谷街蓝色港湾三号
-院2号楼底商105</view>
+            <view class="name">{{detail.store.storeName}}</view>
+            <view class="address">{{detail.store.address}}</view>
         </view>
         <image src="../../image/hasPay.png"></image>
     </view>
     <view class="center">
         <view class="title">订单详情</view>
-        <view class="item">
+        <view class="item" wx:for="{{detail.temp}}" wx:for-index="index" wx:key="index">
             <view class="top">
-                <view class="name">伊利百利包牛奶100L</view>
-                <view class="money"><text class="symbol">¥</text><text class="singMoney">89</text></view>
+                <view class="name">{{item.name}}</view>
+                <view class="money"><text class="symbol">¥</text><text class="singMoney">{{item.price}}</text></view>
             </view>
             <view class="bottom">
-                <view class="guige">规格：100ml</view>
-                <view class="amount">x{{1}}</view>
+                <view class="guige">规格：{{item.specifi}}</view>
+                <view class="amount">x{{item.amount}}</view>
             </view>
         </view>
-        <view class="total">金额：<text class="symbol">¥</text>{{89}}</view>
+        <view class="total">金额：<text class="symbol">¥</text>{{detail.fee}}</view>
     </view>
     <view class="footer">
-        <view class="orderno">订单编号：{{1818181818181899000}}</view>
-        <view class="time">下单时间：{{2017}}</view>
+        <view class="orderno">订单编号：{{detail.orderNo}}</view>
+        <view class="time">下单时间：{{detail.time}}</view>
     </view>
 </view>

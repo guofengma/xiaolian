@@ -20,11 +20,57 @@ Page({
             let arr = res.result.split('_');
             wx.setStorageSync('orderNo', arr[0]);
             console.log("扫码成功");
-            this.sendSocketMessage(arr[1]);
-            return;
-            setTimeout(() => {
-               this.detailView();
-            }, 200)
+
+            //查询订单状态是否已扫描过
+            fetch({
+               url: "/wxpay/queryOrderByNo",
+               // baseUrl: "http://192.168.50.57:9888",
+               baseUrl: "https://store.lianlianchains.com",
+               data: {
+                  orderNo: arr[0]
+               },
+               noLoading: true,
+               method: "GET",
+               header: { 'content-type': 'application/x-www-form-urlencoded' }
+               // header: { 'content-type': 'application/json' }
+            }).then(result => {
+               console.log(result)
+               if (result.checkstate == 0){
+                  fetch({
+                     url: "/wxpay/check",
+                     // baseUrl: "http://192.168.50.57:9888",
+                     baseUrl: "https://store.lianlianchains.com",
+                     data: {
+                        orderNo: arr[0],
+                        storeid: wx.getStorageSync('storeid')
+                     },
+                     noLoading: true,
+                     method: "POST",
+                     header: { 'content-type': 'application/x-www-form-urlencoded' }
+                     // header: { 'content-type': 'application/json' }
+                  }).then(check => {
+                     console.log("修改状态完毕")
+                     console.log(check)
+                     //推送消息
+                     this.sendSocketMessage(arr[1]);
+                     //扫描完跳转到详情页
+                     setTimeout(() => {
+                        this.detailView();
+                     }, 200)
+
+                  }).catch(err => {
+
+                  })
+               }else{
+                  wx.showToast({
+                     title: '该商品已扫描过了',
+                  })
+               }
+
+            }).catch(err => {
+
+            })
+           
 
 
          }

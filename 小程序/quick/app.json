@@ -1,10 +1,11 @@
 {
   "pages":[
-     
-      "pages/index/index",
+     "pages/index/index",
+     "pages/orderList/orderList",
+      
       "pages/leftCancel/leftCancel",
       "pages/check/check",
-      "pages/orderList/orderList",
+      
       "pages/store/store",
       "pages/submit/submit",
       "pages/cart/cart",

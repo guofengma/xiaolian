@@ -1,6 +1,6 @@
 /* pages/orderList/orderList.wxss */
 page{
-    height: 100%;
+     height: 100%; 
 }
 .container{
     height: 100%;
@@ -82,4 +82,17 @@ page{
 .hasCheck{
    text-align: right;
    width: 100%;
+}
+
+.loadmore{
+   text-align: center;
+}
+.loadmore image{
+   text-align: center;
+   width: 80rpx;
+   height: 80rpx;
+}
+
+.nomore{
+   padding: 20rpx 0 50rpx;
 }

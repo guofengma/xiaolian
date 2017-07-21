@@ -6,14 +6,14 @@
     position: relative;
     letter-spacing: 0;
 }
-@keyframes myfirst
+/* @keyframes myfirst
 {
 from {left: 0;}
 to {left: -50px;}
 }
 .left{
     animation: myfirst 2s;
-}
+} */
 .item:after{
     content: '';
     position: absolute;

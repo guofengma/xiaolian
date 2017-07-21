@@ -123,7 +123,7 @@ Page({
          console.log(result);
          this.setData({
             count: result.count,
-            totlefee: result.totlefee
+            totlefee: result.totlefee.toFixed(2)
          })
       }).catch(err => {
          console.log("出错了")
@@ -144,7 +144,7 @@ Page({
          console.log(result);
          this.setData({
             amounts: result.count,
-            totalcost: result.totle
+            totalcost: result.totle.toFixed(2)
          })
       }).catch(err => {
          console.log("出错了")

@@ -27,6 +27,11 @@ export function formatTime(date) {
    return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
+//时间格式化
+export function formattime(date) {
+   return date.substring(0, 4) + '/' + date.substring(4, 6) + '/' + date.substring(6, 8) + " " + date.substring(8, 10) + ":" + date.substring(10, 12) + ":" + date.substring(12);
+}
+
 //随机32位字符串
 export function randomString(len) {
    len = len || 32;

@@ -113,9 +113,11 @@ Page({
          //   header: { 'content-type': 'application/json' }
       }).then(result => {
          console.log(result)
+         
          if(result){
+            let mobile = result.phoneno.substr(0, 3) + "****" + result.phoneno.substr(7)
             this.setData({
-               mobile: result.phoneno
+               mobile: mobile
             })
          }else{
             this.setData({

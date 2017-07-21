@@ -70,7 +70,7 @@ Page({
   },
   //下单
   order(){
-      this.prepay(wx.getStorageSync('user').openid, 0.01)
+     this.prepay(wx.getStorageSync('user').openid, this.data.total)
   },
   prepay(openId, payMoney) {
       console.log("支付钱数：" + payMoney);
@@ -143,6 +143,7 @@ Page({
                   header: { 'content-type': 'application/x-www-form-urlencoded' }
                   //   header: { 'content-type': 'application/json' }
               }).then(carts => {
+  
                   console.log("删除成功")
                   if (carts == 1 || carts == 0) {
                       wx.redirectTo({
@@ -176,6 +177,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+     console.log("购物车查询开始")
       fetch({
           url: "/CVS/cart/querycart",
         //   baseUrl: "http://192.168.50.57:9888", 
@@ -189,6 +191,8 @@ Page({
           //   header: { 'content-type': 'application/x-www-form-urlencoded' }
           header: { 'content-type': 'application/json' }
       }).then(carts => {
+         console.log("购物车查询成功，输出回调：")
+         console.log(carts)
           this.setData({
               cartList: carts
           })

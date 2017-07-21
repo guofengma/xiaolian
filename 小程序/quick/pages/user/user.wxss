@@ -3,7 +3,7 @@
    padding: 0 20rpx;
 }
 .header{
-  padding: 104rpx 0 148rpx;
+  padding: 104rpx 0 120rpx;
   /* background-color: #fff; */
   /* border-top: 1px #e3e3e3 solid; */
   /* border-bottom: 1px #e3e3e3 solid; */
@@ -110,9 +110,9 @@
    position: absolute;
    right: -12rpx;
    top: 8rpx;
-   width: 28rpx;
-   height: 28rpx;
-   line-height: 28rpx;
+   width: 38rpx;
+   height: 38rpx;
+   line-height: 38rpx;
    text-align: center;
    border-radius: 28rpx;
    background: #F02E51;

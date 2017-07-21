@@ -21,6 +21,7 @@ export default function(param) {
         resolve(res.data)
       },
       fail: function (msg) {
+         console.log(222)
         console.log('reqest error', msg)
         // wx.hideNavigationBarLoading()
         // wx.hideToast();

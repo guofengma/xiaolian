@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 import fetch from '../../utils/fetch'
+import { formattime} from '../../utils/filter'
 Page({
 
    /**
@@ -27,22 +28,23 @@ Page({
     * 生命周期函数--监听页面显示
     */
    onShow: function () {
+      //查询订单状态是否已扫描过
       fetch({
-         url: "/CVS/good/querybyCode",
+         url: "/wxpay/queryOrderByNo",
          // baseUrl: "http://192.168.50.57:9888",
          baseUrl: "https://store.lianlianchains.com",
          data: {
-            // code: res.code
-            code: "6901121300298",
-            storeid: getApp().globalData.storeid
+            // orderNo: "wcjfgf5leteyrgciqoiiaaxcm5xsk6hw"
+            orderNo: wx.getStorageSync('orderNo')
          },
          noLoading: true,
          method: "GET",
          header: { 'content-type': 'application/x-www-form-urlencoded' }
          // header: { 'content-type': 'application/json' }
       }).then(result => {
+         result.time = formattime(result.time)
          this.setData({
-            details: result
+            detail: result
          })
       }).catch(err => {
 
