@@ -13,7 +13,7 @@ Page({
   data: {
       hasOrder:true,
       orderList:[],
-      hidden: false
+      hidden: true
   },
   checkView(){
 

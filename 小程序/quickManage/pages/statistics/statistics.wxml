@@ -17,11 +17,11 @@
    </view>
    <view class="content">
       <view class="num item">
-         <view class="tit">总量 (件)</view>
+         <view class="tit">库存 (件)</view>
          <view class="value">{{amounts}}</view>
       </view>
       <view class="money item">
-         <view class="tit">总成本 (元)</view>
+         <view class="tit">库存成本 (元)</view>
          <view class="value">{{totalcost}}</view>
       </view>
    </view>

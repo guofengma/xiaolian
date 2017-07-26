@@ -1,14 +1,24 @@
 /* pages/user/user.wxss */
 .container{
-   padding: 0 20rpx;
+   /* padding: 0 20rpx; */
 }
 .header{
   padding: 104rpx 0 120rpx;
-  /* background-color: #fff; */
+   background-color: #fff; 
   /* border-top: 1px #e3e3e3 solid; */
   /* border-bottom: 1px #e3e3e3 solid; */
   position: relative;
   text-align: center;
+}
+.header::after{
+   content: '';
+   height: 1px;
+   background-color: #ddd;
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   transform: scaleY(.5);
 }
 .avatar{
   border:2rpx #ffffff solid;
@@ -91,7 +101,6 @@
    width: 100%;
    background: #FFFFFF;
    border: 1px solid #ECECEC;
-   border-radius: 6px;
    height: 90rpx;
    line-height: 90rpx;
    text-align: center;
@@ -99,7 +108,9 @@
    font-size: 28rpx;
    color: #333333;
    letter-spacing: 0.08px;
+   margin-top: 20rpx;
 }
+
 .cart .tit{
    width: 108rpx;
    margin: 0 auto;
@@ -126,12 +137,15 @@
     font-size: 30rpx;
     line-height: 90rpx;
     border: 1px solid #ECECEC;
-    border-radius: 6px;
+    border-left: none;
+    border-right: none;
     color: #333333;
+    border-radius: 0;
 }
 
 .order:after{
     border: none;
+    border-radius: 0;
 }
 
 /** 添加自定义button点击态样式类**/
@@ -139,3 +153,4 @@
   background-color: #0D8FEF;
   color: #fff;
 }
+

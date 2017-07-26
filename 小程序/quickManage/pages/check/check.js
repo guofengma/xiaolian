@@ -14,6 +14,7 @@ Page({
       socketOpen: false,
    },
    scanCode() {
+      var that = this;
       wx.scanCode({
          success: (res) => {
             console.log(res);
@@ -52,7 +53,9 @@ Page({
                      console.log("修改状态完毕")
                      console.log(check)
                      //推送消息
-                     this.sendSocketMessage(arr[1]);
+                     console.log('输出推送消息参数：')
+                     console.log(arr[1])
+                     that.sendSocketMessage(arr[1]);
                      //扫描完跳转到详情页
                      setTimeout(() => {
                         this.detailView();

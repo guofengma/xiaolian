@@ -1,4 +1,7 @@
 /* pages/submit/submit.wxss */
+page{
+   background-color: #fff;
+}
 .container{
     padding: 0 116rpx;
     background-color: #fff;

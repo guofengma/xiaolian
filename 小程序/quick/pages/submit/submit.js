@@ -69,7 +69,7 @@ Page({
       }).then(result => {
           if (result.code != 200) {
               wx.showToast({
-                  title: '密码错误'
+                  title: '发送密码失败'
               })
 
           } else {
@@ -77,9 +77,6 @@ Page({
           }
       }).catch(err => {
           console.log("出错了")
-          wx.showToast({
-              title: '密码错误'
-          })
           console.log(err)
       });
   },
@@ -91,25 +88,26 @@ Page({
         data: {
            openid: wx.getStorageSync('user').openid,
            phoneno: mobile,
-           nickname: '',
-           storeid: getApp().globalData.storeid
+           nickname: ''
         },
         noLoading: true,
         method: "POST",
           header: { 'content-type': 'application/x-www-form-urlencoded' }
       //   header: { 'content-type': 'application/json' }
      }).then(result => {
+        wx.showToast({
+           title: '登录成功',
+           duration: 1500
+        })
+
         var timer = setTimeout(() => {
            wx.switchTab({
               url: '../user/user'
            })
            clearTimeout(timer);
-        }, 1000)
+        }, 1500)
      }).catch(err => {
         console.log("出错了")
-        wx.showToast({
-           title: '密码错误'
-        })
         console.log(err)
      });
   },
@@ -122,7 +120,7 @@ Page({
           data: {
               mobile: e.detail.value.phoneno,
               code: e.detail.value.pwd,
-              storeid: getApp().globalData.storeid
+              storeid: wx.getStorageSync('storeId')
           },
           noLoading: true,
           method: "GET",
@@ -131,6 +129,11 @@ Page({
       }).then(result => {
           if (result.code == 200) {
              this.saveInfo(e.detail.value.phoneno)
+          }else{
+             wx.showToast({
+                title: '验证码错误',
+                duration: 1500
+             })
           }
       }).catch(err => {
           console.log("出错了")

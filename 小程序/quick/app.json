@@ -1,21 +1,19 @@
-{
+                                                            {
   "pages":[
+     
      "pages/index/index",
-     "pages/orderList/orderList",
-      
+     "pages/cart/cart",
+      "pages/orderList/orderList",
       "pages/leftCancel/leftCancel",
       "pages/check/check",
       
       "pages/store/store",
       "pages/submit/submit",
-      "pages/cart/cart",
+      
       "pages/info/info",
       "pages/user/user",
-      "pages/detail/detail",
       "pages/success/success",
-      "pages/sheet/sheet",
-      "pages/demo/demo",
-      "pages/order/order"
+      "pages/demo/demo"
   ],
   "window":{
     "backgroundTextStyle":"light",

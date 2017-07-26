@@ -31,18 +31,7 @@ Page({
   cartView(e){
      console.log(e.target.dataset.totalnum);
      let totalnum = e.target.dataset.totalnum;
-     if (totalnum == 0) {
-      wx.showToast({
-         title: '购物车空空如也',
-         icon: 'success',
-         image: '',
-         duration: 2000,
-         mask: true,
-         success: function(res) {},
-         fail: function(res) {},
-         complete: function(res) {},
-      })
-     } else if (totalnum > 0){
+     if (totalnum > 0){
          wx.navigateTo({
             url: '../cart/cart',
          })
@@ -55,7 +44,7 @@ Page({
         baseUrl: "https://store.lianlianchains.com",
         data: {
            openid: wx.getStorageSync('user').openid,
-           storeid: getApp().globalData.storeid
+           storeid: wx.getStorageSync('storeId')
         },
         noLoading: true,
         method: "GET",
@@ -97,15 +86,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   //   CVS / user / query
       var that = this;
       fetch({
          url: "/CVS/user/query",
          //   baseUrl: "http://192.168.50.57:9888",
          baseUrl: "https://store.lianlianchains.com",
          data: {
-            openid: wx.getStorageSync('user').openid,
-            storeid: getApp().globalData.storeid
+            openid: wx.getStorageSync('user').openid
          },
          noLoading: true,
          method: "GET",
@@ -126,9 +113,6 @@ Page({
          }
       }).catch(err => {
          console.log("出错了")
-         wx.showToast({
-            title: '密码错误'
-         })
          console.log(err)
       });
       this._getCartnum();

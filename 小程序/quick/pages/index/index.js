@@ -53,7 +53,7 @@ Page({
                data: {
                   code: res.result,
                   //  code: "6901121300298",
-                  storeid: getApp().globalData.storeid
+                  storeid: wx.getStorageSync('storeId')
                },
                noLoading: true,
                method: "GET",
@@ -62,7 +62,12 @@ Page({
             }).then(result => {
                console.log(result)
                console.log("查库成功");
-
+               if (!result){
+                  wx.showToast({
+                     title: '该商品暂未上架',
+                  })
+                  return
+               }
                //查询购物车
                wx.setStorageSync('price', result.price);
                wx.setStorageSync('name', result.name);
@@ -72,7 +77,7 @@ Page({
                   baseUrl: "https://store.lianlianchains.com",
                   data: {
                      openid: wx.getStorageSync('user').openid,
-                     storeid: getApp().globalData.storeid
+                     storeid: wx.getStorageSync('storeId')
                   },
                   noLoading: true,
                   method: "GET",
@@ -109,7 +114,7 @@ Page({
                               amount: 1,
                               code: res.result,
                               //   code: "6901121300298",
-                              storeid: getApp().globalData.storeid
+                              storeid: wx.getStorageSync('storeId')
                            },
                            noLoading: true,
                            method: "POST",
@@ -135,7 +140,7 @@ Page({
                            amount: 1,
                            code: res.result,
                            //  code: "6901121300298",
-                           storeid: getApp().globalData.storeid
+                           storeid: wx.getStorageSync('storeId')
                         },
                         noLoading: true,
                         method: "POST",
@@ -177,7 +182,7 @@ Page({
             baseUrl: "https://store.lianlianchains.com",
             data: {
                openid: wx.getStorageSync('user').openid,
-               storeid: getApp().globalData.storeid
+               storeid: wx.getStorageSync('storeId')
             },
             noLoading: true,
             method: "GET",

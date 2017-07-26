@@ -8,8 +8,7 @@ Page({
    data: {
       disabled: true,
       isPhone: false,
-      isPassword: false,
-      hidden: true
+      isPassword: false
    },
    mobHandler(e) {
       let mobile = e.detail.value.length;
@@ -55,29 +54,32 @@ Page({
          header: { 'content-type': 'application/x-www-form-urlencoded' }
       }).then(result => {
          console.log(result);
-         if (result) {
-            wx.showToast({
-               title: '登录成功',
-               duration: 1500
-            })
-            wx.setStorageSync('storeid', result)
-            var timer = setTimeout(() => {
-               wx.switchTab({
-                  url: '../check/check',
-               })
-               clearTimeout(timer)
-            }, 1500)
-         } else if (result == '登录失败') {
-            this.setData({
-               hidden: false
-            })
+         if (result.returncode == '01') {
+            
             var timer = setTimeout(() => {
                this.setData({
                   hidden: true
                })
                clearTimeout(timer)
             }, 2000)
+            wx.showToast({
+               title: '用户名或密码错误',
+            })
+            return
          }
+         if (result.returncode == '00') {
+            wx.showToast({
+               title: '登录成功',
+               duration: 1500
+            })
+            wx.setStorageSync('storeid', result.storeid)
+            var timer = setTimeout(() => {
+               wx.switchTab({
+                  url: '../check/check',
+               })
+               clearTimeout(timer)
+            }, 1500)
+         } 
 
 
       }).catch(err => {

@@ -13,7 +13,6 @@
             <image src="../../image/pwd.png"></image>
             <input name="pwd" bindinput="pwdHandler" maxlength="6" type="number" password placeholder="密码" placeholder-class="resetStyle"/>
         </view>
-        <text class="info" hidden="{{hidden}}">账号或密码不正确</text>
     </view>
     <button form-type="submit" disabled="{{isPhone == true && isPassword == true ? false : true}}" class="{{isPhone == true && isPassword == true ? 'active' : ''}}">登录</button>
   </form>

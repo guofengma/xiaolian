@@ -1,8 +1,10 @@
 {
   "pages":[
+     
      "pages/submit/submit",
-     "pages/detail/detail",
+     
      "pages/orderList/orderList",
+     "pages/detail/detail",
      "pages/statistics/statistics",
      "pages/info/info",
      "pages/check/check",
