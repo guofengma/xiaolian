@@ -4,7 +4,16 @@
     font-size: 28rpx;
     padding: 40rpx;
     position: relative;
+    letter-spacing: 0;
 }
+/* @keyframes myfirst
+{
+from {left: 0;}
+to {left: -50px;}
+}
+.left{
+    animation: myfirst 2s;
+} */
 .item:after{
     content: '';
     position: absolute;
@@ -15,6 +24,14 @@
     background-color: #ddd;
     -webkit-transform: scaleY(.5); 
     transform: scaleY(.5); 
+}
+.item .top{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.item .top .delete{
+   color: #999999;
 }
 .item image{
     width: 44rpx;
@@ -68,4 +85,42 @@
     background-color: #0D8FEF;
     text-align: center;
     line-height: 100rpx;
+    border-radius: 0;
+}
+
+.noCart{
+   width: 100%;
+   position: absolute;
+   left: 50%;
+   top: 40%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+}
+
+.noCart .tishi{
+   font-size: 50rpx;
+   color: #999999;
+   text-align: center;
+}
+
+.order{
+    width: 90%;
+    background-color: #fff;
+    height: 90rpx;
+    font-size: 30rpx;
+    line-height: 90rpx;
+    border: 1px solid #ECECEC;
+    border-radius: 6px;
+    color: #333;
+    margin-top: 100rpx;
+}
+
+.order:after{
+    border: none;
+}
+
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+  background-color: #0D8FEF;
+  color: #fff;
 }

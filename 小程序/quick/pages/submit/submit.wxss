@@ -1,4 +1,7 @@
 /* pages/submit/submit.wxss */
+page{
+   background-color: #fff;
+}
 .container{
     padding: 0 116rpx;
     background-color: #fff;
@@ -16,10 +19,13 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: #999999;
+    color: #0D8FEF;
     z-index: 10;
     height: 52.5rpx;
     line-height: 40.5rpx;
+}
+.checkCode .msg .line{
+   margin-right: 10rpx;
 }
 .item{
     position: relative;
@@ -31,10 +37,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 1px;
+    height: 2px;
     background-color: #ddd;
-    -webkit-transform: scaleY(.5);
-    transform: scaleY(.5);
+    /*-webkit-transform: scaleY(.5);
+    transform: scaleY(.5);*/
 }
 button{
     margin-top: 100rpx;

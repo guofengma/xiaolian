@@ -14,11 +14,13 @@ Page({
         wx.scanCode({
             success: (res) => {
                 console.log(res);
-                this.detailView();
+                wx.setStorageSync('code', res.result)
+                console.log(wx.getStorageSync('code'))
+                this.infoView();
             }
         })
     },
-    detailView() {
+    infoView() {
         wx.navigateTo({
             url: '../info/info'
         })

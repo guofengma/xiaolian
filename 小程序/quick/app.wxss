@@ -1,13 +1,13 @@
 /**app.wxss**/
 page{
     height: 100%;
+    background-color: #f8f8f8;
 }
 .container {
   height: 100%;
   color: #333333;
   font-size: 30rpx;
-  background-color: #f8f8f8;
-  overflow: hidden;
+  /*overflow: hidden;*/
   letter-spacing: -0.19px;
 }
 
