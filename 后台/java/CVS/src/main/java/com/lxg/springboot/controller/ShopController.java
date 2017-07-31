@@ -50,7 +50,7 @@ public class ShopController{
     	shop = shopMapper.query(); 
     	for(int i=0 ;i<shop.size();i++){
     		double dis= GetDistance(lng,lat,shop.get(i).getLng(),shop.get(i).getLat());
-    		if(dis<100){
+    		if(dis<1000){
     		return  shop.get(i);   		
     		}
     	}
@@ -74,14 +74,15 @@ public class ShopController{
     	double fee=0;
     	
     	for(int j =0;j<allOrder.size();j++){
+    		if(allOrder.get(j).getState()==1){
     		List<OrderGood> temp;
-        	temp=orderMapper.queryGood(allOrder.get(j));        	
-        	count = count + temp.size();
+        	temp=orderMapper.queryGood(allOrder.get(j));
+        	for(int i =0;i<temp.size();i++){
+        	count = count + temp.get(i).getAmount();
+        	}
         	fee = fee + allOrder.get(j).getFee();
     	}
-    	
-
-
+    	}
 		JSONObject json = new JSONObject();
 		json.put("count", count);
 		json.put("totlefee", fee);
@@ -106,10 +107,14 @@ public class ShopController{
     	double fee=0;
     	
     	for(int j =0;j<allOrder.size();j++){
+    		if(allOrder.get(j).getState()==1){
     		List<OrderGood> temp;
-        	temp=orderMapper.queryGood(allOrder.get(j));        	
-        	count = count + temp.size();
+        	temp=orderMapper.queryGood(allOrder.get(j));
+        	for(int i =0;i<temp.size();i++){
+        	count = count + temp.get(i).getAmount();
+        	}
         	fee = fee + allOrder.get(j).getFee();
+    	}
     	}
     	
 
@@ -140,13 +145,16 @@ public class ShopController{
     	double fee=0;
     	
     	for(int j =0;j<allOrder.size();j++){
+    		if(allOrder.get(j).getState()==1){
     		List<OrderGood> temp;
-        	temp=orderMapper.queryGood(allOrder.get(j));        	
-        	count = count + temp.size();
+        	temp=orderMapper.queryGood(allOrder.get(j));
+        	for(int i =0;i<temp.size();i++){
+        	count = count + temp.get(i).getAmount();
+        	}
         	fee = fee + allOrder.get(j).getFee();
     	}
+    	}
     	
-
 
 		JSONObject json = new JSONObject();
 		json.put("count", count);

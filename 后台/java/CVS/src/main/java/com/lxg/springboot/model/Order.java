@@ -20,6 +20,8 @@ public class Order extends BasicObject {
 	private List<OrderGood> temp;
 	private String startDate;//时间
 	private String endDate;//时间
+	private int page;
+	private Shop store;
 
 	
 	public String getOpenid() {
@@ -133,6 +135,22 @@ public class Order extends BasicObject {
 
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public Shop getStore() {
+		return store;
+	}
+
+	public void setStore(Shop store) {
+		this.store = store;
 	}
 
 

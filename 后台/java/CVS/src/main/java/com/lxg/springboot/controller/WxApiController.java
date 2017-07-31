@@ -77,7 +77,7 @@ public class WxApiController {
 	}
 	
 	@RequestMapping("wx/getTwoBarCodes")
-	public void  getTwoBarCodes(String StoreId, int width,HttpServletResponse response) throws Exception {
+	public void  getTwoBarCodes(String StoreId,String StoreName,int width,HttpServletResponse response) throws Exception {
 		// 获取token
 		String urltoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&" + "appid=" + appid
 				+ "&" + "secret=" + appSecret;
@@ -91,7 +91,7 @@ public class WxApiController {
 
 		// 参数
 		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("path","pages/index/index"+"?StoreId="+ StoreId);
+		map.put("path","pages/index/index"+"?StoreId="+ StoreId+"&StoreName="+ StoreName);
 		map.put("width",width);
 
 		HashMap<String, Object> maptemp = new HashMap<String, Object>();

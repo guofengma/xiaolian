@@ -13,6 +13,8 @@ public interface OrderMapper {
 	
 	int updatecheck(Order order);
 	
+	Order querybyno(Order order);
+	
 	List<Order> query(Order order);
 	
 	List<Order> queryshop(Order order);
@@ -20,5 +22,13 @@ public interface OrderMapper {
 	int savegood(OrderGood ordergood);
 	
 	List<OrderGood> queryGood(Order order);
+	
+	List<Order> querybypage(Order order);
+	
+	int querytotalpage(String openid);
+	
+	List<Order> querybypageshop(Order order);
+	
+	int querytotalpageshop(String storeid);
 	
 }

@@ -9,6 +9,8 @@ public interface ShopMapper {
 
 	List<Shop> query();
 	
+	Shop querybyid(String storeid);
+	
 	List<Order> totle(Order order);
 			
 }

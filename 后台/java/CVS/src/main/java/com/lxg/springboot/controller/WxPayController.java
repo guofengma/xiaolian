@@ -5,13 +5,16 @@ import com.lxg.springboot.mapper.GoodMapper;
 import com.lxg.springboot.mapper.OrderMapper;
 import com.lxg.springboot.mapper.RefundMapper;
 import com.lxg.springboot.mapper.WithDrawMapper;
+import com.lxg.springboot.mapper.ShopMapper;
 import com.lxg.springboot.model.Cart;
 import com.lxg.springboot.model.Good;
+import com.lxg.springboot.model.Shop;
 import com.lxg.springboot.model.HttpResult;
 import com.lxg.springboot.model.Order;
 import com.lxg.springboot.model.OrderGood;
 import com.lxg.springboot.model.OrderInfo;
 import com.lxg.springboot.model.OrderReturnInfo;
+import com.lxg.springboot.model.Orderpage;
 import com.lxg.springboot.model.PayReturnInfo;
 import com.lxg.springboot.model.RefundReturnInfo;
 import com.lxg.springboot.model.SignInfo;
@@ -83,6 +86,8 @@ public class WxPayController {
 	private CartMapper cartMapper;
 	@Resource
     private GoodMapper goodMapper;
+	@Resource
+    private ShopMapper shopMapper;
 	
     @RequestMapping("wxpay/prepay")
     public String prepay(Order Order) throws Exception {	
@@ -98,13 +103,26 @@ public class WxPayController {
 		tempA.setOpenid(Order.getOpenid());
 		tempA.setStoreid(Order.getStoreid());
 		cart = cartMapper.querybypage(tempA);
-		for(int i = 0 ; i < cart.size() ; i++) {
+		for(int i = 0 ; i < cart.size() ; i++) {			
 			OrderGood temp = new OrderGood();
-			temp.setAmount(cart.get(i).getAmount());
-			temp.setCode(cart.get(i).getCode());
-			temp.setOrderNo(orderNo);
-			temp.setStoreid(Order.getStoreid());
-			OrderMapper.savegood(temp);		 
+			Good good = new Good();
+    		good.setCode(cart.get(i).getCode());
+        	good.setStoreid(cart.get(i).getStoreid());
+        	Good returngood = new Good();
+        	returngood=goodMapper.querybyCode(good);
+        	if(returngood.getAmount()<cart.get(i).getAmount()){
+        		JSONObject jsonA = new JSONObject();
+        		jsonA.put("returncode", "01");
+        		jsonA.put("returnmsg", returngood.getName()+"库存不足");
+        		return jsonA.toJSONString();
+        	}
+        	else{
+        		temp.setAmount(cart.get(i).getAmount());
+        		temp.setCode(cart.get(i).getCode());
+        		temp.setOrderNo(orderNo);
+        		temp.setStoreid(Order.getStoreid());
+        		OrderMapper.savegood(temp);	
+        	}	 
         }	
 		Order.setOrderNo(orderNo);
 		Order.setTime(time);
@@ -195,23 +213,37 @@ public class WxPayController {
         
         Order Order = new Order();
         Order.setOrderNo(map.get("out_trade_no"));
-        if (map.get("result_code").equals("SUCCESS")) {
-        	Order.setState(1);		
+        if(orderMapper.querybyno(Order).getState()!=1){
+        if (map.get("result_code").equals("SUCCESS")) {      	
+        	Order.setState(1);
+        	List<OrderGood> temp;
+        	temp=orderMapper.queryGood(Order);
+        	for(int i=0 ;i<temp.size();i++){
+        		Good good = new Good();
+        		good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
+            	Good returngood = new Good();
+            	returngood=goodMapper.querybyCode(good);
+            	System.out.println("减库存"+ returngood.getAmount()+temp.get(i).getAmount());
+            	returngood.setAmount(returngood.getAmount()-temp.get(i).getAmount());
+            	goodMapper.update(returngood);		
+    	}	
         }
         else{
         	Order.setState(0);	
         }               
 		orderMapper.update(Order);        
+        }
     }
     
     @RequestMapping("wxpay/check")
-    public void check(String orderNo) throws IOException {  	
+    public int check(String orderNo) throws IOException {  	
     
         
         Order Order = new Order();
         Order.setOrderNo(orderNo);
         Order.setCheckstate(1);	
-		orderMapper.update(Order);        
+		return orderMapper.updatecheck(Order);        
     }
     
     @RequestMapping("wxpay/queryOrder")
@@ -220,11 +252,12 @@ public class WxPayController {
     	allOrder=orderMapper.query(order);
     	for(int j =0;j<allOrder.size();j++){
     		List<OrderGood> temp;
-        	temp=orderMapper.queryGood(order);  
+        	temp=orderMapper.queryGood(allOrder.get(j));  
         	for(int i=0 ;i<temp.size();i++){
         		Good good = new Good();
             	Good returngood = new Good();
             	good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
             	returngood=goodMapper.query(good);
             	temp.get(i).setPrice(returngood.getPrice());
             	temp.get(i).setName(returngood.getName());
@@ -236,17 +269,40 @@ public class WxPayController {
     	return allOrder;  	       
     }
     
+    @RequestMapping("wxpay/queryOrderByNo")
+    public Order queryOrderByNo(Order order) throws IOException {
+    		Order returnOrder;
+    		returnOrder=orderMapper.querybyno(order);
+    		List<OrderGood> temp;
+        	temp=orderMapper.queryGood(returnOrder);  
+        	for(int i=0 ;i<temp.size();i++){
+        		Good good = new Good();
+            	Good returngood = new Good();
+            	good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
+            	returngood=goodMapper.query(good);
+            	temp.get(i).setPrice(returngood.getPrice());
+            	temp.get(i).setName(returngood.getName());
+            	temp.get(i).setSpecifi(returngood.getSpecifi()); 	
+            	temp.get(i).setStoreid(returnOrder.getStoreid());
+        	}
+        	returnOrder.setStore(shopMapper.querybyid(returnOrder.getStoreid()));
+        	returnOrder.setTemp(temp);
+    	return returnOrder;  	       
+    }
+    
     @RequestMapping("wxpay/queryShopOrder")
     public List<Order> queryShopOrder(Order order) throws IOException {
     	List<Order> allOrder;
     	allOrder=orderMapper.queryshop(order);
     	for(int j =0;j<allOrder.size();j++){
     		List<OrderGood> temp;
-        	temp=orderMapper.queryGood(order);  
+        	temp=orderMapper.queryGood(allOrder.get(j));  
         	for(int i=0 ;i<temp.size();i++){
         		Good good = new Good();
             	Good returngood = new Good();
             	good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
             	returngood=goodMapper.query(good);
             	temp.get(i).setPrice(returngood.getPrice());
             	temp.get(i).setName(returngood.getName());
@@ -256,6 +312,76 @@ public class WxPayController {
         	allOrder.get(j).setTemp(temp);
     	}
     	return allOrder;  	       
+    }
+    
+    @RequestMapping("wxpay/queryShopOrderByPage")
+    public Orderpage queryShopOrderByPage(Order order) throws IOException {
+    	order.setPage(order.getPage()*5);
+    	Orderpage orderpage = new Orderpage();
+    	List<Order> allOrder = orderMapper.querybypageshop(order);
+    	  
+    	for(int j =0;j<allOrder.size();j++){
+    		List<OrderGood> temp;
+        	temp=orderMapper.queryGood(allOrder.get(j));  
+        	for(int i=0 ;i<temp.size();i++){
+        		Good good = new Good();
+            	Good returngood = new Good();
+            	good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
+            	returngood=goodMapper.query(good);
+            	temp.get(i).setPrice(returngood.getPrice());
+            	temp.get(i).setName(returngood.getName());
+            	temp.get(i).setSpecifi(returngood.getSpecifi()); 	
+            	temp.get(i).setStoreid(order.getStoreid());
+    	}
+        	allOrder.get(j).setTemp(temp);
+    	}
+    	
+    	orderpage.setOrder(allOrder);
+    	
+    	int tempcount = orderMapper.querytotalpageshop(order.getStoreid());
+    	int temppage = tempcount/5;
+    	if(tempcount%5==0){
+    	orderpage.setTotalpage(temppage);
+    	}
+    	else{
+    	orderpage.setTotalpage(temppage+1);
+    	}
+    	return orderpage;  	      
+    }
+    
+    @RequestMapping("wxpay/queryOrderByPage")
+    public Orderpage queryOrderByPage(Order order) throws IOException {
+    	order.setPage(order.getPage()*5);
+    	Orderpage orderpage = new Orderpage();
+    	List<Order> allOrder = orderMapper.querybypage(order);
+    	  
+    	for(int j =0;j<allOrder.size();j++){
+    		List<OrderGood> temp;
+        	temp=orderMapper.queryGood(allOrder.get(j));  
+        	for(int i=0 ;i<temp.size();i++){
+        		Good good = new Good();
+            	Good returngood = new Good();
+            	good.setCode(temp.get(i).getCode());
+            	good.setStoreid(temp.get(i).getStoreid());
+            	returngood=goodMapper.query(good);
+            	temp.get(i).setPrice(returngood.getPrice());
+            	temp.get(i).setName(returngood.getName());
+            	temp.get(i).setSpecifi(returngood.getSpecifi()); 	
+            	temp.get(i).setStoreid(order.getStoreid());
+    	}
+        	allOrder.get(j).setTemp(temp);
+    	}
+    	orderpage.setOrder(allOrder);
+    	int tempcount = orderMapper.querytotalpage(order.getOpenid());
+    	int temppage = tempcount/5;
+    	if(tempcount%5==0){
+    	orderpage.setTotalpage(temppage);
+    	}
+    	else{
+    	orderpage.setTotalpage(temppage+1);
+    	}
+    	return orderpage;  	       
     }
     
     

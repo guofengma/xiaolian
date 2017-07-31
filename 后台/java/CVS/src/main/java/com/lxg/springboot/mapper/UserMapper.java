@@ -13,6 +13,16 @@ public interface UserMapper {
 	
 	User querybyno(User user);
 	
+	int saveboss(User user);
+	
+	int updateboss(User user);
+
+	User queryboss(User user);
+	
+	User querybynoboss(User user);
+	
 	int count(User user);
+	
+	int countboss(User user);
 	
 }

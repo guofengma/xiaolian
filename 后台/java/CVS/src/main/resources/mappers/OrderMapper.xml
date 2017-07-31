@@ -10,18 +10,23 @@
 	<update id="update" parameterType="com.lxg.springboot.model.Order">
 		 update orders 
 		 set state=#{state}
-		 where orderNo=#{orderNo} and storeid=#{storeid}
+		 where orderNo=#{orderNo}
 	</update>
 	
 	<update id="updatecheck" parameterType="com.lxg.springboot.model.Order">
 		 update orders 
 		 set checkstate=#{checkstate}
-		 where orderNo=#{orderNo}  and storeid=#{storeid}
+		 where orderNo=#{orderNo}
 	</update>
 	
 	<select id="query" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
 		select * from orders 
-		where openid=#{openid} and storeid=#{storeid}
+		where openid=#{openid}
+	</select>
+	
+	<select id="querybyno" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
+		select * from orders 
+		where orderNo=#{orderNo}
 	</select>
 	
 	<select id="queryshop" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
@@ -36,7 +41,29 @@
 	
 	<select id="queryGood" parameterType="com.lxg.springboot.model.OrderGood" resultType="com.lxg.springboot.model.OrderGood">
 		select * from ordergood 
-		where orderNo=#{orderNo} and storeid=#{storeid}
+		where orderNo=#{orderNo}
 	</select>
 	
+	<select id="querybypage" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
+		select * from orders
+		where openid=#{openid}
+		order by time DESC
+		limit #{page},5
+	</select>	
+
+	<select id="querytotalpage" resultType="int">
+		select count(orderNo) from orders where openid=#{openid}
+	</select>
+	
+	
+	<select id="querybypageshop" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
+		select * from orders
+		where storeid=#{storeid}
+		order by time DESC
+		limit #{page},5
+	</select>	
+
+	<select id="querytotalpageshop" resultType="int">
+		select count(orderNo) from orders where storeid=#{storeid}
+	</select>
 </mapper>  

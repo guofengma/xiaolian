@@ -2,6 +2,7 @@ package com.lxg.springboot.controller;
 
 import com.lxg.springboot.mapper.OrderMapper;
 import com.lxg.springboot.mapper.CartMapper;
+import com.lxg.springboot.mapper.GoodMapper;
 import com.lxg.springboot.model.Order;
 import com.lxg.springboot.model.Cart;
 import com.lxg.springboot.model.Good;
@@ -33,8 +34,10 @@ public class CVSOrderController extends BaseController {
     private OrderMapper OrderMapper;
 	@Resource
 	private CartMapper cartMapper;
+	@Resource
+    private GoodMapper goodMapper;
     @RequestMapping("createOrder")
-    public int createOrder(String openid,String storeid) {
+    public String createOrder(String openid,String storeid) {
     	Order order = new Order();
     	String OrderNo = RandomStringGenerator.getRandomStringByLength(32);
     	order.setOpenid(openid);
@@ -52,13 +55,24 @@ public class CVSOrderController extends BaseController {
 		cart = cartMapper.querybypage(temp);
 		for(int i = 0 ; i < cart.size() ; i++) {
 			OrderGood tempA = new OrderGood();
+			Good good = new Good();
+    		good.setCode(cart.get(i).getCode());
+        	good.setStoreid(cart.get(i).getStoreid());
+        	Good returngood = new Good();
+        	returngood=goodMapper.querybyCode(good);
+        	if(returngood.getAmount()<cart.get(i).getAmount()){
+        	return cart.get(i).getName()+"库存不足";
+        	}
+        	else{
 			tempA.setAmount(cart.get(i).getAmount());
 			tempA.setCode(cart.get(i).getCode());
 			tempA.setOrderNo(OrderNo);
 			tempA.setStoreid(storeid);
-			OrderMapper.savegood(tempA);		 
+			OrderMapper.savegood(tempA);	
+        	}
         }
-		return OrderMapper.save(order);
+		 OrderMapper.save(order);
+		 return "订单创建成功";
     }
     
     @RequestMapping("query")

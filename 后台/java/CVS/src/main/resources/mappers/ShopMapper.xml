@@ -7,6 +7,10 @@
 		select * from store 
 	</select>
 	
+	<select id="querybyid" resultType="com.lxg.springboot.model.Shop">
+		select * from store where storeid=#{storeid}
+	</select>
+	
 	<select id="totle" parameterType="com.lxg.springboot.model.Order" resultType="com.lxg.springboot.model.Order">
 		select * from orders where storeid=#{storeid}
 		<if test="startDate != null and startDate != ''">
